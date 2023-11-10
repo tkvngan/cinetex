@@ -1,16 +1,18 @@
 {
-  "name": "@cinetex/backend",
+  "name": "cinetex-backend",
   "version": "1.0.0",
   "description": "Backend for Cinetex",
-  "main": "dist/index",
-  "types": "dist/index",
-  "files": [
-    "dist"
-  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
   "scripts": {
-    "build": "npm run clean && npm run compile",
     "clean": "rm -rf ./dist",
-    "compile": "tsc --build"
+    "compile": "tsc --build",
+    "build": "npm run clean && npm run compile",
+    "start": "npm run build && node dist/index.js"
   },
   "devDependencies": {
     "@types/cors": "^2.8.15",
@@ -40,6 +42,7 @@
     "mongoose": "^8.0.0",
     "morgan": "^1.10.0",
     "serve-static": "^1.15.0",
-    "type-fest": "^4.6.0"
+    "type-fest": "^4.6.0",
+    "@cinetex/shared": "file:../shared/dist"
   }
 }

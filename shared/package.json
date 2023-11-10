@@ -2,11 +2,8 @@
   "name": "@cinetex/shared",
   "version": "1.0.0",
   "description": "Shared library for Cinetex",
-  "main": "dist/index",
-  "types": "dist/index",
-  "files": [
-    "dist"
-  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "clean": "rm -rf ./dist",
     "compile": "tsc --build",

@@ -12,11 +12,7 @@
     "declaration": true,
     "declarationMap": true,
     "outDir": "./dist",
-    "rootDir": "./src",
-    "baseUrl": "./",
-    "paths": {
-        "@cinetex/shared/*": ["../shared/dist/*"]
-    }
+    "rootDir": "./src"
   },
   "include": ["./src/**/*"],
   "exclude": ["node_modules", "dist"],

@@ -1,6 +1,11 @@
-import {Movie} from "@cinetex/shared/domain/entities/Movie";
+import {MovieRepository} from "./MovieRepository";
+import {TheatreRepository} from "./TheatreRepository";
+import {ScheduleRepository} from "./ScheduleRepository";
+import {BookingRepository} from "./BookingRepository";
+import {UserRepository} from "./UserRepository";
 
-export interface Repository {
+export type Pattern = { pattern: string, options?: string }
 
-    getAllMovies(): Promise<Movie[]>;
-}
+export type Range<T> = { from?: T, to?: T };
+
+export interface Repository extends MovieRepository, TheatreRepository, ScheduleRepository, BookingRepository, UserRepository {}

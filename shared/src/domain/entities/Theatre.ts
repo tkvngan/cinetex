@@ -16,15 +16,12 @@ export type Screen = Readonly<{
     name: string;
     rows: number;
     columns: number;
-    seats: readonly Seat[];
+    seats: readonly SeatType[][];
 }>
 
-export type Seat = Readonly<{
-    row: number;
-    column: number;
-    priceClass: SeatClass;
-}>
-
-export type SeatClass = "economy" | "standard" | "luxury"
-
-export const SeatClasses: readonly SeatClass[] = ["economy", "standard", "luxury"] as const
+export enum SeatType {
+    Unavailable = 0,
+    Economy = 1,
+    Standard = 2,
+    Luxury = 3,
+}

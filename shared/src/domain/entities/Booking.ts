@@ -1,19 +1,26 @@
 import {Entity, Id} from "../types/Entity";
-import {Show, ShowTime} from "./Show";
+import {Schedule, ShowTime} from "./Schedule";
 import {Column, Row} from "./Theatre";
 
 export type Booking = Entity & Readonly<{
     id: Id
     userId: Id
-    bookingTime: Date
-    totalPrice: number,
+    theatreId: Id,
+    bookingTime: string
+    totalPrice: number
     bookingItems: readonly BookingItem[]
 }>
 
 export type BookingItem = Readonly<{
-    showId: Id
-    showDate: Date
+    movieId: Id,
+    screenId: number
+    showDate: string
     showTime: ShowTime
-    seat: readonly [Row, Column]
-    price: number
+    seat: SeatPosition
+    price: number,
+}>
+
+export type SeatPosition = Readonly<{
+    row: Row
+    column: Column
 }>
