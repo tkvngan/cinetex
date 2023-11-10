@@ -1,7 +1,7 @@
 import {MongoDBModels} from "./infrastructure/repositories/MongoDBModels";
 import {SampleMovies} from "./infrastructure/repositories/SampleMovies";
 import {SampleTheatres} from "./infrastructure/repositories/SampleTheatres";
-import {MongoDBRepository} from "./infrastructure/repositories/MongoDBRepository";
+import {MongoDBRepositories} from "./infrastructure/repositories/MongoDBRepositories";
 
 
 MongoDBModels.connect().then(async () => {
@@ -9,11 +9,11 @@ MongoDBModels.connect().then(async () => {
 });
 
 const models = new MongoDBModels()
-const repository = new MongoDBRepository()
+const repository = new MongoDBRepositories()
 
 async function storeSampleMovies(): Promise<void> {
     for (const movie of SampleMovies) {
-        const createdMovie = await repository.addMovie(movie)
+        const createdMovie = await repository.movie.addMovie(movie)
         console.log("Created movie: " + JSON.stringify(createdMovie, null, 4))
     }
     console.log("Number of movies: " + SampleMovies.length)
@@ -31,7 +31,7 @@ function run(action: () => Promise<void>): Promise<void> {
 }
 
 run (async () => {
-    const count = await repository.deleteAllMovies()
+    const count = await repository.movie.deleteAllMovies()
     console.log("Deleted " + count + " movies.")
     // await storeSampleMovies()
 }).then(() => {

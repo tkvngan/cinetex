@@ -1,4 +1,4 @@
 import {QueryUseCase} from "../UseCase";
-import {Movie} from "../../../domain/entities/Movie";
+import {Movie} from "../../../domain/entities";
 
-export type GetAllMovies = QueryUseCase<{}, readonly Movie[]>;
+export type GetAllMovies = QueryUseCase<{}, Movie[]>

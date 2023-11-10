@@ -1,34 +1,25 @@
-import {Pattern, Range} from "./Repository";
-import {Movie, Genre, Rating} from "@cinetex/shared/domain/entities/Movie";
+import {Movie} from "@cinetex/shared/domain/entities/Movie";
+import {MovieQueryCriteria} from "@cinetex/shared/application/usecases/queries/GetMoviesByQuery";
 
-
-export type MovieSearchCriteria = {
-    name?: string | Pattern;
-    genres?: Genre[];
-    rating?: Rating;
-    director?: string | Pattern;
-    cast?: string[];
-    releaseDate?: string | Range<string>;
-}
 
 export interface MovieRepository {
     getAllMovies(): Promise<Movie[]>;
 
-    getMovie(id: string): Promise<Movie | undefined>;
+    getMovieById(id: string): Promise<Movie | undefined>;
 
     getMovieByName(name: string): Promise<Movie | undefined>;
 
-    getMovies(criteria: MovieSearchCriteria): Promise<Movie[]>;
+    getMoviesByQuery(criteria: MovieQueryCriteria): Promise<Movie[]>;
 
     addMovie(movie: Movie): Promise<Movie>;
 
-    deleteMovie(id: string): Promise<Movie | undefined>;
+    deleteMovieById(id: string): Promise<Movie | undefined>;
 
     deleteMovieByName(name: string): Promise<Movie | undefined>;
 
-    deleteMovies(criteria: MovieSearchCriteria): Promise<number>;
+    deleteMoviesByQuery(criteria: MovieQueryCriteria): Promise<number>;
 
     deleteAllMovies(): Promise<number>;
 
-    updateMovie(id: string, movie: Partial<Omit<Movie, "id">>): Promise<Movie | undefined>;
+    updateMovieById(id: string, movie: Partial<Omit<Movie, "id">>): Promise<Movie | undefined>;
 }

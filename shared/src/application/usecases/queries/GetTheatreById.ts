@@ -1,6 +1,4 @@
 import {QueryUseCase} from "../UseCase";
-import {Id} from "../../../domain/types/Entity";
-import {Theatre} from "../../../domain/entities/Theatre";
+import {Theatre} from "../../../domain/entities";
 
-export type GetTheatreById = QueryUseCase<{theatreId: Id}, Theatre | undefined>;
-
+export type GetTheatreById = QueryUseCase<{ id: string }, Theatre | undefined>

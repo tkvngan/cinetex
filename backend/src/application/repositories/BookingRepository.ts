@@ -1,20 +1,11 @@
-import {Range} from "./Repository";
 import {Booking} from "@cinetex/shared/domain/entities/Booking";
-import {ShowTime} from "@cinetex/shared/domain/entities/Schedule";
-
-export type BookingSearchCriteria = {
-    userId?: string;
-    theatreId?: string;
-    movieId?: string;
-    showDate?: string | Range<string>;
-    showTime?: ShowTime[];
-}
+import {BookingQueryCriteria} from "@cinetex/shared/application/usecases/queries/GetBookingsByQuery";
 
 export interface BookingRepository {
 
     getAllBookings(): Promise<Booking[]>;
 
-    getBooking(id: string): Promise<Booking | undefined>;
+    getBookingById(id: string): Promise<Booking | undefined>;
 
     getBookingsByUserId(userId: string): Promise<Booking[]>;
 
@@ -22,13 +13,13 @@ export interface BookingRepository {
 
     getBookingsByMovieId(movieId: string): Promise<Booking[]>;
 
-    getBookings(criteria: BookingSearchCriteria): Promise<Booking[]>;
+    getBookingsByQuery(criteria: BookingQueryCriteria): Promise<Booking[]>;
 
     addBooking(booking: Booking): Promise<Booking>;
 
-    deleteBooking(id: string): Promise<Booking | undefined>;
+    deleteBookingById(id: string): Promise<Booking | undefined>;
 
-    deleteBookings(criteria: BookingSearchCriteria): Promise<number>;
+    deleteBookingsByQuery(criteria: BookingQueryCriteria): Promise<number>;
 
-    updateBooking(id: string, booking: Partial<Omit<Booking, "id">>): Promise<Booking | undefined>;
+    updateBookingById(id: string, booking: Partial<Omit<Booking, "id">>): Promise<Booking | undefined>;
 }

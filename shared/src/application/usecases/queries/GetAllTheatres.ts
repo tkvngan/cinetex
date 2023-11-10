@@ -1,4 +1,4 @@
 import {QueryUseCase} from "../UseCase";
-import {Theatre} from "../../../domain/entities/Theatre";
+import {Theatre} from "../../../domain/entities";
 
-export type GetAllTheatres = QueryUseCase<{}, readonly Theatre[]>;
+export type GetAllTheatres = QueryUseCase<{}, Theatre[]>

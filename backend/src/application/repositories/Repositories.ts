@@ -4,8 +4,15 @@ import {ScheduleRepository} from "./ScheduleRepository";
 import {BookingRepository} from "./BookingRepository";
 import {UserRepository} from "./UserRepository";
 
-export type Pattern = { pattern: string, options?: string }
+export interface Repositories {
 
-export type Range<T> = { from?: T, to?: T };
+    readonly movie: MovieRepository
 
-export interface Repository extends MovieRepository, TheatreRepository, ScheduleRepository, BookingRepository, UserRepository {}
+    readonly theatre: TheatreRepository,
+
+    readonly schedule: ScheduleRepository,
+
+    readonly booking: BookingRepository,
+
+    readonly user: UserRepository
+}
