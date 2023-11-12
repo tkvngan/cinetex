@@ -1,47 +1,45 @@
 import {UserRepository} from "../../application/repositories/UserRepository";
 import {toObjectId, toPatternFilter} from "./MongoDBUtils";
 import {FilterQuery, Model} from "mongoose";
-import {User} from "@cinetex/shared/domain/entities/User";
-import {UserQueryCriteria} from "@cinetex/shared/application/usecases/queries/GetUsersByQuery";
+import {User} from "shared/dist/domain/entities/User";
+import {UserQueryCriteria} from "shared/dist/application/usecases/queries/GetUsersByQuery";
 
-export class MongoDBUserRepository implements UserRepository {
+export function MongoDBUserRepository(model: Model<User>): UserRepository {
+    return {
+        async getAllUsers(): Promise<User[]> {
+            return (await model.find()).map(user => user.toObject());
+        },
 
-    constructor(readonly model: Model<User>) {}
+        async getUserById(id: string): Promise<User | undefined> {
+            return (await model.findById(toObjectId(id)))?.toObject();
+        },
 
-    async getAllUsers(): Promise<User[]> {
-        return (await this.model.find()).map(user => user.toObject());
-    }
+        async getUserByEmail(email: string): Promise<User | undefined> {
+            return (await model.findOne({email: email}))?.toObject();
+        },
 
-    async getUserId(id: string): Promise<User | undefined> {
-        return (await this.model.findById(toObjectId(id)))?.toObject();
-    }
+        async getUsersByQuery(criteria: UserQueryCriteria): Promise<User[]> {
+            const filter = createUserFilter(criteria);
+            return (await model.find(filter)).map(user => user.toObject());
+        },
 
-    async getUserByEmail(email: string): Promise<User | undefined> {
-        return (await this.model.findOne({email: email}))?.toObject();
-    }
+        async addUser(user: User): Promise<User> {
+            return (await model.create(user)).toObject();
+        },
 
-    async getUsersByQuery(criteria: UserQueryCriteria): Promise<User[]> {
-        const filter = createUserFilter(criteria);
-        return (await this.model.find(filter)).map(user => user.toObject());
-    }
+        async deleteUserById(id: string): Promise<User | undefined> {
+            return (await model.findByIdAndDelete(toObjectId(id), {returnDocument: "before"}))?.toObject();
+        },
 
-    async addUser(user: User): Promise<User> {
-        return (await this.model.create(user)).toObject();
-    }
+        async deleteUsersByQuery(criteria: UserQueryCriteria): Promise<number> {
+            const filter = createUserFilter(criteria);
+            return (await model.deleteMany(filter)).deletedCount || 0
+        },
 
-    async deleteUserById(id: string): Promise<User | undefined> {
-        return (await this.model
-            .findByIdAndDelete(toObjectId(id), {returnDocument: "before"}))?.toObject();
-    }
-
-    async deleteUsersByQuery(criteria: UserQueryCriteria): Promise<number> {
-        const filter= createUserFilter(criteria);
-        return (await this.model.deleteMany(filter)).deletedCount || 0
-    }
-
-    async updateUserById(id: string, user: Partial<Omit<User, "id">>): Promise<User | undefined> {
-        delete (user as any).id
-        return (await this.model.findByIdAndUpdate(toObjectId(id), {$set: user}, {returnDocument: "after"}))?.toObject()
+        async updateUserById(id: string, user: Partial<Omit<User, "id">>): Promise<User | undefined> {
+            delete (user as any).id
+            return (await model.findByIdAndUpdate(toObjectId(id), {$set: user}, {returnDocument: "after"}))?.toObject()
+        },
     }
 }
 

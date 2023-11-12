@@ -3,16 +3,13 @@ import {TheatreRepository} from "./TheatreRepository";
 import {ScheduleRepository} from "./ScheduleRepository";
 import {BookingRepository} from "./BookingRepository";
 import {UserRepository} from "./UserRepository";
+import {MediaContentRepository} from "./MediaContentRepository";
 
 export interface Repositories {
-
-    readonly movie: MovieRepository
-
-    readonly theatre: TheatreRepository,
-
-    readonly schedule: ScheduleRepository,
-
-    readonly booking: BookingRepository,
-
-    readonly user: UserRepository
+    readonly Movie: MovieRepository
+    readonly Theatre: TheatreRepository,
+    readonly Schedule: ScheduleRepository,
+    readonly Booking: BookingRepository,
+    readonly User: UserRepository
+    readonly MediaContent: MediaContentRepository
 }

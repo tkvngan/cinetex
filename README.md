@@ -1,2 +1,2 @@
 # cinetex
-Online movie theatre ticket booking system
+Online Movie Theatre ticket Booking system

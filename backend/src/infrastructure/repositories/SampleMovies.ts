@@ -1,4 +1,4 @@
-import {Movie} from "@cinetex/shared/domain/entities";
+import {Movie} from "shared/dist/domain/entities";
 
 export const SampleMovies: Movie[] = [
     {

@@ -1,27 +1,18 @@
 import {UseCase} from "./UseCase";
 
 export interface UseCaseCollection {
-    readonly array: readonly UseCase[];
-    readonly map: ReadonlyMap<UseCaseCollectionKeys, UseCase>;
+    toArray(): readonly UseCase[]
 }
 
-export type UseCaseCollectionKeys = keyof Omit<UseCaseCollection, "array" | "map">
-
-export function getUseCaseArray(collection: UseCaseCollection): readonly UseCase[] {
-    return Object.getOwnPropertyNames(collection).filter((name) => {
-        if (name !== "array" && name !== "map") {
-            const property = (collection as any)[name]
-            return property != undefined
-                && property.name !== undefined
-                && property.name === name
-                && (property.type === "query" || property.type === "command")
+export function UseCaseCollection(): UseCaseCollection & { $<T extends UseCase>(item: T): T } {
+    const array: UseCase[] = [];
+    return {
+        $<T extends UseCase>(item: T): T {
+            array.push(item);
+            return item;
+        },
+        toArray(): readonly UseCase[] {
+            return array;
         }
-        return false
-    }).map((name) => (collection as any)[name])
-}
-
-export function getUseCaseMap(collection: UseCaseCollection): ReadonlyMap<UseCaseCollectionKeys, UseCase> {
-    return new Map<UseCaseCollectionKeys, UseCase>(getUseCaseArray(collection).map((useCase) => {
-        return [useCase.name as UseCaseCollectionKeys, useCase]
-    }))
+    }
 }

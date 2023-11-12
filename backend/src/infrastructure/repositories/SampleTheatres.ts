@@ -1,4 +1,4 @@
-import {SeatType, Theatre} from "@cinetex/shared/domain/entities";
+import {SeatType, Theatre} from "shared/dist/domain/entities";
 import {Types} from "mongoose";
 
 export const SampleTheatres: Theatre[] = [

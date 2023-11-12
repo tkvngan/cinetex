@@ -1,5 +1,5 @@
-import {Schedule} from "@cinetex/shared/domain/entities/Schedule";
-import {ScheduleQueryCriteria} from "@cinetex/shared/application/usecases/queries/GetSchedulesByQuery";
+import {Schedule} from "shared/dist/domain/entities/Schedule";
+import {ScheduleQueryCriteria} from "shared/dist/application/usecases/queries/GetSchedulesByQuery";
 
 export interface ScheduleRepository {
     getAllSchedules(): Promise<Schedule[]>;

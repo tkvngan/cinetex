@@ -1,5 +1,5 @@
-import {User} from "@cinetex/shared/domain/entities/User";
-import {QueryPattern} from "@cinetex/shared/application/usecases/queries/QueryCriteria";
+import {User} from "shared/dist/domain/entities/User";
+import {QueryPattern} from "shared/dist/application/usecases/queries/QueryCriteria";
 
 export type UserQueryCriteria = {
     name?: string | QueryPattern;
@@ -11,7 +11,7 @@ export interface UserRepository {
 
     getAllUsers(): Promise<User[]>;
 
-    getUserId(id: string): Promise<User | undefined>;
+    getUserById(id: string): Promise<User | undefined>;
 
     getUserByEmail(email: string): Promise<User | undefined>;
 

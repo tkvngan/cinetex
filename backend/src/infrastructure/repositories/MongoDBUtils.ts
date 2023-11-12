@@ -1,5 +1,5 @@
 import {FilterQuery, Types} from "mongoose";
-import {QueryPattern, QueryRange} from "@cinetex/shared/application/usecases/queries/QueryCriteria";
+import {QueryPattern, QueryRange} from "shared/dist/application/usecases/queries/QueryCriteria";
 
 export function toObjectId(id: string) {
     return new Types.ObjectId(id);

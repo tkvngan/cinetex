@@ -1,6 +1,6 @@
 import {Entity, Id} from "../types";
 
-export type MediaStore = Entity & Readonly<{
+export type MediaContent = Entity & Readonly<{
     id: Id;
     name?: string;
     contentType: string;

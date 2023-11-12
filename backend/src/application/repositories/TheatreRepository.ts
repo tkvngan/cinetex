@@ -1,5 +1,5 @@
-import {Theatre} from "@cinetex/shared/domain/entities/Theatre";
-import {TheatreQueryCriteria} from "@cinetex/shared/application/usecases/queries/GetTheatresByQuery";
+import {Theatre} from "shared/dist/domain/entities/Theatre";
+import {TheatreQueryCriteria} from "shared/dist/application/usecases/queries/GetTheatresByQuery";
 
 export interface TheatreRepository {
     getAllTheatres(): Promise<Theatre[]>;

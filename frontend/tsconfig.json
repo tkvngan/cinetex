@@ -24,15 +24,7 @@
     "jsx": "react-jsx",
     "outDir": "./dist",
     "rootDir": "./src",
-    "baseUrl": "./",
-    "paths": {
-      "@cinetex/shared/*": ["../shared/dist/*"]
-    },
-    "noEmit": true
   },
   "include": ["./src/**/*"],
-  "exclude": ["node_modules", "dist"],
-  "references": [
-    {"path": "../shared"}
-  ]
+  "exclude": ["node_modules", "dist", "build"]
 }

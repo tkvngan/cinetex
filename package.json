@@ -1,0 +1,12 @@
+{
+  "name": "cinetext",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "workspaces": ["shared", "backend", "frontend"],
+  "scripts": {
+    "clean-all": "yarn workspace share clean & yarn workspace backend clean & yarn workspace frontend clean",
+    "compile-all": "yarn workspace shared compile && yarn workspace backend compile && yarn workspace frontend compile",
+    "build-all": "yarn workspace shared build && yarn workspace backend build && yarn workspace frontend build",
+  }
+}

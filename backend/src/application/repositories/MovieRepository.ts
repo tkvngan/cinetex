@@ -1,8 +1,9 @@
-import {Movie} from "@cinetex/shared/domain/entities/Movie";
-import {MovieQueryCriteria} from "@cinetex/shared/application/usecases/queries/GetMoviesByQuery";
+import {Movie} from "shared/dist/domain/entities/Movie";
+import {MovieQueryCriteria} from "shared/dist/application/usecases/queries/GetMoviesByQuery";
 
 
 export interface MovieRepository {
+
     getAllMovies(): Promise<Movie[]>;
 
     getMovieById(id: string): Promise<Movie | undefined>;

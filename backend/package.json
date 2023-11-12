@@ -1,7 +1,8 @@
 {
-  "name": "cinetex-backend",
+  "name": "backend",
   "version": "1.0.0",
   "description": "Backend for Cinetex",
+  "license": "MIT",
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -10,9 +11,9 @@
   },
   "scripts": {
     "clean": "rm -rf ./dist",
-    "compile": "tsc --build",
-    "build": "npm run clean && npm run compile",
-    "start": "npm run build && node dist/index.js"
+    "compile": "tsc",
+    "build": "yarn clean && yarn compile",
+    "start": "yarn build && node ./dist/index.js"
   },
   "devDependencies": {
     "@types/cors": "^2.8.15",
@@ -43,6 +44,6 @@
     "morgan": "^1.10.0",
     "serve-static": "^1.15.0",
     "type-fest": "^4.6.0",
-    "@cinetex/shared": "file:../shared/dist"
+    "shared": "1.0.0"
   }
 }

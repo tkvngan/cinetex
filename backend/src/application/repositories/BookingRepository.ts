@@ -1,5 +1,5 @@
-import {Booking} from "@cinetex/shared/domain/entities/Booking";
-import {BookingQueryCriteria} from "@cinetex/shared/application/usecases/queries/GetBookingsByQuery";
+import {Booking} from "shared/dist/domain/entities/Booking";
+import {BookingQueryCriteria} from "shared/dist/application/usecases/queries/GetBookingsByQuery";
 
 export interface BookingRepository {
 

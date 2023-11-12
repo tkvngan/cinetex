@@ -1,22 +1,38 @@
 export type UseCaseType = "query" | "command" ;
 
-export type UseCaseProperties = {
+export interface UseCaseProperties<T extends UseCaseType = UseCaseType> {
+    readonly name: string;
+    readonly type: T;
+    readonly parameters?: [key: string, type: "string" | "number" | "boolean"][]
+}
+
+export type UseCaseInvoker<Input, Output> = (input: Input) => Promise<Output>
+
+export interface UseCase<Input = any, Output = any> extends UseCaseProperties {
     readonly name: string;
     readonly type: UseCaseType;
-}
-
-export type QueryUseCaseProperties = UseCaseProperties & {
-    readonly type: "query";
-}
-
-export type CommandUseCaseProperties = UseCaseProperties & {
-    readonly type: "command";
-}
-
-export type UseCase<Input = any, Output = any> = UseCaseProperties & {
     invoke(input: Input): Promise<Output>;
 }
 
-export type QueryUseCase<Query = any, Result = any> = UseCase<Query, Result> & QueryUseCaseProperties
+export interface QueryUseCase<Query = any, Result = any> extends UseCase<Query, Result>, UseCaseProperties<"query"> {
+    readonly type: "query";
+}
 
-export type CommandUseCase<Command = any> = UseCase<Command, void> & CommandUseCaseProperties
+export interface CommandUseCase<Command = any> extends UseCase<Command, void>, UseCaseProperties<"command"> {
+    readonly type: "command";
+}
+
+export function UseCase<Type extends UseCaseType, Input = any, Output = any>(properties: UseCaseProperties<Type>, invoke: UseCaseInvoker<Input, Output>): UseCase<Input, Output> {
+    return {
+        ...properties,
+        invoke
+    }
+}
+
+export function QueryUseCase<Query = any, Result = any>(name: string, invoke: (input: Query) => Promise<Result>): QueryUseCase<Query, Result> {
+    return UseCase({ name, type: "query" }, invoke) as QueryUseCase<Query, Result>;
+}
+
+export function CommandUseCase<Command = any>(name: string, invoke: (input: Command) => Promise<void>): CommandUseCase<Command> {
+    return UseCase({ name, type: "command" }, invoke) as CommandUseCase<Command>;
+}

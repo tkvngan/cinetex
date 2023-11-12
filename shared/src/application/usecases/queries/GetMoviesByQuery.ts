@@ -1,6 +1,6 @@
 import {QueryCriteria, QueryPattern, QueryRange} from "./QueryCriteria";
 import {Genre, Movie, Rating} from "../../../domain/entities";
-import {QueryUseCase} from "../UseCase";
+import {QueryUseCase, UseCaseProperties} from "../UseCase";
 
 export type MovieQueryCriteria = QueryCriteria & {
     name?: string | QueryPattern;
@@ -11,4 +11,10 @@ export type MovieQueryCriteria = QueryCriteria & {
     releaseDate?: string | QueryRange<string>;
 }
 
-export type GetMoviesByQuery = QueryUseCase<{ criteria: MovieQueryCriteria }, Movie[]>;
+export type GetMoviesByQuery = QueryUseCase<{ criteria: MovieQueryCriteria }, Movie[]>
+
+export function GetMoviesByQuery(invoke: (query: { criteria: MovieQueryCriteria }) => Promise<Movie[]>): GetMoviesByQuery {
+    return { name: "GetMoviesByQuery", type: "query", invoke }
+}
+;
+
