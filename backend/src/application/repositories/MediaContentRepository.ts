@@ -1,4 +1,4 @@
-import { MediaContent } from "shared/dist/domain/entities";
+import {MediaContent} from "shared/dist/domain/entities";
 
 export interface MediaContentRepository {
 

@@ -1,11 +1,5 @@
 import {User} from "shared/dist/domain/entities/User";
-import {QueryPattern} from "shared/dist/application/usecases/queries/QueryCriteria";
-
-export type UserQueryCriteria = {
-    name?: string | QueryPattern;
-    email?: string | QueryPattern;
-    phoneNumber?: string | QueryPattern;
-}
+import {QueryUserCriteria} from "../interactors/queries";
 
 export interface UserRepository {
 
@@ -15,14 +9,15 @@ export interface UserRepository {
 
     getUserByEmail(email: string): Promise<User | undefined>;
 
-    getUsersByQuery(criteria: UserQueryCriteria): Promise<User[]>;
-
     addUser(user: User): Promise<User>;
 
     deleteUserById(id: string): Promise<User | undefined>;
 
-    deleteUsersByQuery(criteria: UserQueryCriteria): Promise<number>;
+    deleteUsersByQuery(criteria: QueryUserCriteria): Promise<number>;
 
     updateUserById(id: string, user: Partial<Omit<User, "id">>): Promise<User | undefined>;
+
+    queryUsers(criteria: QueryUserCriteria): Promise<User[]>;
+
 
 }

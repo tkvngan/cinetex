@@ -8,4 +8,3 @@ export function GetMovieByIdInteractor(repositories: Repositories): GetMovieById
     })
 }
 
-

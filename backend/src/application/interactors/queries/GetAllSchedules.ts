@@ -8,4 +8,3 @@ export function GetAllSchedulesInteractor(repositories: Repositories): GetAllSch
     })
 }
 
-

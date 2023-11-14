@@ -2,18 +2,18 @@ import {QueryUseCase, UseCaseProperties} from "../UseCase";
 import {Schedule, ShowTime} from "../../../domain/entities";
 import {QueryCriteria, QueryPattern, QueryRange} from "./QueryCriteria";
 
-export type ScheduleQueryCriteria = QueryCriteria & {
+export type QueryScheduleCriteria = QueryCriteria & {
     theatreId?: string;
     movieId?: string;
     movieName?: string | QueryPattern;
-    screenId?: number;
+    auditoriumId?: number;
     showDate?: string | QueryRange<string>;
     showTime?: ShowTime[];
 }
 
-export type GetSchedulesByQuery = QueryUseCase<{ criteria: ScheduleQueryCriteria }, Schedule[]>
+export type QuerySchedules = QueryUseCase<{ criteria: QueryScheduleCriteria }, Schedule[]>
 
-export function GetSchedulesByQuery(invoke: (query: { criteria: ScheduleQueryCriteria }) => Promise<Schedule[]>): GetSchedulesByQuery {
+export function QuerySchedules(invoke: (query: { criteria: QueryScheduleCriteria }) => Promise<Schedule[]>): QuerySchedules {
     return { name: "GetSchedulesByQuery", type: "query", invoke }
 }
 

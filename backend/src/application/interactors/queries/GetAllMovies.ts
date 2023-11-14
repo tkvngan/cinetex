@@ -8,4 +8,3 @@ export function GetAllMoviesInteractor(repositories: Repositories): GetAllMovies
     })
 }
 
-

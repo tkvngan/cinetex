@@ -8,4 +8,3 @@ export function GetBookingsByTheatreIdInteractor(repositories: Repositories): Ge
     })
 }
 
-

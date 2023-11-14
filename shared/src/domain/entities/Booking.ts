@@ -13,7 +13,7 @@ export type Booking = Entity & Readonly<{
 
 export type BookingItem = Readonly<{
     movieId: Id,
-    screenId: number
+    auditoriumId: number
     showDate: string
     showTime: ShowTime
     seat: SeatPosition

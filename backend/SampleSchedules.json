@@ -1,0 +1,11 @@
+[
+  {"movieId": "65524f0e658ce215e0bf1b26", "theatreId": "654d86124c67be25bc7cf408", "auditoriumId": 0, "showStartDate": "2023-11-19", "showEndDate": "2023-12-02", "showTimes": ["evening", "night"], "id": "6552629b15cacc667e435004"},
+  {"movieId": "65524f0e658ce215e0bf1b29", "theatreId": "654d86124c67be25bc7cf408", "auditoriumId": 1, "showStartDate": "2023-11-19", "showEndDate": "2023-12-09", "showTimes": ["evening", "night"], "id": "6552629b15cacc667e435005"},
+  {"movieId": "65524f0e658ce215e0bf1b2b", "theatreId": "654d86124c67be25bc7cf408", "auditoriumId": 0, "showStartDate": "2023-11-19", "showEndDate": "2023-11-25", "showTimes": ["afternoon"], "id": "6552629b15cacc667e435006"},
+  {"movieId": "65524f0e658ce215e0bf1b2d", "theatreId": "654d86124c67be25bc7cf408", "auditoriumId": 0, "showStartDate": "2023-11-26", "showEndDate": "2023-12-09", "showTimes": ["afternoon"], "id": "6552629b15cacc667e435007"},
+  {"movieId": "65524f0e658ce215e0bf1b2f", "theatreId": "654d86124c67be25bc7cf408", "auditoriumId": 1, "showStartDate": "2023-11-19", "showEndDate": "2023-12-02", "showTimes": ["afternoon"], "id": "6552629b15cacc667e435008"},
+  {"movieId": "65524f0e658ce215e0bf1b31", "theatreId": "654d86124c67be25bc7cf408", "auditoriumId": 0, "showStartDate": "2023-12-03", "showEndDate": "2023-12-16", "showTimes": ["evening", "night"], "id": "6552629b15cacc667e435009"},
+  {"movieId": "65524f0e658ce215e0bf1b33", "theatreId": "654d86124c67be25bc7cf408", "auditoriumId": 1, "showStartDate": "2023-12-10", "showEndDate": "2023-12-23", "showTimes": ["evening", "night"], "id": "6552629b15cacc667e43500a"},
+  {"movieId": "65524f0e658ce215e0bf1b35", "theatreId": "654d86124c67be25bc7cf408", "auditoriumId": 0, "showStartDate": "2023-12-10", "showEndDate": "2023-12-23", "showTimes": ["afternoon"], "id": "6552629b15cacc667e43500b"},
+  {"movieId": "65524f0e658ce215e0bf1b37", "theatreId": "654d86124c67be25bc7cf408", "auditoriumId": 1, "showStartDate": "2023-12-03", "showEndDate": "2023-12-23", "showTimes": ["afternoon"], "id": "6552629b15cacc667e43500c"}
+]

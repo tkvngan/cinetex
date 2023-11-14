@@ -8,4 +8,3 @@ export function GetUserByIdInteractor(repositories: Repositories): GetUserById {
     })
 }
 
-

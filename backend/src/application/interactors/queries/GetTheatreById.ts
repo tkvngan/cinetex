@@ -8,4 +8,3 @@ export function GetTheatreByIdInteractor(repositories: Repositories): GetTheatre
     })
 }
 
-

@@ -1,5 +1,5 @@
 import {Theatre} from "shared/dist/domain/entities/Theatre";
-import {TheatreQueryCriteria} from "shared/dist/application/usecases/queries/GetTheatresByQuery";
+import {QueryTheatreCriteria} from "shared/dist/application/usecases/queries";
 
 export interface TheatreRepository {
     getAllTheatres(): Promise<Theatre[]>;
@@ -8,15 +8,16 @@ export interface TheatreRepository {
 
     getTheatreByName(name: string): Promise<Theatre | undefined>;
 
-    getTheatresByQuery(criteria: TheatreQueryCriteria): Promise<Theatre[]>;
-
     addTheatre(theatre: Theatre): Promise<Theatre>;
 
     deleteTheatreById(id: string): Promise<Theatre | undefined>;
 
     deleteTheatreByName(name: string): Promise<Theatre | undefined>;
 
-    deleteTheatresByQuery(criteria: TheatreQueryCriteria): Promise<number>;
+    deleteTheatresByQuery(criteria: QueryTheatreCriteria): Promise<number>;
 
     updateTheatreById(id: string, theatre: Partial<Omit<Theatre, "id">>): Promise<Theatre | undefined>;
+
+    queryTheatres(criteria: QueryTheatreCriteria): Promise<Theatre[]>;
+
 }

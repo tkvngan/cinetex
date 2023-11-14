@@ -1,5 +1,5 @@
 import {Booking} from "shared/dist/domain/entities/Booking";
-import {BookingQueryCriteria} from "shared/dist/application/usecases/queries/GetBookingsByQuery";
+import {QueryBookingCriteria} from "shared/dist/application/usecases/queries";
 
 export interface BookingRepository {
 
@@ -13,13 +13,14 @@ export interface BookingRepository {
 
     getBookingsByMovieId(movieId: string): Promise<Booking[]>;
 
-    getBookingsByQuery(criteria: BookingQueryCriteria): Promise<Booking[]>;
-
     addBooking(booking: Booking): Promise<Booking>;
 
     deleteBookingById(id: string): Promise<Booking | undefined>;
 
-    deleteBookingsByQuery(criteria: BookingQueryCriteria): Promise<number>;
+    deleteBookingsByQuery(criteria: QueryBookingCriteria): Promise<number>;
 
     updateBookingById(id: string, booking: Partial<Omit<Booking, "id">>): Promise<Booking | undefined>;
+
+    queryBookings(criteria: QueryBookingCriteria): Promise<Booking[]>;
+
 }

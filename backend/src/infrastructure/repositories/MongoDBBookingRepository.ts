@@ -1,8 +1,29 @@
 import {BookingRepository} from "../../application/repositories";
-import {FilterQuery, Model} from "mongoose";
+import {FilterQuery, Model, SchemaDefinition, Types} from "mongoose";
 import {toObjectId, toRangeFilter} from "./MongoDBUtils";
 import {Booking} from "shared/dist/domain/entities";
-import {BookingQueryCriteria} from "shared/dist/application/usecases/queries";
+import {QueryBookingCriteria} from "shared/dist/application/usecases/queries";
+
+const SeatPositionDefinition: SchemaDefinition = {
+    row: {type: Number, required: true},
+    column: {type: Number, required: true}
+}
+
+const BookingItemDefinition: SchemaDefinition = {
+    auditoriumId: {type: Number, required: true},
+    showDate: {type: String, required: true},
+    showTime: {type: String, required: true},
+    seat: {type: SeatPositionDefinition, required: true},
+    price: {type: Number, required: true}
+}
+
+export const BookingSchemaDefinition: SchemaDefinition = {
+    userId: {type: Types.ObjectId, required: true},
+    theatreId: {type: Types.ObjectId, required: true},
+    bookingTime: {type: String, required: true},
+    totalPrice: {type: Number, required: true},
+    bookingItems: {type: [BookingItemDefinition], required: true}
+}
 
 export function MongoDBBookingRepository(model: Model<Booking>): BookingRepository {
     return {
@@ -26,7 +47,7 @@ export function MongoDBBookingRepository(model: Model<Booking>): BookingReposito
             return (await model.find({movieId: toObjectId(movieId)})).map(booking => booking.toObject());
         },
 
-        async getBookingsByQuery(criteria: BookingQueryCriteria): Promise<Booking[]> {
+        async queryBookings(criteria: QueryBookingCriteria): Promise<Booking[]> {
             const filter = createBookingFilter(criteria);
             return (await model.find(filter)).map(booking => booking.toObject());
         },
@@ -40,7 +61,7 @@ export function MongoDBBookingRepository(model: Model<Booking>): BookingReposito
                 .findByIdAndDelete(toObjectId(id), {returnDocument: "before"}))?.toObject();
         },
 
-        async deleteBookingsByQuery(criteria: BookingQueryCriteria): Promise<number> {
+        async deleteBookingsByQuery(criteria: QueryBookingCriteria): Promise<number> {
             const filter = createBookingFilter(criteria);
             return (await model.deleteMany(filter)).deletedCount || 0
         },
@@ -51,7 +72,7 @@ export function MongoDBBookingRepository(model: Model<Booking>): BookingReposito
         }
     }
 
-    function createBookingFilter(criteria: BookingQueryCriteria): FilterQuery<Booking> {
+    function createBookingFilter(criteria: QueryBookingCriteria): FilterQuery<Booking> {
         const filter: FilterQuery<any> = {}
         if (criteria.userId) {
             filter.userId = toObjectId(criteria.userId)

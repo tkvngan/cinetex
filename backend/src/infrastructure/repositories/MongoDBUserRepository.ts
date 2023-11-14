@@ -1,8 +1,15 @@
-import {UserRepository} from "../../application/repositories/UserRepository";
+import {UserRepository} from "../../application/repositories";
 import {toObjectId, toPatternFilter} from "./MongoDBUtils";
-import {FilterQuery, Model} from "mongoose";
+import {FilterQuery, Model, SchemaDefinition} from "mongoose";
 import {User} from "shared/dist/domain/entities/User";
-import {UserQueryCriteria} from "shared/dist/application/usecases/queries/GetUsersByQuery";
+import {QueryUserCriteria} from "shared/dist/application/usecases/queries";
+
+export const UserSchemaDefinition: SchemaDefinition = {
+    firstName: {type: String, required: true},
+    lastName: {type: String, required: true},
+    email: {type: String, required: true, unique: true, index: true},
+    phoneNumber: {type: String, required: false},
+}
 
 export function MongoDBUserRepository(model: Model<User>): UserRepository {
     return {
@@ -18,7 +25,7 @@ export function MongoDBUserRepository(model: Model<User>): UserRepository {
             return (await model.findOne({email: email}))?.toObject();
         },
 
-        async getUsersByQuery(criteria: UserQueryCriteria): Promise<User[]> {
+        async queryUsers(criteria: QueryUserCriteria): Promise<User[]> {
             const filter = createUserFilter(criteria);
             return (await model.find(filter)).map(user => user.toObject());
         },
@@ -31,7 +38,7 @@ export function MongoDBUserRepository(model: Model<User>): UserRepository {
             return (await model.findByIdAndDelete(toObjectId(id), {returnDocument: "before"}))?.toObject();
         },
 
-        async deleteUsersByQuery(criteria: UserQueryCriteria): Promise<number> {
+        async deleteUsersByQuery(criteria: QueryUserCriteria): Promise<number> {
             const filter = createUserFilter(criteria);
             return (await model.deleteMany(filter)).deletedCount || 0
         },
@@ -43,7 +50,7 @@ export function MongoDBUserRepository(model: Model<User>): UserRepository {
     }
 }
 
-function createUserFilter(criteria: UserQueryCriteria): FilterQuery<User> {
+function createUserFilter(criteria: QueryUserCriteria): FilterQuery<User> {
     const filter: FilterQuery<any> = {}
     if (criteria.name) {
         filter.name = toPatternFilter(criteria.name)

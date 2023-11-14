@@ -1,5 +1,5 @@
-import {Entity, Id} from "../types/Entity";
-import {Address} from "../types/Address";
+import {Entity, Id} from "../types";
+import {Address} from "../types";
 
 export type Row = number
 export type Column = number
@@ -8,14 +8,15 @@ export type Theatre = Entity & Readonly<{
     id: Id;
     name: string;
     location: Address;
-    screens: readonly Screen[];
+    auditoriums: readonly Auditorium[];
 }>
 
-export type Screen = Readonly<{
+export type Auditorium = Readonly<{
     id: number;
     name: string;
     rows: number;
     columns: number;
+    sideColumns: number;
     seats: readonly SeatType[][];
 }>
 

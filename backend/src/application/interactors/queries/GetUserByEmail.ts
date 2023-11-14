@@ -8,4 +8,3 @@ export function GetUserByEmailInteractor(repositories: Repositories): GetUserByE
     })
 }
 
-

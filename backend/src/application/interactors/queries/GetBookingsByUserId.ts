@@ -8,4 +8,3 @@ export function GetBookingsByUserIdInteractor(repositories: Repositories): GetBo
     })
 }
 
-

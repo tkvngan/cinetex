@@ -1,6 +1,5 @@
 import {Movie} from "shared/dist/domain/entities/Movie";
-import {MovieQueryCriteria} from "shared/dist/application/usecases/queries/GetMoviesByQuery";
-
+import {QueryMovieCriteria} from "shared/dist/application/usecases/queries";
 
 export interface MovieRepository {
 
@@ -10,17 +9,18 @@ export interface MovieRepository {
 
     getMovieByName(name: string): Promise<Movie | undefined>;
 
-    getMoviesByQuery(criteria: MovieQueryCriteria): Promise<Movie[]>;
-
     addMovie(movie: Movie): Promise<Movie>;
 
     deleteMovieById(id: string): Promise<Movie | undefined>;
 
     deleteMovieByName(name: string): Promise<Movie | undefined>;
 
-    deleteMoviesByQuery(criteria: MovieQueryCriteria): Promise<number>;
+    deleteMoviesByQuery(criteria: QueryMovieCriteria): Promise<number>;
 
     deleteAllMovies(): Promise<number>;
 
     updateMovieById(id: string, movie: Partial<Omit<Movie, "id">>): Promise<Movie | undefined>;
+
+    queryMovies(criteria: QueryMovieCriteria): Promise<Movie[]>;
+
 }

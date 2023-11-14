@@ -1,8 +1,29 @@
 import {TheatreRepository} from "../../application/repositories";
 import {toObjectId, toPatternFilter, toRangeFilter} from "./MongoDBUtils";
-import {FilterQuery, Model} from "mongoose";
+import {FilterQuery, Model, SchemaDefinition} from "mongoose";
 import {Theatre} from "shared/dist/domain/entities";
-import {TheatreQueryCriteria} from "shared/dist/application/usecases/queries";
+import {QueryTheatreCriteria} from "shared/dist/application/usecases/queries";
+
+const AddressDefinition: SchemaDefinition = {
+    street: {type: String, required: true},
+    city: {type: String, required: true},
+    state: {type: String, required: true},
+    zip: {type: String, required: true}
+}
+
+const AuditoriumDefinition: SchemaDefinition = {
+    name: {type: String, required: true},
+    rows: {type: Number, required: true},
+    columns: {type: Number, required: true},
+    sideColumns: {type: Number, required: true},
+    seats: {type: [[Number]], required: true}
+}
+
+export const TheatreSchemaDefinition: SchemaDefinition = {
+    name: {type: String, required: true, unique: true, index: true},
+    location: {type: AddressDefinition, required: true},
+    auditoriums: {type: [AuditoriumDefinition], required: true}
+}
 
 export function MongoDBTheatreRepository(model: Model<Theatre>): TheatreRepository {
     return {
@@ -18,7 +39,7 @@ export function MongoDBTheatreRepository(model: Model<Theatre>): TheatreReposito
             return (await model.findOne({name: name}))?.toObject();
         },
 
-        async getTheatresByQuery(criteria: TheatreQueryCriteria): Promise<Theatre[]> {
+        async queryTheatres(criteria: QueryTheatreCriteria): Promise<Theatre[]> {
             const filter = createTheatreFilter(criteria);
             return (await model.find(filter)).map(theatre => theatre.toObject());
         },
@@ -37,7 +58,7 @@ export function MongoDBTheatreRepository(model: Model<Theatre>): TheatreReposito
                 .findOneAndDelete({name: name}, {returnDocument: "before"}))?.toObject();
         },
 
-        async deleteTheatresByQuery(criteria: TheatreQueryCriteria): Promise<number> {
+        async deleteTheatresByQuery(criteria: QueryTheatreCriteria): Promise<number> {
             const filter = createTheatreFilter(criteria);
             return (await model.deleteMany(filter)).deletedCount || 0
         },
@@ -48,13 +69,13 @@ export function MongoDBTheatreRepository(model: Model<Theatre>): TheatreReposito
         },
     }
 
-    function createTheatreFilter(criteria: TheatreQueryCriteria): FilterQuery<Theatre> {
+    function createTheatreFilter(criteria: QueryTheatreCriteria): FilterQuery<Theatre> {
         const filter: FilterQuery<any> = {}
         if (criteria.name) {
             filter.name = toPatternFilter(criteria.name)
         }
-        if (criteria.screenCount) {
-            filter.screen = { $size: toRangeFilter(criteria.screenCount) }
+        if (criteria.auditoriumCount) {
+            filter.auditorium = { $size: toRangeFilter(criteria.auditoriumCount) }
         }
         if (criteria.location) {
             filter.location = {

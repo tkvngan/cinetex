@@ -8,4 +8,3 @@ export function GetAllUsersInteractor(repositories: Repositories): GetAllUsers {
     })
 }
 
-
