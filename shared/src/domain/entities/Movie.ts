@@ -1,4 +1,4 @@
-import {Entity, Id} from "../types/Entity";
+import {Entity, Id} from "../types";
 
 export type Movie = Entity & Readonly<{
     id: Id;
@@ -10,8 +10,8 @@ export type Movie = Entity & Readonly<{
     releaseDate: string;
     rating: Rating;
     genres: readonly Genre[];
-    imageId?: Id;
-    trailerId?: Id;
+    imageUrl?: string;
+    trailerUrl?: string;
 }>
 
 export type Rating = 'G' | 'PG' | 'PG-13' | 'R' | 'NC-17';

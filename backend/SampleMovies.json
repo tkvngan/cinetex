@@ -1,65 +1,5 @@
 [
   {
-    "name": "Oppenheimer",
-    "duration": 180,
-    "synopsis": "The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb.",
-    "director": "Christopher Nolan",
-    "cast": [
-      "Cillian Murphy",
-      "Emily Blunt",
-      "Matt Damon",
-      "Robert Downey Jr."
-    ],
-    "releaseDate": "2023-07-21",
-    "rating": "R",
-    "genres": [
-      "Biography",
-      "Drama",
-      "History"
-    ],
-    "id": "6551992414c9e2796127f607"
-  },
-  {
-    "name": "Spider-Man: Across the Spider-Verse",
-    "duration": 140,
-    "synopsis": "Miles Morales catapults across the Multiverse, where he encounters a team of Spider-People charged with protecting its very existence.",
-    "director": "Joaquim Dos Santos, Kemp Powers, Justin K. Thompson",
-    "cast": [
-      "Shameik Moore",
-      "Hailee Steinfeld",
-      "Brian Tyree Henry",
-      "Luna Lauren Velez"
-    ],
-    "releaseDate": "2023-06-02",
-    "rating": "PG",
-    "genres": [
-      "Animation",
-      "Action",
-      "Adventure"
-    ],
-    "id": "6551992414c9e2796127f60a"
-  },
-  {
-    "name": "Mission: Impossible - Dead Reckoning Part One",
-    "duration": 163,
-    "synopsis": "Ethan Hunt and his IMF team must track down a dangerous weapon before it falls into the wrong hands.",
-    "director": "Christopher McQuarrie",
-    "cast": [
-      "Tom Cruise",
-      "Hayley Atwell",
-      "Ving Rhames",
-      "Simon Pegg"
-    ],
-    "releaseDate": "2023-07-14",
-    "rating": "PG-13",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Thriller"
-    ],
-    "id": "6551992414c9e2796127f60c"
-  },
-  {
     "name": "John Wick: Chapter 4",
     "duration": 169,
     "synopsis": "John Wick uncovers a path to defeating The High Table. But before he can earn his freedom, Wick must face off against a new enemy.",
@@ -77,27 +17,8 @@
       "Crime",
       "Thriller"
     ],
+    "imageUrl": "images/movies/JohnWickChapter4.jpg",
     "id": "6551992414c9e2796127f60e"
-  },
-  {
-    "name": "Killers of the Flower Moon",
-    "duration": 206,
-    "synopsis": "When oil is discovered in 1920s Oklahoma under Osage Nation land, the Osage people are murdered until the FBI intervenes.",
-    "director": "Martin Scorsese",
-    "cast": [
-      "Leonardo DiCaprio",
-      "Robert De Niro",
-      "Lily Gladstone",
-      "Jesse Plemons"
-    ],
-    "releaseDate": "2023-11-01",
-    "rating": "R",
-    "genres": [
-      "Crime",
-      "Drama",
-      "History"
-    ],
-    "id": "6551992414c9e2796127f610"
   },
   {
     "name": "Guardians of the Galaxy Vol. 3",
@@ -117,27 +38,29 @@
       "Adventure",
       "Comedy"
     ],
+    "imageUrl": "images/movies/GuardiansOfTheGalaxyVol3.jpg",
     "id": "6551992414c9e2796127f612"
   },
   {
-    "name": "Dune: Part Two",
-    "duration": 150,
-    "synopsis": "Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family.",
-    "director": "Denis Villeneuve",
+    "name": "Spider-Man: Across the Spider-Verse",
+    "duration": 140,
+    "synopsis": "Miles Morales catapults across the Multiverse, where he encounters a team of Spider-People charged with protecting its very existence.",
+    "director": "Joaquim Dos Santos, Kemp Powers, Justin K. Thompson",
     "cast": [
-      "Rebecca Ferguson",
-      "Florence Pugh",
-      "Timothée Chalamet",
-      "Zendaya"
+      "Shameik Moore",
+      "Hailee Steinfeld",
+      "Brian Tyree Henry",
+      "Luna Lauren Velez"
     ],
-    "releaseDate": "2023-11-17",
-    "rating": "PG-13",
+    "releaseDate": "2023-06-02",
+    "rating": "PG",
     "genres": [
+      "Animation",
       "Action",
-      "Adventure",
-      "Drama"
+      "Adventure"
     ],
-    "id": "6551992414c9e2796127f614"
+    "imageUrl": "images/movies/SpiderManAcrossTheSpiderVerse.jpg",
+    "id": "6551992414c9e2796127f60a"
   },
   {
     "name": "Indiana Jones and the Dial of Destiny",
@@ -157,7 +80,50 @@
       "Adventure",
       "Sci-Fi"
     ],
+    "imageUrl": "images/movies/IndianaJonesAndTheDialOfDestiny.jpg",
     "id": "6551992414c9e2796127f616"
+  },
+  {
+    "name": "Mission: Impossible - Dead Reckoning Part One",
+    "duration": 163,
+    "synopsis": "Ethan Hunt and his IMF team must track down a dangerous weapon before it falls into the wrong hands.",
+    "director": "Christopher McQuarrie",
+    "cast": [
+      "Tom Cruise",
+      "Hayley Atwell",
+      "Ving Rhames",
+      "Simon Pegg"
+    ],
+    "releaseDate": "2023-07-14",
+    "rating": "PG-13",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Thriller"
+    ],
+    "imageUrl": "images/movies/MissionImpossibleDeadReckoningPartOne.jpg",
+    "id": "6551992414c9e2796127f60c"
+  },
+  {
+    "name": "Oppenheimer",
+    "duration": 180,
+    "synopsis": "The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb.",
+    "director": "Christopher Nolan",
+    "cast": [
+      "Cillian Murphy",
+      "Emily Blunt",
+      "Matt Damon",
+      "Robert Downey Jr."
+    ],
+    "releaseDate": "2023-07-21",
+    "rating": "R",
+    "genres": [
+      "Biography",
+      "Drama",
+      "History"
+    ],
+    "imageUrl": "images/movies/Oppenheimer.jpg",
+    "id": "6551992414c9e2796127f607"
   },
   {
     "name": "The Marvels",
@@ -177,7 +143,49 @@
       "Adventure",
       "Fantasy"
     ],
+    "imageUrl": "images/movies/TheMarvels.jpg",
     "id": "6551992414c9e2796127f618"
+  },
+  {
+    "name": "Killers of the Flower Moon",
+    "duration": 206,
+    "synopsis": "When oil is discovered in 1920s Oklahoma under Osage Nation land, the Osage people are murdered until the FBI intervenes.",
+    "director": "Martin Scorsese",
+    "cast": [
+      "Leonardo DiCaprio",
+      "Robert De Niro",
+      "Lily Gladstone",
+      "Jesse Plemons"
+    ],
+    "releaseDate": "2023-11-01",
+    "rating": "R",
+    "genres": [
+      "Crime",
+      "Drama",
+      "History"
+    ],
+    "imageUrl": "images/movies/KillersOfTheFlowerMoon.jpg",
+    "id": "6551992414c9e2796127f610"
+  },
+  {
+    "name": "Dune: Part Two",
+    "duration": 150,
+    "synopsis": "Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family.",
+    "director": "Denis Villeneuve",
+    "cast": [
+      "Rebecca Ferguson",
+      "Florence Pugh",
+      "Timothée Chalamet",
+      "Zendaya"
+    ],
+    "releaseDate": "2023-11-17",
+    "rating": "PG-13",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama"
+    ],
+    "imageUrl": "images/movies/DunePartTwo.jpg",
+    "id": "6551992414c9e2796127f614"
   }
 ]
-

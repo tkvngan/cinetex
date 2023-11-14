@@ -9,6 +9,7 @@ export type Theatre = Entity & Readonly<{
     name: string;
     location: Address;
     auditoriums: readonly Auditorium[];
+    imageUrl?: string;
 }>
 
 export type Auditorium = Readonly<{
@@ -18,6 +19,7 @@ export type Auditorium = Readonly<{
     columns: number;
     sideColumns: number;
     seats: readonly SeatType[][];
+    imageUrl?: string;
 }>
 
 export enum SeatType {

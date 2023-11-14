@@ -24,5 +24,4 @@ export interface QueryUseCaseCollection extends UseCaseCollection {
     readonly QuerySchedules: queries.QuerySchedules;
     readonly QueryTheatres: queries.QueryTheatres;
     readonly QueryUsers: queries.QueryUsers;
-
 }

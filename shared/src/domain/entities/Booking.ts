@@ -1,4 +1,4 @@
-import {Entity, Id} from "../types/Entity";
+import {Entity, Id} from "../types";
 import {Schedule, ShowTime} from "./Schedule";
 import {Column, Row} from "./Theatre";
 

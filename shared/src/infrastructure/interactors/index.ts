@@ -1,1 +1,1 @@
-export * from "./AxiosClientUseCaseInteractors"
+export * from "./AxiosUseCaseInteractorCollections"

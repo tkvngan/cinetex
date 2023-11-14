@@ -16,13 +16,15 @@ const AuditoriumDefinition: SchemaDefinition = {
     rows: {type: Number, required: true},
     columns: {type: Number, required: true},
     sideColumns: {type: Number, required: true},
-    seats: {type: [[Number]], required: true}
+    seats: {type: [[Number]], required: true},
+    imageUrl: {type: String, required: false}
 }
 
 export const TheatreSchemaDefinition: SchemaDefinition = {
     name: {type: String, required: true, unique: true, index: true},
     location: {type: AddressDefinition, required: true},
-    auditoriums: {type: [AuditoriumDefinition], required: true}
+    auditoriums: {type: [AuditoriumDefinition], required: true},
+    imageUrl: {type: String, required: false}
 }
 
 export function MongoDBTheatreRepository(model: Model<Theatre>): TheatreRepository {

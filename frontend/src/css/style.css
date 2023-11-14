@@ -134,19 +134,25 @@ header {
     color: var(--solid-light-color);
     transition: font-size, color .3s;
     text-decoration: none;
+    white-space: nowrap;
 }
 
 .my-nav__item:hover a {
     color: var(--onPrimary-color);
-
 }
+
+.my-active.my-nav__item a {
+    color: var(--onPrimary-color);
+}
+
+
 
 /*-----------------------------------------*/
 /*------------------ HERO -----------------*/
 /*-----------------------------------------*/
 
 .hero {
-    margin-top: 10rem;
+    margin-top: 5rem;
 }
 
 .hero__tagline {
@@ -160,6 +166,7 @@ header {
 }
 
 .hero__contents {
+    margin-top: 10rem;
     row-gap: 5rem;
 }
 
@@ -236,6 +243,27 @@ header {
 #MoviesPage img {
     margin: 16px;
     box-shadow: 5px 10px 18px #000000;
-    width: 200px;
     height: 300px;
+    width: auto;
+}
+
+#TheatresPage img {
+    box-shadow: 5px 10px 18px #000000;
+    width: 300px;
+    height: auto;
+    margin: 8px;
+}
+#TheatresPage h2 {
+    color: var(--onPrimary-color);
+    font-size: 2.5rem;
+    margin: 4px 4px 8px 4px;
+}
+
+#TheatresPage ul {
+    width: 100%;
+    padding: 18px 18px 24px 18px;
+    list-style-type: none;
+    /*border: 1px solid #ddd;*/
+    /*box-shadow: 5px 10px 18px #000000;*/
+    background-color: rgba(0, 0, 0, 0.1);
 }

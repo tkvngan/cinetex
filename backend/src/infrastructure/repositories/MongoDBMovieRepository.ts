@@ -13,8 +13,8 @@ export const MovieSchemaDefinition: SchemaDefinition = {
     releaseDate: {type: String, required: true},
     rating: {type: String, required: true},
     genres: {type: [String], required: true},
-    imageId: {type: Types.ObjectId, required: false},
-    trailerId: {type: Types.ObjectId, required: false},
+    imageUrl: {type: String, required: false},
+    trailerUrl: {type: String, required: false},
 }
 
 export function MongoDBMovieRepository(model: Model<Movie>): MovieRepository {
@@ -37,12 +37,7 @@ export function MongoDBMovieRepository(model: Model<Movie>): MovieRepository {
         },
 
         async addMovie(movie: Movie): Promise<Movie> {
-            return (await model.create(
-                {...movie,
-                    imageId: movie.imageId && toObjectId(movie.imageId),
-                    trailerId: movie.trailerId && toObjectId(movie.trailerId),
-                }
-            )).toObject();
+            return (await model.create(movie)).toObject();
         },
 
         async deleteMovieById(id: string): Promise<Movie | undefined> {
