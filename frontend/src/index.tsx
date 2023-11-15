@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/style.css";
 
 const client = axios.create({
-    baseURL: "http://localhost:3001/service",
+    baseURL: "/service",
     headers: {
         "Content-Type": "application/json",
     },
