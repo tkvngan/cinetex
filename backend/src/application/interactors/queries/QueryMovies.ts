@@ -1,5 +1,5 @@
-import {QueryMovies, QueryCriteria, QueryPattern, QueryRange} from "shared/dist/application/usecases/queries";
-import {Genre, Movie, Rating} from "shared/dist/domain/entities";
+import {QueryMovies, QueryCriteria, QueryPattern, QueryRange} from "core/dist/application/usecases/queries";
+import {Genre, Movie, Rating} from "core/dist/domain/entities";
 import {Repositories} from "../../repositories";
 
 export type QueryMovieCriteria = QueryCriteria & {

@@ -1,5 +1,5 @@
-import {QueryTheatres, QueryTheatreCriteria} from "shared/dist/application/usecases/queries";
-import {Theatre} from "shared/dist/domain/entities";
+import {QueryTheatres, QueryTheatreCriteria} from "core/dist/application/usecases/queries";
+import {Theatre} from "core/dist/domain/entities";
 import {Repositories} from "../../repositories";
 
 export function QueryTheatresInteractor(repositories: Repositories): QueryTheatres {

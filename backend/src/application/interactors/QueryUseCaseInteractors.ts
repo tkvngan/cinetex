@@ -1,5 +1,5 @@
 import {Repositories} from "../repositories";
-import {QueryUseCaseCollection, UseCaseCollection} from "shared/dist/application/usecases";
+import {QueryUseCaseCollection, UseCaseCollection} from "core/dist/application/usecases";
 import * as interactors from "./queries";
 
 export function QueryUseCaseInteractors(repositories: Repositories): QueryUseCaseCollection {

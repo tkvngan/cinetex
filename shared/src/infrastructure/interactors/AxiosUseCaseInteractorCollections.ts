@@ -1,6 +1,6 @@
-import {UseCaseCollection, UseCase, UseCaseCollections, UseCaseProperties} from "../../application/usecases";
+import {UseCaseCollection, UseCase, UseCaseCollections, UseCaseProperties} from "core/dist/application/usecases";
 import {AxiosInstance} from "axios";
-import * as queries from "../../application/usecases/queries";
+import * as queries from "core/dist/application/usecases/queries";
 
 export function AxiosUseCaseInteractorCollections(client: AxiosInstance): UseCaseCollections {
     const base = UseCaseCollection();

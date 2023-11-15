@@ -1,5 +1,5 @@
-import {Schedule} from "shared/dist/domain/entities/Schedule";
-import {QueryScheduleCriteria} from "shared/dist/application/usecases/queries";
+import {Schedule} from "core/dist/domain/entities/Schedule";
+import {QueryScheduleCriteria} from "core/dist/application/usecases/queries";
 
 export interface ScheduleRepository {
     getAllSchedules(): Promise<Schedule[]>;

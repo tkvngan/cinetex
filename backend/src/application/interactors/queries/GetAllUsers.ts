@@ -1,6 +1,6 @@
-import {User} from "shared/dist/domain/entities";
+import {User} from "core/dist/domain/entities";
 import {Repositories} from "../../repositories";
-import {GetAllUsers} from "shared/dist/application/usecases/queries";
+import {GetAllUsers} from "core/dist/application/usecases/queries";
 
 export function GetAllUsersInteractor(repositories: Repositories): GetAllUsers {
     return GetAllUsers(async (query: {}): Promise<User[]>  => {

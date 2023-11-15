@@ -1,4 +1,4 @@
-import {CommandUseCaseCollection, UseCaseCollection} from "shared/dist/application/usecases";
+import {CommandUseCaseCollection, UseCaseCollection} from "core/dist/application/usecases";
 import {Repositories} from "../repositories";
 
 export function CommandUseCaseInteractors(repositories: Repositories): CommandUseCaseCollection {

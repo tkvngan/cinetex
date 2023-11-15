@@ -1,5 +1,5 @@
-import {UseCaseCollections} from "shared/dist/application/usecases";
-import {Theatre} from "shared/dist/domain/entities";
+import {UseCaseCollections} from "core/dist/application/usecases";
+import {Theatre} from "core/dist/domain/entities";
 import {useEffect, useState} from "react";
 
 export default function TheatresPage({interactors}: {interactors: UseCaseCollections}) {

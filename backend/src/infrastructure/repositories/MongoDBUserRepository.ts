@@ -1,8 +1,8 @@
 import {UserRepository} from "../../application/repositories";
 import {toObjectId, toPatternFilter} from "./MongoDBUtils";
 import {FilterQuery, Model, SchemaDefinition} from "mongoose";
-import {User} from "shared/dist/domain/entities/User";
-import {QueryUserCriteria} from "shared/dist/application/usecases/queries";
+import {User} from "core/dist/domain/entities/User";
+import {QueryUserCriteria} from "core/dist/application/usecases/queries";
 
 export const UserSchemaDefinition: SchemaDefinition = {
     firstName: {type: String, required: true},

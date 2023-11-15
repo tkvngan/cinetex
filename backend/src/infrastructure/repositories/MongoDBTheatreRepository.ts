@@ -1,8 +1,8 @@
 import {TheatreRepository} from "../../application/repositories";
 import {toObjectId, toPatternFilter, toRangeFilter} from "./MongoDBUtils";
 import {FilterQuery, Model, SchemaDefinition} from "mongoose";
-import {Theatre} from "shared/dist/domain/entities";
-import {QueryTheatreCriteria} from "shared/dist/application/usecases/queries";
+import {Theatre} from "core/dist/domain/entities";
+import {QueryTheatreCriteria} from "core/dist/application/usecases/queries";
 
 const AddressDefinition: SchemaDefinition = {
     street: {type: String, required: true},

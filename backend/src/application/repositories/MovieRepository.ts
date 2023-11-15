@@ -1,5 +1,5 @@
-import {Movie} from "shared/dist/domain/entities/Movie";
-import {QueryMovieCriteria} from "shared/dist/application/usecases/queries";
+import {Movie} from "core/dist/domain/entities/Movie";
+import {QueryMovieCriteria} from "core/dist/application/usecases/queries";
 
 export interface MovieRepository {
 

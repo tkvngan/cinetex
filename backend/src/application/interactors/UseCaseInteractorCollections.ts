@@ -1,4 +1,4 @@
-import {UseCase, UseCaseCollections} from "shared/dist/application/usecases";
+import {UseCase, UseCaseCollections} from "core/dist/application/usecases";
 import {Repositories} from "../repositories";
 import {QueryUseCaseInteractors} from "./QueryUseCaseInteractors";
 import {CommandUseCaseInteractors} from "./CommandUseCaseInteractors";

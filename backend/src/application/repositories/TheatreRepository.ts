@@ -1,5 +1,5 @@
-import {Theatre} from "shared/dist/domain/entities/Theatre";
-import {QueryTheatreCriteria} from "shared/dist/application/usecases/queries";
+import {Theatre} from "core/dist/domain/entities/Theatre";
+import {QueryTheatreCriteria} from "core/dist/application/usecases/queries";
 
 export interface TheatreRepository {
     getAllTheatres(): Promise<Theatre[]>;

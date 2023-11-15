@@ -1,6 +1,6 @@
-import {Movie} from "shared/dist/domain/entities";
+import {Movie} from "core/dist/domain/entities";
 import {Repositories} from "../../repositories";
-import {GetMovieById} from "shared/dist/application/usecases/queries";
+import {GetMovieById} from "core/dist/application/usecases/queries";
 
 export function GetMovieByIdInteractor(repositories: Repositories): GetMovieById {
     return GetMovieById(async (query: { id: string }): Promise<Movie | undefined>  => {

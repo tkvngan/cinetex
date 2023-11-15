@@ -1,4 +1,4 @@
-import {User} from "shared/dist/domain/entities/User";
+import {User} from "core/dist/domain/entities/User";
 import {QueryUserCriteria} from "../interactors/queries";
 
 export interface UserRepository {

@@ -1,5 +1,5 @@
-import {Booking} from "shared/dist/domain/entities/Booking";
-import {QueryBookingCriteria} from "shared/dist/application/usecases/queries";
+import {Booking} from "core/dist/domain/entities/Booking";
+import {QueryBookingCriteria} from "core/dist/application/usecases/queries";
 
 export interface BookingRepository {
 

@@ -1,6 +1,6 @@
-import {Booking} from "shared/dist/domain/entities";
+import {Booking} from "core/dist/domain/entities";
 import {Repositories} from "../../repositories";
-import {GetBookingsByMovieId} from "shared/dist/application/usecases/queries";
+import {GetBookingsByMovieId} from "core/dist/application/usecases/queries";
 
 export function GetBookingsByMovieIdInteractor(repositories: Repositories): GetBookingsByMovieId {
     return GetBookingsByMovieId(async (query: { movieId: string }): Promise<Booking[]>  => {

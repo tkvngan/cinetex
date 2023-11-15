@@ -1,6 +1,6 @@
-import {User} from "shared/dist/domain/entities";
+import {User} from "core/dist/domain/entities";
 import {Repositories} from "../../repositories";
-import {GetUserById} from "shared/dist/application/usecases/queries";
+import {GetUserById} from "core/dist/application/usecases/queries";
 
 export function GetUserByIdInteractor(repositories: Repositories): GetUserById {
     return GetUserById(async (query: { id: string }): Promise<User | undefined>  => {

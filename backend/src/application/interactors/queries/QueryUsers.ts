@@ -1,5 +1,5 @@
-import {User} from "shared/dist/domain/entities";
-import {QueryUsers, QueryCriteria, QueryPattern} from "shared/dist/application/usecases/queries";
+import {User} from "core/dist/domain/entities";
+import {QueryUsers, QueryCriteria, QueryPattern} from "core/dist/application/usecases/queries";
 import {Repositories} from "../../repositories";
 
 export type QueryUserCriteria = QueryCriteria & {

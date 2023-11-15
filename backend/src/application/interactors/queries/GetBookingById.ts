@@ -1,6 +1,6 @@
-import {Booking} from "shared/dist/domain/entities";
+import {Booking} from "core/dist/domain/entities";
 import {Repositories} from "../../repositories";
-import {GetBookingById} from "shared/dist/application/usecases/queries";
+import {GetBookingById} from "core/dist/application/usecases/queries";
 
 export function GetBookingByIdInteractor(repositories: Repositories): GetBookingById {
     return GetBookingById(async (query: { id: string }): Promise<Booking | undefined>  => {

@@ -1,8 +1,8 @@
 import {ScheduleRepository} from "../../application/repositories";
 import {toObjectId, toRangeFilter} from "./MongoDBUtils";
 import {FilterQuery, Model, SchemaDefinition, Types} from "mongoose";
-import {Schedule} from "shared/dist/domain/entities";
-import {QueryScheduleCriteria} from "shared/dist/application/usecases/queries";
+import {Schedule} from "core/dist/domain/entities";
+import {QueryScheduleCriteria} from "core/dist/application/usecases/queries";
 
 export const ScheduleSchemaDefinition: SchemaDefinition = {
     movieId: {type: Types.ObjectId, required: true},

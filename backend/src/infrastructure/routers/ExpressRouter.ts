@@ -1,5 +1,5 @@
 import express, {Router} from "express"
-import {UseCase, UseCaseCollection} from "shared/dist/application/usecases"
+import {UseCase, UseCaseCollection} from "core/dist/application/usecases"
 import {RequestHandler} from "express-serve-static-core";
 
 export function ExpressRouter(interactors: UseCaseCollection): Router {

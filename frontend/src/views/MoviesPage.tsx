@@ -1,6 +1,6 @@
-import {UseCaseCollections} from "shared/dist/application/usecases";
+import {UseCaseCollections} from "core/dist/application/usecases";
 import React, {useEffect, useState} from "react";
-import {Movie} from "shared/dist/domain/entities";
+import {Movie} from "core/dist/domain/entities";
 
 export default function MoviesPage({interactors}: {interactors: UseCaseCollections}) {
     const {GetAllMovies} = interactors

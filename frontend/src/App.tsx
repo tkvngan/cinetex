@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {UseCaseCollections} from "shared/dist/application/usecases";
+import {UseCaseCollections} from "core/dist/application/usecases";
 import MoviesPage from "./views/MoviesPage";
 import TheatresPage from "./views/TheatresPage";
 import HomePage from "./views/HomePage";
