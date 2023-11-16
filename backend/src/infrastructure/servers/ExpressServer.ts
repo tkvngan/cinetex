@@ -2,8 +2,9 @@ import express, {NextFunction, Request, Response, Router} from 'express';
 import morgan from "morgan"
 import cors from "cors";
 import http, {Server} from "http";
+import {RequestHandler} from "express-serve-static-core";
 
-export function ExpressServer(routers: [path: string, router: Router][]): Server {
+export function ExpressServer(routers: [path: string, router: RequestHandler][]): Server {
     const app = express();
     app.use(express.json());
     app.use(cors());
@@ -12,7 +13,6 @@ export function ExpressServer(routers: [path: string, router: Router][]): Server
     app.use(morgan('dev'));
     app.use(logErrors)
     app.use(errorHandler)
-
     for (const [path, router] of routers) {
         console.log("Registering router at path " + path);
         app.use(path, router);

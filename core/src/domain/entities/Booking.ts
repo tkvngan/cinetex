@@ -1,5 +1,5 @@
 import {Entity, Id} from "../types";
-import {Schedule, ShowTime} from "./Schedule";
+import {ShowTime} from "./Schedule";
 import {Column, Row} from "./Theatre";
 
 export type Booking = Entity & Readonly<{
@@ -8,10 +8,10 @@ export type Booking = Entity & Readonly<{
     theatreId: Id,
     bookingTime: string
     totalPrice: number
-    bookingItems: readonly BookingItem[]
+    tickets: readonly Ticket[]
 }>
 
-export type BookingItem = Readonly<{
+export type Ticket = Readonly<{
     movieId: Id,
     auditoriumId: number
     showDate: string

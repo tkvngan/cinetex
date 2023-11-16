@@ -42,7 +42,7 @@ export function App({interactors}: {interactors: UseCaseCollections}) {
             </header>
             <footer className="my-footer">
                 <article className="my-footer__content">
-                    <p className="my-footer__copyright">&copy; Code Crafters 2023</p>
+                    <p className="my-footer__copyright">&copy;Code Crafters 2023</p>
                 </article>
             </footer>
         </BrowserRouter>

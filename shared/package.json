@@ -6,9 +6,10 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "compile": "tsc --build",
+    "compile": "tsc",
     "clean": "rm -rf ./dist",
-    "build": "yarn clean && yarn compile",
+    "build": "yarn run compile",
+    "clean-build": "yarn run clean && yarn run compile",
     "test": "jest --verbose --coverage"
   },
   "devDependencies": {

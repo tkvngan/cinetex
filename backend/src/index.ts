@@ -1,18 +1,23 @@
-import {ExpressRouter} from "./infrastructure/routers"
+import {ExpressServiceRouter, ExpressRootPathRouter} from "./infrastructure/routers"
 import {connectMongoDB, MongoDBRepositories} from "./infrastructure/repositories"
 import {ExpressServer} from "./infrastructure/servers"
 import {UseCaseInteractorCollections} from "./application/interactors/UseCaseInteractorCollections";
 import {installAllSamples} from "./samples";
+import dotenv from "dotenv";
+
+dotenv.config()
+const port = process.env.PORT || 3000
 
 connectMongoDB().then(() => {
     console.log("Connected to MongoDB.")
     const repositories = MongoDBRepositories()
     installAllSamples(repositories).then(() => {
         console.log("Installed sample data.")
-        const router = ExpressRouter(UseCaseInteractorCollections(repositories))
-        const server = ExpressServer([["/service", router]])
-        server.listen(3001, () => {
-            console.log("Listening on port 3001...")
+        const root = ExpressRootPathRouter()
+        const service = ExpressServiceRouter(UseCaseInteractorCollections(repositories))
+        const server = ExpressServer([["/service", service], ["/", root]])
+        server.listen(port, () => {
+            console.log(`Backend server listening on port ${port}...`)
         });
     }).catch((err) => {
         console.error(err)

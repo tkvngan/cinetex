@@ -8,7 +8,7 @@ export default function TheatresPage({interactors}: {interactors: UseCaseCollect
         interactors.GetAllTheatres.invoke({}).then((theatres: Theatre[]) => {
             setTheatres(theatres)
         })
-    })
+    }, [])
     return (
         <div id={"TheatresPage"}>
             <ul>

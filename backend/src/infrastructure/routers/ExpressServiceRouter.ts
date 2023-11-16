@@ -2,7 +2,7 @@ import express, {Router} from "express"
 import {UseCase, UseCaseCollection} from "core/dist/application/usecases"
 import {RequestHandler} from "express-serve-static-core";
 
-export function ExpressRouter(interactors: UseCaseCollection): Router {
+export function ExpressServiceRouter(interactors: UseCaseCollection): Router {
     const router: Router = express.Router()
 
     function queryHandler<Input, Output>(interactor: UseCase<Input, Output>): RequestHandler {

@@ -1,5 +1,5 @@
 import {User} from "core/dist/domain/entities/User";
-import {QueryUserCriteria} from "../interactors/queries";
+import {QueryUserCriteria} from "core/dist/application/usecases/queries";
 
 export interface UserRepository {
 

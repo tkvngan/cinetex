@@ -9,7 +9,7 @@ const SeatPositionDefinition: SchemaDefinition = {
     column: {type: Number, required: true}
 }
 
-const BookingItemDefinition: SchemaDefinition = {
+const TicketDefinition: SchemaDefinition = {
     auditoriumId: {type: Number, required: true},
     showDate: {type: String, required: true},
     showTime: {type: String, required: true},
@@ -22,7 +22,7 @@ export const BookingSchemaDefinition: SchemaDefinition = {
     theatreId: {type: Types.ObjectId, required: true},
     bookingTime: {type: String, required: true},
     totalPrice: {type: Number, required: true},
-    bookingItems: {type: [BookingItemDefinition], required: true}
+    tickets: {type: [TicketDefinition], required: true}
 }
 
 export function MongoDBBookingRepository(model: Model<Booking>): BookingRepository {
