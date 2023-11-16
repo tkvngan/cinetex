@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM, {Root} from 'react-dom/client';
+import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import axios from "axios";
 import App from "./App";

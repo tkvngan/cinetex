@@ -1,4 +1,4 @@
-import {QueryUseCase, UseCaseProperties} from "../UseCase";
+import {QueryUseCase} from "../UseCase";
 import {User} from "../../../domain/entities";
 import {QueryCriteria, QueryPattern} from "./QueryCriteria";
 

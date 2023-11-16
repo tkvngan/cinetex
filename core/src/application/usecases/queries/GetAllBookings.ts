@@ -1,6 +1,5 @@
-import {QueryUseCase, UseCaseProperties} from "../UseCase";
+import {QueryUseCase} from "../UseCase";
 import {Booking} from "../../../domain/entities";
-import {UseCase} from "../UseCase";
 
 export type GetAllBookings = QueryUseCase<{}, Booking[]>
 

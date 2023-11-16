@@ -1,6 +1,5 @@
-import {connectMongoDB, MongoDBRepositories} from "./infrastructure/repositories";
 import fs from "fs";
-import {Movie, Schedule, Theatre} from "core/dist/domain/entities";
+import {Movie} from "core/dist/domain/entities";
 import {Repositories} from "./application/repositories";
 
 export async function loadSamples<T>(fileName: string): Promise<T[]> {

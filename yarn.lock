@@ -4466,7 +4466,7 @@ dotenv-cli@^7.3.0:
 
 dotenv-expand@^10.0.0:
   version "10.0.0"
-  resolved "https://registry.npmjs.org/dotenv-expand/-/dotenv-expand-10.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/dotenv-expand/-/dotenv-expand-10.0.0.tgz#12605d00fb0af6d0a592e6558585784032e4ef37"
   integrity sha512-GopVGCpVS1UKH75VKHGuQFqS1Gusej0z4FyQkPdwjil2gNIv+LNsqBlboOzpJFZKVT95GkCyWJbBSdFEFUWI2A==
 
 dotenv-expand@^5.1.0:
@@ -7612,7 +7612,7 @@ mongodb-memory-server-core@9.0.1:
 
 mongodb-memory-server@^9.0.1:
   version "9.0.1"
-  resolved "https://registry.npmjs.org/mongodb-memory-server/-/mongodb-memory-server-9.0.1.tgz"
+  resolved "https://registry.yarnpkg.com/mongodb-memory-server/-/mongodb-memory-server-9.0.1.tgz#1c9f94a2ed76ba7d0a39bfea23bb22346ad41847"
   integrity sha512-Qqph8PoJHtHjvP8JynWMx9K9N4Eh0GDj+bexL/vB6jtvzw1nUcARnxidPvaKFzU+hDULz9sgTUqYJmjqowmXTQ==
   dependencies:
     mongodb-memory-server-core "9.0.1"

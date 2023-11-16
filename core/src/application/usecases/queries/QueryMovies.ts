@@ -1,6 +1,6 @@
 import {QueryCriteria, QueryPattern, QueryRange} from "./QueryCriteria";
 import {Genre, Movie, Rating} from "../../../domain/entities";
-import {QueryUseCase, UseCaseProperties} from "../UseCase";
+import {QueryUseCase} from "../UseCase";
 
 export type QueryMovieCriteria = QueryCriteria & {
     name?: string | QueryPattern;

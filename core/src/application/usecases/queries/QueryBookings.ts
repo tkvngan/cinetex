@@ -1,7 +1,6 @@
-import {QueryRange} from "./QueryCriteria";
-import {Booking, Genre, Rating, ShowTime} from "../../../domain/entities";
-import {QueryUseCase, UseCaseProperties} from "../UseCase";
-import {QueryCriteria} from "./QueryCriteria";
+import {QueryCriteria, QueryRange} from "./QueryCriteria";
+import {Booking, ShowTime} from "../../../domain/entities";
+import {QueryUseCase} from "../UseCase";
 
 export type QueryBookingCriteria = QueryCriteria & {
     userId?: string;

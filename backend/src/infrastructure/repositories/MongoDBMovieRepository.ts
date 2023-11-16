@@ -1,6 +1,6 @@
 import {MovieRepository} from "../../application/repositories";
 import {toObjectId, toPatternFilter, toRangeFilter} from "./MongoDBUtils";
-import {FilterQuery, Model, SchemaDefinition, Types} from "mongoose";
+import {FilterQuery, Model, SchemaDefinition} from "mongoose";
 import {Movie} from "core/dist/domain/entities/Movie";
 import {QueryMovieCriteria} from "core/dist/application/usecases/queries";
 

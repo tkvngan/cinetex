@@ -1,4 +1,4 @@
-import {QueryUseCase, UseCaseProperties} from "../UseCase";
+import {QueryUseCase} from "../UseCase";
 import {Schedule, ShowTime} from "../../../domain/entities";
 import {QueryCriteria, QueryPattern, QueryRange} from "./QueryCriteria";
 

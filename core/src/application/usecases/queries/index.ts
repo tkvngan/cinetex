@@ -1,5 +1,3 @@
-import {GetAllBookings} from "./GetAllBookings";
-
 export * from "./GetAllBookings"
 export * from "./GetAllMovies"
 export * from "./GetAllSchedules"

@@ -1,4 +1,4 @@
-import {UseCaseCollection, UseCase, UseCaseCollections, UseCaseProperties} from "core/dist/application/usecases";
+import {UseCase, UseCaseCollection, UseCaseCollections, UseCaseProperties} from "core/dist/application/usecases";
 import {AxiosInstance} from "axios";
 import * as queries from "core/dist/application/usecases/queries";
 

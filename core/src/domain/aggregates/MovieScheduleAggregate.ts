@@ -1,4 +1,4 @@
-import {Movie, Schedule, ShowTime} from "../entities";
+import {Movie, Schedule} from "../entities";
 import {Aggregate} from "./Aggregate";
 
 export type MovieScheduleAggregate = Aggregate<Movie> & Readonly<{

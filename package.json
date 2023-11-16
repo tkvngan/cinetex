@@ -6,6 +6,8 @@
   "workspaces": ["core", "backend", "frontend","shared"],
   "scripts": {
     "clean-all": "yarn workspace core clean && yarn workspace shared clean && yarn workspace frontend clean && yarn workspace backend clean",
-    "build-all": "yarn workspace core build && yarn workspace shared build && yarn workspace frontend build && yarn workspace backend build"
+    "build-all": "yarn workspace core build && yarn workspace shared build && yarn workspace frontend build && yarn workspace backend build",
+    "start-backend": "yarn workspace backend start",
+    "start-frontend": "yarn workspace frontend start"
   }
 }

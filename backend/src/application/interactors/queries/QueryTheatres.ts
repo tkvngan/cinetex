@@ -1,4 +1,4 @@
-import {QueryTheatres, QueryTheatreCriteria} from "core/dist/application/usecases/queries";
+import {QueryTheatreCriteria, QueryTheatres} from "core/dist/application/usecases/queries";
 import {Theatre} from "core/dist/domain/entities";
 import {Repositories} from "../../repositories";
 

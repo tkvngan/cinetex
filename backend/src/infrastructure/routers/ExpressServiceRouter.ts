@@ -30,11 +30,11 @@ export function ExpressServiceRouter(interactors: UseCaseCollection): Router {
         switch (interactor.type) {
         case "query":
             router.get(path, queryHandler(interactor))
-            console.log("Registered query interactor " + interactor.name + " at " + path)
+            // console.log("Registered query interactor " + interactor.name + " at " + path)
             break;
         case "command":
             router.post(path, commandHandler(interactor))
-            console.log("Registered command interactor: " + interactor.name + " at " + path)
+            // console.log("Registered command interactor: " + interactor.name + " at " + path)
             break;
         default:
             console.warn("Unknown interactor type: " + interactor.type + ", skipping...")

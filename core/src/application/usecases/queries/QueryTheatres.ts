@@ -1,5 +1,5 @@
 import {QueryCriteria, QueryPattern, QueryRange} from "./QueryCriteria";
-import {QueryUseCase, UseCaseProperties} from "../UseCase";
+import {QueryUseCase} from "../UseCase";
 import {Theatre} from "../../../domain/entities";
 
 export type QueryTheatreCriteria = QueryCriteria & {

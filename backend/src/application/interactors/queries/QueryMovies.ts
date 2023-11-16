@@ -1,4 +1,4 @@
-import {QueryMovies, QueryMovieCriteria} from "core/dist/application/usecases/queries";
+import {QueryMovieCriteria, QueryMovies} from "core/dist/application/usecases/queries";
 import {Movie} from "core/dist/domain/entities";
 import {Repositories} from "../../repositories";
 
