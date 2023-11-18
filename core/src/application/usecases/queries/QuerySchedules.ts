@@ -6,7 +6,7 @@ export type QueryScheduleCriteria = QueryCriteria & {
     theatreId?: string;
     movieId?: string;
     movieName?: string | QueryPattern;
-    auditoriumId?: number;
+    screenId?: number;
     showDate?: string | QueryRange<string>;
     showTime?: ShowTime[];
 }

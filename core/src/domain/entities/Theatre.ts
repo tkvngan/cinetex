@@ -7,11 +7,12 @@ export type Theatre = Entity & Readonly<{
     id: Id;
     name: string;
     location: Address;
-    auditoriums: readonly Auditorium[];
+    phone: string;
+    screens: readonly Screen[];
     imageUrl?: string;
 }>
 
-export type Auditorium = Readonly<{
+export type Screen = Readonly<{
     id: number;
     name: string;
     rows: number;

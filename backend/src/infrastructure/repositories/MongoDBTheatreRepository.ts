@@ -11,7 +11,7 @@ const AddressDefinition: SchemaDefinition = {
     zip: {type: String, required: true}
 }
 
-const AuditoriumDefinition: SchemaDefinition = {
+const ScreenDefinition: SchemaDefinition = {
     name: {type: String, required: true},
     rows: {type: Number, required: true},
     columns: {type: Number, required: true},
@@ -23,7 +23,7 @@ const AuditoriumDefinition: SchemaDefinition = {
 export const TheatreSchemaDefinition: SchemaDefinition = {
     name: {type: String, required: true, unique: true, index: true},
     location: {type: AddressDefinition, required: true},
-    auditoriums: {type: [AuditoriumDefinition], required: true},
+    screens: {type: [ScreenDefinition], required: true},
     imageUrl: {type: String, required: false}
 }
 
@@ -76,8 +76,8 @@ export function MongoDBTheatreRepository(model: Model<Theatre>): TheatreReposito
         if (criteria.name) {
             filter.name = toPatternFilter(criteria.name)
         }
-        if (criteria.auditoriumCount) {
-            filter.auditorium = { $size: toRangeFilter(criteria.auditoriumCount) }
+        if (criteria.screenCount) {
+            filter.screen = { $size: toRangeFilter(criteria.screenCount) }
         }
         if (criteria.location) {
             filter.location = {

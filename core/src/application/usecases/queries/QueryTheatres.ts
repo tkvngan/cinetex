@@ -5,7 +5,7 @@ import {Theatre} from "../../../domain/entities";
 export type QueryTheatreCriteria = QueryCriteria & {
     name?: string | QueryPattern;
     location?: QueryPattern;
-    auditoriumCount?: number | QueryRange<number>;
+    screenCount?: number | QueryRange<number>;
 }
 
 export type QueryTheatres = QueryUseCase<{ criteria: QueryTheatreCriteria }, Theatre[]>

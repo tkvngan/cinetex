@@ -10,7 +10,7 @@ const SeatPositionDefinition: SchemaDefinition = {
 }
 
 const TicketDefinition: SchemaDefinition = {
-    auditoriumId: {type: Number, required: true},
+    screenId: {type: Number, required: true},
     showDate: {type: String, required: true},
     showTime: {type: String, required: true},
     seat: {type: SeatPositionDefinition, required: true},

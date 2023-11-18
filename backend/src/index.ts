@@ -8,36 +8,7 @@ import {ExpressServer} from "./infrastructure/servers"
 import {UseCaseInteractorCollections} from "./application/interactors/UseCaseInteractorCollections";
 import {installAllSamples} from "./samples";
 import {MongoMemoryServerOpts} from "mongodb-memory-server-core/lib/MongoMemoryServer";
-
-
-dotenvExpand.expand(dotenv.config())
-
-const config: Readonly<{
-    PORT: string,
-    HOST: string,
-    ROOT: string,
-    MONGODB_HOST: string,
-    MONGODB_PORT: string,
-    MONGODB_URI: string,
-    MONGODB_DBNAME: string,
-    MONGODB_USER: string,
-    MONGODB_PASS: string,
-    START_MONGODB_MEMORY_SERVER: string,
-    INSTALL_SAMPLE_DATA: string
-}> = {
-    PORT: "3000",
-    HOST: "localhost",
-    ROOT: "../frontend/build",
-    MONGODB_HOST: "localhost",
-    MONGODB_PORT: "27017",
-    MONGODB_URI: "mongodb://localhost:27017/",
-    MONGODB_DBNAME: "Cinetex",
-    MONGODB_USER: "root",
-    MONGODB_PASS: "goodExample",
-    START_MONGODB_MEMORY_SERVER: "false",
-    INSTALL_SAMPLE_DATA: "false",
-    ...process.env
-}
+import config from "./config";
 
 async function startMongoDBMemoryServerIfEnabled(): Promise<void> {
     if (config.START_MONGODB_MEMORY_SERVER !== "true") {

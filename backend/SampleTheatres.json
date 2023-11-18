@@ -1,68 +1,230 @@
 [
   {
-    "id": "654d86124c67be25bc7cf408",
-    "name": "Centennial Grand Theatre",
+    "id": "6557da2297929c35968ffbcd",
+    "name": "Cineplex Cinemas Yonge-Dundas and VIP",
     "location": {
-      "street": "941 Progress Ave",
+      "street": "10 Dundas St E #402",
       "city": "Toronto",
       "state": "ON",
-      "zip": "M1G 3T8"
+      "zip": "M5B 2G9"
     },
-    "auditoriums": [
-      {
-        "id": 0,
-        "name": "Auditorium A",
-        "rows": 15,
-        "columns": 20,
-        "sideColumns": 4,
-        "seats": [
-          [0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0],
-          [0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0],
-          [0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0],
-          [0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0],
-          [0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0],
-          [0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,0],
-          [0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,0],
-          [0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0],
-          [0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0],
-          [0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0],
-          [0,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,0],
-          [0,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,0],
-          [0,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,0],
-          [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3],
-          [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3]
-        ]
-      },
-      {
-        "id": 1,
-        "name": "Auditorium B",
-        "rows": 20,
-        "columns": 30,
-        "sideColumns": 6,
-        "seats": [
-          [0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0],
-          [0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0],
-          [0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0],
-          [0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0],
-          [0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0],
-          [0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0],
-          [0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0],
-          [0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,0,0],
-          [0,0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,0,0],
-          [0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,0,0],
-          [0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,0],
-          [0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,0],
-          [0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,0],
-          [0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0],
-          [0,0,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,0,0],
-          [0,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,0],
-          [0,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,0],
-          [0,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,0],
-          [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3],
-          [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3]
-        ]
-      }
-    ],
-    "imageUrl": "images/theatres/CentennialCollege.png"
+    "screens": [],
+    "imageUrl": "./images/theatres/Cineplex-YongeDundas.jpg"
+  },
+  {
+    "id": "6557da2297929c35968ffbd0",
+    "name": "Carlton Cinema",
+    "location": {
+      "street": "20 Carlton St.",
+      "city": "Toronto",
+      "state": "ON",
+      "zip": "M5B 2H5"
+    },
+    "screens": [],
+    "imageUrl": "./images/theatres/CarltonCinema.jpg"
+  },
+  {
+    "id": "6557da2297929c35968ffbd3",
+    "name": "Fox Theatre",
+    "location": {
+      "street": "2236 Queen St E",
+      "city": "Toronto",
+      "state": "ON",
+      "zip": "M4E 1G2"
+    },
+    "screens": [],
+    "imageUrl": "./images/theatres/Fox.jpg"
+  },
+  {
+    "id": "6557da2297929c35968ffbd6",
+    "name": "Cineplex Cinemas Queensway & VIP",
+    "location": {
+      "street": "1025 The Queensway",
+      "city": "Etobicoke",
+      "state": "ON",
+      "zip": "M8Z 6C7"
+    },
+    "screens": [],
+    "imageUrl": "./images/theatres/Cineplex-Queensway.jpg"
+  },
+  {
+    "id": "6557da2297929c35968ffbd9",
+    "name": "Cineplex VIP Don Mills",
+    "location": {
+      "street": "12 Marie Labatte Rd",
+      "city": "Toronto",
+      "state": "ON",
+      "zip": "M3C 0H9"
+    },
+    "screens": [],
+    "imageUrl": "./images/theatres/Cineplex-DonMills.jpg"
+  },
+  {
+    "id": "6557da2297929c35968ffbdc",
+    "name": "Bloor Cinema",
+    "location": {
+      "street": "506 Bloor St W",
+      "city": "Toronto",
+      "state": "ON",
+      "zip": "M5S 1Y3"
+    },
+    "screens": [],
+    "imageUrl": "./images/theatres/BloorCinema.jpg"
+  },
+  {
+    "id": "6557da2297929c35968ffbdf",
+    "name": "The Revue Cinema",
+    "location": {
+      "street": "400 Roncesvalles Ave",
+      "city": "Toronto",
+      "state": "ON",
+      "zip": "M6R 2M9"
+    },
+    "screens": [],
+    "imageUrl": "./images/theatres/RevueCinema.jpg"
+  },
+  {
+    "id": "6557da2297929c35968ffbe2",
+    "name": "Cineplex Cinemas Yonge-Eglinton",
+    "location": {
+      "street": "2300 Yonge St",
+      "city": "Toronto",
+      "state": "ON",
+      "zip": "M4P 1E4"
+    },
+    "screens": [],
+    "imageUrl": "./images/theatres/Cineplex-YongeEglinton.jpg"
+  },
+  {
+    "id": "6557da2297929c35968ffbe8",
+    "name": "Imagine Cinema Market Square",
+    "location": {
+      "street": "80 Front St E",
+      "city": "Toronto",
+      "state": "ON",
+      "zip": "M5E 1T4"
+    },
+    "screens": [],
+    "imageUrl": "./images/theatres/ImagineCinema.jpg"
+  },
+  {
+    "id": "6557da2297929c35968ffbeb",
+    "name": "Cineplex Cinemas Empress Walk",
+    "location": {
+      "street": "5095 Yonge St",
+      "city": "North York",
+      "state": "ON",
+      "zip": "M2N 6Z4"
+    },
+    "screens": [],
+    "imageUrl": "./images/theatres/Cineplex-EmpressWalk.jpg"
+  },
+  {
+    "id": "6557da2297929c35968ffbee",
+    "name": "SilverCity Yorkdale Cinemas",
+    "location": {
+      "street": "3401 Dufferin St",
+      "city": "Toronto",
+      "state": "ON",
+      "zip": "M6A 2T9"
+    },
+    "screens": [],
+    "imageUrl": "./images/theatres/Cineplex-Yorkdale.jpg"
+  },
+  {
+    "id": "6557da2297929c35968ffbf1",
+    "name": "The Royal Cinema",
+    "location": {
+      "street": "608 College St",
+      "city": "Toronto",
+      "state": "ON",
+      "zip": "M6G 1B4"
+    },
+    "screens": [],
+    "imageUrl": "./images/theatres/Royal.jpg"
+  },
+  {
+    "id": "6557da2297929c35968ffbf4",
+    "name": "SilverCity Fairview Mall Cinemas",
+    "location": {
+      "street": "1800 Sheppard Ave E",
+      "city": "North York",
+      "state": "ON",
+      "zip": "M2J 5A7"
+    },
+    "screens": [],
+    "imageUrl": "./images/theatres/SilverCity.jpg"
+  },
+  {
+    "id": "6557da2297929c35968ffbf7",
+    "name": "Cineplex Odeon Eglinton Town Centre Cinemas",
+    "location": {
+      "street": "22 Lebovic Ave",
+      "city": "Scarborough",
+      "state": "ON",
+      "zip": "M1L 4V9"
+    },
+    "screens": [],
+    "imageUrl": "./images/theatres/Cineplex-OdeonEglinton.jpg"
+  },
+  {
+    "id": "6557da2297929c35968ffbfa",
+    "name": "Famous Players Canada Square Cinemas",
+    "location": {
+      "street": "2190 Yonge St",
+      "city": "Toronto",
+      "state": "ON",
+      "zip": "M4S 2C6"
+    },
+    "screens": [],
+    "imageUrl": "./images/theatres/FamousPlayers.jpg"
+  },
+  {
+    "id": "6557da2297929c35968ffbfd",
+    "name": "Cineplex Cinemas Scarborough",
+    "location": {
+      "street": "300 Borough Dr",
+      "city": "Scarborough",
+      "state": "ON",
+      "zip": "M1P 4P5"
+    },
+    "screens": [],
+    "imageUrl": "./images/theatres/Cineplex-Scarborough.jpg"
+  },
+  {
+    "id": "6557da2297929c35968ffc00",
+    "name": "Cineplex Cinemas Markham and VIP",
+    "location": {
+      "street": "179 Enterprise Blvd",
+      "city": "Markham",
+      "state": "ON",
+      "zip": "L6G 0E7"
+    },
+    "screens": [],
+    "imageUrl": "./images/theatres/Cineplex-Markham.jpg"
+  },
+  {
+    "id": "6557da2297929c35968ffc03",
+    "name": "Cineplex Cinemas Vaughan",
+    "location": {
+      "street": "3555 Highway 7 W",
+      "city": "Vaughan",
+      "state": "ON",
+      "zip": "L4L 6B1"
+    },
+    "screens": [],
+    "imageUrl": "./images/theatres/Cineplex-Vaughan.jpg"
+  },
+  {
+    "id": "6557da2297929c35968ffc06",
+    "name": "Cineplex Cinemas Mississauga",
+    "location": {
+      "street": "309 Rathburn Rd W",
+      "city": "Mississauga",
+      "state": "ON",
+      "zip": "L5B 4C1"
+    },
+    "screens": [],
+    "imageUrl": "./images/theatres/Cineplex-Mississauga.jpg"
   }
 ]

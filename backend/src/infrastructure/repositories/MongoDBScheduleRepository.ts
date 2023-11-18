@@ -7,7 +7,7 @@ import {QueryScheduleCriteria} from "core/dist/application/usecases/queries";
 export const ScheduleSchemaDefinition: SchemaDefinition = {
     movieId: {type: Types.ObjectId, required: true},
     theatreId: {type: Types.ObjectId, required: true},
-    auditoriumId: {type: Number, required: true},
+    screenId: {type: Number, required: true},
     showStartDate: {type: String, required: true},
     showEndDate: {type: String, required: true},
     showTimes: {type: [String], required: true}
@@ -60,8 +60,8 @@ export function MongoDBScheduleRepository(model: Model<Schedule>): ScheduleRepos
         if (criteria.theatreId) {
             filter.theatreId = toObjectId(criteria.theatreId)
         }
-        if (criteria.auditoriumId) {
-            filter.auditoriumId = criteria.auditoriumId
+        if (criteria.screenId) {
+            filter.screenId = criteria.screenId
         }
         if (criteria.showDate) {
             filter.date = toRangeFilter(criteria.showDate)
