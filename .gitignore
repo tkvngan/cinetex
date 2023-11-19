@@ -9,3 +9,4 @@
 /core/dist/
 /core/node_modules/
 yarn-error.log
+/frontend/dist/

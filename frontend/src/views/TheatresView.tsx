@@ -1,29 +1,28 @@
 import {UseCaseCollections} from "core/dist/application/usecases";
 import {Theatre} from "core/dist/domain/entities";
 import {useEffect, useState} from "react";
+import "../css/TheatresView.css"
 
-export default function TheatresPage({interactors}: {interactors: UseCaseCollections}) {
+export default function TheatresView({interactors}: {interactors: UseCaseCollections}) {
     const [theatres, setTheatres] = useState<Theatre[]>([])
     useEffect(() => {
         interactors.GetAllTheatres.invoke({}).then((theatres: Theatre[]) => {
             setTheatres(theatres)
         })
     }, [])
+
     return (
-        <div id={"TheatresPage"}>
+        <div id="TheatresView">
             <ul>
                 {theatres && theatres.map((theatre) =>
                     <li key={theatre.id}>
                         <div>
-                            <h2>{theatre.name}</h2>
+                            <p>{theatre.name}</p>
                             <img src={theatre.imageUrl} alt={theatre.name}/>
                         </div>
-
                     </li>
                 )}
             </ul>
         </div>
     );
-
-
 }

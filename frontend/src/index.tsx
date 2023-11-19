@@ -5,7 +5,7 @@ import axios from "axios";
 import App from "./App";
 import {AxiosUseCaseInteractorCollections} from "shared/dist/infrastructure/interactors";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./css/style.css";
+import "./css/index.css";
 
 const client = axios.create({
     baseURL: "/service",
@@ -14,10 +14,10 @@ const client = axios.create({
     },
     timeout: 1000,
 })
-const interactors = AxiosUseCaseInteractorCollections(client)
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLLinkElement).render(
-    <App interactors={interactors}/>
-)
+const interactors = AxiosUseCaseInteractorCollections(client)
+const root = document.getElementById('root') as HTMLElement
+
+ReactDOM.createRoot(root).render(<App interactors={interactors}/>)
 
 reportWebVitals();

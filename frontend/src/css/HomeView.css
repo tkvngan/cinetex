@@ -1,0 +1,26 @@
+#HomeView {
+    margin-top: 20rem;
+    display: grid;
+    grid-template-columns: .5fr .5fr;
+
+    &:last-child {
+        justify-self: center;
+    }
+
+    & article {
+        width: auto;
+
+        & h1 {
+            margin-bottom: 1.5rem;
+            font-size: 5rem;
+        }
+
+        & p {
+            margin-bottom: 4rem;
+        }
+    }
+
+    & img {
+        width: 50rem
+    }
+}
