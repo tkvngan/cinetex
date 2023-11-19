@@ -10,4 +10,4 @@ export type Schedule = Entity & Readonly<{
     showTimes: readonly ShowTime[]
 }>
 
-export enum ShowTime { afternoon = "afternoon", evening = "evening", night = "night" }
+export type ShowTime = string
