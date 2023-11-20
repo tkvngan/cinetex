@@ -1,5 +1,5 @@
 import {Theatre} from "core/dist/domain/entities/Theatre";
-import {QueryTheatreCriteria} from "core/dist/application/usecases/queries";
+import {QueryTheatresCriteria} from "core/dist/application/usecases/queries";
 
 export interface TheatreRepository {
     getAllTheatres(): Promise<Theatre[]>;
@@ -14,10 +14,10 @@ export interface TheatreRepository {
 
     deleteTheatreByName(name: string): Promise<Theatre | undefined>;
 
-    deleteTheatresByQuery(criteria: QueryTheatreCriteria): Promise<number>;
+    deleteTheatresByQuery(criteria: QueryTheatresCriteria): Promise<number>;
 
     updateTheatreById(id: string, theatre: Partial<Omit<Theatre, "id">>): Promise<Theatre | undefined>;
 
-    queryTheatres(criteria: QueryTheatreCriteria): Promise<Theatre[]>;
+    queryTheatres(criteria: QueryTheatresCriteria): Promise<Theatre[]>;
 
 }

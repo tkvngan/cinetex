@@ -2,7 +2,7 @@ import {TheatreRepository} from "../../application/repositories";
 import {toObjectId, toPatternFilter, toRangeFilter} from "./MongoDBUtils";
 import {FilterQuery, Model, SchemaDefinition} from "mongoose";
 import {Theatre} from "core/dist/domain/entities";
-import {QueryTheatreCriteria} from "core/dist/application/usecases/queries";
+import {QueryTheatresCriteria} from "core/dist/application/usecases/queries";
 
 const AddressDefinition: SchemaDefinition = {
     street: {type: String, required: true},
@@ -41,7 +41,7 @@ export function MongoDBTheatreRepository(model: Model<Theatre>): TheatreReposito
             return (await model.findOne({name: name}))?.toObject();
         },
 
-        async queryTheatres(criteria: QueryTheatreCriteria): Promise<Theatre[]> {
+        async queryTheatres(criteria: QueryTheatresCriteria): Promise<Theatre[]> {
             const filter = createTheatreFilter(criteria);
             return (await model.find(filter)).map(theatre => theatre.toObject());
         },
@@ -60,7 +60,7 @@ export function MongoDBTheatreRepository(model: Model<Theatre>): TheatreReposito
                 .findOneAndDelete({name: name}, {returnDocument: "before"}))?.toObject();
         },
 
-        async deleteTheatresByQuery(criteria: QueryTheatreCriteria): Promise<number> {
+        async deleteTheatresByQuery(criteria: QueryTheatresCriteria): Promise<number> {
             const filter = createTheatreFilter(criteria);
             return (await model.deleteMany(filter)).deletedCount || 0
         },
@@ -71,7 +71,7 @@ export function MongoDBTheatreRepository(model: Model<Theatre>): TheatreReposito
         },
     }
 
-    function createTheatreFilter(criteria: QueryTheatreCriteria): FilterQuery<Theatre> {
+    function createTheatreFilter(criteria: QueryTheatresCriteria): FilterQuery<Theatre> {
         const filter: FilterQuery<any> = {}
         if (criteria.name) {
             filter.name = toPatternFilter(criteria.name)

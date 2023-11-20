@@ -1,5 +1,5 @@
 import {Schedule} from "core/dist/domain/entities/Schedule";
-import {QueryScheduleCriteria} from "core/dist/application/usecases/queries";
+import {QuerySchedulesCriteria} from "core/dist/application/usecases/queries";
 
 export interface ScheduleRepository {
     getAllSchedules(): Promise<Schedule[]>;
@@ -10,10 +10,10 @@ export interface ScheduleRepository {
 
     deleteScheduleById(id: string): Promise<Schedule | undefined>;
 
-    deleteSchedulesByQuery(criteria: QueryScheduleCriteria): Promise<number>;
+    deleteSchedulesByQuery(criteria: QuerySchedulesCriteria): Promise<number>;
 
     updateScheduleById(id: string, show: Partial<Omit<Schedule, "id">>): Promise<Schedule | undefined>;
 
-    querySchedules(criteria: QueryScheduleCriteria): Promise<Schedule[]>;
+    querySchedules(criteria: QuerySchedulesCriteria): Promise<Schedule[]>;
 
 }

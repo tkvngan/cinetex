@@ -2,7 +2,7 @@ import {UserRepository} from "../../application/repositories";
 import {toObjectId, toPatternFilter} from "./MongoDBUtils";
 import {FilterQuery, Model, SchemaDefinition} from "mongoose";
 import {User} from "core/dist/domain/entities/User";
-import {QueryUserCriteria} from "core/dist/application/usecases/queries";
+import {QueryUsersCriteria} from "core/dist/application/usecases/queries";
 
 export const UserSchemaDefinition: SchemaDefinition = {
     firstName: {type: String, required: true},
@@ -25,7 +25,7 @@ export function MongoDBUserRepository(model: Model<User>): UserRepository {
             return (await model.findOne({email: email}))?.toObject();
         },
 
-        async queryUsers(criteria: QueryUserCriteria): Promise<User[]> {
+        async queryUsers(criteria: QueryUsersCriteria): Promise<User[]> {
             const filter = createUserFilter(criteria);
             return (await model.find(filter)).map(user => user.toObject());
         },
@@ -38,7 +38,7 @@ export function MongoDBUserRepository(model: Model<User>): UserRepository {
             return (await model.findByIdAndDelete(toObjectId(id), {returnDocument: "before"}))?.toObject();
         },
 
-        async deleteUsersByQuery(criteria: QueryUserCriteria): Promise<number> {
+        async deleteUsersByQuery(criteria: QueryUsersCriteria): Promise<number> {
             const filter = createUserFilter(criteria);
             return (await model.deleteMany(filter)).deletedCount || 0
         },
@@ -50,7 +50,7 @@ export function MongoDBUserRepository(model: Model<User>): UserRepository {
     }
 }
 
-function createUserFilter(criteria: QueryUserCriteria): FilterQuery<User> {
+function createUserFilter(criteria: QueryUsersCriteria): FilterQuery<User> {
     const filter: FilterQuery<any> = {}
     if (criteria.name) {
         filter.name = toPatternFilter(criteria.name)

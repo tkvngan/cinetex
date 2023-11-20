@@ -1,5 +1,5 @@
 import {User} from "core/dist/domain/entities/User";
-import {QueryUserCriteria} from "core/dist/application/usecases/queries";
+import {QueryUsersCriteria} from "core/dist/application/usecases/queries";
 
 export interface UserRepository {
 
@@ -13,11 +13,11 @@ export interface UserRepository {
 
     deleteUserById(id: string): Promise<User | undefined>;
 
-    deleteUsersByQuery(criteria: QueryUserCriteria): Promise<number>;
+    deleteUsersByQuery(criteria: QueryUsersCriteria): Promise<number>;
 
     updateUserById(id: string, user: Partial<Omit<User, "id">>): Promise<User | undefined>;
 
-    queryUsers(criteria: QueryUserCriteria): Promise<User[]>;
+    queryUsers(criteria: QueryUsersCriteria): Promise<User[]>;
 
 
 }

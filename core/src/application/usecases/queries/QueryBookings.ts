@@ -2,7 +2,7 @@ import {QueryCriteria, QueryRange} from "./QueryCriteria";
 import {Booking, ShowTime} from "../../../domain/entities";
 import {QueryUseCase} from "../UseCase";
 
-export type QueryBookingCriteria = QueryCriteria & {
+export type QueryBookingsCriteria = QueryCriteria & {
     userId?: string;
     theatreId?: string;
     movieId?: string;
@@ -10,9 +10,9 @@ export type QueryBookingCriteria = QueryCriteria & {
     showTime?: ShowTime[];
 }
 
-export type QueryBookings = QueryUseCase<{ criteria: QueryBookingCriteria }, Booking[]>
+export type QueryBookings = QueryUseCase<{ criteria: QueryBookingsCriteria }, Booking[]>
 
-export function QueryBookings(invoke: (query: { criteria: QueryBookingCriteria }) => Promise<Booking[]>): QueryBookings {
+export function QueryBookings(invoke: (query: { criteria: QueryBookingsCriteria }) => Promise<Booking[]>): QueryBookings {
     return { name: "GetBookingsByQuery", type: "query", invoke }
 }
 
