@@ -2,15 +2,15 @@ import {QueryCriteria, QueryPattern, QueryRange} from "./QueryCriteria";
 import {QueryUseCase} from "../UseCase";
 import {Theatre} from "../../../domain/entities";
 
-export type QueryTheatresCriteria = QueryCriteria & {
+export type TheatresQuery = QueryCriteria & {
     name?: string | QueryPattern;
     location?: QueryPattern;
     screenCount?: number | QueryRange<number>;
 }
 
-export type QueryTheatres = QueryUseCase<{ criteria: QueryTheatresCriteria }, Theatre[]>
+export type GetTheatresByQuery = QueryUseCase<TheatresQuery, Theatre[]>
 
-export function QueryTheatres(invoke: (query: { criteria: QueryTheatresCriteria }) => Promise<Theatre[]>): QueryTheatres {
+export function GetTheatresByQuery(invoke: (query: TheatresQuery) => Promise<Theatre[]>): GetTheatresByQuery {
     return { name: "GetTheatresByQuery", type: "query", invoke }
 }
 

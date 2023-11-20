@@ -2,7 +2,7 @@ import {MovieRepository} from "../../application/repositories";
 import {toObjectId, toPatternFilter, toRangeFilter} from "./MongoDBUtils";
 import {FilterQuery, Model, SchemaDefinition} from "mongoose";
 import {Movie} from "core/dist/domain/entities/Movie";
-import {QueryMoviesCriteria} from "core/dist/application/usecases/queries";
+import {MoviesQuery} from "core/dist/application/usecases/queries";
 
 export const MovieSchemaDefinition: SchemaDefinition = {
     name: {type: String, required: true, unique: true, index: true},
@@ -31,7 +31,7 @@ export function MongoDBMovieRepository(model: Model<Movie>): MovieRepository {
             return (await model.findOne({name: name}))?.toObject();
         },
 
-        async queryMovies(criteria: QueryMoviesCriteria): Promise<Movie[]> {
+        async queryMovies(criteria: MoviesQuery): Promise<Movie[]> {
             const filter = createMovieFilter(criteria);
             return (await model.find(filter)).map(movie => movie.toObject());
         },
@@ -48,7 +48,7 @@ export function MongoDBMovieRepository(model: Model<Movie>): MovieRepository {
             return (await model.findOneAndDelete({name: name}, {returnDocument: "before"}))?.toObject();
         },
 
-        async deleteMoviesByQuery(criteria: QueryMoviesCriteria): Promise<number> {
+        async deleteMoviesByQuery(criteria: MoviesQuery): Promise<number> {
             const filter = createMovieFilter(criteria);
             return (await model.deleteMany(filter)).deletedCount || 0
         },
@@ -63,7 +63,7 @@ export function MongoDBMovieRepository(model: Model<Movie>): MovieRepository {
         }
     }
 
-    function createMovieFilter(criteria: QueryMoviesCriteria): FilterQuery<Movie> {
+    function createMovieFilter(criteria: MoviesQuery): FilterQuery<Movie> {
         const filter: FilterQuery<any> = {}
         if (criteria.name) {
             filter.name = toPatternFilter(criteria.name)

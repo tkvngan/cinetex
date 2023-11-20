@@ -2,7 +2,7 @@ import {ScheduleRepository} from "../../application/repositories";
 import {toObjectId, toRangeFilter} from "./MongoDBUtils";
 import {FilterQuery, Model, SchemaDefinition, Types} from "mongoose";
 import {Schedule} from "core/dist/domain/entities";
-import {QuerySchedulesCriteria} from "core/dist/application/usecases/queries";
+import {SchedulesQuery} from "core/dist/application/usecases/queries";
 
 export const ScheduleSchemaDefinition: SchemaDefinition = {
     movieId: {type: Types.ObjectId, required: true},
@@ -23,7 +23,7 @@ export function MongoDBScheduleRepository(model: Model<Schedule>): ScheduleRepos
             return (await model.findById(toObjectId(id)))?.toObject();
         },
 
-        async querySchedules(criteria: QuerySchedulesCriteria): Promise<Schedule[]> {
+        async querySchedules(criteria: SchedulesQuery): Promise<Schedule[]> {
             const filter = createScheduleFilter(criteria);
             return (await model.find(filter)).map(schedule => schedule.toObject());
         },
@@ -41,7 +41,7 @@ export function MongoDBScheduleRepository(model: Model<Schedule>): ScheduleRepos
             return (await model.findByIdAndDelete(toObjectId(id), {returnDocument: "before"},))?.toObject();
         },
 
-        async deleteSchedulesByQuery(criteria: QuerySchedulesCriteria): Promise<number> {
+        async deleteSchedulesByQuery(criteria: SchedulesQuery): Promise<number> {
             const filter = createScheduleFilter(criteria);
             return (await model.deleteMany(filter)).deletedCount || 0
         },
@@ -52,7 +52,7 @@ export function MongoDBScheduleRepository(model: Model<Schedule>): ScheduleRepos
         },
     }
 
-    function createScheduleFilter(criteria: QuerySchedulesCriteria): FilterQuery<Schedule> {
+    function createScheduleFilter(criteria: SchedulesQuery): FilterQuery<Schedule> {
         const filter: FilterQuery<any> = {}
         if (criteria.movieId) {
             filter.movieId = toObjectId(criteria.movieId)

@@ -19,9 +19,9 @@ export interface QueryUseCaseCollection extends UseCaseCollection {
     readonly GetUserByEmail: queries.GetUserByEmail;
     readonly GetUserById: queries.GetUserById;
 
-    readonly QueryBookings: queries.QueryBookings;
-    readonly QueryMovies: queries.QueryMovies;
-    readonly QuerySchedules: queries.QuerySchedules;
-    readonly QueryTheatres: queries.QueryTheatres;
-    readonly QueryUsers: queries.QueryUsers;
+    readonly GetBookingsByQuery: queries.GetBookingsByQuery;
+    readonly GetMoviesByQuery: queries.GetMoviesByQuery;
+    readonly GetSchedulesByQuery: queries.GetSchedulesByQuery;
+    readonly GetTheatresByQuery: queries.GetTheatresByQuery;
+    readonly GetUsersByQuery: queries.GetUsersByQuery;
 }

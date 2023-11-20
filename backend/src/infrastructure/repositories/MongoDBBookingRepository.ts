@@ -2,7 +2,7 @@ import {BookingRepository} from "../../application/repositories";
 import {FilterQuery, Model, SchemaDefinition, Types} from "mongoose";
 import {toObjectId, toRangeFilter} from "./MongoDBUtils";
 import {Booking} from "core/dist/domain/entities";
-import {QueryBookingsCriteria} from "core/dist/application/usecases/queries";
+import {BookingsQuery} from "core/dist/application/usecases/queries";
 
 const SeatPositionDefinition: SchemaDefinition = {
     row: {type: Number, required: true},
@@ -47,7 +47,7 @@ export function MongoDBBookingRepository(model: Model<Booking>): BookingReposito
             return (await model.find({movieId: toObjectId(movieId)})).map(booking => booking.toObject());
         },
 
-        async queryBookings(criteria: QueryBookingsCriteria): Promise<Booking[]> {
+        async queryBookings(criteria: BookingsQuery): Promise<Booking[]> {
             const filter = createBookingFilter(criteria);
             return (await model.find(filter)).map(booking => booking.toObject());
         },
@@ -61,7 +61,7 @@ export function MongoDBBookingRepository(model: Model<Booking>): BookingReposito
                 .findByIdAndDelete(toObjectId(id), {returnDocument: "before"}))?.toObject();
         },
 
-        async deleteBookingsByQuery(criteria: QueryBookingsCriteria): Promise<number> {
+        async deleteBookingsByQuery(criteria: BookingsQuery): Promise<number> {
             const filter = createBookingFilter(criteria);
             return (await model.deleteMany(filter)).deletedCount || 0
         },
@@ -72,7 +72,7 @@ export function MongoDBBookingRepository(model: Model<Booking>): BookingReposito
         }
     }
 
-    function createBookingFilter(criteria: QueryBookingsCriteria): FilterQuery<Booking> {
+    function createBookingFilter(criteria: BookingsQuery): FilterQuery<Booking> {
         const filter: FilterQuery<any> = {}
         if (criteria.userId) {
             filter.userId = toObjectId(criteria.userId)

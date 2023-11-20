@@ -2,15 +2,15 @@ import {QueryUseCase} from "../UseCase";
 import {User} from "../../../domain/entities";
 import {QueryCriteria, QueryPattern} from "./QueryCriteria";
 
-export type QueryUsersCriteria = QueryCriteria & {
+export type UsersQuery = QueryCriteria & {
     name?: string | QueryPattern;
     email?: string | QueryPattern;
     phoneNumber?: string | QueryPattern;
 }
 
-export type QueryUsers = QueryUseCase<{ criteria: QueryUsersCriteria }, User[]>
+export type GetUsersByQuery = QueryUseCase<UsersQuery, User[]>
 
-export function QueryUsers(invoke: (query: { criteria: QueryUsersCriteria }) => Promise<User[]>): QueryUsers {
+export function GetUsersByQuery(invoke: (query: UsersQuery) => Promise<User[]>): GetUsersByQuery {
     return { name: "GetUsersByQuery", type: "query", invoke }
 }
 

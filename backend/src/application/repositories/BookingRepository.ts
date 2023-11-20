@@ -1,5 +1,5 @@
 import {Booking} from "core/dist/domain/entities/Booking";
-import {QueryBookingsCriteria} from "core/dist/application/usecases/queries";
+import {BookingsQuery} from "core/dist/application/usecases/queries";
 
 export interface BookingRepository {
 
@@ -17,10 +17,10 @@ export interface BookingRepository {
 
     deleteBookingById(id: string): Promise<Booking | undefined>;
 
-    deleteBookingsByQuery(criteria: QueryBookingsCriteria): Promise<number>;
+    deleteBookingsByQuery(criteria: BookingsQuery): Promise<number>;
 
     updateBookingById(id: string, booking: Partial<Omit<Booking, "id">>): Promise<Booking | undefined>;
 
-    queryBookings(criteria: QueryBookingsCriteria): Promise<Booking[]>;
+    queryBookings(criteria: BookingsQuery): Promise<Booking[]>;
 
 }

@@ -1,5 +1,5 @@
 import {Movie} from "core/dist/domain/entities/Movie";
-import {QueryMoviesCriteria} from "core/dist/application/usecases/queries";
+import {MoviesQuery} from "core/dist/application/usecases/queries";
 
 export interface MovieRepository {
 
@@ -15,12 +15,12 @@ export interface MovieRepository {
 
     deleteMovieByName(name: string): Promise<Movie | undefined>;
 
-    deleteMoviesByQuery(criteria: QueryMoviesCriteria): Promise<number>;
+    deleteMoviesByQuery(criteria: MoviesQuery): Promise<number>;
 
     deleteAllMovies(): Promise<number>;
 
     updateMovieById(id: string, movie: Partial<Omit<Movie, "id">>): Promise<Movie | undefined>;
 
-    queryMovies(criteria: QueryMoviesCriteria): Promise<Movie[]>;
+    queryMovies(criteria: MoviesQuery): Promise<Movie[]>;
 
 }
