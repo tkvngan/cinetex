@@ -2,7 +2,7 @@ import {MovieRepository} from "../../application/repositories";
 import {toObjectId, toPatternFilter, toRangeFilter} from "./MongoDBUtils";
 import {FilterQuery, Model, SchemaDefinition} from "mongoose";
 import {Movie} from "core/dist/domain/entities/Movie";
-import {MoviesQuery} from "core/dist/application/usecases/queries";
+import {MoviesQuery} from "core/dist/application/queries";
 
 export const MovieSchemaDefinition: SchemaDefinition = {
     name: {type: String, required: true, unique: true, index: true},

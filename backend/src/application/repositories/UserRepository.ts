@@ -1,5 +1,5 @@
 import {User} from "core/dist/domain/entities/User";
-import {UsersQuery} from "core/dist/application/usecases/queries";
+import {UsersQuery} from "core/dist/application/queries";
 
 export interface UserRepository {
 

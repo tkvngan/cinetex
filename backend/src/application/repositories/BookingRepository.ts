@@ -1,5 +1,5 @@
 import {Booking} from "core/dist/domain/entities/Booking";
-import {BookingsQuery} from "core/dist/application/usecases/queries";
+import {BookingsQuery} from "core/dist/application/queries";
 
 export interface BookingRepository {
 

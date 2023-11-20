@@ -1,4 +1,4 @@
-import {UseCaseCollections} from "core/dist/application/usecases";
+import {UseCaseCollections} from "core/dist/application";
 import React from "react";
 import "../css/TicketsView.css"
 

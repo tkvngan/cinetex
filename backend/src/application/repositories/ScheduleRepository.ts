@@ -1,5 +1,5 @@
 import {Schedule} from "core/dist/domain/entities/Schedule";
-import {SchedulesQuery} from "core/dist/application/usecases/queries";
+import {SchedulesQuery} from "core/dist/application/queries";
 
 export interface ScheduleRepository {
     getAllSchedules(): Promise<Schedule[]>;

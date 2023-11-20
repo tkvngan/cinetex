@@ -1,5 +1,5 @@
 import {Movie} from "core/dist/domain/entities/Movie";
-import {MoviesQuery} from "core/dist/application/usecases/queries";
+import {MoviesQuery} from "core/dist/application/queries";
 
 export interface MovieRepository {
 

@@ -2,7 +2,7 @@ import {TheatreRepository} from "../../application/repositories";
 import {toObjectId, toPatternFilter, toRangeFilter} from "./MongoDBUtils";
 import {FilterQuery, Model, SchemaDefinition} from "mongoose";
 import {Theatre} from "core/dist/domain/entities";
-import {TheatresQuery} from "core/dist/application/usecases/queries";
+import {TheatresQuery} from "core/dist/application/queries";
 
 const AddressDefinition: SchemaDefinition = {
     street: {type: String, required: true},

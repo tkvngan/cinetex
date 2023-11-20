@@ -1,11 +1,9 @@
-import dotenv from "dotenv";
-import dotenvExpand from "dotenv-expand";
 import {MongoMemoryServer} from "mongodb-memory-server";
 import {Repositories} from "./application/repositories";
 import {ExpressRootPathRouter, ExpressServiceRouter} from "./infrastructure/routers"
 import {connectMongoDB, MongoDBRepositories} from "./infrastructure/repositories"
 import {ExpressServer} from "./infrastructure/servers"
-import {UseCaseInteractorCollections} from "./application/interactors/UseCaseInteractorCollections";
+import {UseCaseInteractorCollections} from "./application";
 import {installAllSamples} from "./samples";
 import {MongoMemoryServerOpts} from "mongodb-memory-server-core/lib/MongoMemoryServer";
 import config from "./config";

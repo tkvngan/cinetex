@@ -2,7 +2,7 @@ import {BookingRepository} from "../../application/repositories";
 import {FilterQuery, Model, SchemaDefinition, Types} from "mongoose";
 import {toObjectId, toRangeFilter} from "./MongoDBUtils";
 import {Booking} from "core/dist/domain/entities";
-import {BookingsQuery} from "core/dist/application/usecases/queries";
+import {BookingsQuery} from "core/dist/application/queries";
 
 const SeatPositionDefinition: SchemaDefinition = {
     row: {type: Number, required: true},

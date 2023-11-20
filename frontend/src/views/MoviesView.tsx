@@ -1,4 +1,4 @@
-import {UseCaseCollections} from "core/dist/application/usecases";
+import {UseCaseCollections} from "core/dist/application";
 import React, {useEffect, useState} from "react";
 import {Movie} from "core/dist/domain/entities";
 import "../css/MoviesView.css"
