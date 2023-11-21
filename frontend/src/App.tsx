@@ -50,7 +50,7 @@ function NavigationBar() {
     const location = useLocation();
     const isActive: (path: string) => boolean = (path) => location.pathname === path
     return (
-        <div className="navbar fixed-top navbar-expand-lg navbar-light container">
+        <div className="navbar fixed-top navbar-expand-lg navbar-dark container">
             <Link className="navbar-brand" to="/">Cinetex</Link>
             <button
                 className="navbar-toggler" type="button"
