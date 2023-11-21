@@ -1,8 +1,12 @@
 import {BookingRepository} from "../../application/repositories";
 import {FilterQuery, Model, SchemaDefinition, Types} from "mongoose";
-import {toObjectId, toRangeFilter} from "./MongoDBUtils";
-import {Booking} from "core/dist/domain/entities";
-import {BookingsQuery} from "core/dist/application/queries";
+import {toObjectId, asFieldFilter, asIdFieldFilter,} from "./MongoDBUtils";
+import {Booking, Movie, Schedule, Theatre, User} from "core/dist/domain/entities";
+import {BookingsQuery, MoviesQuery, TheatresQuery} from "core/dist/application/queries";
+import {TODO} from "core/dist/utils";
+import {createTheatreFilter} from "./MongoDBTheatreRepository";
+import {createMovieFilter} from "./MongoDBMovieRepository";
+import {createUserFilter} from "./MongoDBUserRepository";
 
 const SeatPositionDefinition: SchemaDefinition = {
     row: {type: Number, required: true},
@@ -25,7 +29,43 @@ export const BookingSchemaDefinition: SchemaDefinition = {
     tickets: {type: [TicketDefinition], required: true}
 }
 
-export function MongoDBBookingRepository(model: Model<Booking>): BookingRepository {
+function createBookingFilter(query: BookingsQuery): FilterQuery<Booking> {
+    const filter: FilterQuery<any> = {}
+    if (query.id) {
+        filter._id = asIdFieldFilter(query.id)
+        return filter
+    }
+    if (query.theatre) {
+        if (query.theatre.id) {
+            filter.theatreId = asIdFieldFilter(query.theatre.id)
+        } else {
+            filter.theatreFilter = createTheatreFilter(query.theatre)
+        }
+    }
+    if (query.movie) {
+        if (query.movie.id) {
+            filter.movieId = asIdFieldFilter(query.movie.id)
+        } else {
+            filter.movieFilter = createMovieFilter(query.movie)
+        }
+    }
+    if (query.user) {
+        if (query.user.id) {
+            filter.userId = asIdFieldFilter(query.user.id)
+        } else {
+            filter.userFilter = createUserFilter(query.user)
+        }
+    }
+    if (query.showDate) {
+        filter.tickets = {$elemMatch: {showDate: asFieldFilter(query.showDate)}}
+    }
+    if (query.showTime) {
+        filter.tickets = {$elemMatch: {showTime: asFieldFilter(query.showTime)}}
+    }
+    return filter
+}
+
+export function MongoDBBookingRepository(model: Model<Booking>, theatreModel: Model<Theatre>, movieModel: Model<Movie>, userModel: Model<User>): BookingRepository {
     return {
         async getAllBookings(): Promise<Booking[]> {
             return (await model.find()).map(booking => booking.toObject());
@@ -47,9 +87,21 @@ export function MongoDBBookingRepository(model: Model<Booking>): BookingReposito
             return (await model.find({movieId: toObjectId(movieId)})).map(booking => booking.toObject());
         },
 
-        async queryBookings(criteria: BookingsQuery): Promise<Booking[]> {
-            const filter = createBookingFilter(criteria);
-            return (await model.find(filter)).map(booking => booking.toObject());
+        async getBookingsByQuery(query: BookingsQuery): Promise<Booking[]> {
+            const filter = createBookingFilter(query);
+            const theatreFilter = filter.theatreFilter
+            const movieFilter = filter.movieFilter
+            const userFilter = filter.userFilter
+            delete filter.theatreFilter
+            delete filter.movieFilter
+            delete filter.userFilter
+            return (await model.find(filter.booking)).filter(async booking => {
+                return (!theatreFilter || (await theatreModel.exists({ _id: booking.theatreId, ...theatreFilter})))
+                    && (!userFilter || (await userModel.exists({ _id: booking.userId, ...userFilter})))
+                    && (!movieFilter || booking.tickets.filter(
+                        async ticket =>
+                            await movieModel.exists({ _id: ticket.movieId, ...movieFilter})).length > 0)
+            });
         },
 
         async addBooking(booking: Booking): Promise<Booking> {
@@ -61,8 +113,8 @@ export function MongoDBBookingRepository(model: Model<Booking>): BookingReposito
                 .findByIdAndDelete(toObjectId(id), {returnDocument: "before"}))?.toObject();
         },
 
-        async deleteBookingsByQuery(criteria: BookingsQuery): Promise<number> {
-            const filter = createBookingFilter(criteria);
+        async deleteBookingsByQuery(query: BookingsQuery): Promise<number> {
+            const filter = createBookingFilter(query);
             return (await model.deleteMany(filter)).deletedCount || 0
         },
 
@@ -72,23 +124,4 @@ export function MongoDBBookingRepository(model: Model<Booking>): BookingReposito
         }
     }
 
-    function createBookingFilter(criteria: BookingsQuery): FilterQuery<Booking> {
-        const filter: FilterQuery<any> = {}
-        if (criteria.userId) {
-            filter.userId = toObjectId(criteria.userId)
-        }
-        if (criteria.theatreId) {
-            filter.theatreId = toObjectId(criteria.theatreId)
-        }
-        if (criteria.movieId) {
-            filter.movieId = toObjectId(criteria.movieId)
-        }
-        if (criteria.showDate) {
-            filter.showDate = toRangeFilter(criteria.showDate)
-        }
-        if (criteria.showTime) {
-            filter.showTime = { $all: criteria.showTime }
-        }
-        return filter as FilterQuery<Booking>
-    }
 }

@@ -42,12 +42,17 @@ export function MongoDBRepositories(): Repositories {
         return mongoose.models[name] as Model<T> ??
             mongoose.model<T>(name, new Schema(definition, options ?? DefaultSchemaOptions), name)
     }
+    const movieModel = createModel<Movie>("Movie", MovieSchemaDefinition)
+    const theatreModel = createModel<Theatre>("Theatre", TheatreSchemaDefinition)
+    const scheduleModel = createModel<Schedule>("Schedule", ScheduleSchemaDefinition)
+    const bookingModel = createModel<Booking>("Booking", BookingSchemaDefinition)
+    const userModel = createModel<User>("User", UserSchemaDefinition)
     return {
-        Movie: MongoDBMovieRepository(createModel<Movie>("Movie", MovieSchemaDefinition)),
-        Theatre: MongoDBTheatreRepository(createModel<Theatre>("Theatre", TheatreSchemaDefinition)),
-        Schedule: MongoDBScheduleRepository(createModel<Schedule>("Schedule", ScheduleSchemaDefinition)),
-        Booking: MongoDBBookingRepository(createModel<Booking>("Booking", BookingSchemaDefinition)),
-        User: MongoDBUserRepository(createModel<User>("User", UserSchemaDefinition)),
+        Movie: MongoDBMovieRepository(movieModel),
+        Theatre: MongoDBTheatreRepository(theatreModel),
+        Schedule: MongoDBScheduleRepository(scheduleModel, movieModel, theatreModel),
+        Booking: MongoDBBookingRepository(bookingModel, theatreModel, movieModel, userModel),
+        User: MongoDBUserRepository(userModel),
         MediaContent: MongoDBMediaContentRepository(createModel<MediaContent>("MediaContent", MediaContentSchemaDefinition))
     }
 }

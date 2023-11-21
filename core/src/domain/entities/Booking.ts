@@ -1,6 +1,8 @@
 import {Entity, Id} from "../types";
 import {ShowTime} from "./Schedule";
-import {Column, Row} from "./Theatre";
+import {Column, Row, Theatre} from "./Theatre";
+import {User} from "./User";
+import {Movie} from "./Movie";
 
 export type Booking = Entity & Readonly<{
     id: Id

@@ -15,12 +15,12 @@ export interface MovieRepository {
 
     deleteMovieByName(name: string): Promise<Movie | undefined>;
 
-    deleteMoviesByQuery(criteria: MoviesQuery): Promise<number>;
+    deleteMoviesByQuery(query: MoviesQuery): Promise<number>;
 
     deleteAllMovies(): Promise<number>;
 
     updateMovieById(id: string, movie: Partial<Omit<Movie, "id">>): Promise<Movie | undefined>;
 
-    queryMovies(criteria: MoviesQuery): Promise<Movie[]>;
+    getMoviesByQuery(query: MoviesQuery): Promise<Movie[]>;
 
 }

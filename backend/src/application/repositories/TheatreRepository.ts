@@ -14,10 +14,10 @@ export interface TheatreRepository {
 
     deleteTheatreByName(name: string): Promise<Theatre | undefined>;
 
-    deleteTheatresByQuery(criteria: TheatresQuery): Promise<number>;
+    deleteTheatresByQuery(query: TheatresQuery): Promise<number>;
 
     updateTheatreById(id: string, theatre: Partial<Omit<Theatre, "id">>): Promise<Theatre | undefined>;
 
-    queryTheatres(criteria: TheatresQuery): Promise<Theatre[]>;
+    getTheatresByQuery(query: TheatresQuery): Promise<Theatre[]>;
 
 }

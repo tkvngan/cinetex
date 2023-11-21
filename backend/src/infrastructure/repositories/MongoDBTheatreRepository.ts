@@ -1,5 +1,5 @@
 import {TheatreRepository} from "../../application/repositories";
-import {toObjectId, toPatternFilter, toRangeFilter} from "./MongoDBUtils";
+import {asFieldFilter, asIdFieldFilter, toObjectId} from "./MongoDBUtils";
 import {FilterQuery, Model, SchemaDefinition} from "mongoose";
 import {Theatre} from "core/dist/domain/entities";
 import {TheatresQuery} from "core/dist/application/queries";
@@ -27,6 +27,31 @@ export const TheatreSchemaDefinition: SchemaDefinition = {
     imageUrl: {type: String, required: false}
 }
 
+export function createTheatreFilter(query: TheatresQuery): FilterQuery<Theatre> {
+    const filter: FilterQuery<any> = {}
+    if (query.id) {
+        filter._id = asIdFieldFilter(query.id)
+        return filter
+    }
+    if (query.name) {
+        filter.name = asFieldFilter(query.name)
+    }
+    if (query.screenCount) {
+        filter.screen = {$size: asFieldFilter(query.screenCount)}
+    }
+    if (query.location) {
+        filter.location = {
+            $or: [
+                {street: asFieldFilter(query.location)},
+                {city: asFieldFilter(query.location)},
+                {state: asFieldFilter(query.location)},
+                {zip: asFieldFilter(query.location)}
+            ]
+        }
+    }
+    return filter
+}
+
 export function MongoDBTheatreRepository(model: Model<Theatre>): TheatreRepository {
     return {
         async getAllTheatres(): Promise<Theatre[]> {
@@ -41,8 +66,8 @@ export function MongoDBTheatreRepository(model: Model<Theatre>): TheatreReposito
             return (await model.findOne({name: name}))?.toObject();
         },
 
-        async queryTheatres(criteria: TheatresQuery): Promise<Theatre[]> {
-            const filter = createTheatreFilter(criteria);
+        async getTheatresByQuery(query: TheatresQuery): Promise<Theatre[]> {
+            const filter = createTheatreFilter(query);
             return (await model.find(filter)).map(theatre => theatre.toObject());
         },
 
@@ -60,8 +85,8 @@ export function MongoDBTheatreRepository(model: Model<Theatre>): TheatreReposito
                 .findOneAndDelete({name: name}, {returnDocument: "before"}))?.toObject();
         },
 
-        async deleteTheatresByQuery(criteria: TheatresQuery): Promise<number> {
-            const filter = createTheatreFilter(criteria);
+        async deleteTheatresByQuery(query: TheatresQuery): Promise<number> {
+            const filter = createTheatreFilter(query);
             return (await model.deleteMany(filter)).deletedCount || 0
         },
 
@@ -71,24 +96,4 @@ export function MongoDBTheatreRepository(model: Model<Theatre>): TheatreReposito
         },
     }
 
-    function createTheatreFilter(criteria: TheatresQuery): FilterQuery<Theatre> {
-        const filter: FilterQuery<any> = {}
-        if (criteria.name) {
-            filter.name = toPatternFilter(criteria.name)
-        }
-        if (criteria.screenCount) {
-            filter.screen = { $size: toRangeFilter(criteria.screenCount) }
-        }
-        if (criteria.location) {
-            filter.location = {
-                $or: [
-                    { street: toPatternFilter(criteria.location) },
-                    { city: toPatternFilter(criteria.location) },
-                    { state: toPatternFilter(criteria.location) },
-                    { zip: toPatternFilter(criteria.location) }
-                ]
-            }
-        }
-        return filter as FilterQuery<Theatre>
-    }
 }

@@ -1,5 +1,5 @@
 import {UserRepository} from "../../application/repositories";
-import {toObjectId, toPatternFilter} from "./MongoDBUtils";
+import {asFieldFilter, asIdFieldFilter, toObjectId} from "./MongoDBUtils";
 import {FilterQuery, Model, SchemaDefinition} from "mongoose";
 import {User} from "core/dist/domain/entities/User";
 import {UsersQuery} from "core/dist/application/queries";
@@ -25,8 +25,8 @@ export function MongoDBUserRepository(model: Model<User>): UserRepository {
             return (await model.findOne({email: email}))?.toObject();
         },
 
-        async queryUsers(criteria: UsersQuery): Promise<User[]> {
-            const filter = createUserFilter(criteria);
+        async queryUsers(query: UsersQuery): Promise<User[]> {
+            const filter = createUserFilter(query);
             return (await model.find(filter)).map(user => user.toObject());
         },
 
@@ -38,8 +38,8 @@ export function MongoDBUserRepository(model: Model<User>): UserRepository {
             return (await model.findByIdAndDelete(toObjectId(id), {returnDocument: "before"}))?.toObject();
         },
 
-        async deleteUsersByQuery(criteria: UsersQuery): Promise<number> {
-            const filter = createUserFilter(criteria);
+        async deleteUsersByQuery(query: UsersQuery): Promise<number> {
+            const filter = createUserFilter(query);
             return (await model.deleteMany(filter)).deletedCount || 0
         },
 
@@ -50,16 +50,23 @@ export function MongoDBUserRepository(model: Model<User>): UserRepository {
     }
 }
 
-function createUserFilter(criteria: UsersQuery): FilterQuery<User> {
+export function createUserFilter(query: UsersQuery): FilterQuery<User> {
     const filter: FilterQuery<any> = {}
-    if (criteria.name) {
-        filter.name = toPatternFilter(criteria.name)
+    if (query.id) {
+        filter._id = asIdFieldFilter(query.id)
+        return filter
     }
-    if (criteria.email) {
-        filter.email = toPatternFilter(criteria.email)
+    if (query.name) {
+        filter.$or = [
+            {firstName: asFieldFilter(query.name)},
+            {lastName: asFieldFilter(query.name)},
+        ]
     }
-    if (criteria.phoneNumber) {
-        filter.phoneNumber = toPatternFilter(criteria.phoneNumber)
+    if (query.email) {
+        filter.email = asFieldFilter(query.email)
+    }
+    if (query.phoneNumber) {
+        filter.phoneNumber = asFieldFilter(query.phoneNumber)
     }
     return filter as FilterQuery<User>
 }

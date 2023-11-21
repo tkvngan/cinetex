@@ -1,8 +1,14 @@
 import {QueryUseCase} from "../UseCase";
 import {User} from "../../domain/entities";
-import {QueryCriteria, QueryPattern} from "./QueryCriteria";
+import {QueryPattern} from "./QueryCriteria";
 
-export type UsersQuery = QueryCriteria & {
+export type UsersQuery = {
+    id: string | [string];
+    name?: never;
+    email?: never;
+    phoneNumber?: never;
+} | {
+    id?: never;
     name?: string | QueryPattern;
     email?: string | QueryPattern;
     phoneNumber?: string | QueryPattern;

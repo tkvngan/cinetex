@@ -5,7 +5,7 @@ import {BookingsQuery} from "core/dist/application/queries/GetBookingsByQuery";
 
 export function GetBookingsByQueryInteractor(repositories: Repositories): GetBookingsByQuery {
     return GetBookingsByQuery(async (query: BookingsQuery): Promise<Booking[]>  => {
-        return await repositories.Booking.queryBookings(query);
+        return await repositories.Booking.getBookingsByQuery(query);
     })
 }
 

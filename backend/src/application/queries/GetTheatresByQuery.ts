@@ -4,7 +4,7 @@ import {Repositories} from "../repositories";
 
 export function GetTheatresByQueryInteractor(repositories: Repositories): GetTheatresByQuery {
     return GetTheatresByQuery(async (query: TheatresQuery): Promise<Theatre[]>  => {
-        return await repositories.Theatre.queryTheatres(query);
+        return await repositories.Theatre.getTheatresByQuery(query);
     })
 }
 

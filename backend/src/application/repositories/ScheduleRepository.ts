@@ -10,10 +10,10 @@ export interface ScheduleRepository {
 
     deleteScheduleById(id: string): Promise<Schedule | undefined>;
 
-    deleteSchedulesByQuery(criteria: SchedulesQuery): Promise<number>;
+    deleteSchedulesByQuery(query: SchedulesQuery): Promise<number>;
 
     updateScheduleById(id: string, show: Partial<Omit<Schedule, "id">>): Promise<Schedule | undefined>;
 
-    querySchedules(criteria: SchedulesQuery): Promise<Schedule[]>;
+    getSchedulesByQuery(query: SchedulesQuery): Promise<Schedule[]>;
 
 }

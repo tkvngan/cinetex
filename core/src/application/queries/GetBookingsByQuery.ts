@@ -1,13 +1,24 @@
-import {QueryCriteria, QueryRange} from "./QueryCriteria";
+import {QueryRange} from "./QueryCriteria";
 import {Booking, ShowTime} from "../../domain/entities";
 import {QueryUseCase} from "../UseCase";
+import {UsersQuery} from "./GetUsersByQuery";
+import {TheatresQuery} from "./GetTheatresByQuery";
+import {MoviesQuery} from "./GetMoviesByQuery";
 
-export type BookingsQuery = QueryCriteria & {
-    userId?: string;
-    theatreId?: string;
-    movieId?: string;
-    showDate?: string | QueryRange<string>;
-    showTime?: ShowTime[];
+export type BookingsQuery = {
+    id: string | [string];
+    user?: never;
+    theatre?: never;
+    movie?: never;
+    showDate?: never;
+    showTime?: never;
+} | {
+    id?: never;
+    user?: UsersQuery;
+    theatre?: TheatresQuery;
+    movie?: MoviesQuery;
+    showDate?: string | [string] | QueryRange<string>;
+    showTime?: string | [string] | QueryRange<string>
 }
 
 export type GetBookingsByQuery = QueryUseCase<BookingsQuery, Booking[]>

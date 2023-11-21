@@ -1,8 +1,11 @@
 import {ScheduleRepository} from "../../application/repositories";
-import {toObjectId, toRangeFilter} from "./MongoDBUtils";
+import {asArrayFieldFilter, asFieldFilter, asIdFieldFilter, toObjectId} from "./MongoDBUtils";
 import {FilterQuery, Model, SchemaDefinition, Types} from "mongoose";
-import {Schedule} from "core/dist/domain/entities";
+import {Movie, Schedule, Theatre} from "core/dist/domain/entities";
 import {SchedulesQuery} from "core/dist/application/queries";
+import {TODO} from "core/dist/utils";
+import {createMovieFilter} from "./MongoDBMovieRepository";
+import {createTheatreFilter} from "./MongoDBTheatreRepository";
 
 export const ScheduleSchemaDefinition: SchemaDefinition = {
     movieId: {type: Types.ObjectId, required: true},
@@ -13,7 +16,7 @@ export const ScheduleSchemaDefinition: SchemaDefinition = {
     showTimes: {type: [String], required: true}
 }
 
-export function MongoDBScheduleRepository(model: Model<Schedule>): ScheduleRepository {
+export function MongoDBScheduleRepository(model: Model<Schedule>, movieModel: Model<Movie>, theatreModel: Model<Theatre>): ScheduleRepository {
     return {
         async getAllSchedules(): Promise<any[]> {
             return (await model.find()).map(schedule => schedule.toObject());
@@ -23,9 +26,16 @@ export function MongoDBScheduleRepository(model: Model<Schedule>): ScheduleRepos
             return (await model.findById(toObjectId(id)))?.toObject();
         },
 
-        async querySchedules(criteria: SchedulesQuery): Promise<Schedule[]> {
-            const filter = createScheduleFilter(criteria);
-            return (await model.find(filter)).map(schedule => schedule.toObject());
+        async getSchedulesByQuery(query: SchedulesQuery): Promise<Schedule[]> {
+            const filter = createScheduleFilter(query);
+            const movieFilter = filter.movieFilter
+            const theatreFilter = filter.theatreFilter
+            delete filter.movieFilter
+            delete filter.theatreFilter
+            return (await model.find(filter)).filter(async schedule => {
+                return (!movieFilter || (await movieModel.exists({_id: schedule.movieId, ...movieFilter})))
+                    && (!theatreFilter || (await theatreModel.exists({_id: schedule.theatreId, ...theatreFilter})))
+            });
         },
 
         async addSchedule(schedule: Schedule): Promise<Schedule> {
@@ -41,8 +51,8 @@ export function MongoDBScheduleRepository(model: Model<Schedule>): ScheduleRepos
             return (await model.findByIdAndDelete(toObjectId(id), {returnDocument: "before"},))?.toObject();
         },
 
-        async deleteSchedulesByQuery(criteria: SchedulesQuery): Promise<number> {
-            const filter = createScheduleFilter(criteria);
+        async deleteSchedulesByQuery(query: SchedulesQuery): Promise<number> {
+            const filter = createScheduleFilter(query);
             return (await model.deleteMany(filter)).deletedCount || 0
         },
 
@@ -52,23 +62,40 @@ export function MongoDBScheduleRepository(model: Model<Schedule>): ScheduleRepos
         },
     }
 
-    function createScheduleFilter(criteria: SchedulesQuery): FilterQuery<Schedule> {
-        const filter: FilterQuery<any> = {}
-        if (criteria.movieId) {
-            filter.movieId = toObjectId(criteria.movieId)
-        }
-        if (criteria.theatreId) {
-            filter.theatreId = toObjectId(criteria.theatreId)
-        }
-        if (criteria.screenId) {
-            filter.screenId = criteria.screenId
-        }
-        if (criteria.showDate) {
-            filter.date = toRangeFilter(criteria.showDate)
-        }
-        if (criteria.showTime) {
-            filter.showTime = { $all: criteria.showTime }
-        }
-        return filter as FilterQuery<Schedule>
+}
+
+export function createScheduleFilter(query: SchedulesQuery): FilterQuery<Schedule> {
+    const filter: FilterQuery<any> = {}
+    if (query.id) {
+        filter._id = asIdFieldFilter(query.id)
+        return filter
     }
+    if (query.movie) {
+        if (query.movie.id) {
+            filter.moveId = asIdFieldFilter(query.movie.id)
+        } else {
+            filter.movieFilter = createMovieFilter(query.movie)
+        }
+    }
+    if (query.theatre) {
+        if (query.theatre.id) {
+            filter.theatreId = asIdFieldFilter(query.theatre.id)
+        } else {
+            filter.theatreFilter = createTheatreFilter(query.theatre)
+        }
+    }
+    if (query.screen) {
+        if (query.screen.id) {
+            filter.screenId = asFieldFilter(query.screen.id)
+        } else if (query.screen.name) {
+            filter.screenName = asFieldFilter(query.screen.name)
+        }
+    }
+    if (query.showDate) {
+        filter.showStartDate = asFieldFilter(query.showDate)
+    }
+    if (query.showTime) {
+        filter.showTimes = asArrayFieldFilter(query.showTime)
+    }
+    return filter
 }

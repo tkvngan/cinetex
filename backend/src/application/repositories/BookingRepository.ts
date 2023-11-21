@@ -17,10 +17,10 @@ export interface BookingRepository {
 
     deleteBookingById(id: string): Promise<Booking | undefined>;
 
-    deleteBookingsByQuery(criteria: BookingsQuery): Promise<number>;
+    deleteBookingsByQuery(query: BookingsQuery): Promise<number>;
 
     updateBookingById(id: string, booking: Partial<Omit<Booking, "id">>): Promise<Booking | undefined>;
 
-    queryBookings(criteria: BookingsQuery): Promise<Booking[]>;
+    getBookingsByQuery(query: BookingsQuery): Promise<Booking[]>;
 
 }
