@@ -7,7 +7,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "compile": "tsc",
-    "clean": "rm -rf ./dist",
+    "clean": "del-cli ./dist",
     "build": "yarn run compile",
     "clean-build": "yarn run clean && yarn run compile",
     "test": "jest --verbose --coverage"
