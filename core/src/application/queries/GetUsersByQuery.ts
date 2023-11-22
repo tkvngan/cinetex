@@ -1,6 +1,6 @@
 import {QueryUseCase} from "../UseCase";
 import {User} from "../../domain/entities";
-import {QueryPattern} from "./QueryCriteria";
+import {ByPattern} from "./QueryCriteria";
 
 export type UsersQuery = {
     id: string | [string];
@@ -9,9 +9,9 @@ export type UsersQuery = {
     phoneNumber?: never;
 } | {
     id?: never;
-    name?: string | QueryPattern;
-    email?: string | QueryPattern;
-    phoneNumber?: string | QueryPattern;
+    name?: string | ByPattern;
+    email?: string | ByPattern;
+    phoneNumber?: string | ByPattern;
 }
 
 export type GetUsersByQuery = QueryUseCase<UsersQuery, User[]>

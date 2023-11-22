@@ -1,4 +1,4 @@
-import {QueryPattern, QueryRange} from "./QueryCriteria";
+import {ByPattern, ByRange} from "./QueryCriteria";
 import {QueryUseCase} from "../UseCase";
 import {Theatre} from "../../domain/entities";
 
@@ -9,9 +9,9 @@ export type TheatresQuery = {
     screenCount?: never;
 } | {
     id?: never;
-    name?: string | [string] |QueryPattern;
-    location?: QueryPattern;
-    screenCount?: number | QueryRange<number>;
+    name?: string | [string] |ByPattern;
+    location?: ByPattern;
+    screenCount?: number | ByRange<number>;
 }
 
 export type GetTheatresByQuery = QueryUseCase<TheatresQuery, Theatre[]>

@@ -1,6 +1,6 @@
 import {QueryUseCase} from "../UseCase";
 import {Schedule} from "../../domain/entities";
-import {QueryPattern, QueryRange} from "./QueryCriteria";
+import {ByPattern, ByRange} from "./QueryCriteria";
 import {TheatresQuery} from "./GetTheatresByQuery";
 import {MoviesQuery} from "./GetMoviesByQuery";
 
@@ -15,9 +15,9 @@ export type SchedulesQuery = {
     id?: never;
     movie?: MoviesQuery
     theatre?: TheatresQuery
-    screen?: { id: number | [number]; name?: never } | { name: string | QueryPattern; id?: never };
-    showDate?: string | [string] | QueryRange<string>;
-    showTime?: string | [string] | QueryRange<string>;
+    screen?: { id: number | [number]; name?: never } | { name: string | ByPattern; id?: never };
+    showDate?: string | [string] | ByRange<string>;
+    showTime?: string | [string] | ByRange<string>;
 }
 
 export type GetSchedulesByQuery = QueryUseCase<SchedulesQuery, Schedule[]>

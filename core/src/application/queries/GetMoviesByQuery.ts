@@ -1,4 +1,4 @@
-import {QueryPattern, QueryRange} from "./QueryCriteria";
+import {ByPattern, ByRange} from "./QueryCriteria";
 import {Genre, Movie, Rating} from "../../domain/entities";
 import {QueryUseCase} from "../UseCase";
 
@@ -12,12 +12,12 @@ export type MoviesQuery = {
     releaseDate?: never;
 } | {
     id?: never;
-    name?: string | [string] | QueryPattern;
+    name?: string | [string] | ByPattern;
     genre?: Genre | Genre[];
     rating?: Rating | Rating[];
-    director?: string | [string] | QueryPattern;
-    cast?: string | string[] | QueryPattern;
-    releaseDate?: string | string[] | QueryRange<string>;
+    director?: string | [string] | ByPattern;
+    cast?: string | string[] | ByPattern;
+    releaseDate?: string | string[] | ByRange<string>;
 }
 
 export type GetMoviesByQuery = QueryUseCase<MoviesQuery, Movie[]>
