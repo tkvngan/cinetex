@@ -1,5 +1,5 @@
 import {User} from "cinetex-core/dist/domain/entities";
-import {UsersQuery, GetUsersByQuery} from "cinetex-core/dist/application/queries";
+import {GetUsersByQuery, UsersQuery} from "cinetex-core/dist/application/queries";
 import {Repositories} from "../repositories";
 
 export function GetUsersByQueryInteractor(repositories: Repositories): GetUsersByQuery {

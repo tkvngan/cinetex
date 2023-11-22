@@ -1,4 +1,4 @@
-import { Theatre } from 'cinetex-core/dist/domain/entities';
+import {Theatre} from 'cinetex-core/dist/domain/entities';
 
 export function generateScreen(id: number, name: string) {
     const rowCount = 5 * Math.trunc(Math.random() * 3 + 3);

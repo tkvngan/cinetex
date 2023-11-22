@@ -3,7 +3,6 @@ import {asArrayFieldFilter, asFieldFilter, asIdFieldFilter, toObjectId} from "./
 import {FilterQuery, Model, SchemaDefinition, Types} from "mongoose";
 import {Movie, Schedule, Theatre} from "cinetex-core/dist/domain/entities";
 import {SchedulesQuery} from "cinetex-core/dist/application/queries";
-import {TODO} from "cinetex-core/dist/utils";
 import {createMovieFilter} from "./MongoDBMovieRepository";
 import {createTheatreFilter} from "./MongoDBTheatreRepository";
 

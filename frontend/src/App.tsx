@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {BrowserRouter, Link, Route, Routes, useLocation} from "react-router-dom";
 import {UseCaseCollections} from "cinetex-core/dist/application";
 import MoviesView from "./views/MoviesView";

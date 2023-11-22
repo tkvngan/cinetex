@@ -1,5 +1,3 @@
-import fs from "fs";
-import {generateScreen} from "./generate-screens";
 import {Schedule, Theatre, TimeSlot} from "cinetex-core/dist/domain/entities";
 import {ObjectId} from "mongodb";
 

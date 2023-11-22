@@ -1,6 +1,6 @@
-import { FilterQuery, Types } from "mongoose";
-import { ByPattern, ByRange } from "cinetex-core/dist/application/queries/QueryCriteria";
-import { error } from "cinetex-core/dist/utils";
+import {Types} from "mongoose";
+import {ByPattern, ByRange} from "cinetex-core/dist/application/queries/QueryCriteria";
+import {error} from "cinetex-core/dist/utils";
 
 export function toObjectId(id: string) {
     return new Types.ObjectId(id);

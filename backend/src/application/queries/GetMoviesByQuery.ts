@@ -1,4 +1,4 @@
-import {MoviesQuery, GetMoviesByQuery} from "cinetex-core/dist/application/queries";
+import {GetMoviesByQuery, MoviesQuery} from "cinetex-core/dist/application/queries";
 import {Movie} from "cinetex-core/dist/domain/entities";
 import {Repositories} from "../repositories";
 
