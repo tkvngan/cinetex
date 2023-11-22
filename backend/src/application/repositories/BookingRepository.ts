@@ -1,5 +1,5 @@
-import {Booking} from "core/dist/domain/entities/Booking";
-import {BookingsQuery} from "core/dist/application/queries";
+import {Booking} from "cinetex-core/dist/domain/entities/Booking";
+import {BookingsQuery} from "cinetex-core/dist/application/queries";
 
 export interface BookingRepository {
 

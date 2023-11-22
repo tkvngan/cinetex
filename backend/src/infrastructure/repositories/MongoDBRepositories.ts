@@ -1,6 +1,6 @@
 import mongoose, {ConnectOptions, Model, Mongoose, Schema, SchemaDefinition, SchemaDefinitionType} from "mongoose";
 import {Repositories} from "../../application/repositories";
-import {Booking, MediaContent, Movie, Schedule, Theatre, User} from "core/dist/domain/entities";
+import {Booking, MediaContent, Movie, Schedule, Theatre, User} from "cinetex-core/dist/domain/entities";
 import {MongoDBMovieRepository, MovieSchemaDefinition} from "./MongoDBMovieRepository";
 import {MongoDBTheatreRepository, TheatreSchemaDefinition} from "./MongoDBTheatreRepository";
 import {MongoDBScheduleRepository, ScheduleSchemaDefinition} from "./MongoDBScheduleRepository";

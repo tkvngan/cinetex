@@ -1,5 +1,5 @@
 import {QueryRange} from "./QueryCriteria";
-import {Booking, ShowTime} from "../../domain/entities";
+import {Booking} from "../../domain/entities";
 import {QueryUseCase} from "../UseCase";
 import {UsersQuery} from "./GetUsersByQuery";
 import {TheatresQuery} from "./GetTheatresByQuery";

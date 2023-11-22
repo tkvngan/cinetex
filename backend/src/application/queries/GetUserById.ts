@@ -1,6 +1,6 @@
-import {User} from "core/dist/domain/entities";
+import {User} from "cinetex-core/dist/domain/entities";
 import {Repositories} from "../repositories";
-import {GetUserById} from "core/dist/application/queries";
+import {GetUserById} from "cinetex-core/dist/application/queries";
 
 export function GetUserByIdInteractor(repositories: Repositories): GetUserById {
     return GetUserById(async (query: { id: string }): Promise<User | undefined>  => {

@@ -1,5 +1,5 @@
-import {TheatresQuery, GetTheatresByQuery} from "core/dist/application/queries";
-import {Theatre} from "core/dist/domain/entities";
+import {TheatresQuery, GetTheatresByQuery} from "cinetex-core/dist/application/queries";
+import {Theatre} from "cinetex-core/dist/domain/entities";
 import {Repositories} from "../repositories";
 
 export function GetTheatresByQueryInteractor(repositories: Repositories): GetTheatresByQuery {

@@ -1,19 +1,22 @@
 import {ScheduleRepository} from "../../application/repositories";
 import {asArrayFieldFilter, asFieldFilter, asIdFieldFilter, toObjectId} from "./MongoDBUtils";
 import {FilterQuery, Model, SchemaDefinition, Types} from "mongoose";
-import {Movie, Schedule, Theatre} from "core/dist/domain/entities";
-import {SchedulesQuery} from "core/dist/application/queries";
-import {TODO} from "core/dist/utils";
+import {Movie, Schedule, Theatre} from "cinetex-core/dist/domain/entities";
+import {SchedulesQuery} from "cinetex-core/dist/application/queries";
+import {TODO} from "cinetex-core/dist/utils";
 import {createMovieFilter} from "./MongoDBMovieRepository";
 import {createTheatreFilter} from "./MongoDBTheatreRepository";
+
+export const TimeSlotSchemaDefinition = {
+    date: {type: String, required: true},
+    times: {type: [String], required: true}
+}
 
 export const ScheduleSchemaDefinition: SchemaDefinition = {
     movieId: {type: Types.ObjectId, required: true},
     theatreId: {type: Types.ObjectId, required: true},
     screenId: {type: Number, required: true},
-    showStartDate: {type: String, required: true},
-    showEndDate: {type: String, required: true},
-    showTimes: {type: [String], required: true}
+    showTimes: {type: [TimeSlotSchemaDefinition], required: true}
 }
 
 export function MongoDBScheduleRepository(model: Model<Schedule>, movieModel: Model<Movie>, theatreModel: Model<Theatre>): ScheduleRepository {

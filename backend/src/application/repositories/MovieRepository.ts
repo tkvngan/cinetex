@@ -1,5 +1,5 @@
-import {Movie} from "core/dist/domain/entities/Movie";
-import {MoviesQuery} from "core/dist/application/queries";
+import {Movie} from "cinetex-core/dist/domain/entities/Movie";
+import {MoviesQuery} from "cinetex-core/dist/application/queries";
 
 export interface MovieRepository {
 

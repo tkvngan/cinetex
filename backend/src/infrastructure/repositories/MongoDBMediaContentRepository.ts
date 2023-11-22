@@ -1,7 +1,7 @@
 import {MediaContentRepository} from "../../application/repositories";
 import {Model, SchemaDefinition} from "mongoose";
-import {MediaContent} from "core/dist/domain/entities";
-import {TODO} from "core/dist/utils";
+import {MediaContent} from "cinetex-core/dist/domain/entities";
+import {TODO} from "cinetex-core/dist/utils";
 
 
 export const MediaContentSchemaDefinition: SchemaDefinition = {

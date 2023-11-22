@@ -1,5 +1,5 @@
 import {QueryUseCase} from "../UseCase";
-import {Schedule, ShowTime} from "../../domain/entities";
+import {Schedule} from "../../domain/entities";
 import {QueryPattern, QueryRange} from "./QueryCriteria";
 import {TheatresQuery} from "./GetTheatresByQuery";
 import {MoviesQuery} from "./GetMoviesByQuery";

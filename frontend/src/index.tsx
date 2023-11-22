@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import axios from "axios";
 import App from "./App";
-import {AxiosUseCaseInteractorCollections} from "shared/dist/infrastructure/interactors";
+import {AxiosUseCaseInteractorCollections} from "cinetex-shared/dist/infrastructure/interactors";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/index.css";
 

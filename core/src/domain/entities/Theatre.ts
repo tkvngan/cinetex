@@ -17,6 +17,7 @@ export type Screen = Readonly<{
     name: string;
     rows: number;
     columns: number;
+    frontRows: number;
     sideColumns: number;
     seats: readonly SeatType[][];
     imageUrl?: string;
@@ -27,4 +28,5 @@ export enum SeatType {
     Economy = 1,
     Standard = 2,
     Luxury = 3,
+    Wheelchair = 4,
 }

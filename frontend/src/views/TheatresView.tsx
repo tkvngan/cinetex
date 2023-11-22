@@ -1,5 +1,5 @@
-import {UseCaseCollections} from "core/dist/application";
-import {Theatre} from "core/dist/domain/entities";
+import {UseCaseCollections} from "cinetex-core/dist/application";
+import {Theatre} from "cinetex-core/dist/domain/entities";
 import {useEffect, useState} from "react";
 import "../css/TheatresView.css"
 

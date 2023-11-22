@@ -1,8 +1,8 @@
 import {MovieRepository} from "../../application/repositories";
 import {asArrayFieldFilter, asFieldFilter, asIdFieldFilter, toObjectId} from "./MongoDBUtils";
 import {FilterQuery, Model, SchemaDefinition} from "mongoose";
-import {Movie} from "core/dist/domain/entities/Movie";
-import {MoviesQuery} from "core/dist/application/queries";
+import {Movie} from "cinetex-core/dist/domain/entities/Movie";
+import {MoviesQuery} from "cinetex-core/dist/application/queries";
 
 export const MovieSchemaDefinition: SchemaDefinition = {
     name: {type: String, required: true, unique: true, index: true},

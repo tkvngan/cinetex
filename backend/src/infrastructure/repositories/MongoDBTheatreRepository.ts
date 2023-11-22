@@ -1,8 +1,8 @@
 import {TheatreRepository} from "../../application/repositories";
 import {asFieldFilter, asIdFieldFilter, toObjectId} from "./MongoDBUtils";
 import {FilterQuery, Model, SchemaDefinition} from "mongoose";
-import {Theatre} from "core/dist/domain/entities";
-import {TheatresQuery} from "core/dist/application/queries";
+import {Theatre} from "cinetex-core/dist/domain/entities";
+import {TheatresQuery} from "cinetex-core/dist/application/queries";
 
 const AddressDefinition: SchemaDefinition = {
     street: {type: String, required: true},
@@ -15,6 +15,7 @@ const ScreenDefinition: SchemaDefinition = {
     name: {type: String, required: true},
     rows: {type: Number, required: true},
     columns: {type: Number, required: true},
+    frontRows: {type: Number, required: true},
     sideColumns: {type: Number, required: true},
     seats: {type: [[Number]], required: true},
     imageUrl: {type: String, required: false}

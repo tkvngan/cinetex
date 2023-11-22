@@ -1,4 +1,4 @@
-import {UseCase, UseCaseCollections} from "core/dist/application";
+import {UseCase, UseCaseCollections} from "cinetex-core/dist/application";
 import {Repositories} from "./repositories";
 import {QueryUseCaseInteractors} from "./QueryUseCaseInteractors";
 import {CommandUseCaseInteractors} from "./CommandUseCaseInteractors";

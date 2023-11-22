@@ -1,5 +1,5 @@
 import {Repositories} from "./repositories";
-import {QueryUseCaseCollection, UseCaseCollection} from "core/dist/application";
+import {QueryUseCaseCollection, UseCaseCollection} from "cinetex-core/dist/application";
 import * as interactors from "./queries";
 
 export function QueryUseCaseInteractors(repositories: Repositories): QueryUseCaseCollection {

@@ -1,4 +1,4 @@
-import {UseCaseCollections} from "core/dist/application";
+import {UseCaseCollections} from "cinetex-core/dist/application";
 import React from "react";
 import "../css/ScheduleView.css"
 

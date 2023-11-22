@@ -1,5 +1,5 @@
-import {MoviesQuery, GetMoviesByQuery} from "core/dist/application/queries";
-import {Movie} from "core/dist/domain/entities";
+import {MoviesQuery, GetMoviesByQuery} from "cinetex-core/dist/application/queries";
+import {Movie} from "cinetex-core/dist/domain/entities";
 import {Repositories} from "../repositories";
 
 export function GetMoviesByQueryInteractor(repositories: Repositories): GetMoviesByQuery {

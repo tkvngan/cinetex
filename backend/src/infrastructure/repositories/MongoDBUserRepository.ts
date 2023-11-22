@@ -1,8 +1,8 @@
 import {UserRepository} from "../../application/repositories";
 import {asFieldFilter, asIdFieldFilter, toObjectId} from "./MongoDBUtils";
 import {FilterQuery, Model, SchemaDefinition} from "mongoose";
-import {User} from "core/dist/domain/entities/User";
-import {UsersQuery} from "core/dist/application/queries";
+import {User} from "cinetex-core/dist/domain/entities/User";
+import {UsersQuery} from "cinetex-core/dist/application/queries";
 
 export const UserSchemaDefinition: SchemaDefinition = {
     firstName: {type: String, required: true},

@@ -1,6 +1,6 @@
-import {UseCaseCollections} from "core/dist/application";
+import {UseCaseCollections} from "cinetex-core/dist/application";
 import React, {useEffect, useState} from "react";
-import {Movie} from "core/dist/domain/entities";
+import {Movie} from "cinetex-core/dist/domain/entities";
 import * as Icons from 'react-bootstrap-icons';
 import "../css/MoviesView.css"
 

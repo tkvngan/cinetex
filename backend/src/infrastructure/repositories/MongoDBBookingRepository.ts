@@ -1,9 +1,9 @@
 import {BookingRepository} from "../../application/repositories";
 import {FilterQuery, Model, SchemaDefinition, Types} from "mongoose";
 import {toObjectId, asFieldFilter, asIdFieldFilter,} from "./MongoDBUtils";
-import {Booking, Movie, Schedule, Theatre, User} from "core/dist/domain/entities";
-import {BookingsQuery, MoviesQuery, TheatresQuery} from "core/dist/application/queries";
-import {TODO} from "core/dist/utils";
+import {Booking, Movie, Schedule, Theatre, User} from "cinetex-core/dist/domain/entities";
+import {BookingsQuery, MoviesQuery, TheatresQuery} from "cinetex-core/dist/application/queries";
+import {TODO} from "cinetex-core/dist/utils";
 import {createTheatreFilter} from "./MongoDBTheatreRepository";
 import {createMovieFilter} from "./MongoDBMovieRepository";
 import {createUserFilter} from "./MongoDBUserRepository";

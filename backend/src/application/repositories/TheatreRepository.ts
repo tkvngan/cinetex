@@ -1,5 +1,5 @@
-import {Theatre} from "core/dist/domain/entities/Theatre";
-import {TheatresQuery} from "core/dist/application/queries";
+import {Theatre} from "cinetex-core/dist/domain/entities/Theatre";
+import {TheatresQuery} from "cinetex-core/dist/application/queries";
 
 export interface TheatreRepository {
     getAllTheatres(): Promise<Theatre[]>;

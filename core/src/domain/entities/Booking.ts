@@ -1,8 +1,5 @@
 import {Entity, Id} from "../types";
-import {ShowTime} from "./Schedule";
 import {Column, Row, Theatre} from "./Theatre";
-import {User} from "./User";
-import {Movie} from "./Movie";
 
 export type Booking = Entity & Readonly<{
     id: Id
@@ -17,7 +14,7 @@ export type Ticket = Readonly<{
     movieId: Id,
     screenId: number
     showDate: string
-    showTime: ShowTime
+    showTime: string
     seat: SeatPosition
     price: number,
 }>

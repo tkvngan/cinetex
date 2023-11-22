@@ -1,6 +1,6 @@
-import {Theatre} from "core/dist/domain/entities";
+import {Theatre} from "cinetex-core/dist/domain/entities";
 import {Repositories} from "../repositories";
-import {GetTheatreByName} from "core/dist/application/queries";
+import {GetTheatreByName} from "cinetex-core/dist/application/queries";
 
 export function GetTheatreByNameInteractor(repositories: Repositories): GetTheatreByName {
     return GetTheatreByName(async (query: { name: string }): Promise<Theatre | undefined>  => {
