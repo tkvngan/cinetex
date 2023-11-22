@@ -1,5 +1,5 @@
 import { FilterQuery, Types } from "mongoose";
-import { QueryPattern, QueryRange } from "cinetex-core/dist/application/queries/QueryCriteria";
+import { ByPattern, ByRange } from "cinetex-core/dist/application/queries/QueryCriteria";
 import { error } from "cinetex-core/dist/utils";
 
 export function toObjectId(id: string) {
@@ -13,12 +13,12 @@ export function asIdFieldFilter(id: string | string[]) {
     return { $eq: toObjectId(id) };
 }
 
-export function asArrayFieldFilter<T>(value: T | T[] | QueryPattern) {
+export function asArrayFieldFilter<T>(value: T | T[] | ByPattern) {
     if (Array.isArray(value)) {
         return { $all: value }
     }
     if (value instanceof Object) {
-        value = value as QueryPattern
+        value = value as ByPattern
         if (value.pattern) {
             return { $elemMatch: { $regex: value.pattern, $options: value.options } }
         }
@@ -27,7 +27,7 @@ export function asArrayFieldFilter<T>(value: T | T[] | QueryPattern) {
     return { $all: [value] };
 }
 
-export function asFieldFilter<T>(value: T | T[] | QueryRange<T> | QueryPattern | { min?: any; max?: any; pattern?: any; options?: any }) {
+export function asFieldFilter<T>(value: T | T[] | ByRange<T> | ByPattern | { min?: any; max?: any; pattern?: any; options?: any }) {
     if (Array.isArray(value)) {
         return { $in: value }
     }
