@@ -3,23 +3,42 @@ import {Entity, Id} from "../types";
 export type Movie = Entity & Readonly<{
     id: Id;
     name: string;
-    duration: number;
-    synopsis: string;
-    director: string;
-    cast: readonly string[];
+    title: string;
     releaseDate: string;
-    rating: Rating;
-    genres: readonly Genre[];
-    imageUrl?: string;
+    runtimeInMinutes: number;
+    genres: string[];
+    synopsis?: string;
+    starring?: string;
+    director?: string;
+    producers?: string;
+    writers?: string;
+    ratings: Rating[];
+
+    billboard?: Billboard;
+    warning?: string;
+    languageCode: string;
+    movieLanguage: string;
+    movieSubtitleLanguage?: string;
+
+    smallPosterImageUrl?: string;
+    mediumPosterImageUrl?: string;
+    largePosterImageUrl?: string;
     trailerUrl?: string;
+
+    cineplexId?: number;
 }>
 
-export type Rating = 'G' | 'PG' | 'PG-13' | 'R' | 'NC-17';
+export type Rating = Readonly<{
+    provinceCode: string
+    warnings: string[]
+    rating: string
+    ratingDescription: string
+}>
 
-export type Genre = 'Action' | 'Adventure' | 'Comedy' | 'Drama' | 'Fantasy' | 'Horror' | 'Mystery' | 'Thriller' | 'Sci-Fi' | 'Animation' | 'Biography' | 'Crime' | 'History'
-
-export const Ratings: readonly Rating[] = ['G', 'PG', 'PG-13', 'R', 'NC-17'];
-
-export const Genres: readonly Genre[] = ['Action', 'Adventure', 'Comedy', 'Drama', 'Fantasy', 'Horror', 'Mystery', 'Thriller', 'Sci-Fi', 'Animation', 'Biography', 'Crime', 'History'];
-
-
+export type Billboard = Readonly<{
+    alt?: string
+    mobileImageUrl?: string
+    tabletImageUrl?: string
+    desktopImageUrl?: string
+    largeDesktopImageUrl?: string
+}>

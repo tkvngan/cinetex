@@ -4,17 +4,46 @@ import {FilterQuery, Model, SchemaDefinition} from "mongoose";
 import {Movie} from "cinetex-core/dist/domain/entities/Movie";
 import {MoviesQuery} from "cinetex-core/dist/application/queries";
 
-export const MovieSchemaDefinition: SchemaDefinition = {
-    name: {type: String, required: true, unique: true, index: true},
-    duration: {type: Number, required: true},
-    synopsis: {type: String, required: true},
-    director: {type: String, required: true},
-    cast: {type: [String], required: true},
-    releaseDate: {type: String, required: true},
+export const RatingSchemaDefinition: SchemaDefinition = {
+    provinceCode: {type: String, required: true},
+    warnings: {type: [String], required: true},
     rating: {type: String, required: true},
+    ratingDescription: {type: String, required: true},
+}
+
+export const BillboardSchemaDefinition: SchemaDefinition = {
+    alt: {type: String, required: false},
+    mobileImageUrl: {type: String, required: false},
+    tabletImageUrl: {type: String, required: false},
+    desktopImageUrl: {type: String, required: false},
+    largeDesktopImageUrl: {type: String, required: false},
+}
+
+export const MovieSchemaDefinition: SchemaDefinition = {
+    name: {type: String, required: true},
+    title: {type: String, required: true},
+    releaseDate: {type: String, required: true},
+    runtimeInMinutes: {type: Number, required: true},
     genres: {type: [String], required: true},
-    imageUrl: {type: String, required: false},
+    synopsis: {type: String, required: false},
+    starring: {type: String, required: false},
+    director: {type: String, required: false},
+    producers: {type: String, required: false},
+    writers: {type: String, required: false},
+    ratings: {type: [RatingSchemaDefinition], required: true},
+
+    billboard: {type: BillboardSchemaDefinition, required: false},
+    warning: {type: String, required: false},
+    languageCode: {type: String, required: true},
+    movieLanguage: {type: String, required: true},
+    movieSubtitleLanguage: {type: String, required: false},
+
+    smallPosterImageUrl: {type: String, required: false},
+    mediumPosterImageUrl: {type: String, required: false},
+    largePosterImageUrl: {type: String, required: false},
     trailerUrl: {type: String, required: false},
+
+    cineplexId: {type: Number, required: false},
 }
 
 export function createMovieFilter(query: MoviesQuery): FilterQuery<Movie> {
@@ -29,14 +58,11 @@ export function createMovieFilter(query: MoviesQuery): FilterQuery<Movie> {
     if (query.genre) {
         filter.genres = asArrayFieldFilter(query.genre)
     }
-    if (query.rating) {
-        filter.rating = asFieldFilter(query.rating)
-    }
     if (query.director) {
         filter.director = asFieldFilter(query.director)
     }
-    if (query.cast) {
-        filter.cast = asArrayFieldFilter(query.cast)
+    if (query.starring) {
+        filter.starring = asArrayFieldFilter(query.starring)
     }
     if (query.releaseDate) {
         filter.releaseDate = asFieldFilter(query.releaseDate)

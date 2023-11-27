@@ -24,6 +24,7 @@
     "jsx": "react-jsx",
     "outDir": "./dist",
     "rootDir": "./src",
+    "jsxImportSource": "@emotion/react"
   },
   "include": ["./src/**/*"],
   "exclude": ["node_modules", "dist", "build"]

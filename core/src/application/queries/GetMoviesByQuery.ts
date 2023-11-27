@@ -1,22 +1,20 @@
 import {ByPattern, ByRange} from "./QueryCriteria";
-import {Genre, Movie, Rating} from "../../domain/entities";
+import {Movie} from "../../domain/entities";
 import {QueryUseCase} from "../UseCase";
 
 export type MoviesQuery = {
     id: string | [string];
     name?: never;
     genre?: never;
-    rating?: never;
     director?: never;
-    cast?: never;
+    starring?: never;
     releaseDate?: never;
 } | {
     id?: never;
     name?: string | [string] | ByPattern;
-    genre?: Genre | Genre[];
-    rating?: Rating | Rating[];
+    genre?: string | string[];
     director?: string | [string] | ByPattern;
-    cast?: string | string[] | ByPattern;
+    starring?: string | string[] | ByPattern;
     releaseDate?: string | string[] | ByRange<string>;
 }
 

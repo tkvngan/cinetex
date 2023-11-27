@@ -27,7 +27,7 @@ export async function installSamples<T>(fileName: string, deleteAll: (command?: 
 
 export async function installAllSamples(repositories: Repositories): Promise<void> {
     const {Movie, Schedule, Theatre} = repositories
-    await installSamples<Movie>("SampleMovies.json", Movie.deleteAllMovies, Movie.addMovie, Movie.getAllMovies)
-    await installSamples("SampleTheatres.json", ()=>Theatre.deleteTheatresByQuery({}), Theatre.addTheatre, Theatre.getAllTheatres)
-    await installSamples("SampleSchedules.json", ()=>Schedule.deleteSchedulesByQuery({}), Schedule.addSchedule, Schedule.getAllSchedules)
+    await installSamples<Movie>("data/movies.json", Movie.deleteAllMovies, Movie.addMovie, Movie.getAllMovies)
+    await installSamples("data/theatres.json", ()=>Theatre.deleteTheatresByQuery({}), Theatre.addTheatre, Theatre.getAllTheatres)
+    // await installSamples("SampleSchedules.json", ()=>Schedule.deleteSchedulesByQuery({}), Schedule.addSchedule, Schedule.getAllSchedules)
 }

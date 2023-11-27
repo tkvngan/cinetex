@@ -4,8 +4,9 @@ import reportWebVitals from './reportWebVitals';
 import axios from "axios";
 import App from "./App";
 import {AxiosUseCaseInteractorCollections} from "cinetex-shared/dist/infrastructure/interactors";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./css/index.css";
+require("bootstrap/dist/css/bootstrap.min.css");
+require("bootstrap/dist/js/bootstrap.bundle.min.js");
+require("./css/index.css");
 
 const client = axios.create({
     baseURL: "/service",
