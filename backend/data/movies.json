@@ -1,0 +1,4912 @@
+[{
+  "id": "6563a43f92c740d467db925b",
+  "name": "All Of Us Strangers",
+  "title": "All Of Us Strangers",
+  "releaseDate": "2024-01-05",
+  "runtimeInMinutes": 999,
+  "genres": [
+    "Drama"
+  ],
+  "starring": "Andrew Scott, Paul Mescal",
+  "director": "Andrew Haigh",
+  "producers": "Graham Broadbent, Peter Czernin, Sarah Harvey",
+  "writers": "Andrew Haigh",
+  "ratings": [],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35693_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35693_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35693_768_1024.jpg",
+  "cineplexId": 35693
+},
+{
+  "id": "6563a43f92c740d467db925d",
+  "name": "American Fiction",
+  "title": "American Fiction",
+  "releaseDate": "2023-12-15",
+  "runtimeInMinutes": 116,
+  "genres": [
+    "Comedy",
+    "Drama"
+  ],
+  "synopsis": "Jeffrey Wright stars as author Thelonious 'Monk' Ellison in this smart comedy that marks acclaimed writer Cord Jefferson's (Watchmen, Master of None, Succession) feature directorial debut, based on Percival Everett's award-winning novel Erasure.",
+  "starring": "Jeffrey Wright, Tracee Ellis Ross, Leslie Uggams, Erika Alexander, Adam Brody, John Ortiz, Myra Lucretia Taylor, Sterling K. Brown, Issa Rae",
+  "director": "Cord Jefferson",
+  "producers": "Ben LeClair, Nikos Karamigios, Cord Jefferson, Jermaine Johnson",
+  "writers": "Cord Jefferson",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age and older."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [
+        "Mature Theme",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [
+        "Mature Theme",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [
+        "Mature Theme",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [
+        "Mature Theme",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [],
+      "rating": "13ans+",
+      "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
+    }
+  ],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35841_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35841_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35841_768_1024.jpg",
+  "cineplexId": 35841
+},
+{
+  "id": "6563a43f92c740d467db9269",
+  "name": "Anatomy of a Fall",
+  "title": "Anatomy of a Fall",
+  "releaseDate": "2023-10-20",
+  "runtimeInMinutes": 152,
+  "genres": [
+    "Drama",
+    "Thriller"
+  ],
+  "synopsis": "For the past year, Sandra, her husband Samuel, and their eleven-year-old son Daniel have lived a secluded life in a remote town in the French Alps. When Samuel is found dead in the snow below their chalet, the police question whether he was murdered or committed suicide. Samuel's suspicious death is presumed murder, and Sandra becomes the main suspect. Little by little, the trial becomes not just an investigation into the circumstances of Samuel's death but an unsettling psychological journey into the depths of Sandra and Samuel's conflicted relationship.",
+  "starring": "Swann Ariaud, Sandra Hüller, Milo Machado Graner",
+  "director": "Justine Triet",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Violence",
+        "Coarse Language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Violence",
+        "Coarse Language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [
+        "Mature Theme",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [
+        "Mature Theme",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [
+        "Mature Theme",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Violence",
+        "Coarse Language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [
+        "Mature Theme",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [
+        "Not Recommended for Young Children"
+      ],
+      "rating": "G",
+      "ratingDescription": "May be viewed by persons of all ages."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [
+        "Violence",
+        "Coarse Language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    }
+  ],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35705_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35705_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35705_768_1024.jpg",
+  "cineplexId": 35705
+},
+{
+  "id": "6563a43f92c740d467db9275",
+  "name": "Animal (Hindi w/e.s.t.)",
+  "title": "Animal (Hindi w/e.s.t.)",
+  "releaseDate": "2023-12-01",
+  "runtimeInMinutes": 192,
+  "genres": [
+    "Action",
+    "Drama",
+    "International"
+  ],
+  "synopsis": "ANIMAL revolves around a troubled father-son relationship, set in the backdrop of the underworld.",
+  "starring": "Ranbir Kapoor, Anil Kapoor, Bobby Deol, Rashmika Mandanna",
+  "director": "Sandeep Reddy Vanga",
+  "ratings": [],
+  "languageCode": "HI",
+  "movieLanguage": "Hindi",
+  "movieSubtitleLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35977_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35977_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35977_768_1024.jpg",
+  "cineplexId": 35977
+},
+{
+  "id": "6563a43f92c740d467db9277",
+  "name": "Anyone But You",
+  "title": "Anyone But You",
+  "releaseDate": "2023-12-22",
+  "runtimeInMinutes": 999,
+  "genres": [
+    "Comedy"
+  ],
+  "synopsis": "In the edgy comedy Anyone But You, Bea (Sydney Sweeney) and Ben (Glen Powell) look like the perfect couple, but after an amazing first date something happens that turns their fiery hot attraction ice cold — until they find themselves unexpectedly thrust together at a destination wedding in Australia. So they do what any two mature adults would do: pretend to be a couple. ",
+  "starring": "Sydney Sweeney, Glen Powell, Alexandra Shipp, GaTa, Hadley Robinson, Michelle Hurd, Dermot Mulroney, Darren Barnet and Rachel Griffiths",
+  "director": "Will Gluck",
+  "producers": "Will Gluck, Joe Roth, Jeffrey Kirschenbaum",
+  "writers": "Will Gluck, Ilana Wolpert",
+  "ratings": [],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35322_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35322_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35322_768_1024.jpg",
+  "cineplexId": 35322
+},
+{
+  "id": "6563a43f92c740d467db9279",
+  "name": "Aquaman And The Lost Kingdom",
+  "title": "Aquaman And The Lost Kingdom",
+  "releaseDate": "2023-12-22",
+  "runtimeInMinutes": 999,
+  "genres": [
+    "Action",
+    "Adventure",
+    "Sequel",
+    "Adaptation"
+  ],
+  "synopsis": "Action Adventure. When an ancient power is unleashed, Aquaman must forge an uneasy alliance with an unlikely ally to protect Atlantis, and the world, from irreversible\ndevastation.",
+  "starring": "Jason Momoa, Amber Heard, Patrick Wilson, Dolph Lundgren, Yahya Abdul-Mateen II, Ben Affleck, Johan “Pilou” Asbaek, Nicole Kidman, Temuera Morrison, Randall Park, Indya Moore,Vincent Regan, Willem Dafoe",
+  "director": "James Wan",
+  "producers": "James Wan, Peter Safran, Rob Cowan",
+  "writers": "David Leslie Johnson",
+  "ratings": [],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/30622_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/30622_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/30622_768_1024.jpg",
+  "cineplexId": 30622
+},
+{
+  "id": "6563a43f92c740d467db927b",
+  "name": "Bandra (Malayalam w/e.s.t.)",
+  "title": "Bandra (Malayalam w/e.s.t.)",
+  "releaseDate": "2023-11-10",
+  "runtimeInMinutes": 155,
+  "genres": [
+    "Action",
+    "International",
+    "Romance",
+    "Thriller"
+  ],
+  "synopsis": "Dileep plays the role of a gangster who is torn between his emotions and his profession in this head vs heart tale.",
+  "starring": "Dileep, Tamannaah, Amika Shali, Sarathkumar, Siddique etc.",
+  "director": "Arun Gopy",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to Classification"
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification"
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Violence",
+        "Coarse Language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject To Classification"
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    }
+  ],
+  "languageCode": "ML",
+  "movieLanguage": "Malayalam",
+  "movieSubtitleLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36015_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36015_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36015_768_1024.jpg",
+  "cineplexId": 36015
+},
+{
+  "id": "6563a43f92c740d467db9287",
+  "name": "Barbie",
+  "title": "Barbie",
+  "releaseDate": "2023-07-21",
+  "runtimeInMinutes": 114,
+  "genres": [
+    "Comedy",
+    "Adaptation",
+    "Family"
+  ],
+  "synopsis": "Eccentric and individualistic, Barbie is exiled from Barbieland because of her imperfections. When her home world is in peril, Barbie returns with the knowledge that what makes her different also makes her stronger.",
+  "starring": "Margot Robbie, Ryan Gosling, Will Ferrell, Kate McKinnon, America Ferrera, Ariana Greenblatt, Emma Mackey, Alexandra Ship, Simu Liu, Issa Rae, Michael Cera, Hari Nef, Kingsley Ben-Adir, Rhea Perlman, Ncuti Gatwa, Emerald Fennell, Sharon Rooney, Scott Evans, Ana Cruz Kayne, Connor Swindells, Ritu Arya, Jamie Demetriou",
+  "director": "Greta Gerwig",
+  "producers": "David Heyman, Margot Robbie, Tom Ackerley, Robbie Brenner",
+  "writers": "Greta Gerwig, Noah Baumbach",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [
+        "Not Recommended for Young Children"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [
+        "Not Recommended for Young Children"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [
+        "Not Recommended for Young Children"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [
+        "Not Recommended for Young Children"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [
+        "Not Recommended for Young Children"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "May be viewed by persons of all ages."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    }
+  ],
+  "billboard": {
+    "alt": "Barbie",
+    "mobileImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Mobile-Barbie_20230620134552_0.jpg",
+    "tabletImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Tablet-Barbie_20230620134555_0.jpg",
+    "desktopImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Desktop_Normal-Barbie_20230620134559_0.jpg",
+    "largeDesktopImageUrl": "https://mediafiles.cineplex.com/cineplex-v2/billboard-block/MDP-Desktop_Wide-Barbie_20230620134602_0.jpg"
+  },
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34071_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34071_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34071_768_1024.jpg",
+  "cineplexId": 34071
+},
+{
+  "id": "6563a43f92c740d467db9294",
+  "name": "Be My Family (Mandarin w/e.s.t.)",
+  "title": "Be My Family (Mandarin w/e.s.t.)",
+  "releaseDate": "2023-11-17",
+  "runtimeInMinutes": 132,
+  "genres": [
+    "International"
+  ],
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to Classification"
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification"
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [
+        "Mature Theme",
+        "Substance Abuse"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Violent Scenes"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "May be viewed by persons of all ages."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    }
+  ],
+  "languageCode": "ZH",
+  "movieLanguage": "Mandarin",
+  "movieSubtitleLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36037_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36037_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36037_768_1024.jpg",
+  "cineplexId": 36037
+},
+{
+  "id": "6563a43f92c740d467db92a0",
+  "name": "Dream Scenario",
+  "title": "Dream Scenario",
+  "releaseDate": "2023-11-24",
+  "runtimeInMinutes": 102,
+  "genres": [],
+  "synopsis": "Hapless family man Paul Matthews (Nicolas Cage) finds his life turned upside down when millions of strangers suddenly start seeing him in their dreams. But when his nighttime appearances take a nightmarish turn, Paul is forced to navigate his newfound stardom, in this wickedly entertaining comedy from writer-director Kristoffer Borgli (Sick of Myself) and producer Ari Aster.\n\n",
+  "starring": "Nicolas Cage, Michael Cera, Tim Meadows",
+  "director": "Kristoffer Borgli",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [
+        "Brutal Violence",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age and older."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [
+        "Violence",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [
+        "Violence",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [
+        "Violence",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [
+        "Violence",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [],
+      "rating": "13ans+",
+      "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
+    }
+  ],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35747_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35747_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35747_768_1024.jpg",
+  "cineplexId": 35747
+},
+{
+  "id": "6563a43f92c740d467db92ac",
+  "name": "Falimy (Malayalam w/e.s.t.)",
+  "title": "Falimy (Malayalam w/e.s.t.)",
+  "releaseDate": "2023-11-24",
+  "runtimeInMinutes": 128,
+  "genres": [
+    "International"
+  ],
+  "synopsis": "‘FALIMY’ takes you on a fun filled rollercoaster adventure of a dysfunctional ‘Family’ embarked on a life changing trip. This is a close to heart movie of almost every struggling middle class household.",
+  "starring": "Basil Joseph, Manju Pillai, Jagadish",
+  "director": "Nitish Sahadev",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to Classification"
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Violence",
+        "Coarse Language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Violence",
+        "Coarse Language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Violent Scenes"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "May be viewed by persons of all ages."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [
+        "Violence",
+        "Coarse Language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    }
+  ],
+  "languageCode": "ML",
+  "movieLanguage": "Malayalam",
+  "movieSubtitleLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36011_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36011_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36011_768_1024.jpg",
+  "cineplexId": 36011
+},
+{
+  "id": "6563a43f92c740d467db92b8",
+  "name": "Ferrari",
+  "title": "Ferrari",
+  "releaseDate": "2023-12-25",
+  "runtimeInMinutes": 999,
+  "genres": [
+    "Biopic",
+    "Adaptation",
+    "Drama",
+    "Period"
+  ],
+  "synopsis": "A biopic of automotive mogul Enzo Ferrari, whose family redefined the idea of the high-powered Italian sports car and practically spawned the concept of Formula One racing. Ferrari's ambition to build and race the finest cars in the world amidst the conflicts of two world wars, the rise of fascism in his country and family tragedies left little room for personal relationships.",
+  "starring": "Adam Driver, Penélope Cruz, Shailene Woodley, Gabriel Leone, Jack O'Connell, Patrick Dempsey, Sarah Gadon, Daniela Piperno, Giuseppe Bonifati",
+  "director": "Michael Mann",
+  "producers": "Michael Mann, P.J. van Sandwijk, Marie Savare, John Lesher, Thomas Hayslip, John Friedberg, Gareth West, Lars Sylvest, Thorsten Schumacher, Laura Rister, Monika Bacardi, Andrea Iervolino",
+  "writers": "Troy Kennedy Martin, Michael Mann, David Rayfiel",
+  "ratings": [],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35608_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35608_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35608_768_1024.jpg",
+  "cineplexId": 35608
+},
+{
+  "id": "6563a43f92c740d467db92ba",
+  "name": "Five Nights at Freddy's",
+  "title": "Five Nights at Freddy's",
+  "releaseDate": "2023-10-27",
+  "runtimeInMinutes": 109,
+  "genres": [
+    "Horror"
+  ],
+  "synopsis": "Can you survive five nights?\n\nThe terrifying horror game phenomenon becomes a blood-chilling cinematic event, as Blumhouse— the producer of M3GAN, The Black Phone and The Invisible Man— brings Five Nights at Freddy’s to the big screen.\n\nThe film follows a troubled security guard as he begins working at Freddy Fazbear’s Pizza. While spending his first night on the job, he realizes the night shift at Freddy’s won’t be so easy to make it through.\n\nThe film stars Josh Hutcherson (Ultraman, The Hunger Games franchise), Elizabeth Lail (You, Mack & Rita), Piper Rubio (Holly & Ivy, Unstable), Kat Conner Sterling (We Have a Ghost, 9-1-1), with Mary Stuart Masterson (Blindspot, Fried Green Tomatoes) and Matthew Lillard (Good Girls, Scream).\n\nFive Nights at Freddy’s is directed by Emma Tammi (The Wind, Blood Moon) and is written by Scott Cawthon, Emma Tammi and Seth Cuddeback.\n\nThe film’s iconic animatronic characters will be created by Jim Henson’s Creature Shop.\n\nFive Nights at Freddy’s is produced by Jason Blum and Scott Cawthon. The film’s executive producers are Bea Sequeira, Russell Binder and Christopher H. Warner. Universal Pictures presents a Blumhouse production, in association with Striker Entertainment.",
+  "starring": "Josh Hutcherson, Elizabeth Lail, Kat Conner Sterling and Piper Rubio, with Mary Stuart Masterson and Matthew Lillard",
+  "director": "Emma Tammi",
+  "producers": "Jason Blum, Scott Cawthon",
+  "writers": "Emma Tammi, Scott Cawthon, Chris Columbus",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [
+        "Frightening Scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Violence",
+        "Frightening Scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Violence",
+        "Frightening Scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age and older."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [
+        "Frightening Scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [
+        "Frightening Scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [
+        "Frightening Scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Violence",
+        "Frightening Scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [
+        "Frightening Scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [
+        "Horror"
+      ],
+      "rating": "13ans+",
+      "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [
+        "Violence",
+        "Frightening Scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
+    }
+  ],
+  "billboard": {
+    "mobileImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Mobile-FNF_20231106214729_0.jpg",
+    "tabletImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Tablet-FNF_20231106214739_0.jpg",
+    "desktopImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Desktop_Normal-FNF_20231106214753_0.jpg",
+    "largeDesktopImageUrl": "https://mediafiles.cineplex.com/cineplex-v2/billboard-block/MDP-Desktop_Wide-FNF_20231106214800_0.jpg"
+  },
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35225_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35225_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35225_768_1024.jpg",
+  "cineplexId": 35225
+},
+{
+  "id": "6563a43f92c740d467db92c7",
+  "name": "Freelance",
+  "title": "Freelance",
+  "releaseDate": "2023-10-27",
+  "runtimeInMinutes": 108,
+  "genres": [
+    "Action",
+    "Comedy"
+  ],
+  "synopsis": "An ex-special forces operator takes a job to provide security for a journalist as she interviews a dictator, but, a military coup breaks out in the middle of the interview, they are forced to escape into the jungle where they must survive.",
+  "starring": "John Cena, Alison Brie, Christian Slater, Marton Csokas, Alice Eve, Juan Pablo Raba",
+  "director": "Pierre Morel",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [
+        "Violence",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Violence",
+        "Nudity",
+        "Coarse Language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Violence",
+        "Nudity",
+        "Coarse Language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [
+        "Violence",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [
+        "Violence",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [
+        "Violence",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Violence",
+        "Nudity",
+        "Coarse Language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [
+        "Violence",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "13ans+",
+      "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [
+        "Violence",
+        "Nudity",
+        "Coarse Language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    }
+  ],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35384_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35384_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35384_768_1024.jpg",
+  "cineplexId": 35384
+},
+{
+  "id": "6563a43f92c740d467db92d3",
+  "name": "Garudan (Malayalam w/e.s.t.)",
+  "title": "Garudan (Malayalam w/e.s.t.)",
+  "releaseDate": "2023-11-03",
+  "runtimeInMinutes": 138,
+  "genres": [
+    "Crime",
+    "Thriller",
+    "International"
+  ],
+  "starring": "Suresh Gopi, Biju Menon,Abhirami,Dileesh Pothan & Others",
+  "director": "Arun Varma",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [
+        "Mature Subject Matter"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Violence",
+        "Sexual language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Violence",
+        "Sexual language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [
+        "Mature Theme"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [
+        "Mature Theme"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [
+        "Mature Theme"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Mature Subject Matter",
+        "Violent Scenes"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [
+        "Mature Theme"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [
+        "Violence",
+        "Sexual language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    }
+  ],
+  "languageCode": "ML",
+  "movieLanguage": "Malayalam",
+  "movieSubtitleLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35985_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35985_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35985_768_1024.jpg",
+  "cineplexId": 35985
+},
+{
+  "id": "6563a43f92c740d467db92df",
+  "name": "Godzilla Minus One (Japanese w/e.s.t.)",
+  "title": "Godzilla Minus One (Japanese w/e.s.t.)",
+  "releaseDate": "2023-12-01",
+  "runtimeInMinutes": 125,
+  "genres": [
+    "Action",
+    "Adventure",
+    "Drama"
+  ],
+  "synopsis": "Japan, devastated after the war, faces a new threat in the form of Godzilla. How will the\ncountry confront this impossible situation?",
+  "starring": "Ryunosuke Kamiki, Minami Hamabe, Yuki Yamada",
+  "director": "Takashi Yamazaki",
+  "ratings": [],
+  "languageCode": "JA",
+  "movieLanguage": "Japanese",
+  "movieSubtitleLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36044_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36044_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36044_768_1024.jpg",
+  "cineplexId": 36044
+},
+{
+  "id": "6563a43f92c740d467db92e1",
+  "name": "It's A Wonderful Knife",
+  "title": "It's A Wonderful Knife",
+  "releaseDate": "2023-11-10",
+  "runtimeInMinutes": 85,
+  "genres": [
+    "Comedy",
+    "Horror",
+    "Mystery",
+    "Suspense",
+    "Thriller"
+  ],
+  "synopsis": "A year after saving her town from a psychotic killer on Christmas Eve, Winnie Carruthers’ life is\nless than wonderful — but when she wishes she’d never been born, she finds herself in a\nnightmare parallel universe and discovers that without her, things could be much, much\nworse. Now the killer is back, and she must team up with the town misfit to identify the killer\nand get back to her own reality. IT’S A WONDERFUL LIFE by way of SCREAM.",
+  "starring": "Jane Widdop, Justin Long, Jess McLeod, Joel McHale, Katharine Isabelle, William B. Davis",
+  "director": "Tyler MacIntyre",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [
+        "Violence",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Violence",
+        "Frightening Scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Violence",
+        "Frightening Scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age and older."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [
+        "Violence",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [
+        "Violence",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [
+        "Violence",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Violence",
+        "Frightening Scenes",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [
+        "Violence",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [
+        "Violence",
+        "Horror"
+      ],
+      "rating": "13ans+",
+      "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    }
+  ],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35986_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35986_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35986_768_1024.jpg",
+  "cineplexId": 35986
+},
+{
+  "id": "6563a43f92c740d467db92ed",
+  "name": "Journey To Bethlehem",
+  "title": "Journey To Bethlehem",
+  "releaseDate": "2023-11-10",
+  "runtimeInMinutes": 99,
+  "genres": [
+    "Musical"
+  ],
+  "synopsis": "A young woman carrying an unimaginable responsibility. A young man torn between love and honor. A jealous king who will stop at nothing to keep his crown. This live-action Christmas musical adventure for the entire family, weaves classic Christmas melodies with humor, faith and new pop songs in a retelling of the greatest story ever told, the story of Mary and Joseph and the birth of Jesus. A unique new entry into the collection of holiday classic movies, this epic Christmas musical is unlike any before it.",
+  "starring": "Fiona Palomo, Milo Manheim, Moriah, Joel Smallbone, Lecrae, Omid Djalili, Rizwan Manji, Geno Segers, Stephanie Gil, Antonio Cantos, Maria Pau Pigem, Alicia Borrachero, Antonio Gil, and Antonio Banderas as King Herod",
+  "director": "Adam Anders",
+  "producers": "Alan Powell, Steve Barnett, Stephen Meinen, Brandt Andersen, Adam Anders",
+  "writers": "Adam Anders, Peter Barsocchini",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Suitable for viewing by all ages."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "G",
+      "ratingDescription": "Suitable for viewing by persons of all ages."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "General Viewing.  Suitable of all audiences."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Suitable for persons of all ages."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Suitable for persons of all ages."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Suitable for persons of all ages."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Suitable for viewing by persons of all ages."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Suitable for persons of all ages."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "May be viewed by persons of all ages."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Acceptable for all age groups."
+    }
+  ],
+  "billboard": {
+    "mobileImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Mobile-Journey_To_Bethlehem_20231106221114_0.jpg",
+    "tabletImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Tablet-Journey_To_Bethlehem_20231106221122_0.jpg",
+    "desktopImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Desktop_Normal-Journey_To_Bethlehem_20231106221211_0.jpg",
+    "largeDesktopImageUrl": "https://mediafiles.cineplex.com/cineplex-v2/billboard-block/MDP-Desktop_Wide-Journey_To_Bethlehem_20231106221221_0.jpg"
+  },
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35103_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35103_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35103_768_1024.jpg",
+  "cineplexId": 35103
+},
+{
+  "id": "6563a43f92c740d467db92fa",
+  "name": "Kaathal The Core (Malayalam w/e.s.t.)",
+  "title": "Kaathal The Core (Malayalam w/e.s.t.)",
+  "releaseDate": "2023-11-24",
+  "runtimeInMinutes": 122,
+  "genres": [
+    "International"
+  ],
+  "synopsis": "The two of them get married, but their marriage is not without its challenges. Unnikrishnan is struggling to come to terms with his age, and Anjali is struggling to adjust to life in a new city.",
+  "starring": "Mammootty, Jyothika, Lalu Alex, Muthumani, Chinnu Chandini Nair",
+  "director": "Jeo Baby",
+  "ratings": [],
+  "languageCode": "ML",
+  "movieLanguage": "Malayalam",
+  "movieSubtitleLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36060_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36060_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36060_768_1024.jpg",
+  "cineplexId": 36060
+},
+{
+  "id": "6563a43f92c740d467db92fc",
+  "name": "Khichdi 2 (Hindi w/e.s.t.)",
+  "title": "Khichdi 2 (Hindi w/e.s.t.)",
+  "releaseDate": "2023-11-17",
+  "runtimeInMinutes": 122,
+  "genres": [
+    "Comedy",
+    "Family",
+    "International"
+  ],
+  "synopsis": "The Parekh family is back with a brand-new adventure! \nTasked by the TIA - Thodi Intelligent Agency, the Parekhs are off on a secret mission to Paanthukistan – a poor, joyless country ruled by a despotic King – who is the exact replica of Praful Parekh! \nTheir mission is to kidnap the King and rescue an imprisoned Indian nuclear scientist before he creates a weapon of mass destruction- a powerful Bio-Robot. \nA madcap roller coaster ride ensues, taking us into a new Khichdi journey full of insane twists and turns.\n",
+  "starring": "Supriya Pathak, Rajeev Mehta, Anang Desai, Vandana Pathak and Jamnadas Majethia ",
+  "director": "Aatish Kapadia  ",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to Classification"
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification"
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification"
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification"
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    }
+  ],
+  "languageCode": "HI",
+  "movieLanguage": "Hindi",
+  "movieSubtitleLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36008_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36008_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36008_768_1024.jpg",
+  "cineplexId": 36008
+},
+{
+  "id": "6563a43f92c740d467db9308",
+  "name": "Killers of the Flower Moon",
+  "title": "Killers of the Flower Moon",
+  "releaseDate": "2023-10-20",
+  "runtimeInMinutes": 206,
+  "genres": [
+    "Crime",
+    "Drama",
+    "History"
+  ],
+  "synopsis": "At the turn of the 20th century, oil brought a fortune to the Osage Nation, who became some of the richest people in the world overnight. The wealth of these Native Americans immediately attracted white interlopers, who manipulated, extorted, and stole as much Osage money as they could before resorting to murder. Based on a true story and told through the improbable romance of Ernest Burkhart (Leonardo DiCaprio) and Mollie Kyle (Lily Gladstone), “Killers of the Flower Moon” is an epic western crime saga, where real love crosses paths with unspeakable betrayal. Also starring Robert De Niro and Jesse Plemons, “Killers of the Flower Moon” is directed by Academy Award winner Martin Scorsese from a screenplay by Eric Roth and Martin Scorsese, based on David Grann’s best-selling book.",
+  "starring": "Leonardo DiCaprio, Robert De Niro, Jesse Plemons, Lily Gladstone, Tantoo Cardinal, John Lithgow, Brendan Fraser, Cara Jade Myers, JaNae Collins, Jillian Dion, William Belleau, Louis Cancelmi, Tatanka Means, Michael Abbot Jr., Pat Healy, Scott Shepard, Jason Isbell, Sturgill Simpson",
+  "director": "Martin Scorsese",
+  "producers": "Dan Friedkin, Bradley Thomas, Martin Scorsese, Daniel Lupi, Emma Tillinger Koskoff, Jennifer Davisson",
+  "writers": "Eric Roth, Martin Scorsese",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age and older."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [
+        "Violence",
+        "Mature Theme"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [
+        "Violence",
+        "Mature Theme"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [
+        "Violence",
+        "Mature Theme"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [
+        "Violence",
+        "Mature Theme"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [],
+      "rating": "13ans+",
+      "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
+    }
+  ],
+  "billboard": {
+    "mobileImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Mobile-Killers_of_the_flower_moon_20231106221706_0.jpg",
+    "tabletImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Tablet-Killers_of_the_flower_moon_20231106221716_0.jpg",
+    "desktopImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Desktop_Normal-Killers_of_the_flower_moon_20231106221729_0.jpg",
+    "largeDesktopImageUrl": "https://mediafiles.cineplex.com/cineplex-v2/billboard-block/MDP-Desktop_Wide-Killers_of_the_flower_moon_20231106221735_0.jpg"
+  },
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35209_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35209_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35209_768_1024.jpg",
+  "cineplexId": 35209
+},
+{
+  "id": "6563a43f92c740d467db9315",
+  "name": "Last Suspect (Mandarin w/Chinese and e.s.t.)",
+  "title": "Last Suspect (Mandarin w/Chinese and e.s.t.)",
+  "releaseDate": "2023-11-10",
+  "runtimeInMinutes": 119,
+  "genres": [
+    "Drama",
+    "International"
+  ],
+  "synopsis": "\nAfter her daughter was kidnapped, Chinese gold medal female lawyer Chen Zhiqi (played by Zhang Xiaofei) received a mysterious phone call asking her to defend a death row prisoner within five days, otherwise she would be thrown out! Forced into despera-tion, Chen Zhiqi teamed up with police officer Jin Zhixiong (played by Li Hongqi) to launch an investigation. During the search for clues, her behavior in defending the death row prisoner was ques-tioned by Lin Shu'e (played by Hui Yinghong), a family member of the deceased. In this defense that concerns her daughter's life and death, Chen Zhiqi must not lose! However, as the case deep-ened, she found that she was involved in another conspiracy...\n",
+  "starring": "XiaoFei,Zhang   Yinghong,Hui.  HonhQi,Li ",
+  "director": "Mo, Zhang",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [
+        "Brutal Violence"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Violence",
+        "Sexual Violence"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Violence",
+        "Sexual Violence"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age and older."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification"
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [
+        "Violence",
+        "Disturbing Content"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Violent Scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "13ans+",
+      "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    }
+  ],
+  "languageCode": "ZH",
+  "movieLanguage": "Mandarin",
+  "movieSubtitleLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35993_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35993_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35993_768_1024.jpg",
+  "cineplexId": 35993
+},
+{
+  "id": "6563a43f92c740d467db9321",
+  "name": "M3GAN 2.0",
+  "title": "M3GAN 2.0",
+  "releaseDate": "2025-01-17",
+  "runtimeInMinutes": 999,
+  "genres": [],
+  "ratings": [],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "cineplexId": 34961
+},
+{
+  "id": "6563a43f92c740d467db9323",
+  "name": "Maujaan Hi Maujaan (Punjabi w/e.s.t.)",
+  "title": "Maujaan Hi Maujaan (Punjabi w/e.s.t.)",
+  "releaseDate": "2023-10-20",
+  "runtimeInMinutes": 108,
+  "genres": [
+    "International"
+  ],
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "May be viewed by persons of all ages."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    }
+  ],
+  "languageCode": "PA",
+  "movieLanguage": "Punjabi",
+  "movieSubtitleLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35912_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35912_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35912_768_1024.jpg",
+  "cineplexId": 35912
+},
+{
+  "id": "6563a43f92c740d467db932f",
+  "name": "Mean Girls (Musical)",
+  "title": "Mean Girls (Musical)",
+  "releaseDate": "2024-01-12",
+  "runtimeInMinutes": 116,
+  "genres": [],
+  "ratings": [],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35842_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35842_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35842_768_1024.jpg",
+  "cineplexId": 35842
+},
+{
+  "id": "6563a43f92c740d467db9331",
+  "name": "Migration",
+  "title": "Migration",
+  "releaseDate": "2023-12-22",
+  "runtimeInMinutes": 80,
+  "genres": [],
+  "synopsis": "This holiday season, Illumination, creators of the blockbuster Minions, Despicable Me, Sing and The Secret Life of Pets comedies, invites you to take flight into the thrill of the unknown with a funny, feathered family vacation like no other in the action-packed new original comedy, Migration. \n \nThe Mallard family is in a bit of rut. While dad Mack is content to keep his family safe paddling around their New England pond forever, mom Pam is eager to shake things up and show their kids—teen son Dax and duckling daughter Gwen—the whole wide world. After a migrating duck family alights on their pond with thrilling tales of far-flung places, Pam persuades Mack to embark on a family trip, via New York City, to tropical Jamaica. \n \nAs the Mallards make their way South for the winter, their well-laid plans quickly go awry. The experience will inspire them to expand their horizons, open themselves up to new friends and accomplish more than they ever thought possible, while teaching them more about each other—and themselves—than they ever imagined. ",
+  "ratings": [],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/27070_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/27070_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/27070_768_1024.jpg",
+  "cineplexId": 27070
+},
+{
+  "id": "6563a43f92c740d467db9333",
+  "name": "Napoleon",
+  "title": "Napoleon",
+  "releaseDate": "2023-11-22",
+  "runtimeInMinutes": 159,
+  "genres": [
+    "Action",
+    "Adventure",
+    "Biography"
+  ],
+  "synopsis": "Napoleon is a spectacle-filled action epic that details the checkered rise and fall of the iconic French Emperor Napoleon Bonaparte, played by Oscar®-winner Joaquin Phoenix. Against a stunning backdrop of large-scale filmmaking orchestrated by legendary director Ridley Scott, the film captures Bonaparte's relentless journey to power through the prism of his addictive, volatile relationship with his one true love, Josephine, showcasing his visionary military and political tactics against some of the most dynamic practical battle sequences ever filmed.",
+  "starring": "Joaquin Phoenix, Vanessa Kirby",
+  "director": "Ridley Scott",
+  "producers": "Ridley Scott, Kevin J. Walsh, Mark Huffam, Joaquin Phoenix",
+  "writers": "David Scarpa",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [
+        "Gory violence"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Violence",
+        "Sexually suggestive scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Violence",
+        "Sexually suggestive scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age and older."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [
+        "Brutal Violence",
+        "Sexual Content",
+        "Gory Scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [
+        "Brutal Violence",
+        "Sexual Content",
+        "Gory Scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [
+        "Brutal Violence",
+        "Sexual Content",
+        "Gory Scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Sexually suggestive scenes",
+        "Gory violence"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [
+        "Brutal Violence",
+        "Sexual Content",
+        "Gory Scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [],
+      "rating": "13ans+",
+      "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [
+        "Violence",
+        "Sexually suggestive scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
+    }
+  ],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35214_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35214_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35214_768_1024.jpg",
+  "cineplexId": 35214
+},
+{
+  "id": "6563a43f92c740d467db933f",
+  "name": "Napoleon - Special Engagement 70mm",
+  "title": "Napoleon - Special Engagement 70mm",
+  "releaseDate": "2023-11-22",
+  "runtimeInMinutes": 159,
+  "genres": [
+    "Action",
+    "Adventure",
+    "Biography"
+  ],
+  "synopsis": "Napoleon is a spectacle-filled action epic that details the checkered rise and fall of the iconic French Emperor Napoleon Bonaparte, played by Oscar®-winner Joaquin Phoenix. Against a stunning backdrop of large-scale filmmaking orchestrated by legendary director Ridley Scott, the film captures Bonaparte's relentless journey to power through the prism of his addictive, volatile relationship with his one true love, Josephine, showcasing his visionary military and political tactics against some of the most dynamic practical battle sequences ever filmed.",
+  "starring": "Joaquin Phoenix, Vanessa Kirby",
+  "director": "Ridley Scott",
+  "producers": "Ridley Scott, Kevin J. Walsh, Mark Huffam, Joaquin Phoenix",
+  "writers": "David Scarpa",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to Classification"
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification"
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification"
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification"
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Sexually suggestive scenes",
+        "Gory violence"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [],
+      "rating": "13ans+",
+      "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    }
+  ],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36014_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36014_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36014_768_1024.jpg",
+  "cineplexId": 36014
+},
+{
+  "id": "6563a43f92c740d467db934b",
+  "name": "Next Goal Wins",
+  "title": "Next Goal Wins",
+  "releaseDate": "2023-11-17",
+  "runtimeInMinutes": 104,
+  "genres": [
+    "Comedy",
+    "Drama",
+    "Sport"
+  ],
+  "synopsis": "Directed by Taika Waititi (Jojo Rabbit, Thor: Ragnarok), NEXT GOAL WINS follows the infamously terrible American Samoa soccer team, known for a brutal 2001 FIFA match they lost 31-0. With the 2014 World Cup Qualifiers approaching, the team hires down-on-his-luck, maverick coach Thomas Rongen (Michael Fassbender) hoping he will turn the world’s worst soccer team around in this humorous and heartfelt underdog story.",
+  "starring": "Elisabeth Moss, Michael Fassbender, Will Arnett",
+  "director": "Taika Waititi",
+  "producers": "Jonathan Cavendish, Garrett Basch, Taika Waititi, Mike Brett, Steve Jamison",
+  "writers": "Taika Waititi, Iain Morris",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [
+        "Coarse Language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Coarse Language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Coarse Language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [
+        "Language May Offend"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [
+        "Language May Offend"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [
+        "Language May Offend"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Coarse Language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [
+        "Language May Offend"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "May be viewed by persons of all ages."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [
+        "Coarse Language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    }
+  ],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34535_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34535_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34535_768_1024.jpg",
+  "cineplexId": 34535
+},
+{
+  "id": "6563a43f92c740d467db9357",
+  "name": "Night Swim",
+  "title": "Night Swim",
+  "releaseDate": "2024-01-05",
+  "runtimeInMinutes": 999,
+  "genres": [
+    "Horror",
+    "Adaptation"
+  ],
+  "starring": "Kerry Condon, Wyatt Russell",
+  "director": "Bryce McGuire",
+  "producers": "James Wan, Jason Blum",
+  "writers": "Bryce McGuire",
+  "ratings": [],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33653_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33653_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33653_768_1024.jpg",
+  "cineplexId": 33653
+},
+{
+  "id": "6563a43f92c740d467db9359",
+  "name": "Oppenheimer",
+  "title": "Oppenheimer",
+  "releaseDate": "2023-07-21",
+  "runtimeInMinutes": 180,
+  "genres": [
+    "Drama",
+    "Historical",
+    "Period",
+    "Adaptation"
+  ],
+  "synopsis": "Written and directed by Christopher Nolan, Oppenheimer is an IMAX®-shot epic thriller that thrusts audiences into the pulse-pounding paradox of the enigmatic man who must risk destroying the world in order to save it.\n\nThe film stars Cillian Murphy as J. Robert Oppenheimer and Emily Blunt as his wife, biologist and botanist Katherine “Kitty” Oppenheimer. Oscar® winner Matt Damon portrays General Leslie Groves Jr., director of the Manhattan Project, and Robert Downey, Jr. plays Lewis Strauss, a founding commissioner of the U.S. Atomic Energy Commission.",
+  "starring": "Cillian Murphy, Emily Blunt, Matt Damon, Robert Downey Jr., Florence Pugh, Josh Hartnett, Casey Affleck, Rami Malek, Kenneth Branagh, Ben Safdie, Jason Clarke, Dylan Arnold, Tom Arnold, Gustaf Skarsgård, David Krumholtz, Matthew Modine, David Dastmalchian, Alden Ehrenreich, Jefferson Hall, Tony Goldwyn, Michael Angarano, Jack Quaid, Josh Peck, Olivia Thirlby, Dane DeHaan, Danny Deferrari, Olli Haaskivi, Louise Lombard, James D'Arcy, David Rysdahl, Guy Burnet, Harrison Gilbertson, Emma Dumont, Matthias Schweighöfer, Devon Bostick, Alex Wolff, Trond Fausa, Christopher Denham, Josh Zuckerman, Gary Oldman, Jeff Hephner, Tom Conti",
+  "director": "Christopher Nolan",
+  "producers": "Emma Thomas, Charles Roven, Christopher Nolan",
+  "writers": "Christopher Nolan",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [],
+      "rating": "14A",
+      "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Nudity",
+        "Sexually suggestive scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Nudity",
+        "Sexually suggestive scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age and older."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [
+        "Mature Theme"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [
+        "Mature Theme"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [
+        "Mature Theme"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Nudity"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [
+        "Mature Theme"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "May be viewed by persons of all ages."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [
+        "Nudity",
+        "Sexually suggestive scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
+    }
+  ],
+  "billboard": {
+    "alt": "Oppenheimer",
+    "mobileImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Mobile-Oppenheimer_20230620132259_0.jpg",
+    "tabletImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Tablet-Oppenheimer_20230620132301_0.jpg",
+    "desktopImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Desktop_Normal-Oppenheimer_20230620132314_0.jpg",
+    "largeDesktopImageUrl": "https://mediafiles.cineplex.com/cineplex-v2/billboard-block/MDP-Desktop_Wide-Oppenheimer_20230620132317_0.jpg"
+  },
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33327_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33327_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33327_768_1024.jpg",
+  "cineplexId": 33327
+},
+{
+  "id": "6563a43f92c740d467db9366",
+  "name": "Paddington in Peru",
+  "title": "Paddington in Peru",
+  "releaseDate": "2025-01-17",
+  "runtimeInMinutes": 999,
+  "genres": [],
+  "ratings": [],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "cineplexId": 35971
+},
+{
+  "id": "6563a43f92c740d467db9368",
+  "name": "Parinda Paar Geyaa (Punjabi w/e.s.t.)",
+  "title": "Parinda Paar Geyaa (Punjabi w/e.s.t.)",
+  "releaseDate": "2023-11-24",
+  "runtimeInMinutes": 143,
+  "genres": [
+    "International"
+  ],
+  "synopsis": "Can Jassi, a village boy with musical dreams and a torn heart, overcome the challenges he faces in his love life and career to achieve his goal of becoming a rockstar and winning the girl of his dreams?",
+  "starring": "Gurnam Bhullar, Gurnazar Chattha, Roopi Gill, Isha Sharma, Donny Kapoor ",
+  "director": "Ksshitij Chaudhary",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification"
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification"
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Violent Scenes"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "May be viewed by persons of all ages."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    }
+  ],
+  "languageCode": "PA",
+  "movieLanguage": "Punjabi",
+  "movieSubtitleLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36068_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36068_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36068_768_1024.jpg",
+  "cineplexId": 36068
+},
+{
+  "id": "6563a43f92c740d467db9374",
+  "name": "PAW Patrol: The Mighty Movie",
+  "title": "PAW Patrol: The Mighty Movie",
+  "releaseDate": "2023-09-29",
+  "runtimeInMinutes": 93,
+  "genres": [
+    "Animation"
+  ],
+  "synopsis": "A magical meteor crash-lands in Adventure City, gives the PAW Patrol pups superpowers, and transforms them into The Mighty Pups. When the PAW Patrol's archrival Humdinger breaks out of jail and teams up with a mad scientist to steal the powers for themselves, the Mighty Pups must save Adventure City and stop the supervillains before it's too late.",
+  "starring": "Kristen Bell, Christian Convery, Mckenna Grace, James Marsden,",
+  "director": "Cal Brunker",
+  "producers": "Jennifer Dodge, Laura Clunie, Toni Stevens",
+  "writers": "Cal Brunker, Bob Barlen",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Suitable for viewing by persons of all ages."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "General Viewing.  Suitable of all audiences."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "May be viewed by persons of all ages."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Acceptable for all age groups."
+    }
+  ],
+  "billboard": {
+    "alt": "PAW Patrol: The Mighty Movie",
+    "mobileImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Mobile-Paw_patrol_20230927171614_0.jpg",
+    "tabletImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Tablet-Paw_patrol_20230927171618_0.jpg",
+    "desktopImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Desktop_Normal-Paw_patrol_20230927171622_0.jpg",
+    "largeDesktopImageUrl": "https://mediafiles.cineplex.com/cineplex-v2/billboard-block/MDP-Desktop_Wide-Paw_patrol_20230927171627_0.jpg"
+  },
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34117_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34117_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34117_768_1024.jpg",
+  "cineplexId": 34117
+},
+{
+  "id": "6563a43f92c740d467db9381",
+  "name": "Poor Things",
+  "title": "Poor Things",
+  "releaseDate": "2023-12-15",
+  "runtimeInMinutes": 999,
+  "genres": [
+    "Drama"
+  ],
+  "starring": "Emma Stone",
+  "director": "Yorgos Lanthimos",
+  "ratings": [],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35371_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35371_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35371_768_1024.jpg",
+  "cineplexId": 35371
+},
+{
+  "id": "6563a43f92c740d467db9383",
+  "name": "Priscilla",
+  "title": "Priscilla",
+  "releaseDate": "2023-11-03",
+  "runtimeInMinutes": 113,
+  "genres": [
+    "Biography",
+    "Drama"
+  ],
+  "synopsis": "When teenage Priscilla Beaulieu meets Elvis Presley, the man who is already a meteoric rock-and-roll superstar becomes someone entirely unexpected in private moments: a thrilling crush, an ally in loneliness, a vulnerable best friend.\n\nOfficial selection of La Mostra de Venise",
+  "starring": "Cailee Spaeny & Jacob Elordi",
+  "director": "Sofia Coppola",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [],
+      "rating": "14A",
+      "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Violence",
+        "Coarse Language",
+        "Drug Use"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Violence",
+        "Coarse Language",
+        "Drug Use"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [
+        "Substance Abuse"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [
+        "Substance Abuse"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [
+        "Substance Abuse"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Violence",
+        "Coarse Language",
+        "Drug Use"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [
+        "Substance Abuse"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "May be viewed by persons of all ages."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [
+        "Violence",
+        "Coarse Language",
+        "Drug Use"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    }
+  ],
+  "billboard": {
+    "mobileImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Mobile-Priscilla _20231106215159_0.jpg",
+    "tabletImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Tablet-Priscilla _20231106215204_0.jpg",
+    "desktopImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Desktop_Normal-Priscilla_20231106215214_0.jpg",
+    "largeDesktopImageUrl": "https://mediafiles.cineplex.com/cineplex-v2/billboard-block/MDP-Desktop_Wide-Priscilla_20231106215224_0.jpg"
+  },
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35706_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35706_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35706_768_1024.jpg",
+  "cineplexId": 35706
+},
+{
+  "id": "6563a43f92c740d467db9390",
+  "name": "RENAISSANCE: A FILM BY BEYONCÉ",
+  "title": "RENAISSANCE: A FILM BY BEYONCÉ",
+  "releaseDate": "2023-11-30",
+  "runtimeInMinutes": 165,
+  "genres": [
+    "Concert"
+  ],
+  "synopsis": "RENAISSANCE: A FILM BY BEYONCÉ accentuates the journey of RENAISSANCE WORLD TOUR, from its inception, to the opening in Stockholm, Sweden, to the finale in Kansas City, Missouri. It is about Beyoncé’s intention, hard work, involvement in every aspect of the production, her creative mind and purpose to create her legacy, and master her craft.  Received with extraordinary acclaim, Beyoncé’s RENAISSANCE WORLD TOUR created a sanctuary for freedom, and shared joy, for more than 2.7 million fans.",
+  "starring": "BEYONCÉ, Blue Ivy Carter",
+  "ratings": [],
+  "billboard": {
+    "mobileImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Mobile-Beyonce_20231115141708_0.jpg",
+    "tabletImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Tablet-Beyonce_20231115141714_0.jpg",
+    "desktopImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Desktop_Normal-Beyonce_20231115141727_0.jpg",
+    "largeDesktopImageUrl": "https://mediafiles.cineplex.com/cineplex-v2/billboard-block/MDP-Desktop_Wide-Beyonce_20231115141731_0.jpg"
+  },
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35877_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35877_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35877_768_1024.jpg",
+  "cineplexId": 35877
+},
+{
+  "id": "6563a43f92c740d467db9393",
+  "name": "RU (French w/e.s.t.)",
+  "title": "RU (French w/e.s.t.)",
+  "releaseDate": "2023-11-24",
+  "runtimeInMinutes": 116,
+  "genres": [],
+  "synopsis": "Inspired by Kim Thuy’s book - After a dangerous sea crossing and a stay in a Malaysian camp, the young Vietnamese girl Tinh and her family are accepted as refugees in Canada, and arrive in Granby where they begin their new life. But for Tinh, adapting isn’t that easy. Already shy and reserved by nature, she must learn a new language and settle into her new environment. Haunted by the journey’s hardships, Tinh will have to draw from the depths of her being the resilience necessary for her survival and happiness.",
+  "starring": "Chloé Djandji, Chantal Thuy, Jean Bui, Olivier Dinh, Xavier Nguyen, Karine Vanasse, Patrice Robitaille, Mali Corbeil Gauvreau, Marie-Thérèse Fortin",
+  "director": "Charles-Olivier Michaud",
+  "ratings": [],
+  "languageCode": "FR",
+  "movieLanguage": "French",
+  "movieSubtitleLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34830_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34830_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34830_768_1024.jpg",
+  "cineplexId": 34830
+},
+{
+  "id": "6563a43f92c740d467db9395",
+  "name": "Saltburn",
+  "title": "Saltburn",
+  "releaseDate": "2023-11-22",
+  "runtimeInMinutes": 131,
+  "genres": [
+    "Comedy",
+    "Drama",
+    "Suspense"
+  ],
+  "synopsis": "Academy Award winning filmmaker Emerald Fennell (Promising Young Woman) brings us a wicked tale of privilege and desire. Struggling to find his place at Oxford University, student Oliver Quick (Barry Keoghan) finds himself drawn into the world of the charming and aristocratic Felix Catton (Jacob Elordi), who invites him to Saltburn, his eccentric family's sprawling estate, for a summer never to be forgotten.",
+  "starring": "Rosamund Pike, Barry Keoghan, Jacob Elordi, Richard E. Grant, Archie Madekwe, Alison Oliver",
+  "director": "Emerald Fennell",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [],
+      "rating": "18A",
+      "ratingDescription": "Suitable for viewing by person 18 years of age or older."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Coarse Language",
+        "Sexually suggestive scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Coarse Language",
+        "Sexually suggestive scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age and older."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [
+        "Sexual Content",
+        "Substance Abuse"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [
+        "Sexual Content",
+        "Substance Abuse"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [
+        "Sexual Content",
+        "Substance Abuse"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [
+        "Sexual Content",
+        "Substance Abuse"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [
+        "Erotism"
+      ],
+      "rating": "13ans+",
+      "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [
+        "Coarse Language",
+        "Sexually suggestive scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
+    }
+  ],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35845_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35845_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35845_768_1024.jpg",
+  "cineplexId": 35845
+},
+{
+  "id": "6563a43f92c740d467db93a1",
+  "name": "Sarabha: Cry for Freedom (Punjabi w/e.s.t.)",
+  "title": "Sarabha: Cry for Freedom (Punjabi w/e.s.t.)",
+  "releaseDate": "2023-11-03",
+  "runtimeInMinutes": 146,
+  "genres": [
+    "Biography",
+    "Drama",
+    "International"
+  ],
+  "synopsis": "Year 1912, a 15 year old boy travels across the oceans to America, leaving behind his enslaved\nmotherland India, to seek higher education at Berkeley University. His dream was to study\naeronautical engineering and learn to fly planes. However, destiny had a different plan for\nhim. Learning the true meaning of Freedom in America, he returns home leading many of his\ncountrymen to fight the mighty British Empire and free his country from the cutches of their\nenslavement.",
+  "starring": "Japtej Singh, Mukul Dev, Kavi Raz, Malkeet Rauni, Mahabir Bhullar Jaspinder Cheema, Kanwar Garewal, Jasbir Jassi, Malkiat Meet, Drren Tassell, Alex Reece",
+  "director": "Kavi Raz",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Violence",
+        "Coarse Language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Violence",
+        "Coarse Language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [
+        "Violence",
+        "Mature Theme"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [
+        "Violence",
+        "Mature Theme"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [
+        "Violence",
+        "Mature Theme"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Coarse Language",
+        "Violent Scenes"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [
+        "Violence",
+        "Mature Theme"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [
+        "Not Recommended for Young Children"
+      ],
+      "rating": "G",
+      "ratingDescription": "May be viewed by persons of all ages."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [
+        "Violence",
+        "Coarse Language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    }
+  ],
+  "languageCode": "PA",
+  "movieLanguage": "Punjabi",
+  "movieSubtitleLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35979_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35979_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35979_768_1024.jpg",
+  "cineplexId": 35979
+},
+{
+  "id": "6563a43f92c740d467db93ad",
+  "name": "Saw X",
+  "title": "Saw X",
+  "releaseDate": "2023-09-29",
+  "runtimeInMinutes": 118,
+  "genres": [
+    "Horror",
+    "Suspense"
+  ],
+  "synopsis": "John Kramer (Tobin Bell) is back. The most chilling installment of the SAW franchise yet explores the untold chapter of Jigsaw’s most personal game. Set between the events of SAW I and II, a sick and desperate John travels to Mexico for a risky and experimental medical procedure in hopes of a miracle cure for his cancer – only to discover the entire operation is a scam to defraud the most vulnerable. Armed with a newfound purpose, John returns to his work, turning the tables on the con artists in his signature visceral way through a series of ingenious and terrifying traps. ",
+  "starring": "Tobin Bell",
+  "director": "Kevin Greutert",
+  "producers": "Mark Burg, Oren Koules",
+  "writers": "Pete Goldfinger, Josh Stolberg",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [
+        "Gory Brutal Violence"
+      ],
+      "rating": "18A",
+      "ratingDescription": "Suitable for viewing by person 18 years of age or older."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Gory Scenes",
+        "Explicit violence"
+      ],
+      "rating": "18A",
+      "ratingDescription": "Persons under 18 years of age must be accomplied by an adult."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Gory Scenes",
+        "Explicit violence"
+      ],
+      "rating": "18A",
+      "ratingDescription": "Suitable for persons 18 years of age and older."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [
+        "Brutal Violence",
+        "Gory Scenes"
+      ],
+      "rating": "18A",
+      "ratingDescription": "Suitable for persons 18+. Persons 14-17 must be accompanied by a person 19+. Under 14 not permitted."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [
+        "Brutal Violence",
+        "Gory Scenes"
+      ],
+      "rating": "18A",
+      "ratingDescription": "Suitable for persons 18+. Persons 14-17 must be accompanied by a person 19+. Under 14 not permitted."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [
+        "Brutal Violence",
+        "Gory Scenes"
+      ],
+      "rating": "18A",
+      "ratingDescription": "Suitable for persons 18+. Persons 14-17 must be accompanied by a person 19+. Under 14 not permitted."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Gory Scenes",
+        "Explicit violence"
+      ],
+      "rating": "18A",
+      "ratingDescription": "Suitable for persons 18 years of age or older. Persons under 18 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [
+        "Brutal Violence",
+        "Gory Scenes"
+      ],
+      "rating": "18A",
+      "ratingDescription": "Suitable for persons 18+. Persons 14-17 must be accompanied by a person 19+. Under 14 not permitted."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [
+        "Violence",
+        "Horror"
+      ],
+      "rating": "16ans+",
+      "ratingDescription": "Restricted to persons 16 years of age or over."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [
+        "Gory Scenes",
+        "Explicit violence"
+      ],
+      "rating": "18A",
+      "ratingDescription": "Suitable for persons 18 years of age or older. Persons under 18 must be accompanied by an adult."
+    }
+  ],
+  "billboard": {
+    "alt": "Saw X",
+    "mobileImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Mobile-Saw_X_20230927163714_0.jpg",
+    "tabletImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Tablet-Saw_X_20230927163718_0.jpg",
+    "desktopImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Desktop_Normal-Saw_X_20230927163723_0.jpg",
+    "largeDesktopImageUrl": "https://mediafiles.cineplex.com/cineplex-v2/billboard-block/MDP-Desktop_Wide-Saw_X_20230927163727_0.jpg"
+  },
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34903_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34903_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34903_768_1024.jpg",
+  "cineplexId": 34903
+},
+{
+  "id": "6563a43f92c740d467db93ba",
+  "name": "Silent Night",
+  "title": "Silent Night",
+  "releaseDate": "2023-12-01",
+  "runtimeInMinutes": 104,
+  "genres": [
+    "Action"
+  ],
+  "synopsis": "From legendary director John Woo and the producer of John Wick comes this gritty revenge tale of a tormented father (Joel Kinnaman) who witnesses his young son die when caught in a gang’s crossfire on Christmas Eve. While recovering from a wound that costs him his voice, he makes vengeance his life’s mission and embarks on a punishing training regimen in order to avenge his son’s death. Full of Woo’s signature style, Silent Night redefines the action genre with visceral, thrill-a-minute storytelling.",
+  "starring": "Joel Kinnaman, Kid Cudi, Catalina Sandino Moreno",
+  "director": "John Woo",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [
+        "Brutal Violence",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Frequent Violence"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Frequent Violence"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age and older."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [
+        "Brutal Violence",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [
+        "Brutal Violence",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [
+        "Brutal Violence",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Brutal Violence",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [
+        "Brutal Violence",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "13ans+",
+      "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [
+        "Frequent Violence"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
+    }
+  ],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35844_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35844_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35844_768_1024.jpg",
+  "cineplexId": 35844
+},
+{
+  "id": "6563a43f92c740d467db93c6",
+  "name": "Solo (French w/e.s.t.)",
+  "title": "Solo (French w/e.s.t.)",
+  "releaseDate": "2023-09-15",
+  "runtimeInMinutes": 102,
+  "genres": [
+    "Drama"
+  ],
+  "synopsis": "The film tells the story of Simon, rising star of Montreal drag queen scene. It's love at first sight when he meets Olivier, the new recruit of the bar-show where he performs. While Simon believes he is living an electrifying love story, a toxic and destructive dynamic arises between them. At the same time, Claire, Simon’s mother, a famous opera singer, returns to work in the country after 15 years of absence. Fascinated by this woman he hardly knows but whom he idealizes, Simon persists in trying to create a bond with her. Weakened by the failure of these two impossible loves, Simon will have no choice but to realize that he deserves better.",
+  "starring": "Théodore Pellerin, Félix Maritaud, Anne-Marie Cadieux, Alice Moreault",
+  "director": "Sophie Dupuis",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to Classification"
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification"
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification"
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification"
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Not Recommended for Children"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "May be viewed by persons of all ages."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    }
+  ],
+  "languageCode": "FR",
+  "movieLanguage": "French",
+  "movieSubtitleLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35733_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35733_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35733_768_1024.jpg",
+  "cineplexId": 35733
+},
+{
+  "id": "6563a43f92c740d467db93d2",
+  "name": "TAYLOR SWIFT THE ERAS TOUR",
+  "title": "TAYLOR SWIFT THE ERAS TOUR",
+  "releaseDate": "2023-10-13",
+  "runtimeInMinutes": 169,
+  "genres": [
+    "Concert"
+  ],
+  "synopsis": "The cultural phenomenon continues on the big screen! Immerse yourself in this once-in-a-lifetime concert film experience with a breathtaking, cinematic view of the history-making tour. Taylor Swift Eras attire and friendship bracelets are strongly encouraged! Looking forward to seeing you at this special event!...........TAYLOR SWIFT|THE ERAS TOUR contains several sequences with flashing lights that may affect those who are susceptible to photo sensitive epilepsy or have other photo sensitivities.............Tuesday discounted pricing and Scene+ discount do not apply to tickets purchased for this event...............",
+  "starring": "TAYLOR SWIFT",
+  "director": "SAM WRENCH",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Coarse Language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Coarse Language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [],
+      "rating": "N/A",
+      "ratingDescription": "Rating not available"
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [],
+      "rating": "N/A",
+      "ratingDescription": "Rating not available."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [],
+      "rating": "N/A",
+      "ratingDescription": "Rating not available"
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [],
+      "rating": "N/A",
+      "ratingDescription": "Rating not available."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "May be viewed by persons of all ages."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [
+        "Coarse Language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    }
+  ],
+  "billboard": {
+    "alt": "TAYLOR SWIFT THE ERAS TOUR",
+    "mobileImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Mobile-Eras_tour_20230831130021_0.jpg",
+    "tabletImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Tablet-Eras_tour_20230831130028_0.jpg",
+    "desktopImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Desktop_Normal-Eras_tour_20230831130033_0.jpg",
+    "largeDesktopImageUrl": "https://mediafiles.cineplex.com/cineplex-v2/billboard-block/MDP-Desktop_Wide-Eras_tour_20230831130038_0.jpg"
+  },
+  "warning": "TAYLOR SWIFT|THE ERAS TOUR contains several sequences with flashing lights that may affect those who are susceptible to photo sensitive epilepsy or have other photo sensitivities............Tuesday discounted pricing and Scene+ discount do not apply to tickets purchased for this event...............",
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35732_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35732_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35732_768_1024.jpg",
+  "cineplexId": 35732
+},
+{
+  "id": "6563a43f92c740d467db93df",
+  "name": "Testament (French w/e.s.t.)",
+  "title": "Testament (French w/e.s.t.)",
+  "releaseDate": "2023-10-06",
+  "runtimeInMinutes": 115,
+  "genres": [],
+  "synopsis": "Jean-Michel, a seventy-three-year-old bachelor, lives in a retirement home run by Suzanne. Their world is shaken up by the sudden arrival of young political activists campaigning for the removal of an ancient fresco depicting the welcoming of Europeans by Native Americans. As Jean-Michel is progressively losing faith in a world dominated by political correctness, he realizes his unsuspected love for Suzanne.",
+  "starring": "Rémy Girard, Sophie Lorain, Marie-Mai, Guylaine Tremblay, Caroline Néron, Alexandra McDonald, Katia Gorshkova, Alex Rice, Charlotte Aubin, Robert Lepage, Yves Jacques",
+  "director": "Denys Arcand",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [
+        "Not Recommended for Young Children"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Coarse & sexual language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Coarse & sexual language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Suitable for persons of all ages."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Suitable for persons of all ages."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Suitable for persons of all ages."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Suitable for persons of all ages."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "May be viewed by persons of all ages."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    }
+  ],
+  "languageCode": "FR",
+  "movieLanguage": "French",
+  "movieSubtitleLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35366_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35366_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35366_768_1024.jpg",
+  "cineplexId": 35366
+},
+{
+  "id": "6563a43f92c740d467db93eb",
+  "name": "Thanksgiving",
+  "title": "Thanksgiving",
+  "releaseDate": "2023-11-17",
+  "runtimeInMinutes": 106,
+  "genres": [
+    "Horror",
+    "Thriller"
+  ],
+  "synopsis": "After a Black Friday riot ends in tragedy, a mysterious Thanksgiving-inspired killer terrorizes Plymouth, Massachusetts – the birthplace of the infamous holiday.",
+  "starring": "Patrick Dempsey, Addison Rae, Milo Manheim, Jalen Brooks Thomas, Nell Verlaque, Rick Hoffman and Gina Gershon",
+  "director": "Eli Roth",
+  "producers": "Roger Birnbaum, Eli Roth, Jeff Rendell",
+  "writers": "Jeff Rendell, Eli Roth",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [
+        "Gory Brutal Violence"
+      ],
+      "rating": "18A",
+      "ratingDescription": "Suitable for viewing by person 18 years of age or older."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Gory Scenes",
+        "Explicit violence"
+      ],
+      "rating": "18A",
+      "ratingDescription": "Persons under 18 years of age must be accomplied by an adult."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Gory Scenes",
+        "Explicit violence"
+      ],
+      "rating": "18A",
+      "ratingDescription": "Suitable for persons 18 years of age and older."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [
+        "Brutal Violence",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [
+        "Brutal Violence",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [
+        "Brutal Violence",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Violence",
+        "Gory Scenes"
+      ],
+      "rating": "18A",
+      "ratingDescription": "Suitable for persons 18 years of age or older. Persons under 18 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [
+        "Brutal Violence",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [
+        "Violence",
+        "Horror"
+      ],
+      "rating": "13ans+",
+      "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [
+        "Gory Scenes",
+        "Explicit violence"
+      ],
+      "rating": "18A",
+      "ratingDescription": "Suitable for persons 18 years of age or older. Persons under 18 must be accompanied by an adult."
+    }
+  ],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35213_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35213_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35213_768_1024.jpg",
+  "cineplexId": 35213
+},
+{
+  "id": "6563a43f92c740d467db93f7",
+  "name": "The Abyss: Special Edition",
+  "title": "The Abyss: Special Edition",
+  "releaseDate": "2023-12-06",
+  "runtimeInMinutes": 170,
+  "genres": [],
+  "synopsis": "In this underwater sci-fi adventure written and directed by James Cameron, a nuclear sub mysteriously sinks and a private oil rig crew, led by foreman Bud Brigman (Ed Harris), is recruited to join a team of Navy SEALs on a search and rescue effort. The group soon finds themselves on a spectacular life-and-death odyssey 25,000 feet below the ocean’s surface, where they find a mysterious force that could either change the world — or destroy it. “The Abyss” stars Ed Harris, Mary Elizabeth Mastrantonio, and Michael Biehn. Fans will be able to experience Cameron’s thrilling underwater sci-fi adventure for the first time in stunning, remastered 4K.",
+  "starring": "Ed Harris, Mary Elizabeth Mastrantonio, Michael Biehn",
+  "director": "James Cameron",
+  "ratings": [],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35941_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35941_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35941_768_1024.jpg",
+  "cineplexId": 35941
+},
+{
+  "id": "6563a43f92c740d467db93f9",
+  "name": "The Beekeeper",
+  "title": "The Beekeeper",
+  "releaseDate": "2024-01-12",
+  "runtimeInMinutes": 999,
+  "genres": [
+    "Thriller",
+    "Drama"
+  ],
+  "synopsis": "In\nThe\nBeekeeper\n, one man’s brutal campaign for vengeance takes on national stakes after he is revealed to be a former operative of a powerful and clandestine organization known as “\nBeekeeper\ns.”",
+  "starring": "Jason Statham, Adam Basil, Josh Hutcherson, Jeremy Irons",
+  "director": "David Ayer",
+  "producers": "Bill Block, Chris Long, Jason Statham, David Ayer, Kurt Wimmer",
+  "writers": "Kurt Wimmer",
+  "ratings": [],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35596_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35596_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35596_768_1024.jpg",
+  "cineplexId": 35596
+},
+{
+  "id": "6563a43f92c740d467db93fb",
+  "name": "The Book of Clarence",
+  "title": "The Book of Clarence",
+  "releaseDate": "2024-01-12",
+  "runtimeInMinutes": 999,
+  "genres": [
+    "Drama",
+    "Period"
+  ],
+  "starring": "LaKeith Stanfield, Omar Sy, R.J. Cyler, Benedict Cumberbatch, James McAvoy, Anna Diop, Teyana Taylor, David Oyelowo, Alfre Woodard, Marianne Jean-Baptiste, Caleb McLaughlin, Babs Olusanmokun, Eric Kofi Abrefa, Nicholas Pinnock, Micheal Ward, Chase W. Dillon, Tom Glynn-Carney, Tom Vaughan-Lawlor",
+  "director": "Jeymes Samuel",
+  "producers": "Jeymes Samuel, James Lassiter, Tendo Nagenda, Jay-Z",
+  "writers": "Jeymes Samuel",
+  "ratings": [],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "cineplexId": 35123
+},
+{
+  "id": "6563a43f92c740d467db93fd",
+  "name": "The Boy and the Heron",
+  "title": "The Boy and the Heron",
+  "releaseDate": "2023-12-08",
+  "runtimeInMinutes": 124,
+  "genres": [
+    "Adventure",
+    "Animation",
+    "Drama",
+    "Fantasy"
+  ],
+  "synopsis": "A young boy named Mahito yearning for his mother ventures into a world shared by the living and the dead. There, death comes to an end, and life finds a new beginning. ?A semi-autobiographical fantasy about life, death, and creation,? in tribute to friendship, from the mind of Hayao Miyazaki.",
+  "starring": "Christian Bale, Robert Pattinson, Florence Pugh, Mark Hamill, Gemma Chan, Dave Bautista, Masaki Suda, Willem Dafoe, Karen Fukuhara, Soma Santoki",
+  "director": "Hayao Miyazaki",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to Classification"
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    }
+  ],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35783_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35783_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35783_768_1024.jpg",
+  "cineplexId": 35783
+},
+{
+  "id": "6563a43f92c740d467db9409",
+  "name": "The Boys in the Boat",
+  "title": "The Boys in the Boat",
+  "releaseDate": "2023-12-25",
+  "runtimeInMinutes": 999,
+  "genres": [
+    "Drama"
+  ],
+  "synopsis": "THE BOYS IN THE BOAT is a sports drama based on the #1 New York Times bestselling non-fiction novel written by Daniel James Brown. The film, directed by George Clooney, is about the 1936 University of Washington rowing team that competed for gold at the Summer Olympics in Berlin. This inspirational true story follows a group of underdogs at the height of the Great Depression as they are thrust into the spotlight and take on elite rivals from around the world.",
+  "starring": "Joel Edgerton, Chris Diamantopoulos, Callum Turner",
+  "director": "George Clooney",
+  "producers": "George Clooney, Grant Heslov, Donna Gigliotti",
+  "writers": "Mark L. Smith, Jon Hartmere, Chris Weitz",
+  "ratings": [],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35439_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35439_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35439_768_1024.jpg",
+  "cineplexId": 35439
+},
+{
+  "id": "6563a43f92c740d467db940b",
+  "name": "The Color Purple",
+  "title": "The Color Purple",
+  "releaseDate": "2023-12-25",
+  "runtimeInMinutes": 141,
+  "genres": [],
+  "synopsis": "Warner Bros. Pictures invites you to experience the extraordinary sisterhood of three\nwomen who share one unbreakable bond in “The Color Purple.” This bold new take\non the beloved classic is directed by Blitz Bazawule (“Black Is King,” “The Burial of Kojo”) and\nproduced by Oprah Winfrey, Steven Spielberg, Scott Sanders and Quincy Jones.\n",
+  "starring": "Corey Hawkins, H.E.R., Taraji P. Henson, Danielle Brooks, Ciara, Halle Bailey, Colman Domingo, Louis Gossett Jr., Fantasia Barrino, David Alan Grier, Deon Cole, Elizabeth Marvel, Stephen Hill, Jonathan Batiste",
+  "director": "Blitz Bazawule",
+  "ratings": [],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33025_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33025_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33025_768_1024.jpg",
+  "cineplexId": 33025
+},
+{
+  "id": "6563a43f92c740d467db940d",
+  "name": "The Exorcist: Believer",
+  "title": "The Exorcist: Believer",
+  "releaseDate": "2023-10-06",
+  "runtimeInMinutes": 111,
+  "genres": [
+    "Horror",
+    "Sequel"
+  ],
+  "synopsis": "Exactly 50 years ago this fall, the most terrifying horror film in history landed on screens, shocking audiences around the world. Now, on Friday, October 6, a new chapter begins. From Blumhouse and director David Gordon Green, who shattered the status quo with their resurrection of the Halloween franchise, comes The Exorcist: Believer.  \n \nSince the death of his pregnant wife in a Haitian earthquake 12 years ago, Victor Fielding (Tony winner and Oscar® nominee Leslie Odom, Jr.; One Night in Miami, Hamilton) has raised their daughter, Angela (Lidya Jewett, Good Girls) on his own. \n \nBut when Angela and her friend Katherine (newcomer Olivia O’Neill), disappear in the woods, only to return three days later with no memory of what happened to them, it unleashes a chain of events that will force Victor to confront the nadir of evil and, in his terror and desperation, seek out the only person alive who has witnessed anything like it before: Chris MacNeil. \n \nFor the first time since the 1973 film, Oscar® winner Ellen Burstyn reprises her iconic role as Chris MacNeil, an actress who has been forever altered by what happened to her daughter Regan five decades before.",
+  "starring": "Ellen Burstyn, Leslie Odom Jr., Ann Dowd, Lidya Jewett, Olivia Marcum, Raphael Sbarge, Jennifer Nettles, Okwui Okpokwasili, Linda Blair, Norbert Leo Butz, Tracey Graves, Danny McCarthy, E.J. Bonilla, Celeste Olivia",
+  "director": "David Gordon Green",
+  "producers": "James G. Robinson, Jason Blum, David C. Robinson",
+  "writers": "David Gordon Green, Peter Sattler",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [
+        "Frightening Scenes",
+        "Gory Scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Violence",
+        "Frightening Scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Violence",
+        "Frightening Scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age and older."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [
+        "Violence",
+        "Disturbing Content"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [
+        "Violence",
+        "Disturbing Content"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [
+        "Violence",
+        "Disturbing Content"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Violence",
+        "Gory Scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [
+        "Violence",
+        "Disturbing Content"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [
+        "Violence",
+        "Horror"
+      ],
+      "rating": "13ans+",
+      "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [
+        "Violence",
+        "Frightening Scenes"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
+    }
+  ],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33365_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33365_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33365_768_1024.jpg",
+  "cineplexId": 33365
+},
+{
+  "id": "6563a43f92c740d467db9419",
+  "name": "The Holdovers",
+  "title": "The Holdovers",
+  "releaseDate": "2023-11-03",
+  "runtimeInMinutes": 133,
+  "genres": [
+    "Comedy",
+    "Drama",
+    "Period"
+  ],
+  "synopsis": "From acclaimed director Alexander Payne, The Holdovers follows a curmudgeonly instructor (Paul Giamatti) at a New England prep school who is forced to remain on campus during Christmas break to babysit the handful of students with nowhere to go. Eventually he forms an unlikely bond with one of them — a damaged, brainy troublemaker (newcomer Dominic Sessa) — and with the school’s head cook, who has just lost a son in Vietnam (Da’Vine Joy Randolph).",
+  "starring": "Paul Giamatti, Da’Vine Joy Randolph, Dominic Sessa",
+  "director": "Alexander Payne",
+  "producers": "Mark Johnson, Bill Block, David Hemingson",
+  "writers": "David Hemingson",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age and older."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [
+        "Not Recommended for Young Children"
+      ],
+      "rating": "G",
+      "ratingDescription": "May be viewed by persons of all ages."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
+    }
+  ],
+  "billboard": {
+    "mobileImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Mobile-The_Holdovers_20231107142729_0.jpg",
+    "tabletImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Tablet-The_Holdovers_20231107142733_0.jpg",
+    "desktopImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Desktop_Normal-The_Holdovers_20231107142739_0.jpg",
+    "largeDesktopImageUrl": "https://mediafiles.cineplex.com/cineplex-v2/billboard-block/MDP-Desktop_Wide-The_Holdovers_20231107142744_0.jpg"
+  },
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35097_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35097_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35097_768_1024.jpg",
+  "cineplexId": 35097
+},
+{
+  "id": "6563a43f92c740d467db9426",
+  "name": "The Hunger Games: The Ballad of Songbirds and Snakes (Dubbed in Spanish)",
+  "title": "The Hunger Games: The Ballad of Songbirds and Snakes (Dubbed in Spanish)",
+  "releaseDate": "2023-11-27",
+  "runtimeInMinutes": 157,
+  "genres": [
+    "Action",
+    "Adventure"
+  ],
+  "starring": "Tom Blyth, Rachel Zegler, Peter Dinklage, Hunter Schafer, Josh Andres Rivera, Jason Schwartzman, Viola Davis",
+  "director": "Francis Lawrence",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to Classification"
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification"
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification"
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification"
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [
+        "Not Recommended for Young Children"
+      ],
+      "rating": "G",
+      "ratingDescription": "May be viewed by persons of all ages."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    }
+  ],
+  "languageCode": "ES",
+  "movieLanguage": "Spanish (Dubbed)",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35958_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35958_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35958_768_1024.jpg",
+  "cineplexId": 35958
+},
+{
+  "id": "6563a43f92c740d467db9432",
+  "name": "The Hunger Games: The Ballad of Songbirds and Snakes",
+  "title": "The Hunger Games: The Ballad of Songbirds and Snakes",
+  "releaseDate": "2023-11-17",
+  "runtimeInMinutes": 157,
+  "genres": [
+    "Action",
+    "Adventure"
+  ],
+  "synopsis": "The Hunger Games: The Ballad of Songbirds & Snakes follows a young Coriolanus (Tom Blyth) who is the last hope for his failing lineage, the one-proud Snow family that has fallen from grace in a post-war Capitol. With his livelihood threatened, Snow is reluctantly assigned to mentor Lucy Gray Baird (Rachel Zegler), a tribute from the impoverished District 12. But after Lucy Gray’s charm captivates the audience of Panem, Snow sees an opportunity to shift their fates. With everything he has worked for hanging in the balance, Snow unites with Lucy Gray to turn the odds in their favor. Battling his instincts for both good and evil, Snow sets out on a race against time to survive and reveal if he will ultimately become a songbird or a snake.",
+  "starring": "Tom Blyth, Rachel Zegler, Peter Dinklage, Hunter Schafer, Josh Andres Rivera, Jason Schwartzman, Viola Davis",
+  "director": "Francis Lawrence",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [
+        "Violence",
+        "Not Recommended for Young Children"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [
+        "Violence",
+        "Not Recommended for Young Children"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [
+        "Violence",
+        "Not Recommended for Young Children"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [
+        "Violence",
+        "Not Recommended for Young Children"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [
+        "Violence",
+        "Not Recommended for Young Children"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [
+        "Not Recommended for Young Children"
+      ],
+      "rating": "G",
+      "ratingDescription": "May be viewed by persons of all ages."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    }
+  ],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34085_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34085_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34085_768_1024.jpg",
+  "cineplexId": 34085
+},
+{
+  "id": "6563a43f92c740d467db943e",
+  "name": "The Iron Claw",
+  "title": "The Iron Claw",
+  "releaseDate": "2023-12-22",
+  "runtimeInMinutes": 999,
+  "genres": [
+    "Biopic",
+    "Drama",
+    "Period"
+  ],
+  "starring": "Zac Efron, Harris Dickinson, Jeremy Allen White, Holt McCallany, Maura Tierney, Lily James, Aaron Dean Eisenberg, Stanley Simons",
+  "director": "Sean Durkin",
+  "producers": "Tessa Ross, Juliette Howell, Angus Lamont, Sean Durkin",
+  "writers": "Sean Durkin",
+  "ratings": [],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35707_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35707_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35707_768_1024.jpg",
+  "cineplexId": 35707
+},
+{
+  "id": "6563a43f92c740d467db9440",
+  "name": "The Marvels (Dubbed in Spanish)",
+  "title": "The Marvels (Dubbed in Spanish)",
+  "releaseDate": "2023-11-20",
+  "runtimeInMinutes": 105,
+  "genres": [
+    "Action",
+    "Adventure",
+    "Fantasy"
+  ],
+  "starring": "Brie Larson, Teyonah Parris, Iman Vellani, Samuel L. Jackson, Zawe Ashton, Park Seo-joon",
+  "director": "Nia DaCosta",
+  "producers": "Kevin Feige",
+  "writers": "Nia DaCosta, Megan McDonnell, Elissa Karasik",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to Classification"
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification"
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification"
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification"
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    }
+  ],
+  "billboard": {
+    "mobileImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Mobile-The_Marvels_20231106220230_0.jpg",
+    "tabletImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Tablet-The_Marvels_20231106220238_0.jpg",
+    "desktopImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Desktop_Normal-The_Marvels_20231106220246_0.jpg",
+    "largeDesktopImageUrl": "https://mediafiles.cineplex.com/cineplex-v2/billboard-block/MDP-Desktop_Wide-The_Marvels_20231106220252_0.jpg"
+  },
+  "languageCode": "ES",
+  "movieLanguage": "Spanish (Dubbed)",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35955_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35955_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35955_768_1024.jpg",
+  "cineplexId": 35955
+},
+{
+  "id": "6563a43f92c740d467db944d",
+  "name": "The Marvels",
+  "title": "The Marvels",
+  "releaseDate": "2023-11-10",
+  "runtimeInMinutes": 105,
+  "genres": [
+    "Action",
+    "Adventure",
+    "Fantasy"
+  ],
+  "starring": "Brie Larson, Teyonah Parris, Iman Vellani, Samuel L. Jackson, Zawe Ashton, Park Seo-joon",
+  "director": "Nia DaCosta",
+  "producers": "Kevin Feige",
+  "writers": "Nia DaCosta, Megan McDonnell, Elissa Karasik",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [
+        "Violence",
+        "Not Recommended for Young Children",
+        "Frightening Scenes"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Violence",
+        "Coarse Language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Violence",
+        "Coarse Language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance is advised."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [
+        "Not Recommended for Young Children"
+      ],
+      "rating": "G",
+      "ratingDescription": "May be viewed by persons of all ages."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [
+        "Violence",
+        "Coarse Language"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    }
+  ],
+  "billboard": {
+    "mobileImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Mobile-The_Marvels_20231106215803_0.jpg",
+    "tabletImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Tablet-The_Marvels_20231106215813_0.jpg",
+    "desktopImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Desktop_Normal-The_Marvels_20231106215821_0.jpg",
+    "largeDesktopImageUrl": "https://mediafiles.cineplex.com/cineplex-v2/billboard-block/MDP-Desktop_Wide-The_Marvels_20231106215830_0.jpg"
+  },
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/28838_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/28838_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/28838_768_1024.jpg",
+  "cineplexId": 28838
+},
+{
+  "id": "6563a43f92c740d467db945a",
+  "name": "Tiger 3 (Hindi w/e.s.t.)",
+  "title": "Tiger 3 (Hindi w/e.s.t.)",
+  "releaseDate": "2023-11-11",
+  "runtimeInMinutes": 156,
+  "genres": [
+    "Action",
+    "International"
+  ],
+  "synopsis": "Framed as Enemy No 1, Salman Khan aka Tiger hunts with vengeance to clear his name in Tiger 3!",
+  "starring": "Salman Khan, Katrina Kaif",
+  "director": "Maneesh Sharma",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age and older."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "13ans+",
+      "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [
+        "Violence"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
+    }
+  ],
+  "languageCode": "HI",
+  "movieLanguage": "Hindi",
+  "movieSubtitleLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35950_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35950_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35950_768_1024.jpg",
+  "cineplexId": 35950
+},
+{
+  "id": "6563a43f92c740d467db9466",
+  "name": "Trolls Band Together",
+  "title": "Trolls Band Together",
+  "releaseDate": "2023-11-17",
+  "runtimeInMinutes": 91,
+  "genres": [
+    "Animation"
+  ],
+  "synopsis": "This holiday season, get ready for an action-packed, all-star, rainbow-colored family reunion like no other as Anna Kendrick and Justin Timberlake return for the new chapter in DreamWorks Animation’s blockbuster musical franchise: Trolls Band Together. \n\nAfter two films of true friendship and relentless flirting, Poppy (Anna Kendrick) and Branch (Justin Timberlake) are now officially, finally, a couple (#broppy)! As they grow closer, Poppy discovers that Branch has a secret past. He was once part of her favorite boyband phenomenon, BroZone, with his four brothers: Floyd (Golden Globe nominated electropop sensation Troye Sivan), John Dory (Eric André; Sing 2), Spruce (Grammy winner Daveed Diggs; Hamilton) and Clay (Grammy winner Kid Cudi; Don’t Look Up). BroZone disbanded when Branch was still a baby, as did the family, and Branch hasn’t seen his brothers since.  \n\nBut when Branch’s bro Floyd is kidnapped for his musical talents by a pair of nefarious pop-star villains—Velvet (Emmy winner Amy Schumer; Trainwreck) and Veneer (Grammy winner and Tony nominee Andrew Rannells; The Book of Mormon)—Branch and Poppy embark on a harrowing and emotional journey to reunite the other brothers and rescue Floyd from a fate even worse than pop-culture obscurity. \n\nFeaturing Trolls’ signature psychedelic joy-bomb of new and classic pop hits, Trolls Band Together stars a dazzling cast of musical superstars and comedic powerhouses as new franchise characters, including four-time Grammy nominee and Latin Grammy winner Camila Cabello (Cinderella) as Viva; Zosia Mamet (The Flight Attendant) as Crimp; and 12-time Emmy winning drag icon RuPaul Charles as Miss Maxine. \n\nThe returning cast includes Grammy, Emmy and Golden Globe nominee Zooey Deschanel as Bridget; Christopher Mintz-Plasse as Gristle, the Icona Pop duo Aino Jawo and Caroline Hjelt as Satin and Chenille, Grammy winner Anderson .Paak as Prince D, comedian Ron Funches as Cooper, SAG nominee Kunal Nayyar as Guy Diamond and Emmy winning Saturday Night Live legend Kenan Thompson as Tiny Diamond. \n\nTrolls Band Together is steered by returning director Walt Dohrn and producer Gina Shay, and is co-directed by Tim Heitz (head of story, Trolls World Tour). DreamWorks Animation’s Trolls films—2016’s Trolls and 2020’s Trolls World Tour—have sung and danced their way to record-breaking success, earning an Oscar® nomination for Best Original Song and fueling one of the largest and most beloved entertainment brands in the world.",
+  "starring": "Anna Kendrick, Justin Timberlake, Camila Cabello, Eric André, Amy Schumer, Andrew Rannells, Troye Sivan, Daveed Diggs, Kid Cudi, Zosia Mamet, Zooey Deschanel, Christopher Mintz-Plasse, RuPaul Charles, Aino Jawo, Caroline Hjelt, Kenan Thompson, Anderson .Paak, Kunal Nayyar, Ron Funches",
+  "director": "Walt Dohrn",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Suitable for viewing by all ages."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Suitable for viewing by persons of all ages."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "General Viewing.  Suitable of all audiences."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Suitable for persons of all ages."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Suitable for persons of all ages."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Suitable for persons of all ages."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Suitable for viewing by persons of all ages."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Suitable for persons of all ages."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "May be viewed by persons of all ages."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Acceptable for all age groups."
+    }
+  ],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33636_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33636_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33636_768_1024.jpg",
+  "cineplexId": 33636
+},
+{
+  "id": "6563a43f92c740d467db9472",
+  "name": "Underdoggs",
+  "title": "Underdoggs",
+  "releaseDate": "2024-01-26",
+  "runtimeInMinutes": 999,
+  "genres": [
+    "Comedy",
+    "Sports"
+  ],
+  "starring": "Snoop Dogg, Tika Sumpter, Mike Epps, Andrew Schulz, George Lopez, Adan James Carrillo, Alexander Michael Gordon",
+  "director": "Charles Stone III",
+  "producers": "Snoop Dogg, Kenya Barris, Mychelle Deschamps, Constance Schwartz, Jonathan Glickman",
+  "writers": "Snoop Dogg, Constance Schwartz",
+  "ratings": [],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "cineplexId": 36002
+},
+{
+  "id": "6563a43f92c740d467db9474",
+  "name": "Unsung Hero",
+  "title": "Unsung Hero",
+  "releaseDate": "2024-04-26",
+  "runtimeInMinutes": 113,
+  "genres": [
+    "Drama"
+  ],
+  "synopsis": "When David Smallbone's successful music company collapses, he moves his family from Australia to the States, searching for a brighter future. With nothing more than their seven children, suitcases, and their love of music, David (for KING + COUNTRY's Joel Smallbone) and his pregnant wife Helen (Daisy Betts) set out to rebuild their lives. Based on a remarkable true story, Helen's faith stands against all odds and inspires her husband and children to hold onto theirs. With their own dreams on hold, David and Helen begin to realize the musical prowess in their children, who would go on to become two of the most successful acts in Inspirational Music history: five-time Grammy Award-winning artists for KING + COUNTRY and Rebecca St. James.",
+  "starring": "Joel Smallbone, Daisy Betts, Kirrilee Berger, Jonathan Jackson, Candace Cameron Bure, Terry O'Quinn, Lucas Black, Hillary Scott",
+  "director": "Richard Ramsey, Joel Smallbone",
+  "producers": "Steve Barnett, Alan Powell, David Smallbone, Luke Smallbone, Justin Tolley, Joshua Walsh",
+  "writers": "Richard Ramsey, Joel Smallbone",
+  "ratings": [],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "cineplexId": 35997
+},
+{
+  "id": "6563a43f92c740d467db9476",
+  "name": "Untitled Fourth Film Directed By Jordan Peele",
+  "title": "Untitled Fourth Film Directed By Jordan Peele",
+  "releaseDate": "2024-12-25",
+  "runtimeInMinutes": 999,
+  "genres": [],
+  "ratings": [],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "cineplexId": 35185
+},
+{
+  "id": "6563a43f92c740d467db9478",
+  "name": "Who’s Yer Father?",
+  "title": "Who’s Yer Father?",
+  "releaseDate": "2023-11-03",
+  "runtimeInMinutes": 110,
+  "genres": [],
+  "synopsis": "In PEI, a novice PI is hired by a wealthy seafood buyer to investigate black-market lobster sales. After enlisting the help of a scrappy local convenience store owner, the duo uncovers much more than they were expecting.",
+  "starring": "Chris Locke; Susan Kent; Jess Salgueiro; Kaniehtiio Horn",
+  "director": "Jeremy Larter",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to Classification"
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification"
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [
+        "Sexual Content",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [
+        "Sexual Content",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [
+        "Sexual Content",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Sexual Content",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [
+        "Sexual Content",
+        "Coarse Language"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    }
+  ],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35895_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35895_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35895_768_1024.jpg",
+  "cineplexId": 35895
+},
+{
+  "id": "6563a43f92c740d467db9484",
+  "name": "Wish (Dubbed in Spanish)",
+  "title": "Wish (Dubbed in Spanish)",
+  "releaseDate": "2023-11-25",
+  "runtimeInMinutes": 94,
+  "genres": [
+    "Animation"
+  ],
+  "starring": "Chris Pine, Ariana DeBose, Alan Tudyk",
+  "director": "Chris Buck, Fawn Veerasunthorn",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to Classification"
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification"
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification"
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification"
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Suitable for viewing by persons of all ages."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    }
+  ],
+  "languageCode": "ES",
+  "movieLanguage": "Spanish (Dubbed)",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35957_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35957_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35957_768_1024.jpg",
+  "cineplexId": 35957
+},
+{
+  "id": "6563a43f92c740d467db9490",
+  "name": "Wish",
+  "title": "Wish",
+  "releaseDate": "2023-11-22",
+  "runtimeInMinutes": 95,
+  "genres": [
+    "Animation"
+  ],
+  "synopsis": "Be careful what you wish for ?? Watch the NEW trailer for Disney's #Wish, coming only to theaters this Thanksgiving. \n\nRevealed today are additional members of the film’s voice cast, who join previously announced cast members Ariana DeBose, who voices 17-year-old heroine Asha; Chris Pine, who lends his voice to the formidable King Magnifico; and Alan Tudyk, who provides the memorable voice of Asha’s pet goat, Valentino. \n\nCast members include:\nAngelique Cabral as Queen Amaya, the wife and sounding board of King Magnifico; Victor Garber as Asha’s grandfather, Sabino, who—at 100 years old—is patiently waiting for his wish to be granted; and Natasha Rothwell as Asha’s loving and supportive mom, Sakina.\n \nPlus, Asha’s tight-knit group of confidants, protectors and forever friends: Jennifer Kumiyama as Asha’s dearest friend, Dahlia, who’s an accomplished baker and unofficial leader of their group; Evan Peters as the strong guy with a big heart and bigger yawn, Simon; Harvey Guillén as Gabo, who may be cynical, but he has a heart of gold; Ramy Youssef as Safi, who’s plagued by allergies; Niko Vargas as Asha’s joyful, always smiling buddy, Hal; Della Saba as the seemingly shy teenager, Bazeema, who’s full of surprises; and Jon Rudnitsky as Asha’s rosy-cheeked, wiggly-eared pal, Dario.",
+  "starring": "Chris Pine, Ariana DeBose, Alan Tudyk",
+  "director": "Chris Buck, Fawn Veerasunthorn",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Suitable for viewing by all ages."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Suitable for viewing by persons of all ages."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "General Viewing.  Suitable of all audiences."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Suitable for persons of all ages."
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Suitable for persons of all ages."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Suitable for persons of all ages."
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Suitable for viewing by persons of all ages."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Suitable for persons of all ages."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "May be viewed by persons of all ages."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [],
+      "rating": "G",
+      "ratingDescription": "Acceptable for all age groups."
+    }
+  ],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34534_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34534_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34534_768_1024.jpg",
+  "cineplexId": 34534
+},
+{
+  "id": "6563a43f92c740d467db949c",
+  "name": "Wonka",
+  "title": "Wonka",
+  "releaseDate": "2023-12-15",
+  "runtimeInMinutes": 116,
+  "genres": [
+    "Fantasy",
+    "Children",
+    "Family",
+    "Adaptation",
+    "Adventure",
+    "Period"
+  ],
+  "synopsis": "Based on the extraordinary character at the center of Charlie and the Chocolate Factory, Roald Dahl’s most iconic children’s book and one of the best-selling children’s books of all time, “Wonka” tells the wondrous story of how the world’s greatest inventor, magician and chocolate-maker became the beloved Willy Wonka we know today.\nFrom Paul King, writer/director of the “Paddington” films, David Heyman, producer of “Harry Potter,” “Gravity,” “Fantastic Beasts” and “Paddington,” and producers Alexandra Derbyshire (the “Paddington” films, “Jurassic World: Dominion”) and Luke Kelly (“Roald Dahl’s The Witches”), comes an intoxicating mix of magic and music, mayhem and emotion, all told with fabulous heart and humor. Starring Timothée Chalamet in the title role, this irresistibly vivid and inventive big screen spectacle will introduce audiences to a young Willy Wonka, chock-full of ideas and determined to change the world one delectable bite at a time—proving that the best things in life begin with a dream, and if you’re lucky enough to meet Willy Wonka, anything is possible.\nStarring alongside Chalamet are Calah Lane (“The Day Shall Come”), Emmy and Peabody Award winner Keegan-Michael Key (“The Prom,” “Schmigadoon”), Paterson Joseph (“Vigil,” “Noughts + Crosses”), Matt Lucas (“Paddington,” “Little Britain”), Mathew Baynton (“The Wrong Mans,” “Ghosts”), Oscar nominee Sally Hawkins (“The Shape of Water,” the “Paddington” films, “Spencer”), Rowan Atkinson (the “Johnny English” and “Mr. Bean” films, “Love Actually”), Jim Carter (“Downton Abbey”), with Oscar winner Olivia Colman (“The Favourite”). The film also stars Natasha Rothwell (“White Lotus,” “Insecure”), Rich Fulcher (“Marriage Story,” “Disenchantment”), Rakhee Thakrar (“Sex Education,” “Four Weddings and a Funeral”), Tom Davis (“Paddington 2,” “King Gary”) and Kobna Holdbrook-Smith (“Paddington 2,” “Zack Snyder’s Justice League,” “Mary Poppins Returns”).Simon Farnaby (“Paddington 2”) & Paul King wrote the screenplay, based on a story by King and characters created by Roald Dahl. Michael Siegel, Cate Adams, Rosie Alison and Tim Wellspring are serving as executive producers. King’s behind-the-scenes creative team includes director of photography Chung-Hoon Chung (“Last Night in Soho,” “Ah-ga-ssi”); Oscar-nominated production designer Nathan Crowley (“Tenet,” “Dunkirk”); editor Mark Everson (the “Paddington” films); Oscar-winning costume\ndesigner Lindy Hemming (the “Paddington” films, “Topsy-Turvy”); and composer Joby Talbot (the “Sing” films). Neil Hannon of the band The Divine Comedy is writing original songs for the film.\nWarner Bros. Pictures Presents, in Association with Village Roadshow Pictures, a Heyday Films Production, a Paul King Confection, “Wonka,” set to open in theatres and in IMAX internationally beginning in December 2023 and in North America on December 15, 2023; it will be distributed worldwide by Warner Bros. Pictures.",
+  "starring": "Timothée Chalamet, Rowan Atkinson, Matthew Baynton, Jim Carter, Olivia Colman, Tom Davis, Simon Farnaby, Rich Fulcher, Sally Hawkins, Kobna Holdbrook-Smith, Paterson Joseph, Keegan-Michael Key, Calah Lane, Matt Lucas, Colin O’Brien, Natasha Rothwell, Rakhee Thakrar, Ellie White.",
+  "director": "Paul King",
+  "producers": "Michael Siegel, David Heyman, Luke Kelly",
+  "writers": "Paul King, Simon Farnaby, Simon Rich, Simon Stephenson, Jeff Nathanson, Steven Levenson",
+  "ratings": [],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33059_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33059_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33059_768_1024.jpg",
+  "cineplexId": 33059
+},
+{
+  "id": "6563a43f92c740d467db949e",
+  "name": "Zindagi Zindabaad (Punjabi w/e.s.t.)",
+  "title": "Zindagi Zindabaad (Punjabi w/e.s.t.)",
+  "releaseDate": "2023-10-27",
+  "runtimeInMinutes": 145,
+  "genres": [
+    "Thriller",
+    "International"
+  ],
+  "synopsis": "It is always been said that \"Addiction to Life is stronger than an Addiction to Drugs\". Zindagi Zindabaad takes us to the deep insights of five individual lives who are chained into the misery of addiction and how these very individuals break free from these chains to live a clean and more realistic colourful lives. ",
+  "starring": "Ninja, Mandy Takhar, Rajeev Thakur, Sukhdeep Sukh, Sardar Sohi, Yaad Grewal, Vadda Grewal, Vibha Bhagat, Anita Meet, Samuel John, Roop Sandhu, Jagdeep Randhawa",
+  "director": "Prem Singh Sidhu",
+  "ratings": [
+    {
+      "provinceCode": "AB",
+      "warnings": [
+        "Substance Abuse"
+      ],
+      "rating": "14A",
+      "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
+    },
+    {
+      "provinceCode": "BC",
+      "warnings": [
+        "Violence",
+        "Drug Use"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "MB",
+      "warnings": [
+        "Violence",
+        "Drug Use"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "NB",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification"
+    },
+    {
+      "provinceCode": "NL",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "NS",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification"
+    },
+    {
+      "provinceCode": "ON",
+      "warnings": [
+        "Drug Use",
+        "Violent Scenes"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    },
+    {
+      "provinceCode": "PE",
+      "warnings": [],
+      "rating": "STC",
+      "ratingDescription": "Subject to classification."
+    },
+    {
+      "provinceCode": "QC",
+      "warnings": [],
+      "rating": "13ans+",
+      "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
+    },
+    {
+      "provinceCode": "SK",
+      "warnings": [
+        "Violence",
+        "Drug Use"
+      ],
+      "rating": "PG",
+      "ratingDescription": "Parental guidance advised."
+    }
+  ],
+  "languageCode": "PA",
+  "movieLanguage": "Punjabi",
+  "movieSubtitleLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35920_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35920_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35920_768_1024.jpg",
+  "cineplexId": 35920
+},
+{
+  "id": "6563a43f92c740d467db94aa",
+  "name": "Zone of Interest",
+  "title": "Zone of Interest",
+  "releaseDate": "2023-12-22",
+  "runtimeInMinutes": 999,
+  "genres": [],
+  "ratings": [],
+  "languageCode": "EN",
+  "movieLanguage": "English",
+  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36003_130_193.jpg",
+  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36003_320_470.jpg",
+  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36003_768_1024.jpg",
+  "cineplexId": 36003
+}]

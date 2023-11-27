@@ -1,5 +1,5 @@
 import {UseCase, UseCaseCollection, UseCaseCollections, UseCaseProperties} from "cinetex-core/dist/application";
-import {AxiosInstance} from "axios";
+import {AxiosInstance, HttpStatusCode} from "axios";
 import * as queries from "cinetex-core/dist/application/queries";
 
 export function AxiosUseCaseInteractorCollections(client: AxiosInstance): UseCaseCollections {
@@ -46,9 +46,9 @@ export function AxiosUseCaseInteractorCollections(client: AxiosInstance): UseCas
             },
             responseType: "json",
             responseEncoding: "utf8",
-            validateStatus: status => (status === 200) || (status === 404 && usecase.type === "query")
+            validateStatus: status => (status === HttpStatusCode.Ok) || (status === HttpStatusCode.NotFound && usecase.type === "query")
         })
-        if (response.status === 200 && (response.data !== undefined && response.data !== "")) {
+        if (response.status === HttpStatusCode.Ok && (response.data !== undefined && response.data !== "")) {
             return response.data as Output
         }
         return undefined as Output

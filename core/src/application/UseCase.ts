@@ -1,4 +1,4 @@
-export type UseCaseType = "query" | "command" ;
+export type UseCaseType = "query" | "command" | "request";
 
 export interface UseCaseProperties<T extends UseCaseType = UseCaseType> {
     readonly name: string;
@@ -22,6 +22,10 @@ export interface CommandUseCase<Command = any> extends UseCase<Command, void>, U
     readonly type: "command";
 }
 
+export interface RequestUseCase<Request = any, Reply = any> extends UseCase<Request, Reply>, UseCaseProperties<"request"> {
+    readonly type: "request";
+}
+
 export function UseCase<Type extends UseCaseType, Input = any, Output = any>(properties: UseCaseProperties<Type>, invoke: UseCaseInvoker<Input, Output>): UseCase<Input, Output> {
     return {
         ...properties,
@@ -35,4 +39,8 @@ export function QueryUseCase<Query = any, Result = any>(name: string, invoke: (i
 
 export function CommandUseCase<Command = any>(name: string, invoke: (input: Command) => Promise<void>): CommandUseCase<Command> {
     return UseCase({ name, type: "command" }, invoke) as CommandUseCase<Command>;
+}
+
+export function RequestUseCase<Request = any, Reply = any>(name: string, invoke: (input: Request) => Promise<Reply>): RequestUseCase<Request, Reply> {
+    return UseCase({ name, type: "request" }, invoke) as RequestUseCase<Request>;
 }
