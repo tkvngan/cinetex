@@ -5,10 +5,14 @@ import {User} from "cinetex-core/dist/domain/entities/User";
 import {UsersQuery} from "cinetex-core/dist/application/queries";
 
 export const UserSchemaDefinition: SchemaDefinition = {
-    firstName: {type: String, required: true},
-    lastName: {type: String, required: true},
     email: {type: String, required: true, unique: true, index: true},
+    password: {type: String, required: true},
+    firstName: {type: String, required: false},
+    lastName: {type: String, required: false},
     phoneNumber: {type: String, required: false},
+    emailVerified: {type: Boolean, required: true, default: false},
+    createdAt: {type: Date, required: true, default: Date.now},
+    roles: {type: [String], required: true, default: []},
 }
 
 export function MongoDBUserRepository(model: Model<User>): UserRepository {
@@ -30,7 +34,7 @@ export function MongoDBUserRepository(model: Model<User>): UserRepository {
             return (await model.find(filter)).map(user => user.toObject());
         },
 
-        async addUser(user: User): Promise<User> {
+        async createUser(user: User): Promise<User> {
             return (await model.create(user)).toObject();
         },
 

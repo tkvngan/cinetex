@@ -14,9 +14,9 @@ export type UsersQuery = {
     phoneNumber?: string | ByPattern;
 }
 
-export type GetUsersByQuery = QueryUseCase<UsersQuery, User[]>
+export type GetUsersByQuery = QueryUseCase<UsersQuery, Omit<User, "password">[]>
 
-export function GetUsersByQuery(invoke: (query: UsersQuery) => Promise<User[]>): GetUsersByQuery {
+export function GetUsersByQuery(invoke: (query: UsersQuery) => Promise<Omit<User, "password">[]>): GetUsersByQuery {
     return { name: "GetUsersByQuery", type: "query", invoke }
 }
 

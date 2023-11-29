@@ -9,7 +9,7 @@ export interface UserRepository {
 
     getUserByEmail(email: string): Promise<User | undefined>;
 
-    addUser(user: User): Promise<User>;
+    createUser(user: User): Promise<User>;
 
     deleteUserById(id: string): Promise<User | undefined>;
 

@@ -7,6 +7,7 @@ import {UseCaseInteractorCollections} from "./application";
 import {installAllSamples} from "./samples";
 import {MongoMemoryServerOpts} from "mongodb-memory-server-core/lib/MongoMemoryServer";
 import config from "./config";
+import {secretKey} from "./infrastructure/security";
 
 async function startMongoDBMemoryServerIfEnabled(): Promise<void> {
     if (config.START_MONGODB_MEMORY_SERVER !== "true") {
@@ -59,6 +60,7 @@ async function installSampleDataIfEnabled(repositories: Repositories): Promise<v
 }
 
 async function main(): Promise<void> {
+    await secretKey()
     await startMongoDBMemoryServerIfEnabled()
     await connectMongoDBServer()
 
@@ -66,7 +68,7 @@ async function main(): Promise<void> {
     await installSampleDataIfEnabled(repositories)
 
     const rootRouter = ExpressRootPathRouter(config.ROOT)
-    const serviceRouter = ExpressServiceRouter(UseCaseInteractorCollections(repositories))
+    const serviceRouter = ExpressServiceRouter(UseCaseInteractorCollections(repositories), repositories)
     const server = ExpressServer([["/service", serviceRouter], ["/", rootRouter]])
     const port = parseInt(config.PORT)
     server.listen(port, () => {

@@ -1,3 +1,5 @@
+import {SecurityCredentials} from "../security/SecurityCredentials";
+
 export type UseCaseType = "query" | "command" | "request";
 
 export interface UseCaseProperties<T extends UseCaseType = UseCaseType> {
@@ -6,12 +8,12 @@ export interface UseCaseProperties<T extends UseCaseType = UseCaseType> {
     readonly parameters?: [key: string, type: "string" | "number" | "boolean"][]
 }
 
-export type UseCaseInvoker<Input, Output> = (input: Input) => Promise<Output>
+export type UseCaseInvoker<Input, Output> = (input: Input, credentials?: SecurityCredentials) => Promise<Output>
 
 export interface UseCase<Input = any, Output = any> extends UseCaseProperties {
     readonly name: string;
     readonly type: UseCaseType;
-    invoke(input: Input): Promise<Output>;
+    invoke(input: Input, credentials?: SecurityCredentials): Promise<Output>;
 }
 
 export interface QueryUseCase<Query = any, Result = any> extends UseCase<Query, Result>, UseCaseProperties<"query"> {

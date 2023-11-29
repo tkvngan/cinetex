@@ -27,6 +27,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "jose": "^5.1.2",
     "type-fest": "^4.6.0"
   }
 }

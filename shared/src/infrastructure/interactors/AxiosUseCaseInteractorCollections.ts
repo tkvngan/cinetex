@@ -1,6 +1,9 @@
 import {UseCase, UseCaseCollection, UseCaseCollections, UseCaseProperties} from "cinetex-core/dist/application";
-import {AxiosInstance, HttpStatusCode} from "axios";
+import {AxiosInstance} from "axios";
 import * as queries from "cinetex-core/dist/application/queries";
+import {StatusCodes} from "http-status-codes";
+import {SignIn} from "cinetex-core/dist/application/requests/SignIn";
+import {SignUp} from "cinetex-core/dist/application/requests/SignUp";
 
 export function AxiosUseCaseInteractorCollections(client: AxiosInstance): UseCaseCollections {
     const base = UseCaseCollection();
@@ -27,6 +30,8 @@ export function AxiosUseCaseInteractorCollections(client: AxiosInstance): UseCas
         GetUserByEmail: base.add(interactor(queries.GetUserByEmail)),
         GetUserById: base.add(interactor(queries.GetUserById)),
         GetUsersByQuery: base.add(interactor(queries.GetUsersByQuery)),
+        SignIn: base.add(interactor(SignIn)),
+        SignUp: base.add(interactor(SignUp))
     }
 
     function interactor<T extends UseCase, Input, Output>(factory: (invoke: (query: Input) => Promise<Output>) => T): T {
@@ -46,9 +51,9 @@ export function AxiosUseCaseInteractorCollections(client: AxiosInstance): UseCas
             },
             responseType: "json",
             responseEncoding: "utf8",
-            validateStatus: status => (status === HttpStatusCode.Ok) || (status === HttpStatusCode.NotFound && usecase.type === "query")
+            validateStatus: status => (status === StatusCodes.OK) || (status === StatusCodes.NOT_FOUND && usecase.type === "query")
         })
-        if (response.status === HttpStatusCode.Ok && (response.data !== undefined && response.data !== "")) {
+        if (response.status === StatusCodes.OK && (response.data !== undefined && response.data !== "")) {
             return response.data as Output
         }
         return undefined as Output
