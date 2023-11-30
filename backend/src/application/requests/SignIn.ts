@@ -1,12 +1,17 @@
 import {Repositories} from "../repositories";
-import {SignIn, SignInRequest, SignInResponse} from "cinetex-core/dist/application/requests/SignIn";
+import {SignIn, SignInRequest, SignInResponse} from "cinetex-core/dist/application/requests";
 import {secretKey} from "../../infrastructure/security";
 import {SignJWT} from "jose";
 import bcrypt from "bcrypt";
+import {User} from "cinetex-core/dist/domain/entities";
 
-export function SignInInteractor(repositories: Repositories): SignIn {
-    return SignIn(async (request: SignInRequest): Promise<SignInResponse> => {
-        const user = await repositories.User.getUserByEmail(request.email);
+export class SignInInteractor extends SignIn {
+    constructor(readonly repositories: Repositories) {
+        super()
+    }
+
+    override async invoke(request: SignInRequest): Promise<SignInResponse> {
+        const user: User | undefined = await this.repositories.User.getUserByEmail(request.email);
         if (!user) {
             throw new Error("User not found");
         }
@@ -16,7 +21,7 @@ export function SignInInteractor(repositories: Repositories): SignIn {
         }
         delete (user as any).password;
         const key = await secretKey();
-        const token = await new SignJWT({user: user})
+        const jwtToken = await new SignJWT({user: user})
             .setIssuer("cinetex")
             .setSubject(request.email)
             .setExpirationTime("30m")
@@ -24,6 +29,6 @@ export function SignInInteractor(repositories: Repositories): SignIn {
             .setIssuedAt(new Date())
             .setProtectedHeader({alg: "HS256", typ: "JWT"})
             .sign(key)
-        return {user, token}
-    });
+        return {user: user, jwtToken: jwtToken}
+    }
 }

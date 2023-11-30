@@ -1,29 +1,34 @@
 import express, {Router} from "express"
 import {CommandUseCase, QueryUseCase, RequestUseCase, UseCase, UseCaseCollection} from "cinetex-core/dist/application"
-import {Request, RequestHandler} from "express-serve-static-core";
+import {ParamsDictionary, Request, RequestHandler} from "express-serve-static-core";
 import {StatusCodes} from "http-status-codes";
-import {SignUp} from "cinetex-core/dist/application/requests/SignUp";
-import {SignUpInteractor} from "../../application/requests/SignUp";
 import {Repositories} from "../../application/repositories";
-import {SignInInteractor} from "../../application/requests/SignIn";
 import {jwtVerify} from "jose";
 import {secretKey} from "../security";
-import { ParsedQs } from "qs";
-import {ParamsDictionary } from "express-serve-static-core";
+import {ParsedQs} from "qs";
+import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredentials";
+import {User} from "cinetex-core/dist/domain/entities";
 
 export function ExpressServiceRouter(interactors: UseCaseCollection, repositories: Repositories): Router {
     const router: Router = express.Router()
 
-    async function getCredentials(req:  Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>): Promise<any | undefined> {
+    async function getCredentials(req:  Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>): Promise<SecurityCredentials | undefined> {
         if (req.headers.authorization) {
             const token = req.headers.authorization.split(" ")[1]
             try {
                 const { payload} = await jwtVerify(token, await secretKey(), {issuer: 'cinetex', audience: 'cinetex',})
-                console.log("Credentials: " + JSON.stringify(payload))
-
-                return payload;
+                console.log("jwtToken: " + token);
+                console.log("jwtPayload: " + JSON.stringify(payload))
+                const credentials = {
+                    user: payload.user as User,
+                    jwtToken: token,
+                    jwtPayload: payload
+                }
+                console.log("credentials: " + JSON.stringify(credentials))
+                return credentials
             } catch (e: any) {
-                console.error(e)
+                console.error("Failed to verify jwtToken: " + token + ", error: " + e)
+                console.error("Treat user as unauthenticated...")
             }
         }
         return undefined
@@ -69,8 +74,9 @@ export function ExpressServiceRouter(interactors: UseCaseCollection, repositorie
         }
     }
 
-    for (const interactor of interactors.toArray()) {
+    for (const interactor of interactors) {
         const path = "/" + interactor.type + "/" + interactor.name
+        console.log("Registering interactor: " + interactor.name + " at path: " + path)
         switch (interactor.type) {
         case "query":
             router.get(path, queryHandler(interactor as QueryUseCase))
@@ -86,8 +92,6 @@ export function ExpressServiceRouter(interactors: UseCaseCollection, repositorie
             break;
         }
     }
-    router.post("/request/SignUp", requestHandler(SignUpInteractor(repositories)))
-    router.post("/request/SignIn", requestHandler(SignInInteractor(repositories)))
     return router
 }
 

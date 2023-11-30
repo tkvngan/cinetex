@@ -7,21 +7,24 @@ import {
     UnauthorizedException
 } from "cinetex-core/dist/application/exceptions/Exceptions";
 
-export function GetUserByEmailInteractor(repositories: Repositories): GetUserByEmail {
-    return GetUserByEmail(async (query: { email: string }, credentials?: SecurityCredentials): Promise<Omit<User, "password"> | undefined> => {
+export class GetUserByEmailInteractor extends GetUserByEmail {
+    constructor(readonly repositories: Repositories) {
+        super()
+    }
+
+    override async invoke(query: { email: string }, credentials?: SecurityCredentials): Promise<Omit<User, "password"> | undefined> {
         if (!credentials) {
             throw new AuthenticationRequiredException()
         }
         const roles = credentials.user.roles;
         // GetUserByEmail is only allowed for admin or the user itself
         if (roles.includes("admin") || roles.includes("user") && credentials.user.email === query.email) {
-            const user = await repositories.User.getUserByEmail(query.email);
+            const user = await this.repositories.User.getUserByEmail(query.email);
             if (user) {
                 delete (user as any).password;
             }
             return user;
         }
         throw new UnauthorizedException()
-    })
+    }
 }
-

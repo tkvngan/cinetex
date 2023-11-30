@@ -1,5 +1,5 @@
 import {ByPattern, ByRange} from "./QueryCriteria";
-import {QueryUseCase} from "../UseCase";
+import {QueryUseCase, UseCaseInvokerFactory} from "../UseCase";
 import {Theatre} from "../../domain/entities";
 
 export type TheatresQuery = {
@@ -14,8 +14,9 @@ export type TheatresQuery = {
     screenCount?: number | ByRange<number>;
 }
 
-export type GetTheatresByQuery = QueryUseCase<TheatresQuery, Theatre[]>
-
-export function GetTheatresByQuery(invoke: (query: TheatresQuery) => Promise<Theatre[]>): GetTheatresByQuery {
-    return { name: "GetTheatresByQuery", type: "query", invoke }
+export class GetTheatresByQuery extends QueryUseCase<TheatresQuery, Theatre[]> {
+    constructor(invokerFactory?: UseCaseInvokerFactory<TheatresQuery, Theatre[]>) {
+        super("GetTheatresByQuery", invokerFactory);
+    }
 }
+

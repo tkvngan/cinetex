@@ -1,3 +1,1 @@
-export * from "./QueryUseCaseInteractors"
-export * from "./CommandUseCaseInteractors"
-export * from "./UseCaseInteractorCollections"
+export * from "./UseCaseInteractorCollection"

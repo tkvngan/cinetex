@@ -2,9 +2,12 @@ import {Movie} from "cinetex-core/dist/domain/entities";
 import {Repositories} from "../repositories";
 import {GetMovieByName} from "cinetex-core/dist/application/queries";
 
-export function GetMovieByNameInteractor(repositories: Repositories): GetMovieByName {
-    return GetMovieByName(async (query: { name: string }): Promise<Movie | undefined>  => {
-        return await repositories.Movie.getMovieByName(query.name);
-    })
-}
+export class GetMovieByNameInteractor extends GetMovieByName {
+    constructor(readonly repositories: Repositories) {
+        super()
+    }
 
+    override async invoke(query: { name: string }): Promise<Movie | undefined> {
+        return await this.repositories.Movie.getMovieByName(query.name);
+    }
+}

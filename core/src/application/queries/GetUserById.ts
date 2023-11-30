@@ -1,10 +1,11 @@
-import {QueryUseCase} from "../UseCase";
+import {QueryUseCase, UseCaseInvokerFactory} from "../UseCase";
 import {User} from "../../domain/entities";
 
-export type GetUserById = QueryUseCase<{ id: string }, Omit<User, "password"> | undefined>
-
-export function GetUserById(invoke: (query: { id: string }) => Promise<Omit<User, "password"> | undefined>): GetUserById {
-    return { name: "GetUserById", type: "query", invoke }
+export class GetUserById extends QueryUseCase<{ id: string }, Omit<User, "password"> | undefined> {
+    constructor(invokerFactory?: UseCaseInvokerFactory<{ id: string }, Omit<User, "password"> | undefined>) {
+        super("GetUserById", invokerFactory);
+    }
 }
+
 
 

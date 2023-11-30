@@ -1,4 +1,4 @@
-import {RequestUseCase} from "../UseCase";
+import {RequestUseCase, UseCaseInvokerFactory} from "../UseCase";
 import {User} from "../../domain/entities";
 
 export type SignInRequest = Readonly<{
@@ -8,11 +8,11 @@ export type SignInRequest = Readonly<{
 
 export type SignInResponse = {
     user: Omit<User, "password">
-    token: string
+    jwtToken: string
 }
 
-export type SignIn = RequestUseCase<SignInRequest, SignInResponse>
-
-export function SignIn(invoke: (request: SignInRequest) => Promise<SignInResponse>): SignIn {
-    return { name: "SignIn", type: "request", invoke }
+export class SignIn extends RequestUseCase<SignInRequest, SignInResponse> {
+    constructor(invokerFactory?: UseCaseInvokerFactory<SignInRequest, SignInResponse>) {
+        super("SignIn", invokerFactory);
+    }
 }

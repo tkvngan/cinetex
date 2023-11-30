@@ -1,4 +1,4 @@
-import {QueryUseCase} from "../UseCase";
+import {QueryUseCase, UseCaseInvokerFactory} from "../UseCase";
 import {Schedule} from "../../domain/entities";
 import {ByPattern, ByRange} from "./QueryCriteria";
 import {TheatresQuery} from "./GetTheatresByQuery";
@@ -20,8 +20,9 @@ export type SchedulesQuery = {
     showTime?: string | [string] | ByRange<string>;
 }
 
-export type GetSchedulesByQuery = QueryUseCase<SchedulesQuery, Schedule[]>
-
-export function GetSchedulesByQuery(invoke: (query: SchedulesQuery) => Promise<Schedule[]>): GetSchedulesByQuery {
-    return { name: "GetSchedulesByQuery", type: "query", invoke }
+export class GetSchedulesByQuery extends QueryUseCase<SchedulesQuery, Schedule[]> {
+    constructor(invokerFactory?: UseCaseInvokerFactory<SchedulesQuery, Schedule[]>) {
+        super("GetSchedulesByQuery", invokerFactory);
+    }
 }
+

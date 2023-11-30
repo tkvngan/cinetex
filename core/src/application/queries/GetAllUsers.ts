@@ -1,10 +1,11 @@
-import {QueryUseCase} from "../UseCase";
+import {QueryUseCase, UseCaseInvokerFactory} from "../UseCase";
 import {User} from "../../domain/entities";
 
-export type GetAllUsers = QueryUseCase<{}, User[]>
-
-export function GetAllUsers(invoke: (query: {}) => Promise<User[]>): GetAllUsers {
-    return { name: "GetAllUsers", type: "query", invoke }
+export class GetAllUsers extends QueryUseCase<{}, User[]> {
+    constructor(invokerFactory?: UseCaseInvokerFactory<{}, User[]>) {
+        super("GetAllUsers", invokerFactory);
+    }
 }
+
 
 

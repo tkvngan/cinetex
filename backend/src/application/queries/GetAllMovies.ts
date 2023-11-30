@@ -2,9 +2,13 @@ import {Movie} from "cinetex-core/dist/domain/entities";
 import {GetAllMovies} from "cinetex-core/dist/application/queries";
 import {Repositories} from "../repositories";
 
-export function GetAllMoviesInteractor(repositories: Repositories): GetAllMovies {
-    return GetAllMovies(async (query: {}): Promise<Movie[]>  => {
-        return await repositories.Movie.getAllMovies();
-    })
+export class GetAllMoviesInteractor extends GetAllMovies {
+    constructor(readonly repositories: Repositories) {
+        super()
+    }
+
+    override async invoke(query: {}): Promise<Movie[]> {
+        return await this.repositories.Movie.getAllMovies();
+    }
 }
 

@@ -1,6 +1,6 @@
 import {ByPattern, ByRange} from "./QueryCriteria";
 import {Movie} from "../../domain/entities";
-import {QueryUseCase} from "../UseCase";
+import {QueryUseCase, UseCaseInvokerFactory} from "../UseCase";
 
 export type MoviesQuery = {
     id: string | [string];
@@ -18,8 +18,9 @@ export type MoviesQuery = {
     releaseDate?: string | string[] | ByRange<string>;
 }
 
-export type GetMoviesByQuery = QueryUseCase<MoviesQuery, Movie[]>
-
-export function GetMoviesByQuery(invoke: (query: MoviesQuery) => Promise<Movie[]>): GetMoviesByQuery {
-    return { name: "GetMoviesByQuery", type: "query", invoke }
+export class GetMoviesByQuery extends QueryUseCase<MoviesQuery, Movie[]> {
+    constructor(invokerFactory?: UseCaseInvokerFactory<MoviesQuery, Movie[]>) {
+        super("GetMoviesByQuery", invokerFactory);
+    }
 }
+

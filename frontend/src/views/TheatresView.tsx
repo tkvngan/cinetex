@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import {UseCaseCollections} from "cinetex-core/dist/application";
+import {UseCaseCollection} from "cinetex-core/dist/application";
 import {Theatre} from "cinetex-core/dist/domain/entities";
 import {useEffect, useState} from "react";
 import {css} from "@emotion/react";
@@ -29,7 +29,7 @@ const theatresViewStyle = css({
     },
 })
 
-export default function TheatresView({interactors}: {interactors: UseCaseCollections}) {
+export default function TheatresView({interactors}: {interactors: UseCaseCollection}) {
     const [theatres, setTheatres] = useState<Theatre[]>([])
     useEffect(() => {
         interactors.GetAllTheatres.invoke({}).then((theatres: Theatre[]) => {

@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
 import {BrowserRouter, Link, Route, Routes, useLocation} from "react-router-dom";
-import {UseCaseCollections} from "cinetex-core/dist/application";
+import {UseCaseCollection} from "cinetex-core/dist/application";
 import MoviesView from "./views/MoviesView";
 import TheatresView from "./views/TheatresView";
 import HomeView from "./views/HomeView";
@@ -17,7 +17,7 @@ type ViewDescriptor = {
     path: string,
     name: string,
     hidden?: boolean,
-    fc: React.FC<{interactors: UseCaseCollections}>
+    fc: React.FC<{interactors: UseCaseCollection}>
 }
 
 const viewDescriptors: ViewDescriptor[] = [
@@ -29,7 +29,7 @@ const viewDescriptors: ViewDescriptor[] = [
     {path: "/SignUp", name: "Sign Up", hidden:true, fc: SignUpView},
 ]
 
-export function App({interactors}: {interactors: UseCaseCollections}) {
+export function App({interactors}: {interactors: UseCaseCollection}) {
     const [credentials, setCredentials] = React.useState<SecurityCredentials | null>(null)
     const [email, setEmail] = React.useState<string>("")
     const [password, setPassword] = React.useState<string>("")
@@ -46,8 +46,8 @@ export function App({interactors}: {interactors: UseCaseCollections}) {
 
     async function onSignInSubmit(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
         console.log("Sign In, email: " + email + ", password: " + password)
-        const {user, token} = await interactors.SignIn.invoke({email: email, password: password})
-        console.log("User: " + user + ", token: " + token)
+        const {user, jwtToken} = await interactors.SignIn.invoke({email: email, password: password})
+        console.log("User: " + user + ", token: " + jwtToken)
     }
 
     return (
@@ -144,11 +144,11 @@ function NavigationBar() {
     )
 }
 
-export function AboutView({interactors}: { interactors: UseCaseCollections}) {
+export function AboutView({interactors}: { interactors: UseCaseCollection}) {
     return <h1>About</h1>
 }
 
-function SignUpView({interactors}: { interactors: UseCaseCollections}) {
+function SignUpView({interactors}: { interactors: UseCaseCollection}) {
     const [email, setEmail] = React.useState<string>("")
     const [password, setPassword] = React.useState<string>("")
     const [firstName, setFirstName] = React.useState<string>("")

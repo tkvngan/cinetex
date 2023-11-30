@@ -2,9 +2,12 @@ import {GetMoviesByQuery, MoviesQuery} from "cinetex-core/dist/application/queri
 import {Movie} from "cinetex-core/dist/domain/entities";
 import {Repositories} from "../repositories";
 
-export function GetMoviesByQueryInteractor(repositories: Repositories): GetMoviesByQuery {
-    return GetMoviesByQuery(async (query: MoviesQuery): Promise<Movie[]>  => {
-        return await repositories.Movie.getMoviesByQuery(query);
-    })
-}
+export class GetMoviesByQueryInteractor extends GetMoviesByQuery {
+    constructor(readonly repositories: Repositories) {
+        super()
+    }
 
+    override async invoke(query: MoviesQuery): Promise<Movie[]> {
+        return await this.repositories.Movie.getMoviesByQuery(query);
+    }
+}

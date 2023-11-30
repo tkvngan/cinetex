@@ -1,10 +1,11 @@
-import {QueryUseCase} from "../UseCase";
+import {QueryUseCase, UseCaseInvokerFactory} from "../UseCase";
 import {Movie} from "../../domain/entities";
 
-export type GetMovieByName = QueryUseCase<{ name: string }, Movie | undefined>
-
-export function GetMovieByName(invoke: (query: { name: string }) => Promise<Movie | undefined>): GetMovieByName {
-    return { name: "GetMovieByName", type: "query", invoke }
+export class GetMovieByName extends QueryUseCase<{ name: string }, Movie | undefined> {
+    constructor(invokerFactory?: UseCaseInvokerFactory<{ name: string }, Movie | undefined>) {
+        super("GetMovieByName", invokerFactory);
+    }
 }
+
 
 

@@ -2,47 +2,50 @@ import {SecurityCredentials} from "../security/SecurityCredentials";
 
 export type UseCaseType = "query" | "command" | "request";
 
-export interface UseCaseProperties<T extends UseCaseType = UseCaseType> {
-    readonly name: string;
-    readonly type: T;
-    readonly parameters?: [key: string, type: "string" | "number" | "boolean"][]
+export type UseCaseInvoker<Input = any, Output = any> = (input: Input, credentials?: SecurityCredentials) => Promise<Output>
+
+export type UseCaseInvokerFactory<Input = any, Output = any> = (usecase: UseCase<Input, Output>) => UseCaseInvoker<Input, Output>
+
+export abstract class UseCase<Input = any, Output = any> {
+
+    protected readonly invoker: UseCaseInvoker<Input, Output>;
+
+    protected constructor(
+        readonly name: string,
+        readonly type: UseCaseType,
+        invokerFactory?: UseCaseInvokerFactory<Input, Output>
+    ) {
+        this.invoker = invokerFactory ? invokerFactory(this) : () => {
+            throw new Error("invoker not initialized")
+        }
+    }
+
+    invoke(input: Input, credentials?: SecurityCredentials): Promise<Output> {
+        return this.invoker(input, credentials);
+    }
+
 }
 
-export type UseCaseInvoker<Input, Output> = (input: Input, credentials?: SecurityCredentials) => Promise<Output>
-
-export interface UseCase<Input = any, Output = any> extends UseCaseProperties {
-    readonly name: string;
-    readonly type: UseCaseType;
-    invoke(input: Input, credentials?: SecurityCredentials): Promise<Output>;
-}
-
-export interface QueryUseCase<Query = any, Result = any> extends UseCase<Query, Result>, UseCaseProperties<"query"> {
-    readonly type: "query";
-}
-
-export interface CommandUseCase<Command = any> extends UseCase<Command, void>, UseCaseProperties<"command"> {
-    readonly type: "command";
-}
-
-export interface RequestUseCase<Request = any, Reply = any> extends UseCase<Request, Reply>, UseCaseProperties<"request"> {
-    readonly type: "request";
-}
-
-export function UseCase<Type extends UseCaseType, Input = any, Output = any>(properties: UseCaseProperties<Type>, invoke: UseCaseInvoker<Input, Output>): UseCase<Input, Output> {
-    return {
-        ...properties,
-        invoke
+export abstract class QueryUseCase<Query = any, Result = any> extends UseCase<Query, Result> {
+    protected constructor(
+        readonly name: string,
+        invokerFactory?: UseCaseInvokerFactory<Query, Result>) {
+        super(name, "query", invokerFactory);
     }
 }
 
-export function QueryUseCase<Query = any, Result = any>(name: string, invoke: (input: Query) => Promise<Result>): QueryUseCase<Query, Result> {
-    return UseCase({ name, type: "query" }, invoke) as QueryUseCase<Query, Result>;
+export abstract class CommandUseCase<Command = any> extends UseCase<Command, void> {
+    protected constructor(
+        readonly name: string,
+        invokerFactory?: UseCaseInvokerFactory<Command, any>) {
+        super(name, "command", invokerFactory);
+    }
 }
 
-export function CommandUseCase<Command = any>(name: string, invoke: (input: Command) => Promise<void>): CommandUseCase<Command> {
-    return UseCase({ name, type: "command" }, invoke) as CommandUseCase<Command>;
-}
-
-export function RequestUseCase<Request = any, Reply = any>(name: string, invoke: (input: Request) => Promise<Reply>): RequestUseCase<Request, Reply> {
-    return UseCase({ name, type: "request" }, invoke) as RequestUseCase<Request>;
+export abstract class RequestUseCase<Request = any, Reply = any> extends UseCase<Request, Reply> {
+    protected constructor(
+        readonly name: string,
+        invokerFactory?: UseCaseInvokerFactory<Request, Reply>) {
+        super(name, "request", invokerFactory);
+    }
 }

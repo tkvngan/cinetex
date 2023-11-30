@@ -1,10 +1,11 @@
-import {QueryUseCase} from "../UseCase";
+import {QueryUseCase, UseCaseInvokerFactory} from "../UseCase";
 import {Schedule} from "../../domain/entities";
 
-export type GetAllSchedules = QueryUseCase<{}, Schedule[]>
-
-export function GetAllSchedules(invoke: (query: {}) => Promise<Schedule[]>): GetAllSchedules {
-    return { name: "GetAllSchedules", type: "query", invoke }
+export class GetAllSchedules extends QueryUseCase<{}, Schedule[]> {
+    constructor(invokerFactory?: UseCaseInvokerFactory<{}, Schedule[]>) {
+        super("GetAllSchedules", invokerFactory);
+    }
 }
+
 
 

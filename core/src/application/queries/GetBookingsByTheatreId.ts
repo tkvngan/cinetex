@@ -1,10 +1,11 @@
-import {QueryUseCase} from "../UseCase";
+import {QueryUseCase, UseCaseInvokerFactory} from "../UseCase";
 import {Booking} from "../../domain/entities";
 
-export type GetBookingsByTheatreId = QueryUseCase<{ theatreId: string }, Booking[]>
-
-export function GetBookingsByTheatreId(invoke: (query: { theatreId: string }) => Promise<Booking[]>): GetBookingsByTheatreId {
-    return { name: "GetBookingsByTheatreId", type: "query", invoke }
+export class GetBookingsByTheatreId extends QueryUseCase<{ theatreId: string }, Booking[]> {
+    constructor(invokerFactory?: UseCaseInvokerFactory<{ theatreId: string }, Booking[]>) {
+        super("GetBookingsByTheatreId", invokerFactory);
+    }
 }
+
 
 

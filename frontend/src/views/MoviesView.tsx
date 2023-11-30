@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
-import {UseCaseCollections} from "cinetex-core/dist/application";
 import React, {useEffect, useState} from "react";
 import {Movie} from "cinetex-core/dist/domain/entities";
 import * as Icons from 'react-bootstrap-icons';
 import {css} from "@emotion/react";
+import {UseCaseCollection} from "cinetex-core/dist/application";
 
 const moviesViewStyle = css({
     ".movie-image-box": {
@@ -24,7 +24,7 @@ const moviesViewStyle = css({
     }
 });
 
-export default function MoviesView({interactors}: {interactors: UseCaseCollections}) {
+export default function MoviesView({interactors}: {interactors: UseCaseCollection}) {
     const {GetAllMovies} = interactors
     const [movies, setMoves] = useState<Movie[]>([])
     const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')

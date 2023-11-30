@@ -1,4 +1,4 @@
-import {QueryUseCase} from "../UseCase";
+import {QueryUseCase, UseCaseInvokerFactory} from "../UseCase";
 import {User} from "../../domain/entities";
 import {ByPattern} from "./QueryCriteria";
 
@@ -14,10 +14,11 @@ export type UsersQuery = {
     phoneNumber?: string | ByPattern;
 }
 
-export type GetUsersByQuery = QueryUseCase<UsersQuery, Omit<User, "password">[]>
-
-export function GetUsersByQuery(invoke: (query: UsersQuery) => Promise<Omit<User, "password">[]>): GetUsersByQuery {
-    return { name: "GetUsersByQuery", type: "query", invoke }
+export class GetUsersByQuery extends QueryUseCase<UsersQuery, Omit<User, "password">[]> {
+    constructor(invokerFactory?: UseCaseInvokerFactory<UsersQuery, Omit<User, "password">[]>) {
+        super("GetUsersByQuery", invokerFactory);
+    }
 }
+
 
 
