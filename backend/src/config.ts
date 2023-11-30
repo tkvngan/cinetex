@@ -12,11 +12,13 @@ export type config = Readonly<{
     MONGODB_USER: string,
     MONGODB_PASS: string,
     START_MONGODB_MEMORY_SERVER: string,
-    INSTALL_SAMPLE_DATA: string
+    INSTALL_SAMPLE_DATA: string,
+    SECRET_KEY?: string,
 }>
 
 dotenvExpand.expand(dotenv.config())
-export const config: config = {
+
+const DEFAULT_CONFIG: config = {
     PORT: "3000",
     HOST: "localhost",
     ROOT: "../frontend/build",
@@ -28,6 +30,10 @@ export const config: config = {
     MONGODB_PASS: "goodExample",
     START_MONGODB_MEMORY_SERVER: "false",
     INSTALL_SAMPLE_DATA: "false",
+}
+
+export const config: config = {
+    ...DEFAULT_CONFIG,
     ...process.env
 }
 

@@ -8,7 +8,7 @@ export type SignInRequest = Readonly<{
 
 export type SignInResponse = {
     user: Omit<User, "password">
-    jwtToken: string
+    token: string
 }
 
 export class SignIn extends RequestUseCase<SignInRequest, SignInResponse> {

@@ -6,7 +6,6 @@ import {ExpressServer} from "./infrastructure/servers"
 import {installAllSamples} from "./samples";
 import {MongoMemoryServerOpts} from "mongodb-memory-server-core/lib/MongoMemoryServer";
 import config from "./config";
-import {secretKey} from "./infrastructure/security";
 import {UseCaseInteractorCollection} from "./application/UseCaseInteractorCollection";
 
 async function startMongoDBMemoryServerIfEnabled(): Promise<void> {
@@ -60,7 +59,6 @@ async function installSampleDataIfEnabled(repositories: Repositories): Promise<v
 }
 
 async function main(): Promise<void> {
-    await secretKey()
     await startMongoDBMemoryServerIfEnabled()
     await connectMongoDBServer()
 

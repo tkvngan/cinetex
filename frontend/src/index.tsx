@@ -5,6 +5,7 @@ import axios from "axios";
 import App from "./App";
 import {AxiosUseCaseInvokerFactory} from "cinetex-shared/dist/infrastructure/interactors";
 import {UseCaseCollection, UseCaseCollectionClient} from "cinetex-core/dist/application";
+import {SecurityContext} from "./security/SecurityContext";
 
 require("bootstrap/dist/css/bootstrap.min.css");
 require("bootstrap/dist/js/bootstrap.bundle.min.js");
@@ -20,8 +21,9 @@ const axiosInstance = axios.create({
 
 const invokerFactory = AxiosUseCaseInvokerFactory(axiosInstance)
 const interactors: UseCaseCollection = new UseCaseCollectionClient(invokerFactory)
+const security = new SecurityContext(invokerFactory)
 const root = document.getElementById('root') as HTMLElement
 
-ReactDOM.createRoot(root).render(<App interactors={interactors}/>)
+ReactDOM.createRoot(root).render(<App interactors={interactors} security={security}/>)
 
 reportWebVitals();

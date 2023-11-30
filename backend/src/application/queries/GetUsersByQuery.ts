@@ -17,7 +17,6 @@ export class GetUsersByQueryInteractor extends GetUsersByQuery {
             throw new AuthenticationRequiredException()
         }
         const roles = credentials.user.roles;
-        // GetUsersByQuery is only allowed for admin
         if (roles.includes("admin")) {
             const users = await this.repositories.User.queryUsers(query);
             users.forEach((user: User) => {

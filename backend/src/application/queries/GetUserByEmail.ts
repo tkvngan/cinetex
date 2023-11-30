@@ -17,7 +17,6 @@ export class GetUserByEmailInteractor extends GetUserByEmail {
             throw new AuthenticationRequiredException()
         }
         const roles = credentials.user.roles;
-        // GetUserByEmail is only allowed for admin or the user itself
         if (roles.includes("admin") || roles.includes("user") && credentials.user.email === query.email) {
             const user = await this.repositories.User.getUserByEmail(query.email);
             if (user) {

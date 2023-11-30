@@ -24,6 +24,10 @@ export abstract class UseCase<Input = any, Output = any> {
         return this.invoker(input, credentials);
     }
 
+    toString() {
+        return `${this.type}:${this.name}`
+    }
+
 }
 
 export abstract class QueryUseCase<Query = any, Result = any> extends UseCase<Query, Result> {

@@ -17,7 +17,6 @@ export class GetBookingsByUserIdInteractor extends GetBookingsByUserId {
             throw new AuthenticationRequiredException()
         }
         const roles = credentials.user.roles;
-        // GetBookingsByUserId is only allowed for admin or the user itself
         if (roles.includes("admin") || roles.includes("user") && credentials.user.id === query.userId) {
             return await this.repositories.Booking.getBookingsByUserId(query.userId);
         }

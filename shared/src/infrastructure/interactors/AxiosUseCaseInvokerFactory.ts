@@ -2,6 +2,7 @@ import axios, {AxiosInstance, AxiosRequestConfig} from "axios";
 import {UseCase, UseCaseInvokerFactory} from "cinetex-core/dist/application";
 import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredentials";
 import {StatusCodes} from "http-status-codes";
+import {toException} from "cinetex-core/dist/application/exceptions/Exceptions";
 
 export function AxiosUseCaseInvokerFactory<Input = any, Output = any>(config: AxiosInstance | string): UseCaseInvokerFactory<Input, Output> {
     const axiosInstance = typeof config === "string" ? axios.create({baseURL: config}) : config
@@ -11,7 +12,7 @@ export function AxiosUseCaseInvokerFactory<Input = any, Output = any>(config: Ax
             "Content-Type": "application/json",
         }
         if (credentials) {
-            headers["Authorization"] = `Bearer ${credentials.jwtToken}`
+            headers["Authorization"] = `Bearer ${credentials.token}`
         }
         const response = await axiosInstance({
             url: `/${usecase.type}/${usecase.name}`,
@@ -20,13 +21,23 @@ export function AxiosUseCaseInvokerFactory<Input = any, Output = any>(config: Ax
             responseEncoding: "utf8",
             headers: headers,
             data: request,
-            validateStatus: status => {
-                return (status === StatusCodes.OK) || (status === StatusCodes.NOT_FOUND && usecase.type === "query")
-            },
+            validateStatus: (status) => true
         })
-        if (response.status === StatusCodes.OK && (response.data !== undefined && response.data !== "")) {
-            return response.data as Output
+        if (response.status === StatusCodes.OK) {
+            if (response.data !== undefined && response.data !== "") {
+                return response.data as Output
+            }
+            return undefined as Output
+        } else if (response.status === StatusCodes.NOT_FOUND) {
+            if (usecase.type === "query") {
+                return undefined as Output
+            }
         }
-        return undefined as Output
+        const errorMessage = `Failed to invoke ${usecase.type} usecase ${usecase.name}, status: ${response.status}, data: ${JSON.stringify(response.data)}`
+        console.error(errorMessage)
+        if (response.data && typeof response.data === "object" && response.data.exception) {
+            throw toException(response.data)
+        }
+        throw Error(errorMessage)
     }
 }

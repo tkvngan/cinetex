@@ -22,12 +22,17 @@ export class SecurityContext {
     }
 
     async signIn(userName: string, password: string): Promise<SecurityCredentials> {
-        const signInResponse = await new SignIn(this.invokerFactory).invoke({ email: userName, password: password })
-        this._credentials = {
-            user: signInResponse.user,
-            jwtToken: signInResponse.jwtToken
+        try {
+            const signInResponse = await new SignIn(this.invokerFactory).invoke({email: userName, password: password})
+            this._credentials = {
+                user: signInResponse.user,
+                token: signInResponse.token
+            }
+            return this._credentials
+        } catch (e) {
+            this._credentials = undefined
+            throw e
         }
-        return this._credentials
     }
 
     async signOut(): Promise<void> {

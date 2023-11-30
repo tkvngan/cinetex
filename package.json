@@ -7,8 +7,8 @@
   "scripts": {
     "clean-all": "yarn workspaces run clean",
     "build-all": "yarn workspaces run build",
-    "clean-build-all": "yarn workspaces run clean && yarn workspaces run build",
-    "start-backend": "yarn workspace cinetex-backend start",
-    "start-frontend": "yarn workspace cinetex-frontend start"
+    "start-all": "(yarn workspace cinetex-backend start &) && (yarn workspace cinetex-frontend start &) && sleep 3600000",
+    "clean-build-all": "yarn clean-all && yarn build-all",
+    "clean-start-all": "yarn clean-build-all && yarn start-all"
   }
 }
