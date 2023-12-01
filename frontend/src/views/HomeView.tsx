@@ -1,49 +1,46 @@
 /** @jsxImportSource @emotion/react */
-import {Link} from "react-router-dom";
 import React from "react";
-import { css } from '@emotion/react'
-
-const homeViewStyle = css({
-    marginTop: '20rem',
-    display: 'grid',
-    gridTemplateColumns: '.5fr .5fr',
-    ".left": {
-        article: {
-            width: 'auto',
-            h1: {
-                marginBottom: '1.5rem',
-                fontSize: '5rem'
-            },
-            p: {
-                marginBottom: '4rem',
-                fontSize: '2rem'
-            }
-        },
-    },
-    ".right": {
-        justifySelf: 'center',
-        img: {
-            width: '50rem'
-        }
-
-    },
-})
+//
+// const homeViewStyle = css({
+//     marginTop: '20rem',
+//     display: 'grid',
+//     gridTemplateColumns: '.5fr .5fr',
+//     ".left": {
+//         article: {
+//             width: 'auto',
+//             h1: {
+//                 marginBottom: '1.5rem',
+//                 fontSize: '5rem'
+//             },
+//             p: {
+//                 marginBottom: '4rem',
+//                 fontSize: '2rem'
+//             }
+//         },
+//     },
+//     ".right": {
+//         justifySelf: 'center',
+//         img: {
+//             width: '30rem'
+//         }
+//
+//     },
+// })
 
 export default function HomeView() {
     return (
-        <div id="HomeView" css={homeViewStyle}>
-            <section className="left">
+        <div id="HomeView" className="row row-cols-2 mt-5">
+            <section className="w-50 mt-5">
                 <article>
-                    <h1>Early Black Friday deal. Get 25% off.</h1>
-                    <p>
+                    <h1 className="display-2 mb-3">Early Black Friday deal. Get 25% off.</h1>
+                    <p className="fs-1 mb-5">
                         Buy tickets and save for the first six months.
                         US$12.50 <del>US$18.99</del> Ends Nov 30.
                     </p>
                 </article>
-                <Link to="/SaveNow" className="btn btn-primary cinetex ">Save now</Link>
             </section>
-            <section className="right">
-                <img src="/assets/svg/hero.svg" alt="" srcSet=""/>
+            <section className="justify-content-center mt-5 w-50">
+                <img src="/assets/svg/hero.svg" alt="" srcSet="" className="object-fit-cover"/>
             </section>
         </div>
     )

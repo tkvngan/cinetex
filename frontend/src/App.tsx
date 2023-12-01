@@ -7,10 +7,9 @@ import TheatresView from "./views/TheatresView";
 import HomeView from "./views/HomeView";
 import TicketsView from "./views/TicketsView";
 import "./css/App.css"
-import {SignInView} from "./views/SignInView";
+import {AuthenticationView} from "./views/AuthenticationView";
 import {SecurityContext} from "./security/SecurityContext";
-
-const bootstrap = require("bootstrap/dist/js/bootstrap.bundle.min.js")
+import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredentials";
 
 type ViewDescriptor = {
     path: string,
@@ -25,15 +24,23 @@ const viewDescriptors: ViewDescriptor[] = [
     {path: "/Theatres", name: "Theatres", fc: TheatresView},
     {path: "/Tickets", name: "Tickets", fc: TicketsView},
     {path: "/About", name: "About", fc: AboutView},
-    // {path: "/SignUp", name: "Sign Up", hidden:true, fc: SignUpView},
 ]
 
 export function App({interactors, security}: {interactors: UseCaseCollection, security: SecurityContext}) {
+
+    const [credentials, setCredentials] = React.useState<SecurityCredentials|undefined>(undefined)
+
+    React.useEffect(() => {
+        security.onCredentialsChanged = (credentials) => {
+            setCredentials(credentials)
+        }
+    }, [])
+
     return (
         <BrowserRouter>
-            <div id="App">
-                <NavigationBar/>
-                <div className="container content">
+            <div id="App" data-bs-theme="dark">
+                <NavigationBar security={security}/>
+                <div className="content">
                     <Routes>{
                         viewDescriptors.map(({path, name, fc}) =>
                             <Route key={path} path={path} element={fc({interactors})}/>
@@ -46,17 +53,25 @@ export function App({interactors, security}: {interactors: UseCaseCollection, se
                         <p>&copy;Code Crafters 2023</p>
                     </article>
                 </div>
-                <SignInView id={"signInView"} security={security}/>
+                <AuthenticationView id="AuthenticationView" signIn={interactors.SignIn} signUp={interactors.SignUp} security={security}/>
             </div>
         </BrowserRouter>
     );
 }
 
-function NavigationBar() {
+function NavigationBar({security}: {security: SecurityContext}) {
+    const [credentials, setCredentials] = React.useState<SecurityCredentials|undefined>(undefined)
     const location = useLocation();
     const isActive: (path: string) => boolean = (path) => location.pathname === path
+
+    React.useEffect(() => {
+        security.onCredentialsChanged = (credentials) => {
+            setCredentials(credentials)
+        }
+    }, [])
+
     return (
-        <div className="navbar fixed-top navbar-expand-lg navbar-dark container">
+        <div className="navbar fixed-top navbar-expand-lg">
             <Link className="navbar-brand" to="/">Cinetex</Link>
             <button
                 className="navbar-toggler" type="button"
@@ -78,10 +93,9 @@ function NavigationBar() {
                     )}
                     <a className="nav-link"
                         data-bs-toggle="offcanvas"
-                        data-bs-target="#signInView"
-                        aria-controls="signInView">Sign In</a>
+                        data-bs-target="#AuthenticationView"
+                        aria-controls="AuthenticationView">{credentials ? "Sign Off" : "Sign In"}</a>
                 </div>
-                <Link className="btn btn-primary" tabIndex={-1} role="button" to="/Tickets">Ticket Now</Link>
             </div>
         </div>
     )

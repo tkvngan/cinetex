@@ -54,23 +54,10 @@ export function ExpressServiceRouter(interactors: UseCaseCollection, repositorie
                 const credentials = await getCredentials(req)
                 const result = await interactor.invoke(req.body, credentials)
                 if (result === undefined) {
-                    res.status(StatusCodes.NOT_FOUND).json(result)
+                    res.status(StatusCodes.NOT_FOUND).json(result).end()
                 } else {
-                    res.status(StatusCodes.OK).json(result)
+                    res.status(StatusCodes.OK).json(result).end()
                 }
-            } catch (e: any) {
-                handleException(e, res)
-            }
-        }
-    }
-
-    function commandHandler<Command>(interactor: CommandUseCase<Command>): RequestHandler {
-        return async (req, res) => {
-            try {
-                logUseCaseInvocation(interactor, req.body)
-                const credentials = await getCredentials(req)
-                const result = await interactor.invoke(req.body, credentials)
-                res.status(StatusCodes.OK).json(result)
             } catch (e: any) {
                 handleException(e, res)
             }
@@ -83,11 +70,15 @@ export function ExpressServiceRouter(interactors: UseCaseCollection, repositorie
                 logUseCaseInvocation(interactor, req.body)
                 const credentials = await getCredentials(req)
                 const result = await interactor.invoke(req.body, credentials)
-                res.status(StatusCodes.OK).json(result)
+                res.status(StatusCodes.OK).json(result).end()
             } catch (e: any) {
                 handleException(e, res)
             }
         }
+    }
+
+    function commandHandler<Command>(interactor: CommandUseCase<Command>): RequestHandler {
+        return requestHandler<Command, void>(interactor)
     }
 
     for (const interactor of interactors) {
@@ -96,7 +87,6 @@ export function ExpressServiceRouter(interactors: UseCaseCollection, repositorie
         switch (interactor.type) {
         case "query":
             router.get(path, queryHandler(interactor as QueryUseCase))
-            router.post(path, queryHandler(interactor as QueryUseCase))
             break;
         case "command":
             router.post(path, commandHandler(interactor as CommandUseCase))

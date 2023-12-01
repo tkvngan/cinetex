@@ -8,7 +8,6 @@ import {UseCaseCollection, UseCaseCollectionClient} from "cinetex-core/dist/appl
 import {SecurityContext} from "./security/SecurityContext";
 
 require("bootstrap/dist/css/bootstrap.min.css");
-require("bootstrap/dist/js/bootstrap.bundle.min.js");
 require("./css/index.css");
 
 const axiosInstance = axios.create({
@@ -21,7 +20,7 @@ const axiosInstance = axios.create({
 
 const invokerFactory = AxiosUseCaseInvokerFactory(axiosInstance)
 const interactors: UseCaseCollection = new UseCaseCollectionClient(invokerFactory)
-const security = new SecurityContext(invokerFactory)
+const security = new SecurityContext(interactors.SignIn)
 const root = document.getElementById('root') as HTMLElement
 
 ReactDOM.createRoot(root).render(<App interactors={interactors} security={security}/>)

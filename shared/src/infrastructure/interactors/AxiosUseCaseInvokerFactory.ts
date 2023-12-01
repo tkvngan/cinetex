@@ -14,15 +14,17 @@ export function AxiosUseCaseInvokerFactory<Input = any, Output = any>(config: Ax
         if (credentials) {
             headers["Authorization"] = `Bearer ${credentials.token}`
         }
-        const response = await axiosInstance({
-            url: `/${usecase.type}/${usecase.name}`,
+        const path = `/${usecase.type}/${usecase.name}`
+        const requestConfig: AxiosRequestConfig = {
+            url: path,
             method: usecase.type === "query" ? "GET" : "POST",
             responseType: "json",
             responseEncoding: "utf8",
             headers: headers,
             data: request,
             validateStatus: (status) => true
-        })
+        }
+        const response = await axiosInstance(requestConfig)
         if (response.status === StatusCodes.OK) {
             if (response.data !== undefined && response.data !== "") {
                 return response.data as Output

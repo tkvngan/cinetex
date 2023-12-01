@@ -1,5 +1,4 @@
 import {RequestUseCase, UseCaseInvokerFactory} from "../UseCase";
-import {User} from "../../domain/entities";
 import {SignInResponse} from "./SignIn";
 
 export type SignUpRequest = Readonly<{
