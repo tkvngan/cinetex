@@ -5,25 +5,6 @@ import * as Icons from 'react-bootstrap-icons';
 import {css} from "@emotion/react";
 import {UseCaseCollection} from "cinetex-core/dist/application";
 
-const moviesViewStyle = css({
-    ".movie-image-box": {
-        boxShadow: '5px 10px 18px #000000',
-        height: '300px',
-        width: '200px',
-        padding: '0',
-        textAlign: 'center',
-        verticalAlign: 'center',
-        backgroundColor: 'rgba(0, 0, 0, 0.25)',
-        img: {
-            objectFit: 'cover',
-            height: '100%',
-            width: '100%',
-            padding: '0',
-            backgroundColor: "transparent",
-        }
-    }
-});
-
 export default function MoviesView({interactors}: {interactors: UseCaseCollection}) {
     const {GetAllMovies} = interactors
     const [movies, setMoves] = useState<Movie[]>([])
@@ -54,9 +35,9 @@ export default function MoviesView({interactors}: {interactors: UseCaseCollectio
                         <Icons.FilterRight/>
                     </a>
                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><a className="dropdown-item fs-4" href="#"><Icons.SortDown/> Name</a></li>
-                        <li><a className="dropdown-item fs-4" href="#"><Icons.SortUp/> Release Date</a></li>
-                        <li><a className="dropdown-item fs-4" href="#"><Icons.SortUp/> Show Time</a></li>
+                        <li><a className="dropdown-item" href="#"><Icons.SortDown/> Name</a></li>
+                        <li><a className="dropdown-item" href="#"><Icons.SortUp/> Release Date</a></li>
+                        <li><a className="dropdown-item" href="#"><Icons.SortUp/> Show Time</a></li>
                     </ul>
                 </span>
                 {viewMode === 'grid' && <Icons.List onClick = {() => setViewMode('list')}/>}
@@ -76,7 +57,26 @@ export default function MoviesView({interactors}: {interactors: UseCaseCollectio
     }
 
     return (
-        <div id="MoviesView" className="container" css={moviesViewStyle}>
+        <div id="MoviesView" className="container"
+            css={{
+                fontFamily: 'var(--cinetex-font-family)',
+                ".movie-image-box": {
+                    boxShadow: '5px 10px 18px #000000',
+                    height: '300px',
+                    width: '200px',
+                    padding: '0',
+                    textAlign: 'center',
+                    verticalAlign: 'center',
+                    backgroundColor: 'rgba(0, 0, 0, 0.25)',
+                    img: {
+                        objectFit: 'cover',
+                        height: '100%',
+                        width: '100%',
+                        padding: '0',
+                        backgroundColor: "transparent",
+                    }
+                }
+            }}>
             <Toolbar/>
             <div className={"row " + gridOrList()}>{movies && movies.map(movie =>
                 <div key={movie.id} className="col row row-cols-2 m-5">
