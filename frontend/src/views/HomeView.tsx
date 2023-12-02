@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
+import hero from '../assets/svg/hero.svg';
 
 export default function HomeView() {
     return (
@@ -19,7 +20,7 @@ export default function HomeView() {
                 </article>
             </section>
             <section className="right justify-content-center w-50">
-                <img src="/assets/svg/hero.svg" alt="" srcSet="" className="object-fit-cover"/>
+                <img src={hero} alt="" srcSet="" className="object-fit-cover"/>
             </section>
         </div>
     )
