@@ -53,6 +53,7 @@ export class SecurityContext {
     }
 
     async signIn(userName: string, password: string): Promise<SecurityCredentials> {
+        userName = userName.trim().toLowerCase()
         try {
             return this.handleResponse(await this.signInUseCase.invoke({email: userName, password: password}))
         } catch (e: any) {
@@ -61,8 +62,9 @@ export class SecurityContext {
     }
 
     async signUp(info: SignUpRequest): Promise<SecurityCredentials> {
+        const username = info.email.trim().toLowerCase()
         try {
-            return this.handleResponse(await this.signUpUseCase.invoke(info))
+            return this.handleResponse(await this.signUpUseCase.invoke({...info, email: username}))
         } catch (e: any) {
             this.handleException(e)
         }
