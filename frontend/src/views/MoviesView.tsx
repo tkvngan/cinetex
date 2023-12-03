@@ -156,7 +156,7 @@ export default function MoviesView({interactors}: {interactors: UseCaseCollectio
                         </li>
                         <li>
                             <a className={"dropdown-item"}
-                                onClick={() => {toggleOrderBy("releaseDate")}}>{orderIcon("releaseDate")} Release
+                                onClick={() => {toggleOrderBy("releaseDate")}}>{orderIcon("releaseDate")} Release Date
                             </a>
                         </li>
                     </ul>
