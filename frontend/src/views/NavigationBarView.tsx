@@ -6,6 +6,7 @@ import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredential
 import {Link, useLocation} from "react-router-dom";
 import {ViewDescriptor} from "../App";
 import bg from '../assets/svg/bg.svg'
+import * as Icons from 'react-bootstrap-icons';
 
 export function NavigationBarView({security, viewDescriptors}: {security: SecurityContext; viewDescriptors: ViewDescriptor[]}) {
     const [credentials, setCredentials] = React.useState<SecurityCredentials|undefined>(undefined)
@@ -34,16 +35,18 @@ export function NavigationBarView({security, viewDescriptors}: {security: Securi
                 paddingRight: '4rem',
                 boxShadow: '0 0 2rem 0 rgba(0, 0, 0, .2)',
                 fontFamily: 'var(--cinetex-font-family)',
-            }}>
-            <Link className="navbar-brand" to="/"
-                css={{
+                ".navbar-brand": {
                     fontSize:   '2.5rem',
                     transition: 'font-size, color .3s',
                     marginLeft: '0rem',
                     marginRight:'3rem',
                     fontWeight: 'bold',
                     color: 'var(--cinetex-solid-light-color)',
-                }}>Cinetex</Link>
+                },
+                ".nav-link": {
+                },
+            }}>
+            <Link className="navbar-brand" to="/">Cinetex</Link>
             <button className="navbar-toggler" type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarNavAltMarkup"
@@ -53,7 +56,7 @@ export function NavigationBarView({security, viewDescriptors}: {security: Securi
                 <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div className="navbar-nav"
+                <div className="navbar-nav align-items-center w-100"
                     css={{
                         ".nav-link": {
                             marginRight:'1.5rem',
@@ -65,18 +68,18 @@ export function NavigationBarView({security, viewDescriptors}: {security: Securi
                                 color:  'var(--cinetex-primary-light-color)',
                             }
                         }
-                    }}>
-                    {viewDescriptors.filter(({hidden}) => !hidden).map(({name, path}) =>
+                    }}>{
+                    viewDescriptors.filter(({hidden}) => !hidden).map(({name, path}) =>
                         <Link key={path}
                             className={"nav-link" + (isActive(path) ? " active" : "")}
                             aria-current={isActive(path) ? "page" : "false"} to={path}>
                             {name}
                         </Link>
                     )}
-                    <a className="nav-link"
+                    <a className="nav-link ms-auto me-0"
                         data-bs-toggle="offcanvas"
                         data-bs-target="#UserSignInView"
-                        aria-controls="UserSignInView">{credentials ? "Sign Off" : "Sign In"}</a>
+                        aria-controls="UserSignInView">{credentials ? <Icons.PersonFill/> : <Icons.Person/>}</a>
                 </div>
             </div>
         </div>
