@@ -100,7 +100,7 @@ const moviesViewStyle = css({
 export default function MoviesView({interactors}: {interactors: UseCaseCollection}) {
     const {GetAllMovies} = interactors
     const [movies, setMoves] = useState<Movie[]>([])
-    const [isListView, setIsListView] = useState<boolean>(true)
+    const [isListView, setIsListView] = useState<boolean>(false)
     const [orderBy, setOrderBy] = useState<string>("name")
     const [orderDirection, setOrderDirection] = useState<number>(1)
 
