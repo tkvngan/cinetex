@@ -48,6 +48,7 @@ const invokerFactory = AxiosUseCaseInvokerFactory(axiosInstance)
 const interactors: UseCaseCollection = new UseCaseCollectionClient(invokerFactory)
 const security = new SecurityContext(interactors.SignIn, interactors.SignUp)
 
+document.documentElement.setAttribute('data-bs-theme', 'dark')
 const root = document.getElementById('root') as HTMLElement
 
 ReactDOM.createRoot(root).render(
