@@ -54,7 +54,6 @@ const moviesViewStyle = css({
         textAlign: 'center',
         verticalAlign: 'center',
         backgroundColor: 'rgba(0, 0, 0, 0.25)',
-        color: 'var(--cinetex-primary-light-color)',
         img: {
             objectFit: 'cover',
             height: '100%',
@@ -71,7 +70,7 @@ const moviesViewStyle = css({
             marginTop: '0rem',
             marginBottom: '1rem'
         },
-        caption: {
+        ".caption": {
             fontSize: '10px',
             lineHeight: '12px',
             fontWeight: 700,
@@ -181,23 +180,23 @@ export default function MoviesView({interactors}: {interactors: UseCaseCollectio
                         <h1 className={"movie-title"}>{movie.name}</h1>
                         <article className="row">
                             <article className="col">
-                                <caption>Length</caption>
+                                <p className="caption">Length</p>
                                 <p>{movie.runtimeInMinutes}min</p>
                             </article>
                             <article className="col">
-                                <caption>Rating</caption>
+                                <p className="caption">Rating</p>
                                 <p>PG</p>
                             </article>
                             <article className="col">
-                                <caption>Genre</caption>
+                                <p className="caption">Genre</p>
                                 <p>{movie.genres.join(", ")}</p>
                             </article>
                             <article className="col">
-                                <caption>Release Date</caption>
+                                <p className="caption">Release Date</p>
                                 <p>{movie.releaseDate.replaceAll("-", "\u2011")}</p>
                             </article>
                             <article className="col">
-                                <caption>Show Time</caption>
+                                <p className="caption">Show Time</p>
                                 <p>{"2:30pm 6:00pm 9:15pm"}</p>
                             </article>
                         </article>
@@ -205,11 +204,11 @@ export default function MoviesView({interactors}: {interactors: UseCaseCollectio
                             <p>{movie.synopsis}</p>
                         </article>
                         <article className={movie.director && movie.director.length > 0 ? "" : "d-none"}>
-                            <caption>Director</caption>
+                            <p className="caption">Director</p>
                             <p>{movie.director}</p>
                         </article>
                         <article className={movie.starring && movie.starring.length > 0 ? "" : "d-none"}>
-                            <caption>Cast</caption>
+                            <p className="caption">Cast</p>
                             <p>{movie.starring}</p>
                         </article>
                     </div>

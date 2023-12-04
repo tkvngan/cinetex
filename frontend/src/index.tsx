@@ -8,11 +8,12 @@ import {AxiosUseCaseInvokerFactory} from "cinetex-shared/dist/infrastructure/int
 import {UseCaseCollection, UseCaseCollectionClient} from "cinetex-core/dist/application";
 import {SecurityContext} from "./security/SecurityContext";
 import {css} from "@emotion/react";
-import {injectGlobal} from "@emotion/css";
-import bg from './assets/svg/bg.svg'
+import {injectGlobal, css as cssJs} from "@emotion/css";
 import "bootstrap/dist/css/bootstrap.min.css"
+import {ThemeManager} from "./ThemeManager";
+import {BrowserRouter} from "react-router-dom";
 
-const masterStyle = css`
+const globalStyle = css(`
     :root {
         --cinetex-primary-color: #5f0f4f;
         --cinetex-primary-light-color: #ED70EF;
@@ -25,15 +26,9 @@ const masterStyle = css`
     html {
         text-rendering: optimizeLegibility;
     }
-    body {
-        background-attachment: fixed;
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.217) 0%, var(--cinetex-solid-dark-color)), url(${bg});
-        background-repeat: no-repeat;
-        background-color: #e26fe4ba;
-        background-size: 100% auto;
-    }
-`
-injectGlobal(masterStyle)
+`)
+
+injectGlobal(globalStyle)
 
 const axiosInstance = axios.create({
     baseURL: "/service",
@@ -47,12 +42,12 @@ const axiosInstance = axios.create({
 const invokerFactory = AxiosUseCaseInvokerFactory(axiosInstance)
 const interactors: UseCaseCollection = new UseCaseCollectionClient(invokerFactory)
 const security = new SecurityContext(interactors.SignIn, interactors.SignUp)
+const themeManager = new ThemeManager("dark")
 
-document.documentElement.setAttribute('data-bs-theme', 'dark')
-const root = document.getElementById('root') as HTMLElement
-
-ReactDOM.createRoot(root).render(
-    <App interactors={interactors} security={security}/>
+ReactDOM.createRoot(document.getElementById('root')!).render(
+    <BrowserRouter>
+        <App interactors={interactors} security={security} themeManager={themeManager}/>
+    </BrowserRouter>
 )
 
 reportWebVitals();

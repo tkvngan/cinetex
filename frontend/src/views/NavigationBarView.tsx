@@ -1,24 +1,33 @@
 /** @jsxImportSource @emotion/react */
 
 import {SecurityContext} from "../security/SecurityContext";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredentials";
 import {Link, useLocation} from "react-router-dom";
 import {ViewDescriptor} from "../App";
 import bg from '../assets/svg/bg.svg'
 import * as Icons from 'react-bootstrap-icons';
+import {ThemeManager} from "../ThemeManager";
 
-export function NavigationBarView({security, viewDescriptors}: {security: SecurityContext; viewDescriptors: ViewDescriptor[]}) {
-    const [credentials, setCredentials] = React.useState<SecurityCredentials|undefined>(undefined)
+type NavigationBarViewProps = {
+    viewDescriptors: ViewDescriptor[],
+    security: SecurityContext,
+    themeManager: ThemeManager,
+    theme: 'light' | 'dark',
+}
+
+export function NavigationBarView({viewDescriptors, security, themeManager, theme}: NavigationBarViewProps) {
+    const [credentials, setCredentials] = useState<SecurityCredentials|undefined>(undefined)
     const location = useLocation();
     const isActive: (path: string) => boolean = (path) => location.pathname === path
+    const isDarkTheme = () => theme === 'dark'
 
-    React.useEffect(() => {
-        const subscription = security.subscribe((credentials) => {
+    useEffect(() => {
+        const credentialsObserver = security.subscribe((credentials) => {
             setCredentials(credentials)
         })
         return () => {
-            subscription.unsubscribe()
+            credentialsObserver.unsubscribe()
         }
     }, [])
 
@@ -26,22 +35,27 @@ export function NavigationBarView({security, viewDescriptors}: {security: Securi
         <div className="navbar fixed-top navbar-expand-lg"
             css={{
                 height: '6rem',
-                backgroundAttachment: 'fixed',
-                backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.217) 0%, var(--cinetex-solid-dark-color)), url(${bg})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundColor: '#e26fe4ba',
-                backgroundSize: '100% auto',
                 paddingLeft: '4rem',
                 paddingRight: '4rem',
                 boxShadow: '0 0 2rem 0 rgba(0, 0, 0, .2)',
                 fontFamily: 'var(--cinetex-font-family)',
+                ...(isDarkTheme() ? {
+                    backgroundAttachment: 'fixed',
+                    backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.217) 0%, var(--cinetex-solid-dark-color)), url(${bg})`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundColor: '#e26fe4ba',
+                    backgroundSize: '100% auto',
+                } : {}),
+
                 ".navbar-brand": {
                     fontSize:   '2.5rem',
                     transition: 'font-size, color .3s',
                     marginLeft: '0rem',
                     marginRight:'3rem',
                     fontWeight: 'bold',
-                    color: 'var(--cinetex-solid-light-color)',
+                    ...(isDarkTheme() ? {
+                        color: 'var(--cinetex-solid-light-color)',
+                    } : {}),
                 },
                 ".nav-link": {
                 },
@@ -63,9 +77,14 @@ export function NavigationBarView({security, viewDescriptors}: {security: Securi
                             whiteSpace: 'nowrap',
                             transition: 'font-size, color .3s',
                             fontSize:   '1.25rem',
-                            color:      'var(--cinetex-solid-light-color)',
+                            ...(isDarkTheme() ? {
+                                color: 'var(--cinetex-solid-light-color)',
+                            } : {}),
                             '&:hover, &.active': {
-                                color:  'var(--cinetex-primary-light-color)',
+                                ...(isDarkTheme() ? {
+                                    color:  'var(--cinetex-primary-light-color)',
+                                } : {
+                                }),
                             }
                         }
                     }}>{
