@@ -8,6 +8,8 @@ import {ViewDescriptor} from "../App";
 import bg from '../assets/svg/bg.svg'
 import * as Icons from 'react-bootstrap-icons';
 import {ThemeManager} from "../ThemeManager";
+import * as bootstrap from "bootstrap"
+import Tooltip from "bootstrap/js/dist/tooltip";
 
 type NavigationBarViewProps = {
     viewDescriptors: ViewDescriptor[],
@@ -16,15 +18,28 @@ type NavigationBarViewProps = {
     theme: 'light' | 'dark',
 }
 
+
 export function NavigationBarView({viewDescriptors, security, themeManager, theme}: NavigationBarViewProps) {
     const [credentials, setCredentials] = useState<SecurityCredentials|undefined>(undefined)
     const location = useLocation();
     const isActive: (path: string) => boolean = (path) => location.pathname === path
     const isDarkTheme = () => theme === 'dark'
+    const signInViewButtonTooltip = React.useRef<Tooltip|null>(null)
 
     useEffect(() => {
+        const signInViewButton = document.getElementById("UserSignInViewButton")
+        if (signInViewButton) {
+            signInViewButtonTooltip.current = new bootstrap.Tooltip(signInViewButton)
+        }
         const credentialsObserver = security.subscribe((credentials) => {
+            console.log("Credentials changed: ", credentials)
+            console.log("Credentials.user.firstName: ", credentials?.user.firstName)
             setCredentials(credentials)
+            const tooltip = signInViewButtonTooltip.current
+            if (tooltip) {
+                const tooltipMessage = credentials ? (credentials?.user.firstName??"") : "Sign In"
+                tooltip.setContent({ '.tooltip-inner': tooltipMessage })
+            }
         })
         return () => {
             credentialsObserver.unsubscribe()
@@ -95,12 +110,24 @@ export function NavigationBarView({viewDescriptors, security, themeManager, them
                             {name}
                         </Link>
                     )}
-                    <a className="nav-link ms-auto me-0"
+                    <span className="nav-link ms-auto me-0"
+                        key={"UserSignInView"}
                         data-bs-toggle="offcanvas"
-                        data-bs-target="#UserSignInView"
-                        aria-controls="UserSignInView">{credentials ? <Icons.PersonFill/> : <Icons.Person/>}</a>
+                        data-bs-target="#UserSignInView">
+                        <a id={"UserSignInViewButton"}
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="bottom"
+                            title={credentials ? credentials.user.firstName : "Sign In"}
+                            aria-controls="UserSignInView">{credentials ? <Icons.PersonFill/> : <Icons.Person/>}
+                        </a>
+                    </span>
                 </div>
             </div>
         </div>
     )
+}
+
+function log(...args: any[]): boolean {
+    console.log(...args)
+    return true
 }
