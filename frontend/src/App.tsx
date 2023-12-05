@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import React, {ReactElement, useEffect} from 'react';
-import {BrowserRouter, Link, Route, Routes, useLocation} from "react-router-dom";
+import {BrowserRouter, Link, Route, Routes, useLocation, useParams} from "react-router-dom";
 import {UseCaseCollection} from "cinetex-core/dist/application";
 import MoviesView from "./views/MoviesView";
 import TheatresView from "./views/TheatresView";
@@ -11,14 +11,17 @@ import {SecurityContext} from "./security/SecurityContext";
 import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredentials";
 import {NavigationBarView} from "./views/NavigationBarView";
 import {ThemeManager} from "./ThemeManager";
+import {MovieViewByPath} from "./views/MovieView";
+
+export type NavigationBarVisibility = "always" | "never" | "whenSignedIn" | "whenSignedOut" | "whenActive" | "whenAuthorized" | undefined
 
 export type ViewDescriptor = {
     path: string,
     name: string,
     roles?: string[],
-    hidden?: boolean,
+    navBarVisible?: NavigationBarVisibility,
     theme?: 'light' | 'dark',
-    viewFactory: () => ReactElement //React.FC<{interactors: UseCaseCollection}>
+    viewFactory: ViewFactory,
 }
 
 export type AppProps = {
@@ -27,14 +30,17 @@ export type AppProps = {
     themeManager: ThemeManager,
 }
 
+export type ViewFactory = () => ReactElement
+
 export function App({interactors, security, themeManager}: AppProps) {
 
     const viewDescriptors: ViewDescriptor[] = [
-        {path: "/", name: "Home", hidden: true, viewFactory: () => <HomeView/>},
+        {path: "/", name: "Home", navBarVisible: "never", viewFactory: () => <HomeView/>},
         {path: "/Movies", name: "Movies", viewFactory: () => <MoviesView interactors={interactors}/>},
+        {path: "/Movie/:id", name: "Movie", navBarVisible: "whenActive", viewFactory: () => <MovieViewByPath viewMode="expanded" interactors={interactors}/>},
         {path: "/Theatres", name: "Theatres", viewFactory: () => <TheatresView interactors={interactors}/>},
         {path: "/Tickets", name: "Tickets", viewFactory: () => <TicketsView interactors={interactors}/>},
-        {path: "/About", name: "About", theme: "light", viewFactory: () => <AboutView/> },
+        {path: "/About", name: "About", theme: "light", viewFactory: () => <AboutView/> }
     ]
 
     const [credentials, setCredentials] = React.useState<SecurityCredentials|undefined>(undefined)

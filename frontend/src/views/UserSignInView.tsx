@@ -299,7 +299,7 @@ export function UserSignInView({id, security}: UserSignInViewProps) {
                     <button type="button"
                         className="btn btn-primary w-100"
                         onClick={onSubmitButtonClick}>{
-                           mode === "info" ? "Sign off" : (mode === "signIn" ? "Sign in" : "Sign up")
+                           mode === "info" ? "Sign out" : (mode === "signIn" ? "Sign in" : "Sign up")
                     }</button>
                 </div>
                 <div className={`col my-4 ${mode === "signIn" ? "" : "d-none"}`}>

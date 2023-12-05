@@ -5,6 +5,7 @@ import * as Icons from 'react-bootstrap-icons';
 import {css} from "@emotion/react";
 import {UseCaseCollection} from "cinetex-core/dist/application";
 import {MovieView, MovieViewById, MovieViewMode} from "./MovieView";
+import {Link} from "react-router-dom";
 
 const moviesViewStyle = css({
     fontFamily: 'var(--cinetex-font-family)',
@@ -52,7 +53,8 @@ export function MoviesView({interactors}: {interactors: UseCaseCollection}) {
 
     useEffect(() => {
         GetAllMovies.invoke({}).then((movies: Movie[]) => {
-            setMovies(sortMovies(movies))
+            const sortedMovies = sortMovies(movies)
+            setMovies(sortedMovies)
         })
     }, [orderBy, orderDirection])
 
@@ -60,7 +62,7 @@ export function MoviesView({interactors}: {interactors: UseCaseCollection}) {
         const copy = [...movies]
         const direction = orderDirection
         const by = orderBy
-        return copy.sort((movie1, movie2) => {
+        const sortedMovies = copy.sort((movie1, movie2) => {
             if (by === "name") {
                 return movie1.name.localeCompare(movie2.name) * direction
             } else if (orderBy === "releaseDate") {
@@ -68,6 +70,7 @@ export function MoviesView({interactors}: {interactors: UseCaseCollection}) {
             }
             return 0
         })
+        return sortedMovies
     }
 
     function toggleOrderBy(newOrderBy: string) {
@@ -116,7 +119,9 @@ export function MoviesView({interactors}: {interactors: UseCaseCollection}) {
                 </span>
             </div>
             <div className={`movies row row-cols-${viewMode === "compact" ? "auto" : "1" }`}>{movies && movies.map(movie =>
-                <MovieViewById key={movie.id} movieId={movie.id} viewMode={viewMode} interactors={interactors}/>
+                <Link key={`movie-${movie.id}`} className="col text-decoration-none" to={`/Movie/${movie.id}`} css={{color: "inherit"}}>
+                    <MovieView key={`movie-${movie.id}`} movie={movie} viewMode={viewMode} interactors={interactors}/>
+                </Link>
             )}
             </div>
         </div>

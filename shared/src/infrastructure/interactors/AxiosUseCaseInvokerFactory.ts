@@ -17,7 +17,7 @@ export function AxiosUseCaseInvokerFactory<Input = any, Output = any>(config: Ax
         const path = `/${usecase.type}/${usecase.name}`
         const requestConfig: AxiosRequestConfig = {
             url: path,
-            method: usecase.type === "query" ? "GET" : "POST",
+            method: "POST",
             responseType: "json",
             responseEncoding: "utf8",
             headers: headers,

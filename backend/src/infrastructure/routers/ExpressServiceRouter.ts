@@ -86,7 +86,7 @@ export function ExpressServiceRouter(interactors: UseCaseCollection, repositorie
         console.log(`Registering ${interactor.type} interactor: ${interactor.name} to path: ${path}`)
         switch (interactor.type) {
         case "query":
-            router.get(path, queryHandler(interactor as QueryUseCase))
+            router.post(path, queryHandler(interactor as QueryUseCase))
             break;
         case "command":
             router.post(path, commandHandler(interactor as CommandUseCase))

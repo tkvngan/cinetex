@@ -3,7 +3,7 @@
 import {SecurityContext} from "../security/SecurityContext";
 import React, {useEffect, useState} from "react";
 import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredentials";
-import {Link, useLocation} from "react-router-dom";
+import {Link, PathMatch, useLocation, useMatch, useMatches, useParams} from "react-router-dom";
 import {ViewDescriptor} from "../App";
 import bg from '../assets/svg/bg.svg'
 import * as Icons from 'react-bootstrap-icons';
@@ -20,10 +20,17 @@ type NavigationBarViewProps = {
 
 export function NavigationBarView({viewDescriptors, security, themeManager, theme}: NavigationBarViewProps) {
     const [credentials, setCredentials] = useState<SecurityCredentials|undefined>(undefined)
-    const location = useLocation();
-    const isActive: (path: string) => boolean = (path) => location.pathname === path
     const isDarkTheme = () => theme === 'dark'
     const signInViewButtonTooltip = React.useRef<Tooltip|null>(null)
+    const currentPathMatch = viewDescriptors.map(({path}) => useMatch(path)).find((match) => match !== null)
+
+    function isActive(path: string) {
+        return currentPathMatch?.pattern?.path === path
+    }
+
+    function isSignedIn() {
+        return credentials !== undefined
+    }
 
     useEffect(() => {
         const signInViewButton = document.getElementById("UserSignInViewButton")
@@ -102,13 +109,21 @@ export function NavigationBarView({viewDescriptors, security, themeManager, them
                             }
                         }
                     }}>{
-                    viewDescriptors.filter(({hidden}) => !hidden).map(({name, path}) =>
-                        <Link key={path}
-                            className={"nav-link" + (isActive(path) ? " active" : "")}
-                            aria-current={isActive(path) ? "page" : "false"} to={path}>
-                            {name}
-                        </Link>
-                    )}
+                    viewDescriptors.map(({name, path, navBarVisible}) => {
+                        if (navBarVisible === "never" ||
+                            navBarVisible === "whenActive" && !isActive(path) ||
+                            navBarVisible === "whenSignedIn" && !isSignedIn() ||
+                            navBarVisible === "whenSignedOut" && isSignedIn()) {
+                            return <span key={path}></span>
+                        }
+                        return (
+                            <Link key={path}
+                                className={"nav-link" + (isActive(path) ? " active" : "")}
+                                aria-current={isActive(path) ? "page" : "false"} to={isActive(path) ? "#" : path}>
+                                {name}
+                            </Link>
+                        )
+                    })}
                     <span className="nav-link ms-auto me-0"
                         key={"UserSignInView"}
                         data-bs-toggle="offcanvas"

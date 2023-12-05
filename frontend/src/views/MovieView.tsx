@@ -3,6 +3,7 @@ import {css} from "@emotion/react";
 import {Movie} from "cinetex-core/dist/domain/entities";
 import {UseCaseCollection} from "cinetex-core/dist/application";
 import React, {useEffect} from "react";
+import {Link, useParams} from "react-router-dom";
 
 const movieViewStyle = css({
     fontFamily: 'var(--cinetex-font-family)',
@@ -65,12 +66,9 @@ export function MovieView({movie, viewMode, interactors}: {
     viewMode: MovieViewMode,
     interactors: UseCaseCollection
 }) {
-    const key = `movie-${movie.id}`
     return (
         <div
-            className={"movie col row row-cols-2"}
-            key={key}
-            id={key}
+            className={"movie row row-cols-2"}
             css={movieViewStyle}>
             <div className={"movie-image-box col d-flex align-items-center"}>{
                 movie.mediumPosterImageUrl ?
@@ -141,12 +139,27 @@ export function MovieViewById({movieId, viewMode, interactors}: {
         return <div>{`Error: ${error}`}</div>
     }
     if (isNotFound) {
-        return <div>{`No such movie with id = ${movieId}`}</div>
+        return <div>{`Error: No such movie with id = ${movieId}`}</div>
     }
     if (movie === undefined) {
         return <div></div>
     }
     return <MovieView movie={movie} viewMode={viewMode} interactors={interactors}/>
+}
+
+export function MovieViewByPath({viewMode, interactors}: {
+    viewMode: MovieViewMode,
+    interactors: UseCaseCollection
+}) {
+    const { id } = useParams<{ id: string }>();
+    if (id) {
+        return (
+            <div css={{padding: '2rem'}}>
+                <MovieViewById movieId={id} viewMode={viewMode} interactors={interactors}/>
+            </div>
+        )
+    }
+    return <div>Error: Movie id not specified</div>
 }
 
 export default MovieView
