@@ -1,7 +1,7 @@
 [
   {
     "id": "6557da2297929c35968ffbcd",
-    "name": "Cineplex Cinemas Yonge-Dundas and VIP",
+    "name": "Cineplex - Yonge-Dundas and VIP",
     "location": {
       "street": "10 Dundas St E #402",
       "city": "Toronto",
@@ -275,7 +275,7 @@
   },
   {
     "id": "6557da2297929c35968ffbd6",
-    "name": "Cineplex Cinemas Queensway & VIP",
+    "name": "Cineplex - Queensway & VIP",
     "location": {
       "street": "1025 The Queensway",
       "city": "Etobicoke",
@@ -540,7 +540,7 @@
         ]
       }
     ],
-    "imageUrl": "./images/theatres/BloorCinema.jpg"
+    "imageUrl": "./images/theatres/BloorCinema.jpeg"
   },
   {
     "id": "6557da2297929c35968ffbdf",
@@ -647,7 +647,7 @@
   },
   {
     "id": "6557da2297929c35968ffbe2",
-    "name": "Cineplex Cinemas Yonge-Eglinton",
+    "name": "Cineplex - Yonge-Eglinton",
     "location": {
       "street": "2300 Yonge St",
       "city": "Toronto",
@@ -823,7 +823,7 @@
   },
   {
     "id": "6557da2297929c35968ffbeb",
-    "name": "Cineplex Cinemas Empress Walk",
+    "name": "Cineplex - Empress Walk",
     "location": {
       "street": "5095 Yonge St",
       "city": "North York",
@@ -1266,7 +1266,7 @@
   },
   {
     "id": "6557da2297929c35968ffbfd",
-    "name": "Cineplex Cinemas Scarborough",
+    "name": "Cineplex - Scarborough",
     "location": {
       "street": "300 Borough Dr",
       "city": "Scarborough",
@@ -1364,7 +1364,7 @@
   },
   {
     "id": "6557da2297929c35968ffc00",
-    "name": "Cineplex Cinemas Markham and VIP",
+    "name": "Cineplex - Markham and VIP",
     "location": {
       "street": "179 Enterprise Blvd",
       "city": "Markham",
@@ -1412,7 +1412,7 @@
   },
   {
     "id": "6557da2297929c35968ffc03",
-    "name": "Cineplex Cinemas Vaughan",
+    "name": "Cineplex - Vaughan",
     "location": {
       "street": "3555 Highway 7 W",
       "city": "Vaughan",
@@ -1455,7 +1455,7 @@
   },
   {
     "id": "6557da2297929c35968ffc06",
-    "name": "Cineplex Cinemas Mississauga",
+    "name": "Cineplex - Mississauga",
     "location": {
       "street": "309 Rathburn Rd W",
       "city": "Mississauga",

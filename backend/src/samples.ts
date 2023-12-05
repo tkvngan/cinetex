@@ -29,5 +29,5 @@ export async function installAllSamples(repositories: Repositories): Promise<voi
     const {Movie, Schedule, Theatre} = repositories
     await installSamples<Movie>("data/movies.json", Movie.deleteAllMovies, Movie.addMovie, Movie.getAllMovies)
     await installSamples("data/theatres.json", ()=>Theatre.deleteTheatresByQuery({}), Theatre.addTheatre, Theatre.getAllTheatres)
-    // await installSamples("SampleSchedules.json", ()=>Schedule.deleteSchedulesByQuery({}), Schedule.addSchedule, Schedule.getAllSchedules)
+    await installSamples("data/schedules.json", ()=>Schedule.deleteSchedulesByQuery({}), Schedule.addSchedule, Schedule.getAllSchedules)
 }

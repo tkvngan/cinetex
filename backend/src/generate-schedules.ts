@@ -2,28 +2,80 @@ import {Schedule, Theatre, TimeSlot} from "cinetex-core/dist/domain/entities";
 import {ObjectId} from "mongodb";
 
 const movieIds: readonly string[] = [
-    "6551992414c9e2796127f60e",
-    "6551992414c9e2796127f612",
-    "6551992414c9e2796127f60a",
-    "6551992414c9e2796127f616",
-    "6551992414c9e2796127f60c",
-    "6551992414c9e2796127f607",
-    "6551992414c9e2796127f618",
-    "6551992414c9e2796127f610",
-    "6551992414c9e2796127f614",
+   "6563a43f92c740d467db925b",
+    "6563a43f92c740d467db925d",
+    "6563a43f92c740d467db9269",
+    "6563a43f92c740d467db9275",
+    "6563a43f92c740d467db9277",
+    "6563a43f92c740d467db9279",
+    "6563a43f92c740d467db927b",
+    "6563a43f92c740d467db9287",
+    "6563a43f92c740d467db9294",
+    "6563a43f92c740d467db92a0",
+    "6563a43f92c740d467db92ac",
+    "6563a43f92c740d467db92b8",
+    "6563a43f92c740d467db92ba",
+    "6563a43f92c740d467db92c7",
+    "6563a43f92c740d467db92d3",
+    "6563a43f92c740d467db92df",
+    "6563a43f92c740d467db92e1",
+    "6563a43f92c740d467db92ed",
+    "6563a43f92c740d467db92fa",
+    "6563a43f92c740d467db92fc",
+    "6563a43f92c740d467db9308",
+    "6563a43f92c740d467db9315",
+    "6563a43f92c740d467db9321",
+    "6563a43f92c740d467db9323",
+    "6563a43f92c740d467db932f",
+    "6563a43f92c740d467db9331",
+    "6563a43f92c740d467db9333",
+    "6563a43f92c740d467db933f",
+    "6563a43f92c740d467db934b",
+    "6563a43f92c740d467db9357",
+    "6563a43f92c740d467db9359",
+    "6563a43f92c740d467db9366",
+    "6563a43f92c740d467db9368",
+    "6563a43f92c740d467db9374",
+    "6563a43f92c740d467db9381",
+    "6563a43f92c740d467db9383",
+    "6563a43f92c740d467db9390",
+    "6563a43f92c740d467db9393",
+    "6563a43f92c740d467db9395",
+    "6563a43f92c740d467db93a1",
+    "6563a43f92c740d467db93ad",
+    "6563a43f92c740d467db93ba",
+    "6563a43f92c740d467db93c6",
+    "6563a43f92c740d467db93d2",
+    "6563a43f92c740d467db93df",
+    "6563a43f92c740d467db93eb",
+    "6563a43f92c740d467db93f7",
+    "6563a43f92c740d467db93f9",
+    "6563a43f92c740d467db93fb",
+    "6563a43f92c740d467db93fd",
+    "6563a43f92c740d467db9409",
+    "6563a43f92c740d467db940b",
+    "6563a43f92c740d467db940d",
+    "6563a43f92c740d467db9419",
+    "6563a43f92c740d467db9426",
+    "6563a43f92c740d467db9432",
+    "6563a43f92c740d467db943e",
+    "6563a43f92c740d467db9440",
+    "6563a43f92c740d467db944d",
+    "6563a43f92c740d467db945a",
+    "6563a43f92c740d467db9466",
+    "6563a43f92c740d467db9472",
+    "6563a43f92c740d467db9474",
+    "6563a43f92c740d467db9476",
+    "6563a43f92c740d467db9478",
+    "6563a43f92c740d467db9484",
+    "6563a43f92c740d467db9490",
+    "6563a43f92c740d467db949c",
+    "6563a43f92c740d467db949e",
+    "6563a43f92c740d467db94aa",
 ]
 
+
 const dates: readonly string[] = [
-    "2023-11-21",
-    "2023-11-22",
-    "2023-11-23",
-    "2023-11-24",
-    "2023-11-25",
-    "2023-11-26",
-    "2023-11-27",
-    "2023-11-28",
-    "2023-11-29",
-    "2023-11-30",
     "2023-12-01",
     "2023-12-02",
     "2023-12-03",
@@ -99,57 +151,67 @@ function shuffle(array: readonly any[]): any[] {
     return shuffledArray;
 }
 
-function generateScheduleForTheatre(theatre: Theatre): Schedule[] {
-    const schedules: Schedule[] = []
-    const theatreId = theatre.id
-    for (const screen of theatre.screens) {
-        const screenId = screen.id
-        const movieDateTimes: Record<string, Record<string, Record<string, true>>> = {}
-        for (const date of dates) {
-            for (const time of ["14:30", "18:00", "21:15"]) {
-                const movieId = movieIds[Math.trunc(movieIds.length * Math.random())]
-                const dateTimes = movieDateTimes[movieId] ?? {}
-                const times = dateTimes[date] ?? {}
-                times[time] = true
-                dateTimes[date] = times
-                movieDateTimes[movieId] = dateTimes
-            }
-        }
-        for (const movieId in movieDateTimes) {
-            const timeSlots: TimeSlot[] = []
-            for (const date in movieDateTimes[movieId]) {
-                const times: string[] = []
-                for (const time in movieDateTimes[movieId][date]) {
-                    times.push(time)
+const T1 = "14:30"
+const T2 = "18:00"
+const T3 = "21:15"
+
+function generateScheduleForTheatre(theatres: Theatre[]): Schedule[] {
+    const entries = new Map<string, {movieId: string; theatreId: string; screenId: number; slots: Map<string, string[]>}>()
+    const movieBlock = 2
+    let movieIxStart = 0
+    for (const date of dates) {
+        for (const theatre of theatres) {
+            for (const screen of theatre.screens) {
+                for (const time of [T1, T2, T3]) {
+                    const movieIx = Math.min(movieIxStart + Math.trunc(Math.random() * movieBlock), movieIds.length - 1)
+                    const movieId = movieIds[movieIx]
+                    const key = `${movieId}-${theatre.id}-${screen.id}`
+                    let entry = entries.get(key)
+                    if (entry === undefined) {
+                        entry = {
+                            movieId: movieId,
+                            theatreId: theatre.id,
+                            screenId: screen.id,
+                            slots: new Map<string, string[]>()
+                        }
+                        entries.set(key, entry)
+                    }
+                    let slots = entry.slots.get(date)
+                    if (slots === undefined) {
+                        slots = []
+                        entry.slots.set(date, slots)
+                    }
+                    slots.push(time)
                 }
-                timeSlots.push({date: date, times: times})
             }
-            const schedule = <Schedule> {
-                id: new ObjectId().toHexString(),
-                movieId: movieId,
-                theatreId: theatreId,
-                screenId: screenId,
-                showTimes: timeSlots
-            }
-            schedules.push(schedule)
         }
+        movieIxStart++;
+    }
+    const schedules: Schedule[] = []
+    for (const [key, entry] of entries.entries()) {
+        const slots: TimeSlot[] = []
+        for (const [date, times] of entry.slots.entries()) {
+            slots.push({date: date, times: times})
+        }
+        schedules.push({
+            id: new ObjectId().toHexString(),
+            movieId: entry.movieId,
+            theatreId: entry.theatreId,
+            screenId: entry.screenId,
+            showTimes: slots
+        })
     }
     return schedules
 }
 
 function main() {
     const fs = require('fs');
-    fs.readFile('../SampleTheatres.json', 'utf8', async function (err: any, data: any) {
+    fs.readFile('../data/theatres.json', 'utf8', async function (err: any, data: any) {
         if (err) {
             return console.log(err);
         }
         const theatres: Theatre[] = JSON.parse(data);
-        const schedules: Schedule[] = [];
-        for (const theatre of theatres) {
-            for (const schedule of generateScheduleForTheatre(theatre)) {
-                schedules.push(schedule)
-            }
-        }
+        const schedules: Schedule[] = generateScheduleForTheatre(theatres)
         console.log(JSON.stringify(schedules, null, 2))
     })
 }
