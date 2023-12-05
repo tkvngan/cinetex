@@ -4,6 +4,7 @@ import {Movie} from "cinetex-core/dist/domain/entities";
 import * as Icons from 'react-bootstrap-icons';
 import {css} from "@emotion/react";
 import {UseCaseCollection} from "cinetex-core/dist/application";
+import {MovieView, MovieViewById, MovieViewMode} from "./MovieView";
 
 const moviesViewStyle = css({
     fontFamily: 'var(--cinetex-font-family)',
@@ -39,67 +40,13 @@ const moviesViewStyle = css({
 
     ".movies": {
         paddingTop: '2rem',
-
     },
-
-    ".movie": {
-        margin: '2rem',
-    },
-
-    ".movie-image-box": {
-        boxShadow: '5px 10px 18px #000000',
-        height: '300px',
-        width: '200px',
-        padding: '0',
-        textAlign: 'center',
-        verticalAlign: 'center',
-        backgroundColor: 'rgba(0, 0, 0, 0.25)',
-        img: {
-            objectFit: 'cover',
-            height: '100%',
-            width: '100%',
-            padding: '0',
-            backgroundColor: "transparent",
-        }
-    },
-    ".movie-info-box": {
-        margin: "0.25rem 1.5rem 0.25rem 1.5rem",
-        ".movie-title": {
-            fontSize: '1.75rem',
-            fontWeight: 'bold',
-            marginTop: '0rem',
-            marginBottom: '1rem'
-        },
-        ".caption": {
-            fontSize: '10px',
-            lineHeight: '12px',
-            fontWeight: 700,
-            marginTop: '0',
-            marginBottom: '0.25rem',
-            paddingTop: '0.25rem',
-            paddingBottom: '0.25rem',
-            textTransform: 'uppercase',
-        },
-        article: {
-            margin: '0 0 2rem 0',
-            p: {
-                fontSize: '1rem',
-                fontWeight: 'normal',
-                margin: '0',
-            },
-            "& > article": {
-                marginBottom: 0,
-                paddingLeft: 0,
-                paddingRight: '1rem',
-            }
-        },
-    }
 })
 
-export default function MoviesView({interactors}: {interactors: UseCaseCollection}) {
+export function MoviesView({interactors}: {interactors: UseCaseCollection}) {
     const {GetAllMovies} = interactors
     const [movies, setMovies] = useState<Movie[]>([])
-    const [isListView, setIsListView] = useState<boolean>(false)
+    const [viewMode, setViewMode] = useState<MovieViewMode>("compact")
     const [orderBy, setOrderBy] = useState<string>("name")
     const [orderDirection, setOrderDirection] = useState<number>(1)
 
@@ -161,61 +108,20 @@ export default function MoviesView({interactors}: {interactors: UseCaseCollectio
                     </ul>
                 </span>
                 <span>
-                    <a className="btn" role="button"> { isListView ?
-                        <Icons.Grid onClick = {() => setIsListView(false)}/> :
-                        <Icons.List onClick = {() => setIsListView(true)} />
+                    <a className="btn" role="button"> { viewMode === "compact" ?
+                        <Icons.List onClick = {() => setViewMode("normal")}/> :
+                        <Icons.Grid onClick = {() => setViewMode("compact")}/>
                     }
                     </a>
                 </span>
             </div>
-            <div className={`movies row row-cols-${isListView ? "1" : "auto"}`}>{movies && movies.map(movie =>
-                <div className={"movie col row row-cols-2"} key={movie.id} >
-                    <div className={"movie-image-box col d-flex align-items-center"}>{
-                        movie.mediumPosterImageUrl ?
-                            <img className="col" src={movie.mediumPosterImageUrl} alt={movie.name}/> :
-                            <h4 className="col text-center">{movie.name}</h4>
-                    }
-                    </div>
-                    <div className={`movie-info-box col ${isListView ? "" : "d-none"} col`}>
-                        <h1 className={"movie-title"}>{movie.name}</h1>
-                        <article className="row">
-                            <article className="col">
-                                <p className="caption">Length</p>
-                                <p>{movie.runtimeInMinutes}min</p>
-                            </article>
-                            <article className="col">
-                                <p className="caption">Rating</p>
-                                <p>PG</p>
-                            </article>
-                            <article className="col">
-                                <p className="caption">Genre</p>
-                                <p>{movie.genres.join(", ")}</p>
-                            </article>
-                            <article className="col">
-                                <p className="caption">Release Date</p>
-                                <p>{movie.releaseDate.replaceAll("-", "\u2011")}</p>
-                            </article>
-                            <article className="col">
-                                <p className="caption">Show Time</p>
-                                <p>{"2:30pm 6:00pm 9:15pm"}</p>
-                            </article>
-                        </article>
-                        <article className={movie.synopsis && movie.synopsis.length > 0 ? "" : "d-none"}>
-                            <p>{movie.synopsis}</p>
-                        </article>
-                        <article className={movie.director && movie.director.length > 0 ? "" : "d-none"}>
-                            <p className="caption">Director</p>
-                            <p>{movie.director}</p>
-                        </article>
-                        <article className={movie.starring && movie.starring.length > 0 ? "" : "d-none"}>
-                            <p className="caption">Cast</p>
-                            <p>{movie.starring}</p>
-                        </article>
-                    </div>
-                </div>
+            <div className={`movies row row-cols-${viewMode === "compact" ? "auto" : "1" }`}>{movies && movies.map(movie =>
+                <MovieViewById key={movie.id} movieId={movie.id} viewMode={viewMode} interactors={interactors}/>
             )}
             </div>
         </div>
     )
 
 }
+
+export default MoviesView

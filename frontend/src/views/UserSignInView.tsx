@@ -312,3 +312,5 @@ export function UserSignInView({id, security}: UserSignInViewProps) {
         </div>
     )
 }
+
+export default UserSignInView

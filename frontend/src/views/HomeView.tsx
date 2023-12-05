@@ -2,7 +2,7 @@
 import React from "react";
 import hero from '../assets/svg/hero.svg';
 
-export default function HomeView() {
+export function HomeView() {
     return (
         <div id="HomeView"
             className="row row-cols-2"
@@ -25,3 +25,5 @@ export default function HomeView() {
         </div>
     )
 }
+
+export default HomeView

@@ -18,7 +18,6 @@ type NavigationBarViewProps = {
     theme: 'light' | 'dark',
 }
 
-
 export function NavigationBarView({viewDescriptors, security, themeManager, theme}: NavigationBarViewProps) {
     const [credentials, setCredentials] = useState<SecurityCredentials|undefined>(undefined)
     const location = useLocation();
@@ -127,7 +126,4 @@ export function NavigationBarView({viewDescriptors, security, themeManager, them
     )
 }
 
-function log(...args: any[]): boolean {
-    console.log(...args)
-    return true
-}
+export default NavigationBarView

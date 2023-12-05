@@ -99,7 +99,7 @@ const theatresViewStyle = css({
 
 type OrderBy = "name" | "location"
 
-export default function TheatresView({interactors}: {interactors: UseCaseCollection}) {
+export function TheatresView({interactors}: {interactors: UseCaseCollection}) {
     const {GetAllTheatres} = interactors
     const [theatres, setMoves] = useState<Theatre[]>([])
     const [isListView, setIsListView] = useState<boolean>(true)
@@ -169,7 +169,8 @@ export default function TheatresView({interactors}: {interactors: UseCaseCollect
                 </span>
             </div>
             <div className={`theatres row row-cols-${isListView ? "1" : "auto"}`}>{theatres && theatres.map(theatre =>
-                <div className={"theatre col row row-cols-2"} key={theatre.id} >
+                <div className={"theatre col row row-cols-2"}
+                    key={theatre.id} >
                     <div className={"theatre-image-box col d-flex align-items-center"}>{
                         theatre.imageUrl ?
                             <img className="col" src={theatre.imageUrl} alt={theatre.name}/> :
@@ -204,3 +205,5 @@ export default function TheatresView({interactors}: {interactors: UseCaseCollect
     )
 
 }
+
+export default TheatresView
