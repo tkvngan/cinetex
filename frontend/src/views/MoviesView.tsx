@@ -98,14 +98,14 @@ const moviesViewStyle = css({
 
 export default function MoviesView({interactors}: {interactors: UseCaseCollection}) {
     const {GetAllMovies} = interactors
-    const [movies, setMoves] = useState<Movie[]>([])
+    const [movies, setMovies] = useState<Movie[]>([])
     const [isListView, setIsListView] = useState<boolean>(false)
     const [orderBy, setOrderBy] = useState<string>("name")
     const [orderDirection, setOrderDirection] = useState<number>(1)
 
     useEffect(() => {
         GetAllMovies.invoke({}).then((movies: Movie[]) => {
-            setMoves(sortMovies(movies))
+            setMovies(sortMovies(movies))
         })
     }, [orderBy, orderDirection])
 
