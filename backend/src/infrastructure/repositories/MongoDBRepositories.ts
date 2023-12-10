@@ -1,12 +1,21 @@
-import mongoose, {ConnectOptions, Model, Mongoose, Schema, SchemaDefinition, SchemaDefinitionType} from "mongoose";
+import mongoose, {
+    ConnectOptions,
+    Model,
+    Mongoose,
+    Schema,
+    SchemaDefinition,
+    SchemaDefinitionType,
+    SchemaOptions, ToObjectOptions
+} from "mongoose";
 import {Repositories} from "../../application/repositories";
 import {Booking, MediaContent, Movie, Schedule, Theatre, User} from "cinetex-core/dist/domain/entities";
 import {MongoDBMovieRepository, MovieSchemaDefinition} from "./MongoDBMovieRepository";
 import {MongoDBTheatreRepository, TheatreSchemaDefinition} from "./MongoDBTheatreRepository";
-import {MongoDBScheduleRepository, ScheduleSchemaDefinition} from "./MongoDBScheduleRepository";
+import {MongoDBScheduleRepository, ScheduleSchemaDefinition, ScheduleSchemaOptions} from "./MongoDBScheduleRepository";
 import {BookingSchemaDefinition, MongoDBBookingRepository} from "./MongoDBBookingRepository";
 import {MongoDBUserRepository, UserSchemaDefinition} from "./MongoDBUserRepository";
 import {MediaContentSchemaDefinition, MongoDBMediaContentRepository} from "./MongoDBMediaContentRepository";
+import {toObjectId} from "./MongoDBUtils";
 
 const defaultUri = "mongodb://localhost:27017"
 
@@ -20,33 +29,43 @@ export async function connectMongoDB(uri?: string, options?: ConnectOptions): Pr
     return mongoose.connect(uri ?? defaultUri, options ?? defaultOptions)
 }
 
-const DefaultSchemaOptions = {
-    id: true,
+export const DefaultSubSchemaOptions: SchemaOptions = {
+    _id: false,
+    id: false,
+}
+
+export const DefaultSchemaOptions: SchemaOptions = {
+    id: false,
     versionKey: false,
-    toObject: {
-        virtuals: true, id: true, versionKey: false,
-        transform: function (doc: any, ret: Record<string, any>) {
-            delete ret._id;
-        }
-    },
-    toJSON: {
-        virtuals: true, id: true, versionKey: false,
-        transform: function (doc: any, ret: Record<string, any>) {
-            delete ret._id;
-        }
+}
+
+export const DefaultToObjectOptions: ToObjectOptions = {
+    versionKey: false,
+    transform: function (doc: any, ret: Record<string, any>) {
+        ret.id = ret._id?.toHexString()
+        delete ret._id;
     }
 }
+
+export function fromObject<T>(obj: T): T {
+    return {
+        ...obj,
+        _id: (obj as any).id ? toObjectId((obj as any).id) : undefined,
+        id: undefined
+    } as T
+}
+
 
 export function MongoDBRepositories(): Repositories {
     function createModel<T>(name: string, definition: SchemaDefinition<SchemaDefinitionType<T>>, options?: {}): Model<T> {
         return mongoose.models[name] as Model<T> ??
             mongoose.model<T>(name, new Schema(definition, options ?? DefaultSchemaOptions), name)
     }
-    const movieModel = createModel<Movie>("Movie", MovieSchemaDefinition)
-    const theatreModel = createModel<Theatre>("Theatre", TheatreSchemaDefinition)
-    const scheduleModel = createModel<Schedule>("Schedule", ScheduleSchemaDefinition)
-    const bookingModel = createModel<Booking>("Booking", BookingSchemaDefinition)
-    const userModel = createModel<User>("User", UserSchemaDefinition)
+    const movieModel = createModel<Movie>("Movie", MovieSchemaDefinition, DefaultSchemaOptions)
+    const theatreModel = createModel<Theatre>("Theatre", TheatreSchemaDefinition, DefaultSchemaOptions)
+    const scheduleModel = createModel<Schedule>("Schedule", ScheduleSchemaDefinition, ScheduleSchemaOptions)
+    const bookingModel = createModel<Booking>("Booking", BookingSchemaDefinition, DefaultSchemaOptions)
+    const userModel = createModel<User>("User", UserSchemaDefinition, DefaultSchemaOptions)
     return {
         Movie: MongoDBMovieRepository(movieModel),
         Theatre: MongoDBTheatreRepository(theatreModel),

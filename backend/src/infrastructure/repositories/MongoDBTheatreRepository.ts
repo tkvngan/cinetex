@@ -1,14 +1,15 @@
 import {TheatreRepository} from "../../application/repositories";
 import {asFieldFilter, asIdFieldFilter, toObjectId} from "./MongoDBUtils";
-import {FilterQuery, Model, SchemaDefinition} from "mongoose";
+import {FilterQuery, Model, SchemaDefinition, ToObjectOptions} from "mongoose";
 import {Theatre} from "cinetex-core/dist/domain/entities";
 import {TheatresQuery} from "cinetex-core/dist/application/queries";
+import {DefaultSubSchemaOptions, DefaultToObjectOptions, fromObject} from "./MongoDBRepositories";
 
 const AddressDefinition: SchemaDefinition = {
     street: {type: String, required: true},
     city: {type: String, required: true},
     state: {type: String, required: true},
-    zip: {type: String, required: true}
+    zip: {type: String, required: true},
 }
 
 const ScreenDefinition: SchemaDefinition = {
@@ -18,13 +19,13 @@ const ScreenDefinition: SchemaDefinition = {
     frontRows: {type: Number, required: true},
     sideColumns: {type: Number, required: true},
     seats: {type: [[Number]], required: true},
-    imageUrl: {type: String, required: false}
+    imageUrl: {type: String, required: false},
 }
 
-export const TheatreSchemaDefinition: SchemaDefinition = {
+export const TheatreSchemaDefinition: SchemaDefinition = <SchemaDefinition> {
     name: {type: String, required: true, unique: true, index: true},
-    location: {type: AddressDefinition, required: true},
-    screens: {type: [ScreenDefinition], required: true},
+    location: {type: AddressDefinition, required: true, options: DefaultSubSchemaOptions},
+    screens: {type: [ScreenDefinition], required: true, options: DefaultSubSchemaOptions},
     imageUrl: {type: String, required: false}
 }
 
@@ -56,34 +57,34 @@ export function createTheatreFilter(query: TheatresQuery): FilterQuery<Theatre> 
 export function MongoDBTheatreRepository(model: Model<Theatre>): TheatreRepository {
     return {
         async getAllTheatres(): Promise<Theatre[]> {
-            return (await model.find()).map(theatre => theatre.toObject());
+            return (await model.find()).map(theatre => theatre.toObject(DefaultToObjectOptions));
         },
 
         async getTheatreById(id: string): Promise<Theatre | undefined> {
-            return (await model.findById(toObjectId(id)))?.toObject();
+            return (await model.findById(toObjectId(id)))?.toObject(DefaultToObjectOptions);
         },
 
         async getTheatreByName(name: string): Promise<Theatre | undefined> {
-            return (await model.findOne({name: name}))?.toObject();
+            return (await model.findOne({name: name}))?.toObject(DefaultToObjectOptions);
         },
 
         async getTheatresByQuery(query: TheatresQuery): Promise<Theatre[]> {
             const filter = createTheatreFilter(query);
-            return (await model.find(filter)).map(theatre => theatre.toObject());
+            return (await model.find(filter)).map(theatre => theatre.toObject(DefaultToObjectOptions));
         },
 
         async addTheatre(theatre: Theatre): Promise<Theatre> {
-            return (await model.create(theatre)).toObject();
+            return (await model.create(fromObject(theatre))).toObject(DefaultToObjectOptions);
         },
 
         async deleteTheatreById(id: string): Promise<Theatre | undefined> {
             return (await model
-                .findByIdAndDelete(toObjectId(id), {returnDocument: "before"}))?.toObject();
+                .findByIdAndDelete(toObjectId(id), {returnDocument: "before"}))?.toObject(DefaultToObjectOptions);
         },
 
         async deleteTheatreByName(name: string): Promise<Theatre | undefined> {
             return (await model
-                .findOneAndDelete({name: name}, {returnDocument: "before"}))?.toObject();
+                .findOneAndDelete({name: name}, {returnDocument: "before"}))?.toObject(DefaultToObjectOptions);
         },
 
         async deleteTheatresByQuery(query: TheatresQuery): Promise<number> {
@@ -92,8 +93,7 @@ export function MongoDBTheatreRepository(model: Model<Theatre>): TheatreReposito
         },
 
         async updateTheatreById(id: string, theatre: Partial<Omit<Theatre, "id">>): Promise<Theatre | undefined> {
-            delete (theatre as any).id
-            return (await model.findByIdAndUpdate(toObjectId(id), {$set: theatre}, {returnDocument: "after"}))?.toObject()
+            return (await model.findByIdAndUpdate(toObjectId(id), {$set: fromObject(theatre)}, {returnDocument: "after"}))?.toObject(DefaultToObjectOptions)
         },
     }
 

@@ -15,7 +15,11 @@ export type SchedulesQuery = {
     id?: never;
     movie?: MoviesQuery
     theatre?: TheatresQuery
-    screen?: { id: number | [number]; name?: never } | { name: string | ByPattern; id?: never };
+    screen?: {
+        name?: never
+    } | {
+        name: string | ByPattern;
+    };
     showDate?: string | [string] | ByRange<string>;
     showTime?: string | [string] | ByRange<string>;
 }

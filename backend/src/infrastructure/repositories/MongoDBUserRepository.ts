@@ -3,6 +3,7 @@ import {asFieldFilter, asIdFieldFilter, toObjectId} from "./MongoDBUtils";
 import {FilterQuery, Model, SchemaDefinition} from "mongoose";
 import {User} from "cinetex-core/dist/domain/entities/User";
 import {UsersQuery} from "cinetex-core/dist/application/queries";
+import {DefaultToObjectOptions, fromObject} from "./MongoDBRepositories";
 
 export const UserSchemaDefinition: SchemaDefinition = {
     email: {type: String, required: true, unique: true, index: true},
@@ -18,28 +19,28 @@ export const UserSchemaDefinition: SchemaDefinition = {
 export function MongoDBUserRepository(model: Model<User>): UserRepository {
     return {
         async getAllUsers(): Promise<User[]> {
-            return (await model.find()).map(user => user.toObject());
+            return (await model.find()).map(user => user.toObject(DefaultToObjectOptions));
         },
 
         async getUserById(id: string): Promise<User | undefined> {
-            return (await model.findById(toObjectId(id)))?.toObject();
+            return (await model.findById(toObjectId(id)))?.toObject(DefaultToObjectOptions);
         },
 
         async getUserByEmail(email: string): Promise<User | undefined> {
-            return (await model.findOne({email: email}))?.toObject();
+            return (await model.findOne({email: email}))?.toObject(DefaultToObjectOptions);
         },
 
         async queryUsers(query: UsersQuery): Promise<User[]> {
             const filter = createUserFilter(query);
-            return (await model.find(filter)).map(user => user.toObject());
+            return (await model.find(filter)).map(user => user.toObject(DefaultToObjectOptions));
         },
 
         async createUser(user: User): Promise<User> {
-            return (await model.create(user)).toObject();
+            return (await model.create(fromObject(user))).toObject(DefaultToObjectOptions);
         },
 
         async deleteUserById(id: string): Promise<User | undefined> {
-            return (await model.findByIdAndDelete(toObjectId(id), {returnDocument: "before"}))?.toObject();
+            return (await model.findByIdAndDelete(toObjectId(id), {returnDocument: "before"}))?.toObject(DefaultToObjectOptions);
         },
 
         async deleteUsersByQuery(query: UsersQuery): Promise<number> {
@@ -49,7 +50,7 @@ export function MongoDBUserRepository(model: Model<User>): UserRepository {
 
         async updateUserById(id: string, user: Partial<Omit<User, "id">>): Promise<User | undefined> {
             delete (user as any).id
-            return (await model.findByIdAndUpdate(toObjectId(id), {$set: user}, {returnDocument: "after"}))?.toObject()
+            return (await model.findByIdAndUpdate(toObjectId(id), {$set: fromObject(user)}, {returnDocument: "after"}))?.toObject(DefaultToObjectOptions)
         },
     }
 }

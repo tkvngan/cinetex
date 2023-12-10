@@ -1,55 +1,34 @@
 /** @jsxImportSource @emotion/react */
-import React, {ReactElement, useEffect} from 'react';
-import {BrowserRouter, Link, Route, Routes, useLocation, useParams} from "react-router-dom";
+
+import React, {useEffect} from 'react';
+import {Route, Routes, useLocation} from "react-router-dom";
 import {UseCaseCollection} from "cinetex-core/dist/application";
-import MoviesView from "./views/MoviesView";
-import TheatresView from "./views/TheatresView";
-import HomeView from "./views/HomeView";
-import TicketsView from "./views/TicketsView";
 import {UserSignInView} from "./views/UserSignInView";
 import {SecurityContext} from "./security/SecurityContext";
 import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredentials";
-import {NavigationBarView} from "./views/NavigationBarView";
-import {ThemeManager} from "./ThemeManager";
-import {MovieViewByPath} from "./views/MovieView";
-
-export type NavigationBarVisibility = "always" | "never" | "whenSignedIn" | "whenSignedOut" | "whenActive" | "whenAuthorized" | undefined
-
-export type ViewDescriptor = {
-    path: string,
-    name: string,
-    roles?: string[],
-    navBarVisible?: NavigationBarVisibility,
-    theme?: 'light' | 'dark',
-    viewFactory: ViewFactory,
-}
+import {AppNavigationBar} from "./AppNavigationBar";
+import {AppThemeManager} from "./AppThemeManager";
+import {AppFeatures} from "./AppFeatures";
 
 export type AppProps = {
     interactors: UseCaseCollection,
     security: SecurityContext,
-    themeManager: ThemeManager,
+    themeManager: AppThemeManager,
 }
 
-export type ViewFactory = () => ReactElement
-
 export function App({interactors, security, themeManager}: AppProps) {
-
-    const viewDescriptors: ViewDescriptor[] = [
-        {path: "/", name: "Home", navBarVisible: "never", viewFactory: () => <HomeView/>},
-        {path: "/Movies", name: "Movies", viewFactory: () => <MoviesView interactors={interactors}/>},
-        {path: "/Movie/:id", name: "Movie", navBarVisible: "whenActive", viewFactory: () => <MovieViewByPath viewMode="expanded" interactors={interactors}/>},
-        {path: "/Theatres", name: "Theatres", viewFactory: () => <TheatresView interactors={interactors}/>},
-        {path: "/Tickets", name: "Tickets", viewFactory: () => <TicketsView interactors={interactors}/>},
-        {path: "/About", name: "About", theme: "light", viewFactory: () => <AboutView/> }
-    ]
-
+    const features = AppFeatures(interactors, security)
     const [credentials, setCredentials] = React.useState<SecurityCredentials|undefined>(undefined)
     const [theme, setTheme] = React.useState<'light' | 'dark'>(themeManager.theme)
     const location = useLocation();
 
     useEffect(() => {
         const credentialsObserver = security.subscribe((credentials) => {
-            setCredentials(credentials)
+            if (credentials) {
+                setCredentials({...credentials})
+            } else {
+                setCredentials(undefined)
+            }
         })
         const themeObserver = themeManager.subscribe((theme) => {
             setTheme(theme)
@@ -61,9 +40,9 @@ export function App({interactors, security, themeManager}: AppProps) {
     }, [])
 
     useEffect(() => {
-        for (const viewDescriptor of viewDescriptors) {
-            if (viewDescriptor.path === location.pathname) {
-                themeManager.setTheme(viewDescriptor.theme ?? 'dark')
+        for (const feature of features) {
+            if (feature.path === location.pathname) {
+                themeManager.setTheme(feature.theme ?? 'dark')
                 break
             }
         }
@@ -71,27 +50,33 @@ export function App({interactors, security, themeManager}: AppProps) {
 
     return (
         <div id="App">
-            <NavigationBarView viewDescriptors={viewDescriptors} security={security} theme={theme} themeManager={themeManager}/>
+            <AppNavigationBar features={features} credentials={credentials} theme={"dark"}/>
             <div className="content" css={{
                     marginTop: '6rem',
-                    paddingLeft: '4rem',
-                    paddingRight: '4rem',
-                }}>
+                    paddingLeft: '3rem',
+                    paddingRight: '3rem',
+                }} data-bs-theme={theme}>
                 <Routes>{
-                    viewDescriptors.map(({path, name, viewFactory}) =>
-                        <Route key={path} path={path} element={viewFactory()}/>
-                    )
+                    features.map(({name, path, view, roles}) => {
+                        const userRoles = credentials?.user.roles ?? []
+                        if (view && (roles === undefined || roles.length === 0 || roles.some(role => userRoles.includes(role)) )) {
+                            return <Route key={path} path={path} element={
+                                view instanceof Function ? view() : view
+                            }/>
+                        }
+                        return undefined
+                    })
                 }
                 </Routes>
             </div>
             <div className="footer" css={{
-                    marginTop: '8rem',
-                    height: '8rem',
+                    marginTop: '5rem',
+                    height: '5rem',
                     backgroundColor: 'transparent',
                     article: {
                         textAlign: 'center',
                     }
-                }}>
+                }} data-bs-theme={theme}>
                 <article>
                     <p>&copy;Code Crafters 2023</p>
                 </article>
@@ -99,10 +84,6 @@ export function App({interactors, security, themeManager}: AppProps) {
             <UserSignInView id="UserSignInView" security={security}/>
         </div>
     );
-}
-
-export function AboutView() {
-    return <h1>About</h1>
 }
 
 export default App;

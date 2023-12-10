@@ -1,6 +1,7 @@
 import {UseCase} from "./UseCase";
 import * as queries from "./queries";
 import * as requests from "./requests";
+import * as commands from "./commands";
 
 export abstract class UseCaseCollection {
 
@@ -21,6 +22,8 @@ export abstract class UseCaseCollection {
     abstract readonly GetMoviesByQuery: queries.GetMoviesByQuery;
 
     abstract readonly GetScheduleById: queries.GetScheduleById;
+    abstract readonly GetSchedulesByMovieId: queries.GetSchedulesByMovieId;
+    abstract readonly GetSchedulesByTheatreId: queries.GetSchedulesByTheatreId;
     abstract readonly GetSchedulesByQuery: queries.GetSchedulesByQuery;
 
     abstract readonly GetTheatreById: queries.GetTheatreById;
@@ -33,6 +36,8 @@ export abstract class UseCaseCollection {
 
     abstract readonly SignIn: requests.SignIn;
     abstract readonly SignUp: requests.SignUp;
+
+    abstract readonly DeleteMovies: commands.DeleteMovies;
 
     [Symbol.iterator](): Iterator<UseCase> {
         return (Object.values(this).filter((value: any): boolean => value instanceof UseCase))[Symbol.iterator]();

@@ -22,6 +22,10 @@ export class SecurityContext {
         return !this._credentials
     }
 
+    hasAnyRole(...roles: string[]): boolean {
+        return this._credentials?.user.roles.some(role => roles.includes(role)) ?? false
+    }
+
     subscribe(listener: (credentials: SecurityCredentials | undefined) => void): { readonly unsubscribe: () => void} {
         this.changeListeners.push(listener)
         return {

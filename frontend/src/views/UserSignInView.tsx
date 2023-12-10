@@ -244,7 +244,7 @@ export function UserSignInView({id, security}: UserSignInViewProps) {
         onKeyUp: (event: KeyboardEvent<HTMLInputElement>) => void,
         readOnly: boolean = false): ReactElement {
         return (
-            <div className={`form-field col ${displayFor(...modes)}`}>
+            <div key={`${field.id}Field`} className={`form-field col ${displayFor(...modes)}`}>
                 <label htmlFor={`${field.id}Input`} className="form-label">{field.label}:</label>
                 <input
                     id={`${field.id}Input`}
@@ -286,7 +286,7 @@ export function UserSignInView({id, security}: UserSignInViewProps) {
                         height: "1rem",
                     },
                 }}>
-                <h2 className="col text-center">{getTitle()}</h2>
+                <h2 className="text-center">{getTitle()}</h2>
                 <div className="mt-4 mb-2 row row-cols-1 align-content-start">{[
                     inputField(firstNameField, ["info", "signUp"], onFirstNameInput, onKeyUpSubmit, mode === "info"),
                     inputField(lastNameField, ["info", "signUp"], onLastNameInput, onKeyUpSubmit, mode === "info"),
@@ -295,14 +295,14 @@ export function UserSignInView({id, security}: UserSignInViewProps) {
                     inputField(passwordField, ["signIn","signUp"], onPasswordInput, onKeyUpSubmit),
                 ]}
                 </div>
-                <div className="col my-3">
+                <div className="my-3">
                     <button type="button"
                         className="btn btn-primary w-100"
                         onClick={onSubmitButtonClick}>{
-                           mode === "info" ? "Sign out" : (mode === "signIn" ? "Sign in" : "Sign up")
+                           mode === "info" ? "Sign Out" : (mode === "signIn" ? "Sign In" : "Sign Up")
                     }</button>
                 </div>
-                <div className={`col my-4 ${mode === "signIn" ? "" : "d-none"}`}>
+                <div className={`my-4 ${mode === "signIn" ? "" : "d-none"}`}>
                     <span>Don't have an account?</span>
                     <button type="button"
                         className="btn btn-link text-decoration-none"

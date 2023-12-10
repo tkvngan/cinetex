@@ -6,6 +6,7 @@ import {BookingsQuery} from "cinetex-core/dist/application/queries";
 import {createTheatreFilter} from "./MongoDBTheatreRepository";
 import {createMovieFilter} from "./MongoDBMovieRepository";
 import {createUserFilter} from "./MongoDBUserRepository";
+import {DefaultToObjectOptions, fromObject} from "./MongoDBRepositories";
 
 const SeatPositionDefinition: SchemaDefinition = {
     row: {type: Number, required: true},
@@ -67,23 +68,23 @@ function createBookingFilter(query: BookingsQuery): FilterQuery<Booking> {
 export function MongoDBBookingRepository(model: Model<Booking>, theatreModel: Model<Theatre>, movieModel: Model<Movie>, userModel: Model<User>): BookingRepository {
     return {
         async getAllBookings(): Promise<Booking[]> {
-            return (await model.find()).map(booking => booking.toObject());
+            return (await model.find()).map(booking => booking.toObject(DefaultToObjectOptions));
         },
 
         async getBookingById(id: string): Promise<Booking | undefined> {
-            return (await model.findById(toObjectId(id)))?.toObject();
+            return (await model.findById(toObjectId(id)))?.toObject(DefaultToObjectOptions);
         },
 
         async getBookingsByUserId(userId: string): Promise<Booking[]> {
-            return (await model.find({userId: toObjectId(userId)})).map(booking => booking.toObject());
+            return (await model.find({userId: toObjectId(userId)})).map(booking => booking.toObject(DefaultToObjectOptions));
         },
 
         async getBookingsByTheatreId(theatreId: string): Promise<Booking[]> {
-            return (await model.find({theatreId: toObjectId(theatreId)})).map(booking => booking.toObject());
+            return (await model.find({theatreId: toObjectId(theatreId)})).map(booking => booking.toObject(DefaultToObjectOptions));
         },
 
         async getBookingsByMovieId(movieId: string): Promise<Booking[]> {
-            return (await model.find({movieId: toObjectId(movieId)})).map(booking => booking.toObject());
+            return (await model.find({movieId: toObjectId(movieId)})).map(booking => booking.toObject(DefaultToObjectOptions));
         },
 
         async getBookingsByQuery(query: BookingsQuery): Promise<Booking[]> {
@@ -104,12 +105,12 @@ export function MongoDBBookingRepository(model: Model<Booking>, theatreModel: Mo
         },
 
         async addBooking(booking: Booking): Promise<Booking> {
-            return (await model.create(booking)).toObject();
+            return (await model.create(fromObject(booking))).toObject(DefaultToObjectOptions);
         },
 
         async deleteBookingById(id: string): Promise<Booking | undefined> {
             return (await model
-                .findByIdAndDelete(toObjectId(id), {returnDocument: "before"}))?.toObject();
+                .findByIdAndDelete(toObjectId(id), {returnDocument: "before"}))?.toObject(DefaultToObjectOptions);
         },
 
         async deleteBookingsByQuery(query: BookingsQuery): Promise<number> {
@@ -118,8 +119,7 @@ export function MongoDBBookingRepository(model: Model<Booking>, theatreModel: Mo
         },
 
         async updateBookingById(id: string, booking: Partial<Omit<Booking, "id">>): Promise<Booking | undefined> {
-            delete (booking as any).id
-            return (await model.findByIdAndUpdate(toObjectId(id), {$set: booking}, {returnDocument: "after"}))?.toObject()
+            return (await model.findByIdAndUpdate(toObjectId(id), {$set: fromObject(booking)}, {returnDocument: "after"}))?.toObject(DefaultToObjectOptions)
         }
     }
 

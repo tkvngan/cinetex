@@ -1,21 +1,23 @@
 /** @jsxImportSource @emotion/react */
+
 import React from "react";
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import axios from "axios";
-import App from "./App";
+import {App} from "./App";
 import {AxiosUseCaseInvokerFactory} from "cinetex-shared/dist/infrastructure/interactors";
 import {UseCaseCollection, UseCaseCollectionClient} from "cinetex-core/dist/application";
 import {SecurityContext} from "./security/SecurityContext";
 import {css} from "@emotion/react";
-import {injectGlobal, css as cssJs} from "@emotion/css";
-import "bootstrap/dist/css/bootstrap.min.css"
-import {ThemeManager} from "./ThemeManager";
+import {injectGlobal} from "@emotion/css";
+import {AppThemeManager} from "./AppThemeManager";
 import {BrowserRouter} from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css"
 
+/*#5f0f4f;*/
 const globalStyle = css(`
     :root {
-        --cinetex-primary-color: #5f0f4f;
+        --cinetex-primary-color: rgb(100,32,98);
         --cinetex-primary-light-color: #ED70EF;
         --cinetex-solid-light-color: white;
         --cinetex-solid-dark-color: black;
@@ -42,7 +44,7 @@ const axiosInstance = axios.create({
 const invokerFactory = AxiosUseCaseInvokerFactory(axiosInstance)
 const interactors: UseCaseCollection = new UseCaseCollectionClient(invokerFactory)
 const security = new SecurityContext(interactors.SignIn, interactors.SignUp)
-const themeManager = new ThemeManager("dark")
+const themeManager = new AppThemeManager("dark")
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <BrowserRouter>

@@ -1,7 +1,6 @@
 [{
   "id": "6563a43f92c740d467db925b",
   "name": "All Of Us Strangers",
-  "title": "All Of Us Strangers",
   "releaseDate": "2024-01-05",
   "runtimeInMinutes": 999,
   "genres": [
@@ -22,7 +21,6 @@
 {
   "id": "6563a43f92c740d467db925d",
   "name": "American Fiction",
-  "title": "American Fiction",
   "releaseDate": "2023-12-15",
   "runtimeInMinutes": 116,
   "genres": [
@@ -126,7 +124,6 @@
 {
   "id": "6563a43f92c740d467db9269",
   "name": "Anatomy of a Fall",
-  "title": "Anatomy of a Fall",
   "releaseDate": "2023-10-20",
   "runtimeInMinutes": 152,
   "genres": [
@@ -235,8 +232,7 @@
 },
 {
   "id": "6563a43f92c740d467db9275",
-  "name": "Animal (Hindi w/e.s.t.)",
-  "title": "Animal (Hindi w/e.s.t.)",
+  "name": "Animal (Hindi)",
   "releaseDate": "2023-12-01",
   "runtimeInMinutes": 192,
   "genres": [
@@ -259,7 +255,6 @@
 {
   "id": "6563a43f92c740d467db9277",
   "name": "Anyone But You",
-  "title": "Anyone But You",
   "releaseDate": "2023-12-22",
   "runtimeInMinutes": 999,
   "genres": [
@@ -281,7 +276,6 @@
 {
   "id": "6563a43f92c740d467db9279",
   "name": "Aquaman And The Lost Kingdom",
-  "title": "Aquaman And The Lost Kingdom",
   "releaseDate": "2023-12-22",
   "runtimeInMinutes": 999,
   "genres": [
@@ -305,8 +299,7 @@
 },
 {
   "id": "6563a43f92c740d467db927b",
-  "name": "Bandra (Malayalam w/e.s.t.)",
-  "title": "Bandra (Malayalam w/e.s.t.)",
+  "name": "Bandra (Malayalam)",
   "releaseDate": "2023-11-10",
   "runtimeInMinutes": 155,
   "genres": [
@@ -394,7 +387,6 @@
 {
   "id": "6563a43f92c740d467db9287",
   "name": "Barbie",
-  "title": "Barbie",
   "releaseDate": "2023-07-21",
   "runtimeInMinutes": 114,
   "genres": [
@@ -501,8 +493,7 @@
 },
 {
   "id": "6563a43f92c740d467db9294",
-  "name": "Be My Family (Mandarin w/e.s.t.)",
-  "title": "Be My Family (Mandarin w/e.s.t.)",
+  "name": "Be My Family (Mandarin)",
   "releaseDate": "2023-11-17",
   "runtimeInMinutes": 132,
   "genres": [
@@ -592,7 +583,6 @@
 {
   "id": "6563a43f92c740d467db92a0",
   "name": "Dream Scenario",
-  "title": "Dream Scenario",
   "releaseDate": "2023-11-24",
   "runtimeInMinutes": 102,
   "genres": [],
@@ -693,8 +683,7 @@
 },
 {
   "id": "6563a43f92c740d467db92ac",
-  "name": "Falimy (Malayalam w/e.s.t.)",
-  "title": "Falimy (Malayalam w/e.s.t.)",
+  "name": "Falimy (Malayalam)",
   "releaseDate": "2023-11-24",
   "runtimeInMinutes": 128,
   "genres": [
@@ -787,7 +776,6 @@
 {
   "id": "6563a43f92c740d467db92b8",
   "name": "Ferrari",
-  "title": "Ferrari",
   "releaseDate": "2023-12-25",
   "runtimeInMinutes": 999,
   "genres": [
@@ -812,7 +800,6 @@
 {
   "id": "6563a43f92c740d467db92ba",
   "name": "Five Nights at Freddy's",
-  "title": "Five Nights at Freddy's",
   "releaseDate": "2023-10-27",
   "runtimeInMinutes": 109,
   "genres": [
@@ -925,7 +912,6 @@
 {
   "id": "6563a43f92c740d467db92c7",
   "name": "Freelance",
-  "title": "Freelance",
   "releaseDate": "2023-10-27",
   "runtimeInMinutes": 108,
   "genres": [
@@ -1039,8 +1025,7 @@
 },
 {
   "id": "6563a43f92c740d467db92d3",
-  "name": "Garudan (Malayalam w/e.s.t.)",
-  "title": "Garudan (Malayalam w/e.s.t.)",
+  "name": "Garudan (Malayalam)",
   "releaseDate": "2023-11-03",
   "runtimeInMinutes": 138,
   "genres": [
@@ -1144,8 +1129,7 @@
 },
 {
   "id": "6563a43f92c740d467db92df",
-  "name": "Godzilla Minus One (Japanese w/e.s.t.)",
-  "title": "Godzilla Minus One (Japanese w/e.s.t.)",
+  "name": "Godzilla Minus One (Japanese)",
   "releaseDate": "2023-12-01",
   "runtimeInMinutes": 125,
   "genres": [
@@ -1168,7 +1152,6 @@
 {
   "id": "6563a43f92c740d467db92e1",
   "name": "It's A Wonderful Knife",
-  "title": "It's A Wonderful Knife",
   "releaseDate": "2023-11-10",
   "runtimeInMinutes": 85,
   "genres": [
@@ -1281,7 +1264,6 @@
 {
   "id": "6563a43f92c740d467db92ed",
   "name": "Journey To Bethlehem",
-  "title": "Journey To Bethlehem",
   "releaseDate": "2023-11-10",
   "runtimeInMinutes": 99,
   "genres": [
@@ -1371,8 +1353,7 @@
 },
 {
   "id": "6563a43f92c740d467db92fa",
-  "name": "Kaathal The Core (Malayalam w/e.s.t.)",
-  "title": "Kaathal The Core (Malayalam w/e.s.t.)",
+  "name": "Kaathal The Core (Malayalam)",
   "releaseDate": "2023-11-24",
   "runtimeInMinutes": 122,
   "genres": [
@@ -1392,8 +1373,7 @@
 },
 {
   "id": "6563a43f92c740d467db92fc",
-  "name": "Khichdi 2 (Hindi w/e.s.t.)",
-  "title": "Khichdi 2 (Hindi w/e.s.t.)",
+  "name": "Khichdi 2 (Hindi)",
   "releaseDate": "2023-11-17",
   "runtimeInMinutes": 122,
   "genres": [
@@ -1477,7 +1457,6 @@
 {
   "id": "6563a43f92c740d467db9308",
   "name": "Killers of the Flower Moon",
-  "title": "Killers of the Flower Moon",
   "releaseDate": "2023-10-20",
   "runtimeInMinutes": 206,
   "genres": [
@@ -1589,8 +1568,7 @@
 },
 {
   "id": "6563a43f92c740d467db9315",
-  "name": "Last Suspect (Mandarin w/Chinese and e.s.t.)",
-  "title": "Last Suspect (Mandarin w/Chinese and e.s.t.)",
+  "name": "Last Suspect (Mandarin)",
   "releaseDate": "2023-11-10",
   "runtimeInMinutes": 119,
   "genres": [
@@ -1688,7 +1666,6 @@
 {
   "id": "6563a43f92c740d467db9321",
   "name": "M3GAN 2.0",
-  "title": "M3GAN 2.0",
   "releaseDate": "2025-01-17",
   "runtimeInMinutes": 999,
   "genres": [],
@@ -1699,8 +1676,7 @@
 },
 {
   "id": "6563a43f92c740d467db9323",
-  "name": "Maujaan Hi Maujaan (Punjabi w/e.s.t.)",
-  "title": "Maujaan Hi Maujaan (Punjabi w/e.s.t.)",
+  "name": "Maujaan Hi Maujaan (Punjabi)",
   "releaseDate": "2023-10-20",
   "runtimeInMinutes": 108,
   "genres": [
@@ -1785,7 +1761,6 @@
 {
   "id": "6563a43f92c740d467db932f",
   "name": "Mean Girls (Musical)",
-  "title": "Mean Girls (Musical)",
   "releaseDate": "2024-01-12",
   "runtimeInMinutes": 116,
   "genres": [],
@@ -1800,7 +1775,6 @@
 {
   "id": "6563a43f92c740d467db9331",
   "name": "Migration",
-  "title": "Migration",
   "releaseDate": "2023-12-22",
   "runtimeInMinutes": 80,
   "genres": [],
@@ -1816,7 +1790,6 @@
 {
   "id": "6563a43f92c740d467db9333",
   "name": "Napoleon",
-  "title": "Napoleon",
   "releaseDate": "2023-11-22",
   "runtimeInMinutes": 159,
   "genres": [
@@ -1931,7 +1904,6 @@
 {
   "id": "6563a43f92c740d467db933f",
   "name": "Napoleon - Special Engagement 70mm",
-  "title": "Napoleon - Special Engagement 70mm",
   "releaseDate": "2023-11-22",
   "runtimeInMinutes": 159,
   "genres": [
@@ -2019,7 +1991,6 @@
 {
   "id": "6563a43f92c740d467db934b",
   "name": "Next Goal Wins",
-  "title": "Next Goal Wins",
   "releaseDate": "2023-11-17",
   "runtimeInMinutes": 104,
   "genres": [
@@ -2122,7 +2093,6 @@
 {
   "id": "6563a43f92c740d467db9357",
   "name": "Night Swim",
-  "title": "Night Swim",
   "releaseDate": "2024-01-05",
   "runtimeInMinutes": 999,
   "genres": [
@@ -2144,7 +2114,6 @@
 {
   "id": "6563a43f92c740d467db9359",
   "name": "Oppenheimer",
-  "title": "Oppenheimer",
   "releaseDate": "2023-07-21",
   "runtimeInMinutes": 180,
   "genres": [
@@ -2256,7 +2225,6 @@
 {
   "id": "6563a43f92c740d467db9366",
   "name": "Paddington in Peru",
-  "title": "Paddington in Peru",
   "releaseDate": "2025-01-17",
   "runtimeInMinutes": 999,
   "genres": [],
@@ -2267,8 +2235,7 @@
 },
 {
   "id": "6563a43f92c740d467db9368",
-  "name": "Parinda Paar Geyaa (Punjabi w/e.s.t.)",
-  "title": "Parinda Paar Geyaa (Punjabi w/e.s.t.)",
+  "name": "Parinda Paar Geyaa (Punjabi)",
   "releaseDate": "2023-11-24",
   "runtimeInMinutes": 143,
   "genres": [
@@ -2358,7 +2325,6 @@
 {
   "id": "6563a43f92c740d467db9374",
   "name": "PAW Patrol: The Mighty Movie",
-  "title": "PAW Patrol: The Mighty Movie",
   "releaseDate": "2023-09-29",
   "runtimeInMinutes": 93,
   "genres": [
@@ -2448,7 +2414,6 @@
 {
   "id": "6563a43f92c740d467db9381",
   "name": "Poor Things",
-  "title": "Poor Things",
   "releaseDate": "2023-12-15",
   "runtimeInMinutes": 999,
   "genres": [
@@ -2467,7 +2432,6 @@
 {
   "id": "6563a43f92c740d467db9383",
   "name": "Priscilla",
-  "title": "Priscilla",
   "releaseDate": "2023-11-03",
   "runtimeInMinutes": 113,
   "genres": [
@@ -2579,7 +2543,6 @@
 {
   "id": "6563a43f92c740d467db9390",
   "name": "RENAISSANCE: A FILM BY BEYONCÉ",
-  "title": "RENAISSANCE: A FILM BY BEYONCÉ",
   "releaseDate": "2023-11-30",
   "runtimeInMinutes": 165,
   "genres": [
@@ -2603,8 +2566,7 @@
 },
 {
   "id": "6563a43f92c740d467db9393",
-  "name": "RU (French w/e.s.t.)",
-  "title": "RU (French w/e.s.t.)",
+  "name": "RU (French)",
   "releaseDate": "2023-11-24",
   "runtimeInMinutes": 116,
   "genres": [],
@@ -2623,7 +2585,6 @@
 {
   "id": "6563a43f92c740d467db9395",
   "name": "Saltburn",
-  "title": "Saltburn",
   "releaseDate": "2023-11-22",
   "runtimeInMinutes": 131,
   "genres": [
@@ -2728,8 +2689,7 @@
 },
 {
   "id": "6563a43f92c740d467db93a1",
-  "name": "Sarabha: Cry for Freedom (Punjabi w/e.s.t.)",
-  "title": "Sarabha: Cry for Freedom (Punjabi w/e.s.t.)",
+  "name": "Sarabha: Cry for Freedom (Punjabi)",
   "releaseDate": "2023-11-03",
   "runtimeInMinutes": 146,
   "genres": [
@@ -2841,7 +2801,6 @@
 {
   "id": "6563a43f92c740d467db93ad",
   "name": "Saw X",
-  "title": "Saw X",
   "releaseDate": "2023-09-29",
   "runtimeInMinutes": 118,
   "genres": [
@@ -2961,7 +2920,6 @@
 {
   "id": "6563a43f92c740d467db93ba",
   "name": "Silent Night",
-  "title": "Silent Night",
   "releaseDate": "2023-12-01",
   "runtimeInMinutes": 104,
   "genres": [
@@ -3067,8 +3025,7 @@
 },
 {
   "id": "6563a43f92c740d467db93c6",
-  "name": "Solo (French w/e.s.t.)",
-  "title": "Solo (French w/e.s.t.)",
+  "name": "Solo (French)",
   "releaseDate": "2023-09-15",
   "runtimeInMinutes": 102,
   "genres": [
@@ -3152,7 +3109,6 @@
 {
   "id": "6563a43f92c740d467db93d2",
   "name": "TAYLOR SWIFT THE ERAS TOUR",
-  "title": "TAYLOR SWIFT THE ERAS TOUR",
   "releaseDate": "2023-10-13",
   "runtimeInMinutes": 169,
   "genres": [
@@ -3246,8 +3202,7 @@
 },
 {
   "id": "6563a43f92c740d467db93df",
-  "name": "Testament (French w/e.s.t.)",
-  "title": "Testament (French w/e.s.t.)",
+  "name": "Testament (French)",
   "releaseDate": "2023-10-06",
   "runtimeInMinutes": 115,
   "genres": [],
@@ -3333,7 +3288,6 @@
 {
   "id": "6563a43f92c740d467db93eb",
   "name": "Thanksgiving",
-  "title": "Thanksgiving",
   "releaseDate": "2023-11-17",
   "runtimeInMinutes": 106,
   "genres": [
@@ -3446,7 +3400,6 @@
 {
   "id": "6563a43f92c740d467db93f7",
   "name": "The Abyss: Special Edition",
-  "title": "The Abyss: Special Edition",
   "releaseDate": "2023-12-06",
   "runtimeInMinutes": 170,
   "genres": [],
@@ -3464,7 +3417,6 @@
 {
   "id": "6563a43f92c740d467db93f9",
   "name": "The Beekeeper",
-  "title": "The Beekeeper",
   "releaseDate": "2024-01-12",
   "runtimeInMinutes": 999,
   "genres": [
@@ -3487,7 +3439,6 @@
 {
   "id": "6563a43f92c740d467db93fb",
   "name": "The Book of Clarence",
-  "title": "The Book of Clarence",
   "releaseDate": "2024-01-12",
   "runtimeInMinutes": 999,
   "genres": [
@@ -3506,7 +3457,6 @@
 {
   "id": "6563a43f92c740d467db93fd",
   "name": "The Boy and the Heron",
-  "title": "The Boy and the Heron",
   "releaseDate": "2023-12-08",
   "runtimeInMinutes": 124,
   "genres": [
@@ -3598,7 +3548,6 @@
 {
   "id": "6563a43f92c740d467db9409",
   "name": "The Boys in the Boat",
-  "title": "The Boys in the Boat",
   "releaseDate": "2023-12-25",
   "runtimeInMinutes": 999,
   "genres": [
@@ -3620,7 +3569,6 @@
 {
   "id": "6563a43f92c740d467db940b",
   "name": "The Color Purple",
-  "title": "The Color Purple",
   "releaseDate": "2023-12-25",
   "runtimeInMinutes": 141,
   "genres": [],
@@ -3638,7 +3586,6 @@
 {
   "id": "6563a43f92c740d467db940d",
   "name": "The Exorcist: Believer",
-  "title": "The Exorcist: Believer",
   "releaseDate": "2023-10-06",
   "runtimeInMinutes": 111,
   "genres": [
@@ -3752,7 +3699,6 @@
 {
   "id": "6563a43f92c740d467db9419",
   "name": "The Holdovers",
-  "title": "The Holdovers",
   "releaseDate": "2023-11-03",
   "runtimeInMinutes": 133,
   "genres": [
@@ -3863,7 +3809,6 @@
 {
   "id": "6563a43f92c740d467db9426",
   "name": "The Hunger Games: The Ballad of Songbirds and Snakes (Dubbed in Spanish)",
-  "title": "The Hunger Games: The Ballad of Songbirds and Snakes (Dubbed in Spanish)",
   "releaseDate": "2023-11-27",
   "runtimeInMinutes": 157,
   "genres": [
@@ -3948,7 +3893,6 @@
 {
   "id": "6563a43f92c740d467db9432",
   "name": "The Hunger Games: The Ballad of Songbirds and Snakes",
-  "title": "The Hunger Games: The Ballad of Songbirds and Snakes",
   "releaseDate": "2023-11-17",
   "runtimeInMinutes": 157,
   "genres": [
@@ -4055,7 +3999,6 @@
 {
   "id": "6563a43f92c740d467db943e",
   "name": "The Iron Claw",
-  "title": "The Iron Claw",
   "releaseDate": "2023-12-22",
   "runtimeInMinutes": 999,
   "genres": [
@@ -4078,7 +4021,6 @@
 {
   "id": "6563a43f92c740d467db9440",
   "name": "The Marvels (Dubbed in Spanish)",
-  "title": "The Marvels (Dubbed in Spanish)",
   "releaseDate": "2023-11-20",
   "runtimeInMinutes": 105,
   "genres": [
@@ -4170,7 +4112,6 @@
 {
   "id": "6563a43f92c740d467db944d",
   "name": "The Marvels",
-  "title": "The Marvels",
   "releaseDate": "2023-11-10",
   "runtimeInMinutes": 105,
   "genres": [
@@ -4284,8 +4225,7 @@
 },
 {
   "id": "6563a43f92c740d467db945a",
-  "name": "Tiger 3 (Hindi w/e.s.t.)",
-  "title": "Tiger 3 (Hindi w/e.s.t.)",
+  "name": "Tiger 3 (Hindi)",
   "releaseDate": "2023-11-11",
   "runtimeInMinutes": 156,
   "genres": [
@@ -4388,7 +4328,6 @@
 {
   "id": "6563a43f92c740d467db9466",
   "name": "Trolls Band Together",
-  "title": "Trolls Band Together",
   "releaseDate": "2023-11-17",
   "runtimeInMinutes": 91,
   "genres": [
@@ -4469,7 +4408,6 @@
 {
   "id": "6563a43f92c740d467db9472",
   "name": "Underdoggs",
-  "title": "Underdoggs",
   "releaseDate": "2024-01-26",
   "runtimeInMinutes": 999,
   "genres": [
@@ -4488,7 +4426,6 @@
 {
   "id": "6563a43f92c740d467db9474",
   "name": "Unsung Hero",
-  "title": "Unsung Hero",
   "releaseDate": "2024-04-26",
   "runtimeInMinutes": 113,
   "genres": [
@@ -4507,7 +4444,6 @@
 {
   "id": "6563a43f92c740d467db9476",
   "name": "Untitled Fourth Film Directed By Jordan Peele",
-  "title": "Untitled Fourth Film Directed By Jordan Peele",
   "releaseDate": "2024-12-25",
   "runtimeInMinutes": 999,
   "genres": [],
@@ -4519,7 +4455,6 @@
 {
   "id": "6563a43f92c740d467db9478",
   "name": "Who’s Yer Father?",
-  "title": "Who’s Yer Father?",
   "releaseDate": "2023-11-03",
   "runtimeInMinutes": 110,
   "genres": [],
@@ -4613,7 +4548,6 @@
 {
   "id": "6563a43f92c740d467db9484",
   "name": "Wish (Dubbed in Spanish)",
-  "title": "Wish (Dubbed in Spanish)",
   "releaseDate": "2023-11-25",
   "runtimeInMinutes": 94,
   "genres": [
@@ -4693,7 +4627,6 @@
 {
   "id": "6563a43f92c740d467db9490",
   "name": "Wish",
-  "title": "Wish",
   "releaseDate": "2023-11-22",
   "runtimeInMinutes": 95,
   "genres": [
@@ -4774,7 +4707,6 @@
 {
   "id": "6563a43f92c740d467db949c",
   "name": "Wonka",
-  "title": "Wonka",
   "releaseDate": "2023-12-15",
   "runtimeInMinutes": 116,
   "genres": [
@@ -4800,8 +4732,7 @@
 },
 {
   "id": "6563a43f92c740d467db949e",
-  "name": "Zindagi Zindabaad (Punjabi w/e.s.t.)",
-  "title": "Zindagi Zindabaad (Punjabi w/e.s.t.)",
+  "name": "Zindagi Zindabaad (Punjabi)",
   "releaseDate": "2023-10-27",
   "runtimeInMinutes": 145,
   "genres": [
@@ -4898,7 +4829,6 @@
 {
   "id": "6563a43f92c740d467db94aa",
   "name": "Zone of Interest",
-  "title": "Zone of Interest",
   "releaseDate": "2023-12-22",
   "runtimeInMinutes": 999,
   "genres": [],

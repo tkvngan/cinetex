@@ -3,7 +3,6 @@ import {Entity, Id} from "../types";
 export type Movie = Entity & Readonly<{
     id: Id;
     name: string;
-    title: string;
     releaseDate: string;
     runtimeInMinutes: number;
     genres: string[];

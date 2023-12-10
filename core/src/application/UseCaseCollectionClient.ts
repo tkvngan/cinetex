@@ -1,6 +1,7 @@
 import {UseCaseCollection, UseCaseInvokerFactory} from "./";
 import * as queries from "./queries";
 import * as requests from "./requests";
+import * as commands from "./commands";
 
 export class UseCaseCollectionClient extends UseCaseCollection {
     constructor(readonly invokerFactory: UseCaseInvokerFactory) {
@@ -24,6 +25,8 @@ export class UseCaseCollectionClient extends UseCaseCollection {
     readonly GetMoviesByQuery = new queries.GetMoviesByQuery(this.invokerFactory);
 
     readonly GetScheduleById = new queries.GetScheduleById(this.invokerFactory);
+    readonly GetSchedulesByMovieId = new queries.GetSchedulesByMovieId(this.invokerFactory);
+    readonly GetSchedulesByTheatreId = new queries.GetSchedulesByTheatreId(this.invokerFactory);
     readonly GetSchedulesByQuery = new queries.GetSchedulesByQuery(this.invokerFactory);
 
     readonly GetTheatreById = new queries.GetTheatreById(this.invokerFactory);
@@ -36,5 +39,7 @@ export class UseCaseCollectionClient extends UseCaseCollection {
 
     readonly SignIn = new requests.SignIn(this.invokerFactory);
     readonly SignUp = new requests.SignUp(this.invokerFactory);
+
+    readonly DeleteMovies = new commands.DeleteMovies(this.invokerFactory);
 }
 

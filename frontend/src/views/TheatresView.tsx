@@ -4,42 +4,14 @@ import {Theatre} from "cinetex-core/dist/domain/entities";
 import React, {useEffect, useState} from "react";
 import {css} from "@emotion/react";
 import * as Icons from "react-bootstrap-icons";
+import Toolbar from "./Toolbar";
 
 
 const theatresViewStyle = css({
     fontFamily: 'var(--cinetex-font-family)',
-    ".theatres-toolbar": {
-        paddingLeft: '4rem',
-        paddingRight: '4rem',
-        width: '100%',
-        position: "fixed",
-        left: '0px',
-        span: {
-            margin: 0,
-            padding: 8,
-            ".btn": {
-                padding: 0,
-                svg: {
-                    fontSize: '1.25rem',
-                },
-            },
-            "&:hover": {
-                cursor: "pointer",
-            }
-        },
-        ".dropdown-menu": {
-            backgroundColor: 'rgba(0, 0, 0, 0.1)',
-        },
-        ".dropdown-item": {
-            fontSize: "1rem",
-            svg: {
-                fontSize: "1rem",
-            }
-        }
-    },
 
     ".theatres": {
-        paddingTop: '2rem',
+        padding: '2rem',
 
     },
 
@@ -48,19 +20,20 @@ const theatresViewStyle = css({
     },
 
     ".theatre-image-box": {
-        boxShadow: '5px 10px 18px #000000',
-        width: '300px',
+        width: '200px',
         height: '200px',
         padding: '0',
         textAlign: 'center',
         verticalAlign: 'center',
-        backgroundColor: 'rgba(0, 0, 0, 0.25)',
         img: {
             objectFit: 'cover',
             height: '100%',
             width: '100%',
             padding: '0',
-            backgroundColor: "transparent",
+            // backgroundColor: "transparent",
+            borderRadius: '50%',
+            boxShadow: '5px 10px 18px #000000',
+            backgroundColor: 'rgba(0, 0, 0, 0.25)',
         }
     },
     ".theatre-info-box": {
@@ -148,26 +121,31 @@ export function TheatresView({interactors}: {interactors: UseCaseCollection}) {
     }
 
     return (
-        <div id="TheatresView" className="container" css={theatresViewStyle}>
-            <div className={"theatres-toolbar d-flex justify-content-end"}>
-                <span className="dropdown">
-                    <a className="btn" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+        <div id="TheatresView" className="container-fluid" css={theatresViewStyle}>
+            <Toolbar tabs={[]} theme={"dark"}>
+                                <span className="dropdown">
+                    <a className="btn" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                       aria-expanded="false">
                         <Icons.FilterRight/>
                     </a>
                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <li>
                             <a className={"dropdown-item"}
-                               onClick={() => {toggleOrderBy("name")}}>{orderIcon("name")} Name
+                               onClick={() => {
+                                   toggleOrderBy("name")
+                               }}>{orderIcon("name")} Name
                             </a>
                         </li>
                         <li>
                             <a className={"dropdown-item"}
-                               onClick={() => {toggleOrderBy("location")}}>{orderIcon("location")} Location
+                               onClick={() => {
+                                   toggleOrderBy("location")
+                               }}>{orderIcon("location")} Location
                             </a>
                         </li>
                     </ul>
                 </span>
-            </div>
+            </Toolbar>
             <div className={`theatres row row-cols-${isListView ? "1" : "auto"}`}>{theatres && theatres.map(theatre =>
                 <div className={"theatre col row row-cols-2"}
                     key={theatre.id} >

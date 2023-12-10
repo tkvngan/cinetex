@@ -2,6 +2,7 @@ import {UseCaseCollection} from "cinetex-core/dist/application";
 import {Repositories} from "./repositories";
 import * as queries from "./queries";
 import * as requests from "./requests";
+import * as commands from "./commands";
 
 export class UseCaseInteractorCollection extends UseCaseCollection {
 
@@ -23,6 +24,8 @@ export class UseCaseInteractorCollection extends UseCaseCollection {
     readonly GetMovieByName = new queries.GetMovieByNameInteractor(this.repositories);
     readonly GetMoviesByQuery = new queries.GetMoviesByQueryInteractor(this.repositories);
     readonly GetScheduleById = new queries.GetScheduleByIdInteractor(this.repositories);
+    readonly GetSchedulesByMovieId = new queries.GetSchedulesByMovieIdInteractor(this.repositories);
+    readonly GetSchedulesByTheatreId = new queries.GetSchedulesByTheatreIdInteractor(this.repositories);
     readonly GetSchedulesByQuery = new queries.GetSchedulesByQueryInteractor(this.repositories);
     readonly GetTheatreById = new queries.GetTheatreByIdInteractor(this.repositories);
     readonly GetTheatreByName = new queries.GetTheatreByNameInteractor(this.repositories);
@@ -33,5 +36,7 @@ export class UseCaseInteractorCollection extends UseCaseCollection {
 
     readonly SignIn = new requests.SignInInteractor(this.repositories);
     readonly SignUp = new requests.SignUpInteractor(this.repositories);
+
+    readonly DeleteMovies = new commands.DeleteMoviesInteractor(this.repositories);
 
 }

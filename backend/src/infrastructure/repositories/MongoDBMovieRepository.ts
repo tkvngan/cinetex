@@ -1,8 +1,9 @@
 import {MovieRepository} from "../../application/repositories";
 import {asArrayFieldFilter, asFieldFilter, asIdFieldFilter, toObjectId} from "./MongoDBUtils";
-import {FilterQuery, Model, SchemaDefinition} from "mongoose";
+import {FilterQuery, Model, SchemaDefinition, ToObjectOptions} from "mongoose";
 import {Movie} from "cinetex-core/dist/domain/entities/Movie";
 import {MoviesQuery} from "cinetex-core/dist/application/queries";
+import {DefaultSubSchemaOptions, DefaultToObjectOptions, fromObject} from "./MongoDBRepositories";
 
 export const RatingSchemaDefinition: SchemaDefinition = {
     provinceCode: {type: String, required: true},
@@ -21,7 +22,6 @@ export const BillboardSchemaDefinition: SchemaDefinition = {
 
 export const MovieSchemaDefinition: SchemaDefinition = {
     name: {type: String, required: true},
-    title: {type: String, required: true},
     releaseDate: {type: String, required: true},
     runtimeInMinutes: {type: Number, required: true},
     genres: {type: [String], required: true},
@@ -30,9 +30,9 @@ export const MovieSchemaDefinition: SchemaDefinition = {
     director: {type: String, required: false},
     producers: {type: String, required: false},
     writers: {type: String, required: false},
-    ratings: {type: [RatingSchemaDefinition], required: true},
+    ratings: {type: [RatingSchemaDefinition], required: true, options: DefaultSubSchemaOptions},
 
-    billboard: {type: BillboardSchemaDefinition, required: false},
+    billboard: {type: BillboardSchemaDefinition, required: false, options: DefaultSubSchemaOptions},
     warning: {type: String, required: false},
     languageCode: {type: String, required: true},
     movieLanguage: {type: String, required: true},
@@ -73,32 +73,33 @@ export function createMovieFilter(query: MoviesQuery): FilterQuery<Movie> {
 export function MongoDBMovieRepository(model: Model<Movie>): MovieRepository {
     return {
         async getAllMovies(): Promise<Movie[]> {
-            return (await model.find()).map(movie => movie.toObject());
+            return (await model.find()).map(movie => movie.toObject(DefaultToObjectOptions));
         },
 
         async getMovieById(id: string): Promise<Movie | undefined> {
-            return (await model.findById(toObjectId(id)))?.toObject();
+            return (await model.findById(toObjectId(id)))?.toObject(DefaultToObjectOptions);
         },
 
         async getMovieByName(name: string): Promise<Movie | undefined> {
-            return (await model.findOne({name: name}))?.toObject();
+            return (await model.findOne({name: name}))?.toObject(DefaultToObjectOptions);
         },
 
         async getMoviesByQuery(query: MoviesQuery): Promise<Movie[]> {
             const filter = createMovieFilter(query);
-            return (await model.find(filter)).map(movie => movie.toObject());
+            return (await model.find(filter)).map(movie => movie.toObject(DefaultToObjectOptions));
         },
 
+
         async addMovie(movie: Movie): Promise<Movie> {
-            return (await model.create(movie)).toObject();
+            return (await model.create(fromObject(movie))).toObject(DefaultToObjectOptions);
         },
 
         async deleteMovieById(id: string): Promise<Movie | undefined> {
-            return (await model.findByIdAndDelete(toObjectId(id), {returnDocument: "before"}))?.toObject();
+            return (await model.findByIdAndDelete(toObjectId(id), {returnDocument: "before"}))?.toObject(DefaultToObjectOptions);
         },
 
         async deleteMovieByName(name: string): Promise<Movie | undefined> {
-            return (await model.findOneAndDelete({name: name}, {returnDocument: "before"}))?.toObject();
+            return (await model.findOneAndDelete({name: name}, {returnDocument: "before"}))?.toObject(DefaultToObjectOptions);
         },
 
         async deleteMoviesByQuery(query: MoviesQuery): Promise<number> {
@@ -108,7 +109,7 @@ export function MongoDBMovieRepository(model: Model<Movie>): MovieRepository {
 
         async updateMovieById(id: string, movie: Partial<Omit<Movie, "id">>): Promise<Movie | undefined> {
             delete (movie as any).id
-            return (await model.findByIdAndUpdate(toObjectId(id), {$set: movie}, {returnDocument: "after"}))?.toObject()
+            return (await model.findByIdAndUpdate(toObjectId(id), {$set: movie}, {returnDocument: "after"}))?.toObject(DefaultToObjectOptions)
         },
 
         async deleteAllMovies(): Promise<number> {

@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+
 import {css as cssJs} from "@emotion/css";
 import bg from "./assets/svg/bg.svg";
 
@@ -12,7 +14,7 @@ const darkBodyStyle = cssJs({
 const lightBodyStyle = cssJs({
 })
 
-export class ThemeManager {
+export class AppThemeManager {
     private _theme: 'light' | 'dark'
     private observers: {
         readonly callback: (theme: 'light' | 'dark') => void,
@@ -77,3 +79,5 @@ export class ThemeManager {
         })
     }
 }
+
+export default AppThemeManager
