@@ -13,13 +13,13 @@ export type Theatre = Entity & Readonly<{
 }>
 
 export type Screen = Readonly<{
-    // id: number;
+    id: number;
     name: string;
     rows: number;
     columns: number;
     frontRows: number;
     sideColumns: number;
-    seats: readonly SeatType[][];
+    seats: readonly (readonly SeatType[])[];
     imageUrl?: string;
 }>
 

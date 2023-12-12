@@ -104,7 +104,7 @@ export function MongoDBBookingRepository(model: Model<Booking>, theatreModel: Mo
             });
         },
 
-        async addBooking(booking: Booking): Promise<Booking> {
+        async addBooking(booking: Omit<Booking, "id">): Promise<Booking> {
             return (await model.create(fromObject(booking))).toObject(DefaultToObjectOptions);
         },
 

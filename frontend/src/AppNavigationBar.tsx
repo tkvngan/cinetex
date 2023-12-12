@@ -8,14 +8,16 @@ import Tooltip from "bootstrap/js/dist/tooltip";
 import bg from './assets/svg/bg.svg'
 import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredentials";
 import {AppFeature} from "./AppFeatures";
+import {CartModel} from "./models/CartModel";
 
 type AppNavigationBarProps = {
     features: AppFeature[],
     credentials: SecurityCredentials | undefined,
+    cart: CartModel | undefined,
     theme: 'dark' | 'light',
 }
 
-export function AppNavigationBar({features, credentials, theme}: AppNavigationBarProps) {
+export function AppNavigationBar({features, credentials, cart, theme}: AppNavigationBarProps) {
     const isDarkTheme = () => (theme === 'dark')
     const signInViewButtonTooltip = React.useRef<Tooltip|null>(null)
     const currentPathMatch = features.map(({path}) => useMatch(path)).find((match) => match !== null)
@@ -81,23 +83,22 @@ export function AppNavigationBar({features, credentials, theme}: AppNavigationBa
             </button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div className="navbar-nav align-items-center w-100"
-                    css={{
-                        ".nav-link": {
-                            marginRight:'1.5rem',
-                            whiteSpace: 'nowrap',
-                            transition: 'font-size, color .3s',
-                            fontSize:   '1.25rem',
-                            ...(isDarkTheme() ? {
-                                color: 'var(--cinetex-solid-light-color)',
-                            } : {}),
-                            '&:hover, &.active': {
-                                ...(isDarkTheme() ? {
-                                    color:  'var(--cinetex-primary-light-color)',
-                                } : {
-                                }),
-                            }
-                        }
-                    }}>{
+                     css={{
+                         ".nav-link": {
+                             marginRight: '1.5rem',
+                             whiteSpace: 'nowrap',
+                             transition: 'font-size, color .3s',
+                             fontSize: '1.25rem',
+                             ...(isDarkTheme() ? {
+                                 color: 'var(--cinetex-solid-light-color)',
+                             } : {}),
+                             '&:hover, &.active': {
+                                 ...(isDarkTheme() ? {
+                                     color: 'var(--cinetex-primary-light-color)',
+                                 } : {}),
+                             }
+                         }
+                     }}>{
                     features.map(({name, path, visible, roles}) => {
                         if (visible === "never" ||
                             visible === "when-active" && !isActive(path)) {
@@ -110,21 +111,32 @@ export function AppNavigationBar({features, credentials, theme}: AppNavigationBa
                         }
                         return (
                             <Link key={path}
-                                className={"nav-link" + (isActive(path) ? " active" : "")}
-                                aria-current={isActive(path) ? "page" : "false"} to={isActive(path) ? "#" : path}>
+                                  className={"nav-link" + (isActive(path) ? " active" : "")}
+                                  aria-current={isActive(path) ? "page" : "false"} to={isActive(path) ? "#" : path}>
                                 {name}
                             </Link>
                         )
                     })}
-                    <span className="nav-link ms-auto me-0"
-                        key={"UserSignInView"}
-                        data-bs-toggle="offcanvas"
-                        data-bs-target="#UserSignInView">
+                    <span className={"nav-link ms-auto me-0"}
+                          key={"CartView"}
+                          data-bs-toggle="offcanvas"
+                          data-bs-target="#CartView">
                         <a id={"UserSignInViewButton"}
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="bottom"
-                            title={credentials ? credentials.user.firstName : "Sign In"}
-                            aria-controls="UserSignInView">{credentials ? <Icons.PersonFill/> : <Icons.Person/>}
+                           data-bs-toggle="tooltip"
+                           data-bs-placement="bottom"
+                           title={"Checkout"}
+                           aria-controls="CartView">{<Icons.Cart/>}
+                        </a>
+                    </span>
+                    <span className="nav-link ms-2 me-0"
+                          key={"UserSignInView"}
+                          data-bs-toggle="offcanvas"
+                          data-bs-target="#UserSignInView">
+                        <a id={"UserSignInViewButton"}
+                           data-bs-toggle="tooltip"
+                           data-bs-placement="bottom"
+                           title={credentials ? credentials.user.firstName : "Sign In"}
+                           aria-controls="UserSignInView">{credentials ? <Icons.PersonFill/> : <Icons.Person/>}
                         </a>
                     </span>
                 </div>

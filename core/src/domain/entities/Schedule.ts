@@ -4,7 +4,7 @@ export type Schedule = Entity & Readonly<{
     id: Id;
     movieId: Id
     theatreId: Id
-    screenIx: number
+    screenId: number
     showTimes: readonly TimeSlot[]
 }>
 

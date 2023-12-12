@@ -38,6 +38,7 @@ export abstract class UseCaseCollection {
     abstract readonly SignUp: requests.SignUp;
 
     abstract readonly DeleteMovies: commands.DeleteMovies;
+    abstract readonly CreateBooking: commands.CreateBooking;
 
     [Symbol.iterator](): Iterator<UseCase> {
         return (Object.values(this).filter((value: any): boolean => value instanceof UseCase))[Symbol.iterator]();

@@ -38,5 +38,7 @@ export class UseCaseInteractorCollection extends UseCaseCollection {
     readonly SignUp = new requests.SignUpInteractor(this.repositories);
 
     readonly DeleteMovies = new commands.DeleteMoviesInteractor(this.repositories);
+    readonly CreateBooking = new commands.CreateBookingInteractor(this.repositories);
+
 
 }

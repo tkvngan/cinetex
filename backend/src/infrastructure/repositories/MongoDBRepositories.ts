@@ -42,17 +42,24 @@ export const DefaultSchemaOptions: SchemaOptions = {
 export const DefaultToObjectOptions: ToObjectOptions = {
     versionKey: false,
     transform: function (doc: any, ret: Record<string, any>) {
-        ret.id = ret._id?.toHexString()
+        if (!ret.id) {
+            ret.id = ret._id?.toHexString()
+        }
         delete ret._id;
     }
 }
 
 export function fromObject<T>(obj: T): T {
-    return {
+    const original = obj as any
+    const replacement: any = {
         ...obj,
-        _id: (obj as any).id ? toObjectId((obj as any).id) : undefined,
-        id: undefined
-    } as T
+    }
+    if (original.id && typeof original.id === "string" && !original._id) {
+        replacement._id = toObjectId(original.id)
+        replacement.id = undefined
+    }
+    return replacement as T
+
 }
 
 

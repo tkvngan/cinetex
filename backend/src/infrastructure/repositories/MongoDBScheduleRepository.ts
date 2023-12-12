@@ -41,7 +41,7 @@ export const ScheduleSchemaOptions: SchemaOptions = {
 export const ScheduleSchemaDefinition: SchemaDefinition = {
     _movieId: {type: Types.ObjectId, required: true, index: true},
     _theatreId: {type: Types.ObjectId, required: true, index: true},
-    screenIx: {type: Number, required: true},
+    screenId: {type: Number, required: true},
     showTimes: {type: [TimeSlotSchemaDefinition], required: true, options: DefaultSubSchemaOptions},
 }
 

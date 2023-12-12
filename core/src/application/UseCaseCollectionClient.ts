@@ -41,5 +41,6 @@ export class UseCaseCollectionClient extends UseCaseCollection {
     readonly SignUp = new requests.SignUp(this.invokerFactory);
 
     readonly DeleteMovies = new commands.DeleteMovies(this.invokerFactory);
+    readonly CreateBooking = new commands.CreateBooking(this.invokerFactory);
 }
 

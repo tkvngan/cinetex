@@ -9,15 +9,18 @@ import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredential
 import {AppNavigationBar} from "./AppNavigationBar";
 import {AppThemeManager} from "./AppThemeManager";
 import {AppFeatures} from "./AppFeatures";
+import {CartModel, createCartModel} from "./models/CartModel";
+import {CartView} from "./views/CartView";
 
 export type AppProps = {
     interactors: UseCaseCollection,
     security: SecurityContext,
+    cart: CartModel,
     themeManager: AppThemeManager,
 }
 
-export function App({interactors, security, themeManager}: AppProps) {
-    const features = AppFeatures(interactors, security)
+export function App({interactors, security, cart, themeManager,}: AppProps) {
+    const features = AppFeatures(interactors, security, cart)
     const [credentials, setCredentials] = React.useState<SecurityCredentials|undefined>(undefined)
     const [theme, setTheme] = React.useState<'light' | 'dark'>(themeManager.theme)
     const location = useLocation();
@@ -50,7 +53,7 @@ export function App({interactors, security, themeManager}: AppProps) {
 
     return (
         <div id="App">
-            <AppNavigationBar features={features} credentials={credentials} theme={"dark"}/>
+            <AppNavigationBar features={features} credentials={credentials} cart={cart} theme={"dark"}/>
             <div className="content" css={{
                     marginTop: '6rem',
                     paddingLeft: '3rem',
@@ -82,6 +85,7 @@ export function App({interactors, security, themeManager}: AppProps) {
                 </article>
             </div>
             <UserSignInView id="UserSignInView" security={security}/>
+            <CartView id={"CartView"} interactors={interactors} cart={cart} security={security}/>
         </div>
     );
 }

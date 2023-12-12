@@ -13,6 +13,7 @@ import {injectGlobal} from "@emotion/css";
 import {AppThemeManager} from "./AppThemeManager";
 import {BrowserRouter} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css"
+import {createCartModel} from "./models/CartModel";
 
 /*#5f0f4f;*/
 const globalStyle = css(`
@@ -44,11 +45,13 @@ const axiosInstance = axios.create({
 const invokerFactory = AxiosUseCaseInvokerFactory(axiosInstance)
 const interactors: UseCaseCollection = new UseCaseCollectionClient(invokerFactory)
 const security = new SecurityContext(interactors.SignIn, interactors.SignUp)
+const cart = createCartModel()
+
 const themeManager = new AppThemeManager("dark")
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
-        <App interactors={interactors} security={security} themeManager={themeManager}/>
+        <App interactors={interactors} security={security} cart={cart} themeManager={themeManager}/>
     </BrowserRouter>
 )
 

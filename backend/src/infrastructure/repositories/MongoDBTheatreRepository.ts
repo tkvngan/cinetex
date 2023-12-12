@@ -13,6 +13,7 @@ const AddressDefinition: SchemaDefinition = {
 }
 
 const ScreenDefinition: SchemaDefinition = {
+    id: {type: Number, required: true},
     name: {type: String, required: true},
     rows: {type: Number, required: true},
     columns: {type: Number, required: true},

@@ -84,7 +84,7 @@ const T3 = "21:15"
 type Entry = {
     movieId: string;
     theatreId: string;
-    screenIx: number;
+    screenId: number;
     slots: Map<string, string[]>
 }
 
@@ -95,17 +95,17 @@ export function generateSchedules(movies: Movie[], theatres: Theatre[]): Schedul
     let movieIxStart = 0
     for (const date of dates) {
         for (const theatre of theatres) {
-            for (let screenIx = 0; screenIx < theatre.screens.length; screenIx++) {
+            for (let screenId = 0; screenId < theatre.screens.length; screenId++) {
                 for (const time of [T1, T2, T3]) {
                     const movieIx = Math.min(movieIxStart + Math.trunc(Math.random() * movieBlock), movies.length - 1)
                     const movieId = movies[movieIx].id
-                    const key = `${movieId}-${theatre.id}-${screenIx}`
+                    const key = `${movieId}-${theatre.id}-${screenId}`
                     let entry = entries.get(key)
                     if (entry === undefined) {
                         entry = <Entry> {
                             movieId: movieId,
                             theatreId: theatre.id,
-                            screenIx: screenIx,
+                            screenId: screenId,
                             slots: new Map<string, string[]>()
                         }
                         entries.set(key, entry)
@@ -131,7 +131,7 @@ export function generateSchedules(movies: Movie[], theatres: Theatre[]): Schedul
             id: new ObjectId().toHexString(),
             movieId: entry.movieId,
             theatreId: entry.theatreId,
-            screenIx: entry.screenIx,
+            screenId: entry.screenId,
             showTimes: slots
         })
     }

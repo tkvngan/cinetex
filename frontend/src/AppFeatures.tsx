@@ -16,6 +16,8 @@ import {WIPView} from "./views/WIPView";
 import {WIPAdminView} from "./views/admin/WIPAdminView";
 import {SecurityContext} from "./security/SecurityContext";
 import {MovieViewByPath} from "./views/MovieViewByPath";
+import {BookingView} from "./views/BookingView";
+import {CartModel} from "./models/CartModel";
 
 export type AppFeatureItem = {
     view?: ReactNode | (() => ReactNode)
@@ -36,13 +38,13 @@ export type AppFeature = (AppFeatureItem | AppFeatureGroup) & {
     theme?: 'light' | 'dark';
 }
 
-export function AppFeatures(interactors: UseCaseCollection, security: SecurityContext): AppFeature[] {
+export function AppFeatures(interactors: UseCaseCollection, security: SecurityContext, cart: CartModel): AppFeature[] {
     return [
         {name: "Home", path: "/", visible: "never", view: () => <HomeView/>},
         {name: "Movies", path: "/Movies", view: () => <MoviesView interactors={interactors}/>},
         {name: "Movie", path: "/Movie/:id", visible: "when-active", view: () => <MovieViewByPath viewMode="expanded" interactors={interactors}/>},
         {name: "Theatres", path: "/Theatres", view: () => <TheatresView interactors={interactors}/>},
-        {name: "Tickets", path: "/Tickets", view: () => <WIPView/>},
+        {name: "Booking", path: "/Booking/movie/:movieId/theatre/:theatreId/:screenId/:date/:time", visible: "when-active", view: () => <BookingView interactors={interactors} cart={cart}/>},
         {name: "System", path: "/System", roles: ["admin"], visible: "always", theme: "light", view: () => <WIPAdminView interactors={interactors}/>},
         {name: "System - Users", path: "/System/Users", roles: ["admin"], visible: "never", theme: "light", view: () => <WIPAdminView interactors={interactors}/>},
         {name: "System - Movies", path: "/System/Movies", roles: ["admin"], visible: "never", theme: "light", view: () => <MoviesAdminView interactors={interactors} credentials={security.credentials}/>},

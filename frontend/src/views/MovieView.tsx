@@ -9,7 +9,7 @@ export type MovieViewMode = "compact" | "normal" | "expanded"
 type ShowTimeDateEntry = {
     date: string,
     screenTimes: {
-        screenIx: number,
+        screenId: number,
         time: string
     }[]
 }
@@ -37,8 +37,8 @@ export function MovieView({movie, viewMode, interactors}: {
              margin: '2rem 1.5rem 2rem 1.5rem',
              ".movie-image-block": {
                  boxShadow: '5px 10px 18px #000000',
-                 height: '300px',
                  width: '200px',
+                 height: '300px',
                  padding: '0',
                  textAlign: 'center',
                  verticalAlign: 'center',
@@ -89,10 +89,14 @@ export function MovieView({movie, viewMode, interactors}: {
                      p: {
                          margin: 0,
                          padding: 0,
+                         fontSize: '1rem'
                      },
                      ".movie-theatres-info-header": {
                          margin: '0 0 0.5rem 0',
                          padding: 0,
+                         p: {
+                             fontSize: '10px'
+                         }
                      },
                      ".movie-theatre-block": {
                          margin: 0,
@@ -106,7 +110,7 @@ export function MovieView({movie, viewMode, interactors}: {
                              '&:hover': {
                                  color: 'var(--cinetex-primary-light-color)',
                              },
-                             fontSize: '0.8rem',
+                             fontSize: '1rem',
 
                          },
                          "a.movie-show-time-link": {
@@ -231,12 +235,12 @@ export function MovieView({movie, viewMode, interactors}: {
                 </p>
                 <div className={"movie-show-times-block col-9 row row-cols-auto"}>
                 {
-                    entry.screenTimes.map(({screenIx, time}) => (
+                    entry.screenTimes.map(({screenId, time}) => (
                         <Link
                             className="movie-show-time-link col"
-                            key={`${theatre.id}-${entry.date}-${time}-${screenIx}`}
-                            to={`/Booking/movie-${movie.id}/theatre-${theatre.id}/screen-${screenIx}/${entry.date}/${time}`}>
-                            <span>{time}({theatre.screens[screenIx].name}) </span>
+                            key={`${theatre.id}-${entry.date}-${time}-${screenId}`}
+                            to={`/Booking/movie/${movie.id}/theatre/${theatre.id}/${screenId}/${entry.date}/${time}`}>
+                            <span>{time}({theatre.screens[screenId].name}) </span>
                         </Link>
                     ))
                 }
@@ -253,13 +257,22 @@ export function MovieView({movie, viewMode, interactors}: {
                 }
                 for (const time of timeSlot.times) {
                     acc[timeSlot.date].screenTimes.push({
-                        screenIx: schedule.screenIx,
+                        screenId: schedule.screenId,
                         time: time
                     })
                 }
             }
             return acc
         }, {})
+        for (const entry of Object.values(entries)) {
+            entry.screenTimes.sort((a, b) => {
+                const result = a.time.localeCompare(b.time)
+                if (result !== 0) {
+                    return result
+                }
+                return a.screenId - b.screenId
+            })
+        }
         return Object.values(entries).sort((a, b) => a.date.localeCompare(b.date))
     }
 
