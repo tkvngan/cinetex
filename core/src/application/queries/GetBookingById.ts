@@ -1,9 +1,9 @@
-import {QueryUseCase, UseCaseInvokerFactory} from "../UseCase";
+import {QueryUseCase, UseCaseInvoker} from "../UseCase";
 import {Booking} from "../../domain/entities";
 
 export class GetBookingById extends QueryUseCase<{ id: string }, Booking | undefined> {
-    constructor(invokerFactory?: UseCaseInvokerFactory<{ id: string }, Booking | undefined>) {
-        super("GetBookingById", invokerFactory);
+    constructor(invoker?: UseCaseInvoker<{ id: string }, Booking | undefined>) {
+        super("GetBookingById", invoker);
     }
 }
 

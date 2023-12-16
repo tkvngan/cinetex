@@ -1,4 +1,4 @@
-import {QueryUseCase, UseCaseInvokerFactory} from "../UseCase";
+import {QueryUseCase, UseCaseInvoker} from "../UseCase";
 import {Schedule} from "../../domain/entities";
 import {ByPattern, ByRange} from "./QueryCriteria";
 import {TheatresQuery} from "./GetTheatresByQuery";
@@ -25,8 +25,8 @@ export type SchedulesQuery = {
 }
 
 export class GetSchedulesByQuery extends QueryUseCase<SchedulesQuery, Schedule[]> {
-    constructor(invokerFactory?: UseCaseInvokerFactory<SchedulesQuery, Schedule[]>) {
-        super("GetSchedulesByQuery", invokerFactory);
+    constructor(invoker?: UseCaseInvoker<SchedulesQuery, Schedule[]>) {
+        super("GetSchedulesByQuery", invoker);
     }
 }
 

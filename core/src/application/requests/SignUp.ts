@@ -1,4 +1,4 @@
-import {RequestUseCase, UseCaseInvokerFactory} from "../UseCase";
+import {RequestUseCase, UseCaseInvoker} from "../UseCase";
 import {SignInResponse} from "./SignIn";
 
 export type SignUpRequest = Readonly<{
@@ -12,7 +12,7 @@ export type SignUpRequest = Readonly<{
 export type SignUpResponse = SignInResponse
 
 export class SignUp extends RequestUseCase<SignUpRequest, SignUpResponse> {
-    constructor(invokerFactory?: UseCaseInvokerFactory<SignUpRequest, SignUpResponse>) {
-        super("SignUp", invokerFactory);
+    constructor(invoker?: UseCaseInvoker<SignUpRequest, SignUpResponse>) {
+        super("SignUp", invoker);
     }
 }

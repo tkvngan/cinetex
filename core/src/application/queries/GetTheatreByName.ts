@@ -1,9 +1,9 @@
-import {QueryUseCase, UseCaseInvokerFactory} from "../UseCase";
+import {QueryUseCase, UseCaseInvoker} from "../UseCase";
 import {Theatre} from "../../domain/entities";
 
 export class GetTheatreByName extends QueryUseCase<{ name: string }, Theatre | undefined> {
-    constructor(invokerFactory?: UseCaseInvokerFactory<{ name: string }, Theatre | undefined>) {
-        super("GetTheatreByName", invokerFactory);
+    constructor(invoker?: UseCaseInvoker<{ name: string }, Theatre | undefined>) {
+        super("GetTheatreByName", invoker);
     }
 }
 

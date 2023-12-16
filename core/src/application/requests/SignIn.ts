@@ -1,4 +1,4 @@
-import {RequestUseCase, UseCaseInvokerFactory} from "../UseCase";
+import {RequestUseCase, UseCaseInvoker} from "../UseCase";
 import {User} from "../../domain/entities";
 
 export type SignInRequest = Readonly<{
@@ -12,7 +12,7 @@ export type SignInResponse = {
 }
 
 export class SignIn extends RequestUseCase<SignInRequest, SignInResponse> {
-    constructor(invokerFactory?: UseCaseInvokerFactory<SignInRequest, SignInResponse>) {
-        super("SignIn", invokerFactory);
+    constructor(invoker?: UseCaseInvoker<SignInRequest, SignInResponse>) {
+        super("SignIn", invoker);
     }
 }

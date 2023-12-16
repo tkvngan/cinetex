@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import axios from "axios";
 import {App} from "./App";
-import {AxiosUseCaseInvokerFactory} from "cinetex-shared/dist/infrastructure/interactors";
+import {AxiosUseCaseInvoker} from "cinetex-shared/dist/infrastructure/interactors";
 import {UseCaseCollection, UseCaseCollectionClient} from "cinetex-core/dist/application";
 import {SecurityContext} from "./security/SecurityContext";
 import {css} from "@emotion/react";
@@ -42,8 +42,8 @@ const axiosInstance = axios.create({
     timeout: 1000,
 })
 
-const invokerFactory = AxiosUseCaseInvokerFactory(axiosInstance)
-const interactors: UseCaseCollection = new UseCaseCollectionClient(invokerFactory)
+const invoker = AxiosUseCaseInvoker(axiosInstance)
+const interactors: UseCaseCollection = new UseCaseCollectionClient(invoker)
 const security = new SecurityContext(interactors.SignIn, interactors.SignUp)
 const cart = createCartModel()
 

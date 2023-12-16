@@ -1,4 +1,4 @@
-import {QueryUseCase, UseCaseInvokerFactory} from "../UseCase";
+import {QueryUseCase, UseCaseInvoker} from "../UseCase";
 import {User} from "../../domain/entities";
 import {ByPattern} from "./QueryCriteria";
 
@@ -15,8 +15,8 @@ export type UsersQuery = {
 }
 
 export class GetUsersByQuery extends QueryUseCase<UsersQuery, Omit<User, "password">[]> {
-    constructor(invokerFactory?: UseCaseInvokerFactory<UsersQuery, Omit<User, "password">[]>) {
-        super("GetUsersByQuery", invokerFactory);
+    constructor(invoker?: UseCaseInvoker<UsersQuery, Omit<User, "password">[]>) {
+        super("GetUsersByQuery", invoker);
     }
 }
 

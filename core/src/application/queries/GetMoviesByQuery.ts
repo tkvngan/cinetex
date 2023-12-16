@@ -1,6 +1,6 @@
 import {ByPattern, ByRange} from "./QueryCriteria";
 import {Movie} from "../../domain/entities";
-import {QueryUseCase, UseCaseInvokerFactory} from "../UseCase";
+import {QueryUseCase, UseCaseInvoker} from "../UseCase";
 
 export type MoviesQuery = {
     id: string | [string];
@@ -19,8 +19,8 @@ export type MoviesQuery = {
 }
 
 export class GetMoviesByQuery extends QueryUseCase<MoviesQuery, Movie[]> {
-    constructor(invokerFactory?: UseCaseInvokerFactory<MoviesQuery, Movie[]>) {
-        super("GetMoviesByQuery", invokerFactory);
+    constructor(invoker?: UseCaseInvoker<MoviesQuery, Movie[]>) {
+        super("GetMoviesByQuery", invoker);
     }
 }
 

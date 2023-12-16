@@ -1,4 +1,4 @@
-import {CommandUseCase, UseCaseInvokerFactory} from "cinetex-core/dist/application";
+import {CommandUseCase} from "cinetex-core/dist/application";
 import {Booking} from "cinetex-core/dist/domain/entities";
 import {CreateBooking} from "cinetex-core/dist/application/commands";
 import {Repositories} from "../repositories";

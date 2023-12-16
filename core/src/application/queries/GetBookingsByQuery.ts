@@ -1,6 +1,6 @@
 import {ByRange} from "./QueryCriteria";
 import {Booking} from "../../domain/entities";
-import {QueryUseCase, UseCaseInvokerFactory} from "../UseCase";
+import {QueryUseCase, UseCaseInvoker} from "../UseCase";
 import {UsersQuery} from "./GetUsersByQuery";
 import {TheatresQuery} from "./GetTheatresByQuery";
 import {MoviesQuery} from "./GetMoviesByQuery";
@@ -22,8 +22,8 @@ export type BookingsQuery = {
 }
 
 export class GetBookingsByQuery extends QueryUseCase<BookingsQuery, Booking[]> {
-    constructor(invokerFactory?: UseCaseInvokerFactory<BookingsQuery, Booking[]>) {
-        super("GetBookingsByQuery", invokerFactory);
+    constructor(invoker?: UseCaseInvoker<BookingsQuery, Booking[]>) {
+        super("GetBookingsByQuery", invoker);
     }
 }
 

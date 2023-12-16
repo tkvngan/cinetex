@@ -1,2 +1,2 @@
 
-export * from "./AxiosUseCaseInvokerFactory";
+export * from "./AxiosUseCaseInvoker";

@@ -1,7 +1,7 @@
-import {CommandUseCase, UseCaseInvokerFactory} from "../UseCase";
+import {CommandUseCase, UseCaseInvoker} from "../UseCase";
 
 export class DeleteMovies extends CommandUseCase<string[]> {
-    constructor(invokerFactory?: UseCaseInvokerFactory<string[], void>) {
-        super("DeleteMovies", invokerFactory);
+    constructor(invoker?: UseCaseInvoker<string[], void>) {
+        super("DeleteMovies", invoker);
     }
 }
