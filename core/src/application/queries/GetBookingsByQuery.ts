@@ -23,7 +23,7 @@ export type BookingsQuery = {
 
 export class GetBookingsByQuery extends QueryUseCase<BookingsQuery, Booking[]> {
     constructor(invoker?: UseCaseInvoker<BookingsQuery, Booking[]>) {
-        super("GetBookingsByQuery", invoker);
+        super(GetBookingsByQuery.name, invoker);
     }
 }
 

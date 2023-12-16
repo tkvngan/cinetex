@@ -26,7 +26,7 @@ export type SchedulesQuery = {
 
 export class GetSchedulesByQuery extends QueryUseCase<SchedulesQuery, Schedule[]> {
     constructor(invoker?: UseCaseInvoker<SchedulesQuery, Schedule[]>) {
-        super("GetSchedulesByQuery", invoker);
+        super(GetSchedulesByQuery.name, invoker);
     }
 }
 

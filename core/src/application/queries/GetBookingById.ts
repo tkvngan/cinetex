@@ -3,7 +3,7 @@ import {Booking} from "../../domain/entities";
 
 export class GetBookingById extends QueryUseCase<{ id: string }, Booking | undefined> {
     constructor(invoker?: UseCaseInvoker<{ id: string }, Booking | undefined>) {
-        super("GetBookingById", invoker);
+        super(GetBookingById.name, invoker);
     }
 }
 

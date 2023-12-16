@@ -20,7 +20,7 @@ export type MoviesQuery = {
 
 export class GetMoviesByQuery extends QueryUseCase<MoviesQuery, Movie[]> {
     constructor(invoker?: UseCaseInvoker<MoviesQuery, Movie[]>) {
-        super("GetMoviesByQuery", invoker);
+        super(GetMoviesByQuery.name, invoker);
     }
 }
 

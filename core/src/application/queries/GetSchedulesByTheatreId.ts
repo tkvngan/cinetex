@@ -3,7 +3,7 @@ import {Schedule} from "../../domain/entities";
 
 export class GetSchedulesByTheatreId extends QueryUseCase<{ theatreId: string }, Schedule[]> {
     constructor(invoker?: UseCaseInvoker<{ theatreId: string }, Schedule[]>) {
-        super("GetSchedulesByTheatreId", invoker);
+        super(GetSchedulesByTheatreId.name, invoker);
     }
 }
 

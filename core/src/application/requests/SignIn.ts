@@ -13,6 +13,6 @@ export type SignInResponse = {
 
 export class SignIn extends RequestUseCase<SignInRequest, SignInResponse> {
     constructor(invoker?: UseCaseInvoker<SignInRequest, SignInResponse>) {
-        super("SignIn", invoker);
+        super(SignIn.name, invoker);
     }
 }

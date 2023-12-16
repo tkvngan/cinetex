@@ -16,7 +16,7 @@ export type UsersQuery = {
 
 export class GetUsersByQuery extends QueryUseCase<UsersQuery, Omit<User, "password">[]> {
     constructor(invoker?: UseCaseInvoker<UsersQuery, Omit<User, "password">[]>) {
-        super("GetUsersByQuery", invoker);
+        super(GetUsersByQuery.name, invoker);
     }
 }
 

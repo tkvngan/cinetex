@@ -16,7 +16,7 @@ export type TheatresQuery = {
 
 export class GetTheatresByQuery extends QueryUseCase<TheatresQuery, Theatre[]> {
     constructor(invoker?: UseCaseInvoker<TheatresQuery, Theatre[]>) {
-        super("GetTheatresByQuery", invoker);
+        super(GetTheatresByQuery.name, invoker);
     }
 }
 
