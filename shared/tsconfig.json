@@ -11,6 +11,8 @@
     "skipLibCheck": true,                                /* Skip type checking all .d.ts files. */
     "declaration": true,
     "declarationMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "outDir": "./dist",
     "rootDir": "./src",
     "composite": true,

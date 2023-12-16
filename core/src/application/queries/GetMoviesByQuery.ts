@@ -18,6 +18,12 @@ export type MoviesQuery = {
     releaseDate?: string | string[] | ByRange<string>;
 }
 
+declare module "../UseCaseDefinitions" {
+    export interface UseCaseDefinitions {
+        readonly GetMoviesByQuery: GetMoviesByQuery
+    }
+}
+
 export class GetMoviesByQuery extends QueryUseCase<MoviesQuery, Movie[]> {
     constructor(invoker?: UseCaseInvoker<MoviesQuery, Movie[]>) {
         super(GetMoviesByQuery.name, invoker);

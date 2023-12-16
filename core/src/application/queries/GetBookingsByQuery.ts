@@ -21,6 +21,12 @@ export type BookingsQuery = {
     showTime?: string | [string] | ByRange<string>
 }
 
+declare module "../UseCaseDefinitions" {
+    export interface UseCaseDefinitions {
+        readonly GetBookingsByQuery: GetBookingsByQuery
+    }
+}
+
 export class GetBookingsByQuery extends QueryUseCase<BookingsQuery, Booking[]> {
     constructor(invoker?: UseCaseInvoker<BookingsQuery, Booking[]>) {
         super(GetBookingsByQuery.name, invoker);

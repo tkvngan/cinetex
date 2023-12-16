@@ -1,3 +1,3 @@
 export * from "./UseCase";
 export * from "./UseCaseCollection";
-export * from "./UseCaseCollectionClient";
+export * from "./UseCaseDefinitions";

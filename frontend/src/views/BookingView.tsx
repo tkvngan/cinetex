@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import {useParams} from "react-router-dom";
 import {UseCaseCollection} from "cinetex-core/dist/application";
-import React, {useEffect, useState, MouseEvent, SyntheticEvent, useReducer} from "react";
+import React, {MouseEvent, useEffect, useReducer, useState} from "react";
 import {AuditoriumModel, createAuditoriumModel, SeatModel} from "../models/AuditoriumModel";
 import {SeatPosition, SeatType} from "cinetex-core/dist/domain/entities";
 import {CartModel} from "../models/CartModel";

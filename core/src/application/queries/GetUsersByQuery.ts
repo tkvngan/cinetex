@@ -14,6 +14,12 @@ export type UsersQuery = {
     phoneNumber?: string | ByPattern;
 }
 
+declare module "../UseCaseDefinitions" {
+    export interface UseCaseDefinitions {
+        readonly GetUsersByQuery: GetUsersByQuery
+    }
+}
+
 export class GetUsersByQuery extends QueryUseCase<UsersQuery, Omit<User, "password">[]> {
     constructor(invoker?: UseCaseInvoker<UsersQuery, Omit<User, "password">[]>) {
         super(GetUsersByQuery.name, invoker);

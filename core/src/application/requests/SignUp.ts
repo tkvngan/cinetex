@@ -11,6 +11,12 @@ export type SignUpRequest = Readonly<{
 
 export type SignUpResponse = SignInResponse
 
+declare module "../UseCaseDefinitions" {
+    export interface UseCaseDefinitions {
+        readonly SignUp: SignUp
+    }
+}
+
 export class SignUp extends RequestUseCase<SignUpRequest, SignUpResponse> {
     constructor(invoker?: UseCaseInvoker<SignUpRequest, SignUpResponse>) {
         super(SignUp.name, invoker);

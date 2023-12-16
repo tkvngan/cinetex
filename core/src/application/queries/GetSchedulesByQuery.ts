@@ -24,6 +24,12 @@ export type SchedulesQuery = {
     showTime?: string | [string] | ByRange<string>;
 }
 
+declare module "../UseCaseDefinitions" {
+    export interface UseCaseDefinitions {
+        readonly GetSchedulesByQuery: GetSchedulesByQuery
+    }
+}
+
 export class GetSchedulesByQuery extends QueryUseCase<SchedulesQuery, Schedule[]> {
     constructor(invoker?: UseCaseInvoker<SchedulesQuery, Schedule[]>) {
         super(GetSchedulesByQuery.name, invoker);

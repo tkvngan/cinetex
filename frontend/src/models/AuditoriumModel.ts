@@ -1,5 +1,4 @@
-import {Booking, Movie, SeatPosition, SeatType, Theatre, Ticket} from "cinetex-core/dist/domain/entities";
-import {Screen} from "cinetex-core/dist/domain/entities";
+import {Booking, Movie, Screen, SeatPosition, SeatType, Theatre, Ticket} from "cinetex-core/dist/domain/entities";
 import {UseCaseCollection} from "cinetex-core/dist/application";
 
 export interface SeatModel extends SeatPosition {

@@ -1,6 +1,6 @@
 import {MovieRepository} from "../../application/repositories";
 import {asArrayFieldFilter, asFieldFilter, asIdFieldFilter, toObjectId} from "./MongoDBUtils";
-import {FilterQuery, Model, SchemaDefinition, ToObjectOptions} from "mongoose";
+import {FilterQuery, Model, SchemaDefinition} from "mongoose";
 import {Movie} from "cinetex-core/dist/domain/entities/Movie";
 import {MoviesQuery} from "cinetex-core/dist/application/queries";
 import {DefaultSubSchemaOptions, DefaultToObjectOptions, fromObject} from "./MongoDBRepositories";

@@ -1,4 +1,4 @@
-import {GetScheduleById, GetSchedulesByTheatreId} from "cinetex-core/dist/application/queries";
+import {GetSchedulesByTheatreId} from "cinetex-core/dist/application/queries";
 import {Schedule} from "cinetex-core/dist/domain/entities";
 import {Repositories} from "../repositories";
 

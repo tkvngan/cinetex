@@ -1,46 +1,48 @@
-import {UseCase} from "./UseCase";
+import {UseCaseInvoker} from "./UseCase";
 import * as queries from "./queries";
 import * as requests from "./requests";
 import * as commands from "./commands";
+import {UseCaseDefinitions} from "./UseCaseDefinitions";
 
-export abstract class UseCaseCollection {
+export type UseCaseCollection = UseCaseDefinitions & {
+    [K in keyof UseCaseDefinitions]: UseCaseDefinitions[K];
+}
 
-    abstract readonly GetAllBookings: queries.GetAllBookings;
-    abstract readonly GetAllMovies: queries.GetAllMovies;
-    abstract readonly GetAllSchedules: queries.GetAllSchedules;
-    abstract readonly GetAllTheatres: queries.GetAllTheatres;
-    abstract readonly GetAllUsers: queries.GetAllUsers;
+export function UseCaseCollection(invoker: UseCaseInvoker): UseCaseCollection {
+    return {
+        GetAllBookings: new queries.GetAllBookings(invoker),
+        GetAllMovies: new queries.GetAllMovies(invoker),
+        GetAllSchedules: new queries.GetAllSchedules(invoker),
+        GetAllTheatres: new queries.GetAllTheatres(invoker),
+        GetAllUsers: new queries.GetAllUsers(invoker),
 
-    abstract readonly GetBookingById: queries.GetBookingById;
-    abstract readonly GetBookingsByMovieId: queries.GetBookingsByMovieId;
-    abstract readonly GetBookingsByQuery: queries.GetBookingsByQuery;
-    abstract readonly GetBookingsByTheatreId: queries.GetBookingsByTheatreId;
-    abstract readonly GetBookingsByUserId: queries.GetBookingsByUserId;
+        GetBookingById: new queries.GetBookingById(invoker),
+        GetBookingsByMovieId: new queries.GetBookingsByMovieId(invoker),
+        GetBookingsByQuery: new queries.GetBookingsByQuery(invoker),
+        GetBookingsByTheatreId: new queries.GetBookingsByTheatreId(invoker),
+        GetBookingsByUserId: new queries.GetBookingsByUserId(invoker),
 
-    abstract readonly GetMovieById: queries.GetMovieById;
-    abstract readonly GetMovieByName: queries.GetMovieByName;
-    abstract readonly GetMoviesByQuery: queries.GetMoviesByQuery;
+        GetMovieById: new queries.GetMovieById(invoker),
+        GetMovieByName: new queries.GetMovieByName(invoker),
+        GetMoviesByQuery: new queries.GetMoviesByQuery(invoker),
 
-    abstract readonly GetScheduleById: queries.GetScheduleById;
-    abstract readonly GetSchedulesByMovieId: queries.GetSchedulesByMovieId;
-    abstract readonly GetSchedulesByTheatreId: queries.GetSchedulesByTheatreId;
-    abstract readonly GetSchedulesByQuery: queries.GetSchedulesByQuery;
+        GetScheduleById: new queries.GetScheduleById(invoker),
+        GetSchedulesByMovieId: new queries.GetSchedulesByMovieId(invoker),
+        GetSchedulesByTheatreId: new queries.GetSchedulesByTheatreId(invoker),
+        GetSchedulesByQuery: new queries.GetSchedulesByQuery(invoker),
 
-    abstract readonly GetTheatreById: queries.GetTheatreById;
-    abstract readonly GetTheatreByName: queries.GetTheatreByName;
-    abstract readonly GetTheatresByQuery: queries.GetTheatresByQuery;
+        GetTheatreById: new queries.GetTheatreById(invoker),
+        GetTheatreByName: new queries.GetTheatreByName(invoker),
+        GetTheatresByQuery: new queries.GetTheatresByQuery(invoker),
 
-    abstract readonly GetUserByEmail: queries.GetUserByEmail;
-    abstract readonly GetUserById: queries.GetUserById;
-    abstract readonly GetUsersByQuery: queries.GetUsersByQuery;
+        GetUserByEmail: new queries.GetUserByEmail(invoker),
+        GetUserById: new queries.GetUserById(invoker),
+        GetUsersByQuery: new queries.GetUsersByQuery(invoker),
 
-    abstract readonly SignIn: requests.SignIn;
-    abstract readonly SignUp: requests.SignUp;
+        SignIn: new requests.SignIn(invoker),
+        SignUp: new requests.SignUp(invoker),
 
-    abstract readonly DeleteMovies: commands.DeleteMovies;
-    abstract readonly CreateBooking: commands.CreateBooking;
-
-    [Symbol.iterator](): Iterator<UseCase> {
-        return (Object.values(this).filter((value: any): boolean => value instanceof UseCase))[Symbol.iterator]();
+        DeleteMovies: new commands.DeleteMovies(invoker),
+        CreateBooking: new commands.CreateBooking(invoker),
     }
 }

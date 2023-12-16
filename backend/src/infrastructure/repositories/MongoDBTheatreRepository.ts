@@ -1,6 +1,6 @@
 import {TheatreRepository} from "../../application/repositories";
 import {asFieldFilter, asIdFieldFilter, toObjectId} from "./MongoDBUtils";
-import {FilterQuery, Model, SchemaDefinition, ToObjectOptions} from "mongoose";
+import {FilterQuery, Model, SchemaDefinition} from "mongoose";
 import {Theatre} from "cinetex-core/dist/domain/entities";
 import {TheatresQuery} from "cinetex-core/dist/application/queries";
 import {DefaultSubSchemaOptions, DefaultToObjectOptions, fromObject} from "./MongoDBRepositories";

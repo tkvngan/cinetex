@@ -1,6 +1,12 @@
 import {QueryUseCase, UseCaseInvoker} from "../UseCase";
 import {Booking} from "../../domain/entities";
 
+declare module "../UseCaseDefinitions" {
+    export interface UseCaseDefinitions {
+        readonly GetBookingsByTheatreId: GetBookingsByTheatreId
+    }
+}
+
 export class GetBookingsByTheatreId extends QueryUseCase<{ theatreId: string }, Booking[]> {
     constructor(invoker?: UseCaseInvoker<{ theatreId: string }, Booking[]>) {
         super(GetBookingsByTheatreId.name, invoker);

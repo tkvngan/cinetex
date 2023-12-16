@@ -2,7 +2,6 @@ import express, {Router} from "express"
 import {CommandUseCase, QueryUseCase, RequestUseCase, UseCase, UseCaseCollection} from "cinetex-core/dist/application"
 import {ParamsDictionary, Request, RequestHandler} from "express-serve-static-core";
 import {StatusCodes} from "http-status-codes";
-import {Repositories} from "../../application/repositories";
 import {verifySecureToken} from "../../security";
 import {ParsedQs} from "qs";
 import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredentials";
@@ -12,7 +11,7 @@ import {
     AuthorizationException
 } from "cinetex-core/dist/application/exceptions/Exceptions";
 
-export function ExpressServiceRouter(interactors: UseCaseCollection, repositories: Repositories): Router {
+export function ExpressServiceRouter(interactors: UseCaseCollection): Router {
     const router: Router = express.Router()
 
     async function getCredentials(req:  Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>): Promise<SecurityCredentials | undefined> {
@@ -81,7 +80,9 @@ export function ExpressServiceRouter(interactors: UseCaseCollection, repositorie
         return requestHandler<Command, void>(interactor)
     }
 
-    for (const interactor of interactors) {
+
+
+    for (const interactor of Object.values(interactors)) {
         const path = `/${interactor.type}/${interactor.name}`
         console.log(`Registering ${interactor.type} interactor: ${interactor.name} to path: ${path}`)
         switch (interactor.type) {

@@ -1,5 +1,4 @@
-import {SeatModel} from "./AuditoriumModel";
-import {Booking, Movie, SeatPosition, SeatType, Theatre} from "cinetex-core/dist/domain/entities";
+import {Booking, Movie, SeatPosition, Theatre} from "cinetex-core/dist/domain/entities";
 import {UseCaseCollection} from "cinetex-core/dist/application";
 import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredentials";
 

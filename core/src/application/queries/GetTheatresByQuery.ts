@@ -14,6 +14,12 @@ export type TheatresQuery = {
     screenCount?: number | ByRange<number>;
 }
 
+declare module "../UseCaseDefinitions" {
+    export interface UseCaseDefinitions {
+        readonly GetTheatresByQuery: GetTheatresByQuery
+    }
+}
+
 export class GetTheatresByQuery extends QueryUseCase<TheatresQuery, Theatre[]> {
     constructor(invoker?: UseCaseInvoker<TheatresQuery, Theatre[]>) {
         super(GetTheatresByQuery.name, invoker);

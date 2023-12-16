@@ -27,7 +27,9 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "inversify": "^6.0.2",
     "jose": "^5.1.2",
+    "reflect-metadata": "^0.2.1",
     "type-fest": "^4.6.0"
   }
 }

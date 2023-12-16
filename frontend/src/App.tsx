@@ -9,7 +9,7 @@ import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredential
 import {AppNavigationBar} from "./AppNavigationBar";
 import {AppThemeManager} from "./AppThemeManager";
 import {AppFeatures} from "./AppFeatures";
-import {CartModel, createCartModel} from "./models/CartModel";
+import {CartModel} from "./models/CartModel";
 import {CartView} from "./views/CartView";
 
 export type AppProps = {
