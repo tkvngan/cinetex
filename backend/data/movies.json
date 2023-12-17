@@ -13,9 +13,9 @@
   "ratings": [],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35693_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35693_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35693_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35693_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35693_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35693_768_1024.jpg",
   "cineplexId": 35693
 },
 {
@@ -116,9 +116,9 @@
   ],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35841_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35841_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35841_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35841_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35841_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35841_768_1024.jpg",
   "cineplexId": 35841
 },
 {
@@ -225,9 +225,9 @@
   ],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35705_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35705_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35705_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35705_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35705_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35705_768_1024.jpg",
   "cineplexId": 35705
 },
 {
@@ -247,9 +247,9 @@
   "languageCode": "HI",
   "movieLanguage": "Hindi",
   "movieSubtitleLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35977_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35977_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35977_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35977_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35977_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35977_768_1024.jpg",
   "cineplexId": 35977
 },
 {
@@ -268,9 +268,9 @@
   "ratings": [],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35322_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35322_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35322_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35322_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35322_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35322_768_1024.jpg",
   "cineplexId": 35322
 },
 {
@@ -292,9 +292,9 @@
   "ratings": [],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/30622_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/30622_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/30622_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/30622_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/30622_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/30622_768_1024.jpg",
   "cineplexId": 30622
 },
 {
@@ -379,9 +379,9 @@
   "languageCode": "ML",
   "movieLanguage": "Malayalam",
   "movieSubtitleLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36015_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36015_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36015_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/36015_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/36015_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/36015_768_1024.jpg",
   "cineplexId": 36015
 },
 {
@@ -486,9 +486,9 @@
   },
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34071_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34071_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34071_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/34071_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/34071_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/34071_768_1024.jpg",
   "cineplexId": 34071
 },
 {
@@ -575,9 +575,9 @@
   "languageCode": "ZH",
   "movieLanguage": "Mandarin",
   "movieSubtitleLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36037_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36037_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36037_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/36037_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/36037_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/36037_768_1024.jpg",
   "cineplexId": 36037
 },
 {
@@ -676,9 +676,9 @@
   ],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35747_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35747_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35747_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35747_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35747_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35747_768_1024.jpg",
   "cineplexId": 35747
 },
 {
@@ -768,9 +768,9 @@
   "languageCode": "ML",
   "movieLanguage": "Malayalam",
   "movieSubtitleLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36011_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36011_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36011_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/36011_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/36011_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/36011_768_1024.jpg",
   "cineplexId": 36011
 },
 {
@@ -792,9 +792,9 @@
   "ratings": [],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35608_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35608_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35608_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35608_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35608_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35608_768_1024.jpg",
   "cineplexId": 35608
 },
 {
@@ -904,9 +904,9 @@
   },
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35225_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35225_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35225_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35225_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35225_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35225_768_1024.jpg",
   "cineplexId": 35225
 },
 {
@@ -1018,9 +1018,9 @@
   ],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35384_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35384_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35384_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35384_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35384_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35384_768_1024.jpg",
   "cineplexId": 35384
 },
 {
@@ -1122,9 +1122,9 @@
   "languageCode": "ML",
   "movieLanguage": "Malayalam",
   "movieSubtitleLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35985_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35985_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35985_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35985_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35985_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35985_768_1024.jpg",
   "cineplexId": 35985
 },
 {
@@ -1144,9 +1144,9 @@
   "languageCode": "JA",
   "movieLanguage": "Japanese",
   "movieSubtitleLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36044_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36044_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36044_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/36044_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/36044_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/36044_768_1024.jpg",
   "cineplexId": 36044
 },
 {
@@ -1256,9 +1256,9 @@
   ],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35986_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35986_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35986_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35986_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35986_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35986_768_1024.jpg",
   "cineplexId": 35986
 },
 {
@@ -1346,9 +1346,9 @@
   },
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35103_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35103_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35103_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35103_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35103_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35103_768_1024.jpg",
   "cineplexId": 35103
 },
 {
@@ -1366,9 +1366,9 @@
   "languageCode": "ML",
   "movieLanguage": "Malayalam",
   "movieSubtitleLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36060_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36060_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36060_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/36060_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/36060_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/36060_768_1024.jpg",
   "cineplexId": 36060
 },
 {
@@ -1449,9 +1449,9 @@
   "languageCode": "HI",
   "movieLanguage": "Hindi",
   "movieSubtitleLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36008_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36008_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36008_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/36008_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/36008_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/36008_768_1024.jpg",
   "cineplexId": 36008
 },
 {
@@ -1561,9 +1561,9 @@
   },
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35209_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35209_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35209_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35209_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35209_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35209_768_1024.jpg",
   "cineplexId": 35209
 },
 {
@@ -1658,9 +1658,9 @@
   "languageCode": "ZH",
   "movieLanguage": "Mandarin",
   "movieSubtitleLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35993_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35993_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35993_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35993_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35993_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35993_768_1024.jpg",
   "cineplexId": 35993
 },
 {
@@ -1753,9 +1753,9 @@
   "languageCode": "PA",
   "movieLanguage": "Punjabi",
   "movieSubtitleLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35912_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35912_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35912_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35912_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35912_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35912_768_1024.jpg",
   "cineplexId": 35912
 },
 {
@@ -1767,9 +1767,9 @@
   "ratings": [],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35842_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35842_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35842_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35842_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35842_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35842_768_1024.jpg",
   "cineplexId": 35842
 },
 {
@@ -1782,9 +1782,9 @@
   "ratings": [],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/27070_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/27070_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/27070_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/27070_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/27070_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/27070_768_1024.jpg",
   "cineplexId": 27070
 },
 {
@@ -1896,9 +1896,9 @@
   ],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35214_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35214_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35214_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35214_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35214_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35214_768_1024.jpg",
   "cineplexId": 35214
 },
 {
@@ -1983,9 +1983,9 @@
   ],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36014_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36014_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36014_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/36014_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/36014_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/36014_768_1024.jpg",
   "cineplexId": 36014
 },
 {
@@ -2085,9 +2085,9 @@
   ],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34535_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34535_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34535_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/34535_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/34535_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/34535_768_1024.jpg",
   "cineplexId": 34535
 },
 {
@@ -2106,9 +2106,9 @@
   "ratings": [],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33653_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33653_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33653_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/33653_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/33653_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/33653_768_1024.jpg",
   "cineplexId": 33653
 },
 {
@@ -2217,9 +2217,9 @@
   },
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33327_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33327_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33327_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/33327_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/33327_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/33327_768_1024.jpg",
   "cineplexId": 33327
 },
 {
@@ -2317,9 +2317,9 @@
   "languageCode": "PA",
   "movieLanguage": "Punjabi",
   "movieSubtitleLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36068_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36068_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36068_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/36068_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/36068_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/36068_768_1024.jpg",
   "cineplexId": 36068
 },
 {
@@ -2406,9 +2406,9 @@
   },
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34117_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34117_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34117_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/34117_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/34117_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/34117_768_1024.jpg",
   "cineplexId": 34117
 },
 {
@@ -2424,9 +2424,9 @@
   "ratings": [],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35371_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35371_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35371_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35371_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35371_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35371_768_1024.jpg",
   "cineplexId": 35371
 },
 {
@@ -2535,9 +2535,9 @@
   },
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35706_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35706_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35706_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35706_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35706_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35706_768_1024.jpg",
   "cineplexId": 35706
 },
 {
@@ -2559,9 +2559,9 @@
   },
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35877_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35877_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35877_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35877_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35877_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35877_768_1024.jpg",
   "cineplexId": 35877
 },
 {
@@ -2577,9 +2577,9 @@
   "languageCode": "FR",
   "movieLanguage": "French",
   "movieSubtitleLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34830_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34830_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34830_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/34830_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/34830_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/34830_768_1024.jpg",
   "cineplexId": 34830
 },
 {
@@ -2682,9 +2682,9 @@
   ],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35845_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35845_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35845_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35845_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35845_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35845_768_1024.jpg",
   "cineplexId": 35845
 },
 {
@@ -2793,9 +2793,9 @@
   "languageCode": "PA",
   "movieLanguage": "Punjabi",
   "movieSubtitleLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35979_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35979_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35979_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35979_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35979_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35979_768_1024.jpg",
   "cineplexId": 35979
 },
 {
@@ -2912,9 +2912,9 @@
   },
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34903_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34903_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34903_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/34903_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/34903_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/34903_768_1024.jpg",
   "cineplexId": 34903
 },
 {
@@ -3018,9 +3018,9 @@
   ],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35844_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35844_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35844_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35844_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35844_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35844_768_1024.jpg",
   "cineplexId": 35844
 },
 {
@@ -3101,9 +3101,9 @@
   "languageCode": "FR",
   "movieLanguage": "French",
   "movieSubtitleLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35733_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35733_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35733_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35733_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35733_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35733_768_1024.jpg",
   "cineplexId": 35733
 },
 {
@@ -3195,9 +3195,9 @@
   "warning": "TAYLOR SWIFT|THE ERAS TOUR contains several sequences with flashing lights that may affect those who are susceptible to photo sensitive epilepsy or have other photo sensitivities............Tuesday discounted pricing and Scene+ discount do not apply to tickets purchased for this event...............",
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35732_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35732_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35732_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35732_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35732_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35732_768_1024.jpg",
   "cineplexId": 35732
 },
 {
@@ -3280,9 +3280,9 @@
   "languageCode": "FR",
   "movieLanguage": "French",
   "movieSubtitleLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35366_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35366_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35366_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35366_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35366_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35366_768_1024.jpg",
   "cineplexId": 35366
 },
 {
@@ -3392,9 +3392,9 @@
   ],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35213_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35213_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35213_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35213_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35213_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35213_768_1024.jpg",
   "cineplexId": 35213
 },
 {
@@ -3409,9 +3409,9 @@
   "ratings": [],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35941_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35941_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35941_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35941_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35941_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35941_768_1024.jpg",
   "cineplexId": 35941
 },
 {
@@ -3431,9 +3431,9 @@
   "ratings": [],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35596_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35596_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35596_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35596_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35596_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35596_768_1024.jpg",
   "cineplexId": 35596
 },
 {
@@ -3540,9 +3540,9 @@
   ],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35783_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35783_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35783_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35783_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35783_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35783_768_1024.jpg",
   "cineplexId": 35783
 },
 {
@@ -3561,9 +3561,9 @@
   "ratings": [],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35439_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35439_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35439_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35439_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35439_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35439_768_1024.jpg",
   "cineplexId": 35439
 },
 {
@@ -3578,9 +3578,9 @@
   "ratings": [],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33025_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33025_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33025_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/33025_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/33025_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/33025_768_1024.jpg",
   "cineplexId": 33025
 },
 {
@@ -3691,9 +3691,9 @@
   ],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33365_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33365_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33365_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/33365_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/33365_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/33365_768_1024.jpg",
   "cineplexId": 33365
 },
 {
@@ -3801,9 +3801,9 @@
   },
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35097_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35097_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35097_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35097_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35097_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35097_768_1024.jpg",
   "cineplexId": 35097
 },
 {
@@ -3885,9 +3885,9 @@
   ],
   "languageCode": "ES",
   "movieLanguage": "Spanish (Dubbed)",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35958_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35958_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35958_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35958_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35958_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35958_768_1024.jpg",
   "cineplexId": 35958
 },
 {
@@ -3991,9 +3991,9 @@
   ],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34085_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34085_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34085_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/34085_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/34085_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/34085_768_1024.jpg",
   "cineplexId": 34085
 },
 {
@@ -4013,9 +4013,9 @@
   "ratings": [],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35707_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35707_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35707_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35707_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35707_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35707_768_1024.jpg",
   "cineplexId": 35707
 },
 {
@@ -4104,9 +4104,9 @@
   },
   "languageCode": "ES",
   "movieLanguage": "Spanish (Dubbed)",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35955_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35955_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35955_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35955_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35955_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35955_768_1024.jpg",
   "cineplexId": 35955
 },
 {
@@ -4218,9 +4218,9 @@
   },
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/28838_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/28838_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/28838_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/28838_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/28838_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/28838_768_1024.jpg",
   "cineplexId": 28838
 },
 {
@@ -4320,9 +4320,9 @@
   "languageCode": "HI",
   "movieLanguage": "Hindi",
   "movieSubtitleLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35950_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35950_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35950_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35950_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35950_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35950_768_1024.jpg",
   "cineplexId": 35950
 },
 {
@@ -4400,9 +4400,9 @@
   ],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33636_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33636_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33636_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/33636_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/33636_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/33636_768_1024.jpg",
   "cineplexId": 33636
 },
 {
@@ -4540,9 +4540,9 @@
   ],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35895_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35895_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35895_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35895_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35895_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35895_768_1024.jpg",
   "cineplexId": 35895
 },
 {
@@ -4619,9 +4619,9 @@
   ],
   "languageCode": "ES",
   "movieLanguage": "Spanish (Dubbed)",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35957_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35957_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35957_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35957_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35957_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35957_768_1024.jpg",
   "cineplexId": 35957
 },
 {
@@ -4699,9 +4699,9 @@
   ],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34534_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34534_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/34534_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/34534_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/34534_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/34534_768_1024.jpg",
   "cineplexId": 34534
 },
 {
@@ -4725,9 +4725,9 @@
   "ratings": [],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33059_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33059_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/33059_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/33059_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/33059_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/33059_768_1024.jpg",
   "cineplexId": 33059
 },
 {
@@ -4821,9 +4821,9 @@
   "languageCode": "PA",
   "movieLanguage": "Punjabi",
   "movieSubtitleLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35920_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35920_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/35920_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/35920_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/35920_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/35920_768_1024.jpg",
   "cineplexId": 35920
 },
 {
@@ -4835,8 +4835,8 @@
   "ratings": [],
   "languageCode": "EN",
   "movieLanguage": "English",
-  "smallPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36003_130_193.jpg",
-  "mediumPosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36003_320_470.jpg",
-  "largePosterImageUrl": "https://mediafiles.cineplex.com/Central/Film/Posters/36003_768_1024.jpg",
+  "smallPosterImageUrl": "/images/posters/36003_130_193.jpg",
+  "mediumPosterImageUrl": "/images/posters/36003_320_470.jpg",
+  "largePosterImageUrl": "/images/posters/36003_768_1024.jpg",
   "cineplexId": 36003
 }]

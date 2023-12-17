@@ -1,5 +1,5 @@
 import {Booking, Movie, Screen, SeatPosition, SeatType, Theatre, Ticket} from "cinetex-core/dist/domain/entities";
-import {UseCaseCollection} from "cinetex-core/dist/application";
+import {UseCaseCollection, UseCaseDefinitions} from "cinetex-core/dist/application";
 
 export interface SeatModel extends SeatPosition {
     readonly row: number;
