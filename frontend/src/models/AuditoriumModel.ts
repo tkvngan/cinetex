@@ -1,13 +1,15 @@
 import {Booking, Movie, Screen, SeatPosition, SeatType, Theatre, Ticket} from "cinetex-core/dist/domain/entities";
-import {UseCaseCollection, UseCaseDefinitions} from "cinetex-core/dist/application";
+import {UseCaseCollection} from "cinetex-core/dist/application";
 
-export interface SeatModel extends SeatPosition {
+export interface SeatModelMutable extends SeatPosition {
     readonly row: number;
     readonly column: number;
     readonly type: SeatType;
-    readonly isOccupied: boolean;
-    readonly isSelected: boolean;
+    isOccupied: boolean;
+    isSelected: boolean;
 }
+
+export type SeatModel = Readonly<SeatModelMutable>
 
 export interface AuditoriumModel {
     readonly movie: Movie,
@@ -30,39 +32,6 @@ export interface AuditoriumModel {
     unselectSeat(row: number, column: number): void;
 }
 
-class SeatModelImpl implements SeatModel {
-    readonly row: number;
-    readonly column: number;
-    readonly type: SeatType;
-    private _isOccupied: boolean;
-    private _isSelected: boolean;
-
-    constructor(row: number, column: number, type: SeatType, isOccupied?: boolean, isSelected?: boolean) {
-        this.row = row;
-        this.column = column;
-        this.type = type;
-        this._isOccupied = isOccupied ?? false;
-        this._isSelected = isSelected ?? false;
-    }
-
-    get isOccupied(): boolean {
-        return this._isOccupied
-    }
-
-    set isOccupied(value: boolean) {
-        this._isOccupied = value
-    }
-
-    get isSelected(): boolean {
-        return this._isSelected
-    }
-
-    set isSelected(value: boolean) {
-        this._isSelected = value
-    }
-
-}
-
 class AuditoriumModelImpl implements AuditoriumModel {
     readonly interactors: UseCaseCollection
     readonly movie: Movie
@@ -70,7 +39,7 @@ class AuditoriumModelImpl implements AuditoriumModel {
     readonly screenId: number;
     readonly screen: Screen;
 
-    private readonly _seats: SeatModelImpl[][]
+    private readonly _seats: SeatModelMutable[][]
     private changeListeners: ((this: this, seats?: SeatModel[]) => void)[] = []
 
     constructor(interactors: UseCaseCollection, movie: Movie, theatre: Theatre, screenId: number, occupiedSeats: SeatPosition[]) {
@@ -80,9 +49,13 @@ class AuditoriumModelImpl implements AuditoriumModel {
         this.screenId = screenId
         this.screen = theatre.screens[screenId]
         this._seats = this.screen.seats.map((row, rowIndex) => row.map((seatType, columnIndex) =>
-            new SeatModelImpl(
-                rowIndex, columnIndex, seatType, occupiedSeats.some(({row, column}) => row === rowIndex && column === columnIndex)
-            )
+            <SeatModelMutable> {
+                row: rowIndex,
+                column: columnIndex,
+                type: seatType,
+                isOccupied: occupiedSeats.some(({row, column}) => row === rowIndex && column === columnIndex),
+                isSelected: false
+            }
         ))
     }
 

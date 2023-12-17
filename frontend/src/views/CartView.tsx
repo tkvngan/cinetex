@@ -3,8 +3,14 @@ import {CartModel} from "../models/CartModel";
 import React, {useEffect, useReducer} from "react";
 import * as bootstrap from "bootstrap"
 import {SecurityContext} from "../security/SecurityContext";
+import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredentials";
 
-export function CartView({id, interactors, cart, security}: {id: string, interactors: UseCaseCollection, cart: CartModel, security: SecurityContext}) {
+export function CartView({id, interactors, cart, credentials}: {
+    id: string,
+    interactors: UseCaseCollection,
+    cart: CartModel,
+    credentials?: SecurityCredentials
+}) {
 
     const ref = React.useRef<HTMLDivElement>(null)
     const [, forceUpdate] = useReducer(x => x + 1, 0);
@@ -25,11 +31,8 @@ export function CartView({id, interactors, cart, security}: {id: string, interac
     }
 
     async function onCheckout() {
-        const credentials = security.credentials
         if (credentials) {
-            if (cart) {
-                await cart?.checkout(interactors, security.credentials)
-            }
+            await cart.checkout(interactors, credentials)
         }
         dismiss()
     }
@@ -90,7 +93,7 @@ export function CartView({id, interactors, cart, security}: {id: string, interac
                 <div className="my-3">
                     <button type="button"
                             className={`btn btn-primary w-100`}
-                            disabled={security.credentials === undefined}
+                            disabled={credentials === undefined}
                             onClick={onCheckout}>Checkout</button>
                 </div>
             </form>

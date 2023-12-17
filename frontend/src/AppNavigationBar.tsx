@@ -13,7 +13,7 @@ import {CartModel} from "./models/CartModel";
 type AppNavigationBarProps = {
     features: AppFeature[],
     credentials: SecurityCredentials | undefined,
-    cart: CartModel | undefined,
+    cart: CartModel,
     theme: 'dark' | 'light',
 }
 
@@ -21,7 +21,7 @@ export function AppNavigationBar({features, credentials, cart, theme}: AppNaviga
     const isDarkTheme = () => (theme === 'dark')
     const signInViewButtonTooltip = React.useRef<Tooltip|null>(null)
     const currentPathMatch = features.map(({path}) => useMatch(path)).find((match) => match !== null)
-
+    const [cartItems, setCartItems] = React.useState<number>(cart.items.length)
     function isActive(path: string) {
         return currentPathMatch?.pattern?.path === path
     }
@@ -31,10 +31,18 @@ export function AppNavigationBar({features, credentials, cart, theme}: AppNaviga
         if (signInViewButton) {
             signInViewButtonTooltip.current = new bootstrap.Tooltip(signInViewButton)
         }
-        const tooltip = signInViewButtonTooltip.current
-        if (tooltip) {
+        const signInTooltip = signInViewButtonTooltip.current
+        if (signInTooltip) {
             const tooltipMessage = credentials ? (credentials?.user.firstName??"") : "Sign In"
-            tooltip.setContent({ '.tooltip-inner': tooltipMessage })
+            signInTooltip.setContent({ '.tooltip-inner': tooltipMessage })
+        }
+
+
+        const cartSubscriber = cart.subscribe(() => {
+            setCartItems(cart.items.length)
+        })
+        return () => {
+            cartSubscriber.unsubscribe()
         }
     }, [])
 
@@ -117,26 +125,29 @@ export function AppNavigationBar({features, credentials, cart, theme}: AppNaviga
                             </Link>
                         )
                     })}
-                    <span className={"nav-link ms-auto me-0"}
-                          key={"CartView"}
-                          data-bs-toggle="offcanvas"
-                          data-bs-target="#CartView">
-                        <a id={"UserSignInViewButton"}
-                           data-bs-toggle="tooltip"
-                           data-bs-placement="bottom"
-                           title={"Checkout"}
-                           aria-controls="CartView">{<Icons.Cart/>}
+                    <span
+                        className={"nav-link ms-auto me-0"}
+                        key={"CartView"}
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#CartView">
+                        <a id={"cartViewButton"}
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="bottom"
+                            title={"Check out"}
+                            aria-controls="CartView">
+                            {cartItems === 0 ? <Icons.Cart/> : <Icons.CartFill/>}
                         </a>
                     </span>
-                    <span className="nav-link ms-2 me-0"
-                          key={"UserSignInView"}
-                          data-bs-toggle="offcanvas"
-                          data-bs-target="#UserSignInView">
+                    <span
+                        className="nav-link ms-2 me-0"
+                        key={"UserSignInView"}
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#UserSignInView">
                         <a id={"UserSignInViewButton"}
-                           data-bs-toggle="tooltip"
-                           data-bs-placement="bottom"
-                           title={credentials ? credentials.user.firstName : "Sign In"}
-                           aria-controls="UserSignInView">{credentials ? <Icons.PersonFill/> : <Icons.Person/>}
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="bottom"
+                            title={credentials ? credentials.user.firstName : "Sign In"}
+                            aria-controls="UserSignInView">{credentials ? <Icons.PersonFill/> : <Icons.Person/>}
                         </a>
                     </span>
                 </div>

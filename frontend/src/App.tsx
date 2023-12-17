@@ -85,7 +85,7 @@ export function App({interactors, security, cart, themeManager,}: AppProps) {
                 </article>
             </div>
             <UserSignInView id="UserSignInView" security={security}/>
-            <CartView id={"CartView"} interactors={interactors} cart={cart} security={security}/>
+            <CartView id={"CartView"} interactors={interactors} cart={cart} credentials={security.credentials}/>
         </div>
     );
 }

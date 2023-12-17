@@ -3,64 +3,37 @@ import {UseCaseCollection} from "cinetex-core/dist/application";
 import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredentials";
 
 export interface CartModel {
-    readonly items: readonly CartItemModel[];
+    readonly items: readonly CartItem[];
     readonly totalPrice: number;
-
-    addItem(movie: Movie, theatre: Theatre, screenId: number, date: string, time: string, seat: SeatPosition, price: number): CartItemModel;
-    removeItem(item: CartItemModel): void;
-
+    addItem(movie: Movie, theatre: Theatre, screenId: number, date: string, time: string, seat: SeatPosition, price: number): CartItem;
+    removeItem(item: CartItem): void;
     updateItems(movie: Movie, theatre: Theatre, screenId: number, date: string, time: string, seats: SeatPosition[]): void;
-
-    subscribe(listener: (this: this, change?: { action: 'add' | 'remove'; items: readonly CartItemModel[]}) => void): { readonly unsubscribe: () => void };
-
     clear(): void;
-
+    subscribe(listener: (this: this, change?: { action: 'add' | 'remove'; items: readonly CartItem[]}) => void): { readonly unsubscribe: () => void };
     checkout(interactors: UseCaseCollection, credentials: SecurityCredentials): Promise<void>;
-
 }
 
-export interface CartItemModel {
-    readonly movie: Movie;
-    readonly theatre: Theatre;
-    readonly screenId: number;
-    readonly date: string;
-    readonly time: string;
-    readonly seat: SeatPosition
-    readonly price: number;
-}
-
-class CartItemModelImpl implements CartItemModel {
-    readonly movie: Movie;
-    readonly theatre: Theatre;
-    readonly screenId: number;
-    readonly date: string;
-    readonly time: string;
-    readonly seat: SeatPosition;
-    readonly price: number;
-
-
-    constructor(movie: Movie, theatre: Theatre, screenId: number, date: string, time: string, seat: SeatPosition, price: number) {
-        this.movie = movie;
-        this.theatre = theatre;
-        this.screenId = screenId;
-        this.date = date;
-        this.time = time;
-        this.seat = seat;
-        this.price = price;
-    }
+export interface CartItem {
+    readonly movie: Movie,
+    readonly theatre: Theatre,
+    readonly screenId: number,
+    readonly date: string,
+    readonly time: string,
+    readonly seat: SeatPosition,
+    readonly price: number
 }
 
 class CartModelImpl implements CartModel {
-    private readonly _items: CartItemModel[];
+    private readonly _items: CartItem[];
     private _totalPrice: number;
-    private _changeListeners: ((this: this, change?: { action: 'add' | 'remove'; items: readonly CartItemModel[]}) => void)[] = [];
+    private _changeListeners: ((this: this, change?: { action: 'add' | 'remove'; items: readonly CartItem[]}) => void)[] = [];
 
-    constructor(items: CartItemModel[], totalPrice: number) {
+    constructor(items: CartItem[], totalPrice: number) {
         this._items = items;
         this._totalPrice = totalPrice;
     }
 
-    get items(): readonly CartItemModel[] {
+    get items(): readonly CartItem[] {
         return this._items;
     }
 
@@ -68,8 +41,8 @@ class CartModelImpl implements CartModel {
         return this._totalPrice;
     }
 
-    addItem(movie: Movie, theatre: Theatre, screenId: number, date: string, time: string, seat: SeatPosition, price: number): CartItemModel {
-        const item = new CartItemModelImpl(movie, theatre, screenId, date, time, seat, price);
+    addItem(movie: Movie, theatre: Theatre, screenId: number, date: string, time: string, seat: SeatPosition, price: number): CartItem {
+        const item = <CartItem> { movie, theatre, screenId, date, time, seat, price }
         this._items.push(item);
         this._totalPrice += price;
         this.notifyItemsAdded([item])
@@ -85,7 +58,7 @@ class CartModelImpl implements CartModel {
                 item.time !== time
         });
         for (const seat of seats) {
-            const item = new CartItemModelImpl(movie, theatre, screenId, date, time, seat, 10.0);
+            const item = <CartItem> { movie, theatre, screenId, date, time, seat, price: 10.0 }
             items.push(item);
         }
         this._items.splice(0, this._items.length);
@@ -93,7 +66,7 @@ class CartModelImpl implements CartModel {
         this.notifyItemsRemoved(this._items)
     }
 
-    removeItem(item: CartItemModel): boolean {
+    removeItem(item: CartItem): boolean {
         const index = this._items.indexOf(item);
         if (index !== -1) {
             this._items.splice(index, 1);
@@ -104,19 +77,19 @@ class CartModelImpl implements CartModel {
         return false
     }
 
-    notifyChange(change?: { action: 'add' | 'remove'; items: readonly CartItemModel[] }): void {
+    notifyChange(change?: { action: 'add' | 'remove'; items: readonly CartItem[] }): void {
         this._changeListeners.forEach(listener => listener.call(this, change))
     }
 
-    notifyItemsAdded(items: CartItemModel[]): void {
+    notifyItemsAdded(items: CartItem[]): void {
         this.notifyChange({action: 'add', items})
     }
 
-    notifyItemsRemoved(items: CartItemModel[]): void {
+    notifyItemsRemoved(items: CartItem[]): void {
         this.notifyChange({action: 'remove', items})
     }
 
-    subscribe(listener: (this: this, change?: { action: 'add' | 'remove'; items: readonly CartItemModel[] }) => void) {
+    subscribe(listener: (this: this, change?: { action: 'add' | 'remove'; items: readonly CartItem[] }) => void) {
         this._changeListeners.push(listener);
         return {
             unsubscribe: () => {
@@ -133,16 +106,13 @@ class CartModelImpl implements CartModel {
     }
 
     async checkout(interactors: UseCaseCollection, credentials: SecurityCredentials): Promise<void> {
-
-        const itemsByTheatre: Record<string, CartItemModel[]> = {}
-
+        const itemsByTheatre: Record<string, CartItem[]> = {}
         for  (const item of this._items) {
             if (!itemsByTheatre[item.theatre.id]) {
                 itemsByTheatre[item.theatre.id] = []
             }
             itemsByTheatre[item.theatre.id].push(item)
         }
-
         for (const theatreId in itemsByTheatre) {
             const items = itemsByTheatre[theatreId]
             const tickets = items.map(item => ({
@@ -161,10 +131,11 @@ class CartModelImpl implements CartModel {
                 tickets
             }
             await interactors.CreateBooking.invoke(booking, credentials);
+            this.clear();
         }
     }
 }
 
-export function createCartModel(items: CartItemModel[] = [], totalPrice: number = 0): CartModel {
+export function CartModel(items: CartItem[] = [], totalPrice: number = 0): CartModel {
     return new CartModelImpl(items, totalPrice);
 }
