@@ -6,13 +6,13 @@ import * as Icons from 'react-bootstrap-icons';
 import * as bootstrap from "bootstrap"
 import Tooltip from "bootstrap/js/dist/tooltip";
 import bg from './assets/svg/bg.svg'
-import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredentials";
+import {Credentials} from "cinetex-core/dist/security/Credentials";
 import {AppFeature} from "./AppFeatures";
-import {CartModel} from "./models/CartModel";
+import {CartModel} from "./models";
 
 type AppNavigationBarProps = {
     features: AppFeature[],
-    credentials: SecurityCredentials | undefined,
+    credentials: Credentials | undefined,
     cart: CartModel,
     theme: 'dark' | 'light',
 }

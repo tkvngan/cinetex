@@ -1,6 +1,6 @@
 import {Booking, Movie, SeatPosition, Theatre} from "cinetex-core/dist/domain/entities";
 import {UseCaseCollection} from "cinetex-core/dist/application";
-import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredentials";
+import {Credentials} from "cinetex-core/dist/security/Credentials";
 
 export interface CartModel {
     readonly items: readonly CartItem[];
@@ -10,7 +10,7 @@ export interface CartModel {
     updateItems(movie: Movie, theatre: Theatre, screenId: number, date: string, time: string, seats: SeatPosition[]): void;
     clear(): void;
     subscribe(listener: (this: this, change?: { action: 'add' | 'remove'; items: readonly CartItem[]}) => void): { readonly unsubscribe: () => void };
-    checkout(interactors: UseCaseCollection, credentials: SecurityCredentials): Promise<void>;
+    checkout(interactors: UseCaseCollection, credentials: Credentials): Promise<void>;
 }
 
 export interface CartItem {
@@ -105,7 +105,7 @@ class CartModelImpl implements CartModel {
         this.notifyItemsRemoved(items);
     }
 
-    async checkout(interactors: UseCaseCollection, credentials: SecurityCredentials): Promise<void> {
+    async checkout(interactors: UseCaseCollection, credentials: Credentials): Promise<void> {
         const itemsByTheatre: Record<string, CartItem[]> = {}
         for  (const item of this._items) {
             if (!itemsByTheatre[item.theatre.id]) {

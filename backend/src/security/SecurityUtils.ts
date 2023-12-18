@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
 import {jwtVerify, SignJWT} from "jose";
 import {User} from "cinetex-core/dist/domain/entities";
-import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredentials";
+import {Credentials} from "cinetex-core/dist/security/Credentials";
 
 const DEFAULT_SALT_ROUNDS = 10;
 const ALGO = { name: "HMAC", hash: "SHA-256" } as HmacKeyGenParams;
@@ -46,9 +46,9 @@ export async function verifyPassword(password: string, passwordHash: string): Pr
     return await bcrypt.compare(password, passwordHash)
 }
 
-export async function verifySecureToken(token: string): Promise<SecurityCredentials> {
+export async function verifySecureToken(token: string): Promise<Credentials> {
     const {payload} = await jwtVerify(token, await getSecretKey(), {issuer: 'cinetex', audience: 'cinetex'})
-    return <SecurityCredentials> {
+    return <Credentials> {
         user: payload.user,
         token: token,
         attributes: payload

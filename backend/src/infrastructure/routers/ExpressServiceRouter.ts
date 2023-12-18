@@ -4,7 +4,7 @@ import {ParamsDictionary, Request, RequestHandler} from "express-serve-static-co
 import {StatusCodes} from "http-status-codes";
 import {verifySecureToken} from "../../security";
 import {ParsedQs} from "qs";
-import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredentials";
+import {Credentials} from "cinetex-core/dist/security/Credentials";
 import {
     ApplicationException,
     AuthenticationException,
@@ -14,7 +14,7 @@ import {
 export function ExpressServiceRouter(interactors: UseCaseCollection): Router {
     const router: Router = express.Router()
 
-    async function getCredentials(req:  Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>): Promise<SecurityCredentials | undefined> {
+    async function getCredentials(req:  Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>): Promise<Credentials | undefined> {
         if (req.headers.authorization) {
             const token = req.headers.authorization.split(" ")[1]
             try {

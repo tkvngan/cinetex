@@ -5,11 +5,11 @@ import {Movie, Rating} from "cinetex-core/dist/domain/entities";
 import * as Icons from "react-bootstrap-icons";
 import {css, SerializedStyles} from "@emotion/react";
 import {AdminToolbar} from "./AdminToolbar";
-import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredentials";
+import {Credentials} from "cinetex-core/dist/security/Credentials";
 
 type AdminMoviesViewProps = {
     interactors: UseCaseCollection,
-    credentials?: SecurityCredentials
+    credentials?: Credentials
 }
 
 export function MoviesAdminView({interactors, credentials}: AdminMoviesViewProps) {

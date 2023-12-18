@@ -5,7 +5,7 @@ import {
     AuthenticationRequiredException,
     UnauthorizedException
 } from "cinetex-core/dist/application/exceptions/Exceptions";
-import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredentials";
+import {Credentials} from "cinetex-core/dist/security/Credentials";
 
 export class GetUserByIdInteractor extends GetUserById {
     constructor(readonly repositories: Repositories) {
@@ -14,7 +14,7 @@ export class GetUserByIdInteractor extends GetUserById {
 
     override async invoke(query: {
         id: string
-    }, credentials?: SecurityCredentials): Promise<Omit<User, "password"> | undefined> {
+    }, credentials?: Credentials): Promise<Omit<User, "password"> | undefined> {
         if (!credentials) {
             throw new AuthenticationRequiredException()
         }

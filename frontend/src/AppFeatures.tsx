@@ -8,10 +8,9 @@ import {TheatresView} from "./views/TheatresView";
 import {MoviesAdminView} from "./views/admin/MoviesAdminView";
 import {WIPView} from "./views/WIPView";
 import {WIPAdminView} from "./views/admin/WIPAdminView";
-import {SecurityContext} from "./security/SecurityContext";
+import {CartModel, SecurityModel} from "./models";
 import {MovieViewByPath} from "./views/MovieViewByPath";
 import {BookingView} from "./views/BookingView";
-import {CartModel} from "./models/CartModel";
 
 export type AppFeatureItem = {
     view?: ReactNode | (() => ReactNode)
@@ -32,7 +31,7 @@ export type AppFeature = (AppFeatureItem | AppFeatureGroup) & {
     theme?: 'light' | 'dark';
 }
 
-export function AppFeatures(interactors: UseCaseCollection, security: SecurityContext, cart: CartModel): AppFeature[] {
+export function AppFeatures(interactors: UseCaseCollection, security: SecurityModel, cart: CartModel): AppFeature[] {
     return [
         {name: "Home", path: "/", visible: "never", view: () => <HomeView/>},
         {name: "Movies", path: "/Movies", view: () => <MoviesView interactors={interactors}/>},

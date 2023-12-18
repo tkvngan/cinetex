@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import React, {ChangeEvent, KeyboardEvent, ReactElement, useEffect, useRef, useState} from "react";
-import {SecurityContext} from "../security/SecurityContext";
+import {SecurityModel} from "../models";
 import * as bootstrap from "bootstrap"
 import {
     ApplicationException,
@@ -9,13 +9,13 @@ import {
     UserAlreadyExistsException,
     UserNotFoundException
 } from "cinetex-core/dist/application/exceptions/Exceptions";
-import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredentials";
+import {Credentials} from "cinetex-core/dist/security/Credentials";
 import validate from "validate.js";
 
 
 export type UserSignInViewProps = {
     id: string,
-    security: SecurityContext,
+    security: SecurityModel,
 }
 
 type Mode = "signIn" | "signUp" | "info"
@@ -31,7 +31,7 @@ type Field = {
 
 export function UserSignInView({id, security}: UserSignInViewProps) {
     const ref = useRef<HTMLDivElement>(null)
-    const [credentials, setCredentials] = useState<SecurityCredentials|undefined>()
+    const [credentials, setCredentials] = useState<Credentials|undefined>()
     const [mode, setMode] = useState<Mode>(security.isAuthenticated ? "info" : "signIn")
     const [errorMessage, setErrorMessage] = useState<string>("")
 
@@ -50,7 +50,7 @@ export function UserSignInView({id, security}: UserSignInViewProps) {
         return mode === "signUp"
     }
 
-    function updateFields(credentials?: SecurityCredentials) {
+    function updateFields(credentials?: Credentials) {
         const user = credentials?.user
         setEmailField({...emailField, value: user?.email??"", message: ""})
         setPasswordField({...passwordField, value: "", message: ""})

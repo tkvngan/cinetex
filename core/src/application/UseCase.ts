@@ -1,8 +1,8 @@
-import {SecurityCredentials} from "../security/SecurityCredentials";
+import {Credentials} from "../security/Credentials";
 
 export type UseCaseType = "query" | "command" | "request";
 
-export type UseCaseInvoker<Input = any, Output = any> = (this: UseCase, input: Input, credentials?: SecurityCredentials) => Promise<Output>
+export type UseCaseInvoker<Input = any, Output = any> = (this: UseCase, input: Input, credentials?: Credentials) => Promise<Output>
 
 export abstract class UseCase<Input = any, Output = any> {
 
@@ -12,7 +12,7 @@ export abstract class UseCase<Input = any, Output = any> {
         readonly invoker?: UseCaseInvoker<Input, Output>
     ) {}
 
-    invoke(input: Input, credentials?: SecurityCredentials): Promise<Output> {
+    invoke(input: Input, credentials?: Credentials): Promise<Output> {
         if (this.invoker) {
             return this.invoker(input, credentials)
         }

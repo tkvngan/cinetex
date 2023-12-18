@@ -1,7 +1,7 @@
 import {User} from "cinetex-core/dist/domain/entities";
 import {Repositories} from "../repositories";
 import {GetUserByEmail} from "cinetex-core/dist/application/queries";
-import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredentials";
+import {Credentials} from "cinetex-core/dist/security/Credentials";
 import {
     AuthenticationRequiredException,
     UnauthorizedException
@@ -12,7 +12,7 @@ export class GetUserByEmailInteractor extends GetUserByEmail {
         super()
     }
 
-    override async invoke(query: { email: string }, credentials?: SecurityCredentials): Promise<Omit<User, "password"> | undefined> {
+    override async invoke(query: { email: string }, credentials?: Credentials): Promise<Omit<User, "password"> | undefined> {
         if (!credentials) {
             throw new AuthenticationRequiredException()
         }

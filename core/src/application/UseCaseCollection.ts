@@ -2,7 +2,7 @@ import {UseCaseInvoker} from "./UseCase";
 import * as queries from "./queries";
 import * as requests from "./requests";
 import * as commands from "./commands";
-import { UseCaseDefinitions } from ".";
+import {UseCaseDefinitions} from ".";
 
 declare module "./" {
     interface UseCaseDefinitions {

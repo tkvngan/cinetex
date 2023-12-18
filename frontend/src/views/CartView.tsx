@@ -1,15 +1,14 @@
 import {UseCaseCollection} from "cinetex-core/dist/application";
-import {CartModel} from "../models/CartModel";
+import {CartModel} from "../models";
 import React, {useEffect, useReducer} from "react";
 import * as bootstrap from "bootstrap"
-import {SecurityContext} from "../security/SecurityContext";
-import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredentials";
+import {Credentials} from "cinetex-core/dist/security/Credentials";
 
 export function CartView({id, interactors, cart, credentials}: {
     id: string,
     interactors: UseCaseCollection,
     cart: CartModel,
-    credentials?: SecurityCredentials
+    credentials?: Credentials
 }) {
 
     const ref = React.useRef<HTMLDivElement>(null)

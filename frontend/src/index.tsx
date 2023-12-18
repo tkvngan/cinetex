@@ -7,13 +7,12 @@ import axios from "axios";
 import {App} from "./App";
 import {AxiosUseCaseInvoker} from "cinetex-shared/dist/infrastructure/interactors";
 import {UseCaseCollection} from "cinetex-core/dist/application";
-import {SecurityContext} from "./security/SecurityContext";
+import {CartModel, SecurityModel} from "./models";
 import {css} from "@emotion/react";
 import {injectGlobal} from "@emotion/css";
 import {AppThemeManager} from "./AppThemeManager";
 import {BrowserRouter} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css"
-import {CartModel} from "./models/CartModel";
 
 /*#5f0f4f;*/
 const globalStyle = css(`
@@ -44,7 +43,7 @@ const axiosInstance = axios.create({
 
 const invoker = AxiosUseCaseInvoker(axiosInstance)
 const interactors: UseCaseCollection = new UseCaseCollection(invoker)
-const security = new SecurityContext(interactors.SignIn, interactors.SignUp)
+const security = new SecurityModel(interactors.SignIn, interactors.SignUp)
 const cart = CartModel()
 
 const themeManager = new AppThemeManager("dark")

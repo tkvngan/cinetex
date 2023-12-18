@@ -1,7 +1,7 @@
 import {User} from "cinetex-core/dist/domain/entities";
 import {Repositories} from "../repositories";
 import {GetAllUsers} from "cinetex-core/dist/application/queries";
-import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredentials";
+import {Credentials} from "cinetex-core/dist/security/Credentials";
 import {
     AuthenticationRequiredException,
     UnauthorizedException
@@ -12,7 +12,7 @@ export class GetAllUsersInteractor extends GetAllUsers {
         super()
     }
 
-    override async invoke(query: {}, credentials?: SecurityCredentials): Promise<User[]> {
+    override async invoke(query: {}, credentials?: Credentials): Promise<User[]> {
         if (!credentials) {
             throw new AuthenticationRequiredException()
         }

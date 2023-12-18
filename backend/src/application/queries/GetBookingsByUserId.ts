@@ -1,7 +1,7 @@
 import {Booking} from "cinetex-core/dist/domain/entities";
 import {Repositories} from "../repositories";
 import {GetBookingsByUserId} from "cinetex-core/dist/application/queries";
-import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredentials";
+import {Credentials} from "cinetex-core/dist/security/Credentials";
 import {
     AuthenticationRequiredException,
     UnauthorizedException
@@ -12,7 +12,7 @@ export class GetBookingsByUserIdInteractor extends GetBookingsByUserId {
         super()
     }
 
-    override async invoke(query: { userId: string }, credentials?: SecurityCredentials): Promise<Booking[]> {
+    override async invoke(query: { userId: string }, credentials?: Credentials): Promise<Booking[]> {
         if (!credentials) {
             throw new AuthenticationRequiredException()
         }

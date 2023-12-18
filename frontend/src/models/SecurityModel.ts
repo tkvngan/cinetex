@@ -1,16 +1,16 @@
-import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredentials";
+import {Credentials} from "cinetex-core/dist/security/Credentials";
 import {SignIn, SignInResponse, SignUp, SignUpRequest, SignUpResponse} from "cinetex-core/dist/application/requests";
 
-export class SecurityContext {
+export class SecurityModel {
 
-    private _credentials: SecurityCredentials | undefined
+    private _credentials: Credentials | undefined
 
-    private changeListeners: ((credentials: SecurityCredentials | undefined) => void)[] = []
+    private changeListeners: ((credentials: Credentials | undefined) => void)[] = []
 
     constructor(readonly signInUseCase: SignIn, readonly signUpUseCase: SignUp) {
     }
 
-    get credentials(): SecurityCredentials | undefined {
+    get credentials(): Credentials | undefined {
         return this._credentials
     }
 
@@ -26,7 +26,7 @@ export class SecurityContext {
         return this._credentials?.user.roles.some(role => roles.includes(role)) ?? false
     }
 
-    subscribe(listener: (credentials: SecurityCredentials | undefined) => void): { readonly unsubscribe: () => void} {
+    subscribe(listener: (credentials: Credentials | undefined) => void): { readonly unsubscribe: () => void} {
         this.changeListeners.push(listener)
         return {
             unsubscribe: () => {
@@ -39,7 +39,7 @@ export class SecurityContext {
         this.changeListeners.forEach(listener => listener(this._credentials))
     }
 
-    private handleResponse(response: SignInResponse | SignUpResponse): SecurityCredentials {
+    private handleResponse(response: SignInResponse | SignUpResponse): Credentials {
         this._credentials = {
             user: response.user,
             token: response.token
@@ -56,7 +56,7 @@ export class SecurityContext {
         throw e;
     }
 
-    async signIn(userName: string, password: string): Promise<SecurityCredentials> {
+    async signIn(userName: string, password: string): Promise<Credentials> {
         userName = userName.trim().toLowerCase()
         try {
             return this.handleResponse(await this.signInUseCase.invoke({email: userName, password: password}))
@@ -65,7 +65,7 @@ export class SecurityContext {
         }
     }
 
-    async signUp(info: SignUpRequest): Promise<SecurityCredentials> {
+    async signUp(info: SignUpRequest): Promise<Credentials> {
         const username = info.email.trim().toLowerCase()
         try {
             return this.handleResponse(await this.signUpUseCase.invoke({...info, email: username}))

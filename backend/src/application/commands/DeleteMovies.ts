@@ -1,6 +1,6 @@
 import {DeleteMovies} from "cinetex-core/dist/application/commands";
 import {Repositories} from "../repositories";
-import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredentials";
+import {Credentials} from "cinetex-core/dist/security/Credentials";
 import {UnauthorizedException} from "cinetex-core/dist/application/exceptions/Exceptions";
 
 export class DeleteMoviesInteractor extends DeleteMovies {
@@ -8,7 +8,7 @@ export class DeleteMoviesInteractor extends DeleteMovies {
         super();
     }
 
-    override async invoke(input: string[], credentials?: SecurityCredentials): Promise<void> {
+    override async invoke(input: string[], credentials?: Credentials): Promise<void> {
         if (credentials && credentials.user.roles.includes("admin")) {
             for (const id of input) {
                 await this.repositories.Movie.deleteMovieById(id);
