@@ -4,34 +4,38 @@ import * as queries from "./queries";
 import * as requests from "./requests";
 import * as commands from "./commands";
 
-export function UseCaseInteractors(repositories: Repositories): UseCaseCollection {
-    return {
-        GetAllBookings: new queries.GetAllBookingsInteractor(repositories),
-        GetAllMovies: new queries.GetAllMoviesInteractor(repositories),
-        GetAllSchedules: new queries.GetAllSchedulesInteractor(repositories),
-        GetAllTheatres: new queries.GetAllTheatresInteractor(repositories),
-        GetAllUsers: new queries.GetAllUsersInteractor(repositories),
-        GetBookingById: new queries.GetBookingByIdInteractor(repositories),
-        GetBookingsByMovieId: new queries.GetBookingsByMovieIdInteractor(repositories),
-        GetBookingsByQuery: new queries.GetBookingsByQueryInteractor(repositories),
-        GetBookingsByTheatreId: new queries.GetBookingsByTheatreIdInteractor(repositories),
-        GetBookingsByUserId: new queries.GetBookingsByUserIdInteractor(repositories),
-        GetMovieById: new queries.GetMovieByIdInteractor(repositories),
-        GetMovieByName: new queries.GetMovieByNameInteractor(repositories),
-        GetMoviesByQuery: new queries.GetMoviesByQueryInteractor(repositories),
-        GetScheduleById: new queries.GetScheduleByIdInteractor(repositories),
-        GetSchedulesByMovieId: new queries.GetSchedulesByMovieIdInteractor(repositories),
-        GetSchedulesByTheatreId: new queries.GetSchedulesByTheatreIdInteractor(repositories),
-        GetSchedulesByQuery: new queries.GetSchedulesByQueryInteractor(repositories),
-        GetTheatreById: new queries.GetTheatreByIdInteractor(repositories),
-        GetTheatreByName: new queries.GetTheatreByNameInteractor(repositories),
-        GetTheatresByQuery: new queries.GetTheatresByQueryInteractor(repositories),
-        GetUserByEmail: new queries.GetUserByEmailInteractor(repositories),
-        GetUserById: new queries.GetUserByIdInteractor(repositories),
-        GetUsersByQuery: new queries.GetUsersByQueryInteractor(repositories),
-        SignIn: new requests.SignInInteractor(repositories),
-        SignUp: new requests.SignUpInteractor(repositories),
-        DeleteMovies: new commands.DeleteMoviesInteractor(repositories),
-        CreateBooking: new commands.CreateBookingInteractor(repositories),
-    }
+interface UseCaseCollectionConstructor {
+    new (repositories: Repositories): UseCaseCollection
+}
+
+export const UseCaseInteractors: UseCaseCollectionConstructor = class implements UseCaseCollection {
+    constructor(private readonly repositories: Repositories) {}
+
+    readonly GetAllBookings = new queries.GetAllBookingsInteractor(this.repositories)
+    readonly GetAllMovies = new queries.GetAllMoviesInteractor(this.repositories)
+    readonly GetAllSchedules = new queries.GetAllSchedulesInteractor(this.repositories)
+    readonly GetAllTheatres = new queries.GetAllTheatresInteractor(this.repositories)
+    readonly GetAllUsers = new queries.GetAllUsersInteractor(this.repositories)
+    readonly GetBookingById = new queries.GetBookingByIdInteractor(this.repositories)
+    readonly GetBookingsByMovieId = new queries.GetBookingsByMovieIdInteractor(this.repositories)
+    readonly GetBookingsByQuery = new queries.GetBookingsByQueryInteractor(this.repositories)
+    readonly GetBookingsByTheatreId = new queries.GetBookingsByTheatreIdInteractor(this.repositories)
+    readonly GetBookingsByUserId = new queries.GetBookingsByUserIdInteractor(this.repositories)
+    readonly GetMovieById = new queries.GetMovieByIdInteractor(this.repositories)
+    readonly GetMovieByName = new queries.GetMovieByNameInteractor(this.repositories)
+    readonly GetMoviesByQuery = new queries.GetMoviesByQueryInteractor(this.repositories)
+    readonly GetScheduleById = new queries.GetScheduleByIdInteractor(this.repositories)
+    readonly GetSchedulesByMovieId = new queries.GetSchedulesByMovieIdInteractor(this.repositories)
+    readonly GetSchedulesByTheatreId = new queries.GetSchedulesByTheatreIdInteractor(this.repositories)
+    readonly GetSchedulesByQuery = new queries.GetSchedulesByQueryInteractor(this.repositories)
+    readonly GetTheatreById = new queries.GetTheatreByIdInteractor(this.repositories)
+    readonly GetTheatreByName = new queries.GetTheatreByNameInteractor(this.repositories)
+    readonly GetTheatresByQuery = new queries.GetTheatresByQueryInteractor(this.repositories)
+    readonly GetUserByEmail = new queries.GetUserByEmailInteractor(this.repositories)
+    readonly GetUserById = new queries.GetUserByIdInteractor(this.repositories)
+    readonly GetUsersByQuery = new queries.GetUsersByQueryInteractor(this.repositories)
+    readonly SignIn = new requests.SignInInteractor(this.repositories)
+    readonly SignUp = new requests.SignUpInteractor(this.repositories)
+    readonly DeleteMovies = new commands.DeleteMoviesInteractor(this.repositories)
+    readonly CreateBooking = new commands.CreateBookingInteractor(this.repositories)
 }

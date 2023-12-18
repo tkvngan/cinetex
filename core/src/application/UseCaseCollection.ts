@@ -2,47 +2,56 @@ import {UseCaseInvoker} from "./UseCase";
 import * as queries from "./queries";
 import * as requests from "./requests";
 import * as commands from "./commands";
-import {UseCaseDefinitions} from "./UseCaseDefinitions";
+import { UseCaseDefinitions } from ".";
+
+declare module "./" {
+    interface UseCaseDefinitions {
+    }
+}
 
 export type UseCaseCollection = UseCaseDefinitions & {
     [K in keyof UseCaseDefinitions]: UseCaseDefinitions[K];
 }
 
-export function UseCaseCollection(invoker: UseCaseInvoker): UseCaseCollection {
-    return {
-        GetAllBookings: new queries.GetAllBookings(invoker),
-        GetAllMovies: new queries.GetAllMovies(invoker),
-        GetAllSchedules: new queries.GetAllSchedules(invoker),
-        GetAllTheatres: new queries.GetAllTheatres(invoker),
-        GetAllUsers: new queries.GetAllUsers(invoker),
+interface UseCaseCollectionConstructor {
+    new (invoker: UseCaseInvoker): UseCaseCollection
+}
 
-        GetBookingById: new queries.GetBookingById(invoker),
-        GetBookingsByMovieId: new queries.GetBookingsByMovieId(invoker),
-        GetBookingsByQuery: new queries.GetBookingsByQuery(invoker),
-        GetBookingsByTheatreId: new queries.GetBookingsByTheatreId(invoker),
-        GetBookingsByUserId: new queries.GetBookingsByUserId(invoker),
+export const UseCaseCollection: UseCaseCollectionConstructor = class implements UseCaseCollection {
+    constructor(private readonly invoker: UseCaseInvoker) {}
 
-        GetMovieById: new queries.GetMovieById(invoker),
-        GetMovieByName: new queries.GetMovieByName(invoker),
-        GetMoviesByQuery: new queries.GetMoviesByQuery(invoker),
+    readonly GetAllBookings = new queries.GetAllBookings(this.invoker)
+    readonly GetAllMovies = new queries.GetAllMovies(this.invoker)
+    readonly GetAllSchedules = new queries.GetAllSchedules(this.invoker)
+    readonly GetAllTheatres = new queries.GetAllTheatres(this.invoker)
+    readonly GetAllUsers = new queries.GetAllUsers(this.invoker)
 
-        GetScheduleById: new queries.GetScheduleById(invoker),
-        GetSchedulesByMovieId: new queries.GetSchedulesByMovieId(invoker),
-        GetSchedulesByTheatreId: new queries.GetSchedulesByTheatreId(invoker),
-        GetSchedulesByQuery: new queries.GetSchedulesByQuery(invoker),
+    readonly GetBookingById = new queries.GetBookingById(this.invoker)
+    readonly GetBookingsByMovieId = new queries.GetBookingsByMovieId(this.invoker)
+    readonly GetBookingsByQuery = new queries.GetBookingsByQuery(this.invoker)
+    readonly GetBookingsByTheatreId = new queries.GetBookingsByTheatreId(this.invoker)
+    readonly GetBookingsByUserId = new queries.GetBookingsByUserId(this.invoker)
 
-        GetTheatreById: new queries.GetTheatreById(invoker),
-        GetTheatreByName: new queries.GetTheatreByName(invoker),
-        GetTheatresByQuery: new queries.GetTheatresByQuery(invoker),
+    readonly GetMovieById = new queries.GetMovieById(this.invoker)
+    readonly GetMovieByName = new queries.GetMovieByName(this.invoker)
+    readonly GetMoviesByQuery = new queries.GetMoviesByQuery(this.invoker)
 
-        GetUserByEmail: new queries.GetUserByEmail(invoker),
-        GetUserById: new queries.GetUserById(invoker),
-        GetUsersByQuery: new queries.GetUsersByQuery(invoker),
+    readonly GetScheduleById = new queries.GetScheduleById(this.invoker)
+    readonly GetSchedulesByMovieId = new queries.GetSchedulesByMovieId(this.invoker)
+    readonly GetSchedulesByTheatreId = new queries.GetSchedulesByTheatreId(this.invoker)
+    readonly GetSchedulesByQuery = new queries.GetSchedulesByQuery(this.invoker)
 
-        SignIn: new requests.SignIn(invoker),
-        SignUp: new requests.SignUp(invoker),
+    readonly GetTheatreById = new queries.GetTheatreById(this.invoker)
+    readonly GetTheatreByName = new queries.GetTheatreByName(this.invoker)
+    readonly GetTheatresByQuery = new queries.GetTheatresByQuery(this.invoker)
 
-        DeleteMovies: new commands.DeleteMovies(invoker),
-        CreateBooking: new commands.CreateBooking(invoker),
-    }
+    readonly GetUserByEmail = new queries.GetUserByEmail(this.invoker)
+    readonly GetUserById = new queries.GetUserById(this.invoker)
+    readonly GetUsersByQuery = new queries.GetUsersByQuery(this.invoker)
+
+    readonly SignIn = new requests.SignIn(this.invoker)
+    readonly SignUp = new requests.SignUp(this.invoker)
+
+    readonly DeleteMovies = new commands.DeleteMovies(this.invoker)
+    readonly CreateBooking = new commands.CreateBooking(this.invoker)
 }

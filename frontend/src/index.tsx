@@ -43,7 +43,7 @@ const axiosInstance = axios.create({
 })
 
 const invoker = AxiosUseCaseInvoker(axiosInstance)
-const interactors: UseCaseCollection = UseCaseCollection(invoker)
+const interactors: UseCaseCollection = new UseCaseCollection(invoker)
 const security = new SecurityContext(interactors.SignIn, interactors.SignUp)
 const cart = CartModel()
 

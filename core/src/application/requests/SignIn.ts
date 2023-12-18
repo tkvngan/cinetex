@@ -11,8 +11,8 @@ export type SignInResponse = {
     token: string
 }
 
-declare module "../UseCaseDefinitions" {
-    export interface UseCaseDefinitions {
+declare module "../" {
+    interface UseCaseDefinitions {
         readonly SignIn: SignIn
     }
 }

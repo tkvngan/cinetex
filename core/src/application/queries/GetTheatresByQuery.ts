@@ -14,8 +14,8 @@ export type TheatresQuery = {
     screenCount?: number | ByRange<number>;
 }
 
-declare module "../UseCaseDefinitions" {
-    export interface UseCaseDefinitions {
+declare module "../" {
+    interface UseCaseDefinitions {
         readonly GetTheatresByQuery: GetTheatresByQuery
     }
 }

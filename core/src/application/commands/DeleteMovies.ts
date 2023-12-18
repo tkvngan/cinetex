@@ -1,7 +1,7 @@
 import {CommandUseCase, UseCaseInvoker} from "../UseCase";
 
-declare module "../UseCaseDefinitions" {
-    export interface UseCaseDefinitions {
+declare module "../" {
+    interface UseCaseDefinitions {
         readonly DeleteMovies: DeleteMovies
     }
 }

@@ -14,8 +14,8 @@ export type UsersQuery = {
     phoneNumber?: string | ByPattern;
 }
 
-declare module "../UseCaseDefinitions" {
-    export interface UseCaseDefinitions {
+declare module "../" {
+    interface UseCaseDefinitions {
         readonly GetUsersByQuery: GetUsersByQuery
     }
 }

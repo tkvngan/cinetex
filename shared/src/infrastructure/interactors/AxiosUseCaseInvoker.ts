@@ -1,11 +1,11 @@
-import axios, {AxiosInstance, AxiosRequestConfig} from "axios";
+import Axios, {AxiosInstance, AxiosRequestConfig} from "axios";
 import {UseCase, UseCaseInvoker} from "cinetex-core/dist/application";
 import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredentials";
 import {StatusCodes} from "http-status-codes";
 import {toException} from "cinetex-core/dist/application/exceptions/Exceptions";
 
 export function AxiosUseCaseInvoker<Input = any, Output = any>(config: AxiosInstance | string): UseCaseInvoker<Input, Output> {
-    const axiosInstance = typeof config === "string" ? axios.create({baseURL: config}) : config
+    const axios = typeof config === "string" ? Axios.create({baseURL: config}) : config
     return async function(this: UseCase, request: Input, credentials?: SecurityCredentials): Promise<Output> {
         const headers: AxiosRequestConfig["headers"] = {
             "Accept": "application/json",
@@ -24,7 +24,7 @@ export function AxiosUseCaseInvoker<Input = any, Output = any>(config: AxiosInst
             data: request,
             validateStatus: (status) => true
         }
-        const response = await axiosInstance(requestConfig)
+        const response = await axios(requestConfig)
         if (response.status === StatusCodes.OK) {
             if (response.data !== undefined && response.data !== "") {
                 return response.data as Output

@@ -18,8 +18,8 @@ export type MoviesQuery = {
     releaseDate?: string | string[] | ByRange<string>;
 }
 
-declare module "../UseCaseDefinitions" {
-    export interface UseCaseDefinitions {
+declare module "../" {
+    interface UseCaseDefinitions {
         readonly GetMoviesByQuery: GetMoviesByQuery
     }
 }

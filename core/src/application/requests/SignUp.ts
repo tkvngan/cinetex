@@ -11,8 +11,8 @@ export type SignUpRequest = Readonly<{
 
 export type SignUpResponse = SignInResponse
 
-declare module "../UseCaseDefinitions" {
-    export interface UseCaseDefinitions {
+declare module "../" {
+    interface UseCaseDefinitions {
         readonly SignUp: SignUp
     }
 }
