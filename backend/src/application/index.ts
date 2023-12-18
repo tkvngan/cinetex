@@ -1,1 +1,1 @@
-export * from "./UseCaseInteractorCollection"
+export * from "./UseCaseInteractors"
