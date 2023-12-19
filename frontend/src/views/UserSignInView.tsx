@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import React, {ChangeEvent, KeyboardEvent, ReactElement, useEffect, useRef, useState} from "react";
-import {SecurityModel} from "../models";
+import {SecurityModel} from "../models/SecurityModel";
 import * as bootstrap from "bootstrap"
 import {
     ApplicationException,

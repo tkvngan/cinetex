@@ -4,24 +4,24 @@ import React, {useEffect} from 'react';
 import {Route, Routes, useLocation} from "react-router-dom";
 import {UseCaseCollection} from "cinetex-core/dist/application";
 import {UserSignInView} from "./views/UserSignInView";
-import {SecurityContext} from "./security/SecurityContext";
-import {SecurityCredentials} from "cinetex-core/dist/security/SecurityCredentials";
+import {Credentials} from "cinetex-core/dist/security/Credentials";
 import {AppNavigationBar} from "./AppNavigationBar";
 import {AppThemeManager} from "./AppThemeManager";
 import {AppFeatures} from "./AppFeatures";
-import {CartModel} from "./models/CartModel";
 import {CartView} from "./views/CartView";
+import {SecurityModel} from "./models/SecurityModel";
+import {CartModel} from "./models/CartModel";
 
 export type AppProps = {
     interactors: UseCaseCollection,
-    security: SecurityContext,
+    security: SecurityModel,
     cart: CartModel,
     themeManager: AppThemeManager,
 }
 
 export function App({interactors, security, cart, themeManager,}: AppProps) {
     const features = AppFeatures(interactors, security, cart)
-    const [credentials, setCredentials] = React.useState<SecurityCredentials|undefined>(undefined)
+    const [credentials, setCredentials] = React.useState<Credentials|undefined>(undefined)
     const [theme, setTheme] = React.useState<'light' | 'dark'>(themeManager.theme)
     const location = useLocation();
 

@@ -1,5 +1,5 @@
 import {UseCaseCollection} from "cinetex-core/dist/application";
-import {CartModel} from "../models";
+import {CartModel} from "../models/CartModel";
 import React, {useEffect, useReducer} from "react";
 import * as bootstrap from "bootstrap"
 import {Credentials} from "cinetex-core/dist/security/Credentials";

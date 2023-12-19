@@ -8,7 +8,7 @@ import Tooltip from "bootstrap/js/dist/tooltip";
 import bg from './assets/svg/bg.svg'
 import {Credentials} from "cinetex-core/dist/security/Credentials";
 import {AppFeature} from "./AppFeatures";
-import {CartModel} from "./models";
+import {CartModel} from "./models/CartModel";
 
 type AppNavigationBarProps = {
     features: AppFeature[],
