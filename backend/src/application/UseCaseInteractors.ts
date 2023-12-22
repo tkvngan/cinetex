@@ -1,4 +1,4 @@
-import {UseCaseCollection} from "cinetex-core/dist/application";
+import {UseCase, UseCaseCollection} from "cinetex-core/dist/application";
 import {Repositories} from "./repositories";
 import * as queries from "./queries";
 import * as requests from "./requests";
@@ -37,5 +37,9 @@ export const UseCaseInteractors: UseCaseCollectionConstructor = class implements
     readonly SignIn = new requests.SignInInteractor(this.repositories)
     readonly SignUp = new requests.SignUpInteractor(this.repositories)
     readonly DeleteMovies = new commands.DeleteMoviesInteractor(this.repositories)
-    readonly CreateBooking = new commands.CreateBookingInteractor(this.repositories)
+    readonly CreateBooking = new commands.CreateBookingInteractor(this.repositories);
+
+    [Symbol.iterator]() {
+        return Object.values(this).filter(value => value instanceof UseCase)[Symbol.iterator]();
+    }
 }

@@ -1,4 +1,4 @@
-import {UseCaseInvoker} from "./UseCase";
+import {UseCase, UseCaseInvoker} from "./UseCase";
 import * as queries from "./queries";
 import * as requests from "./requests";
 import * as commands from "./commands";
@@ -9,7 +9,7 @@ declare module "./" {
     }
 }
 
-export type UseCaseCollection = UseCaseDefinitions & {
+export type UseCaseCollection = UseCaseDefinitions & Iterable<UseCase> & {
     [K in keyof UseCaseDefinitions]: UseCaseDefinitions[K];
 }
 
@@ -18,7 +18,8 @@ interface UseCaseCollectionConstructor {
 }
 
 export const UseCaseCollection: UseCaseCollectionConstructor = class implements UseCaseCollection {
-    constructor(private readonly invoker: UseCaseInvoker) {}
+    constructor(private readonly invoker: UseCaseInvoker) {
+    }
 
     readonly GetAllBookings = new queries.GetAllBookings(this.invoker)
     readonly GetAllMovies = new queries.GetAllMovies(this.invoker)
@@ -53,5 +54,10 @@ export const UseCaseCollection: UseCaseCollectionConstructor = class implements 
     readonly SignUp = new requests.SignUp(this.invoker)
 
     readonly DeleteMovies = new commands.DeleteMovies(this.invoker)
-    readonly CreateBooking = new commands.CreateBooking(this.invoker)
+    readonly CreateBooking = new commands.CreateBooking(this.invoker);
+
+    [Symbol.iterator]() {
+        return Object.values(this).filter(value => value instanceof UseCase)[Symbol.iterator]();
+    }
+
 }

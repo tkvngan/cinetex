@@ -82,7 +82,7 @@ export function ExpressServiceRouter(interactors: UseCaseCollection): Router {
 
 
 
-    for (const interactor of Object.values(interactors)) {
+    for (const interactor of interactors) {
         const path = `/${interactor.type}/${interactor.name}`
         console.log(`Registering ${interactor.type} interactor: ${interactor.name} to path: ${path}`)
         switch (interactor.type) {
