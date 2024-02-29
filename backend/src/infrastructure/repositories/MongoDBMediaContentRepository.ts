@@ -1,4 +1,4 @@
-import {MediaContentRepository} from "../../application/repositories";
+import {MediaContentRepository} from "../../application/repositories/MediaContentRepository";
 import {Model, SchemaDefinition} from "mongoose";
 import {MediaContent} from "cinetex-core/dist/domain/entities";
 import {TODO} from "cinetex-core/dist/utils";

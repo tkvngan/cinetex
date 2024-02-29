@@ -1,5 +1,5 @@
 import {Booking} from "cinetex-core/dist/domain/entities";
-import {Repositories} from "../repositories";
+import {Repositories} from "../repositories/Repositories";
 import {GetBookingById} from "cinetex-core/dist/application/queries";
 
 export class GetBookingByIdInteractor extends GetBookingById {

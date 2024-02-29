@@ -1,5 +1,5 @@
 import {DeleteMovies} from "cinetex-core/dist/application/commands";
-import {Repositories} from "../repositories";
+import {Repositories} from "../repositories/Repositories";
 import {Credentials} from "cinetex-core/dist/security/Credentials";
 import {UnauthorizedException} from "cinetex-core/dist/application/exceptions/Exceptions";
 

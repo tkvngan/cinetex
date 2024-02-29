@@ -1,4 +1,4 @@
-import {UserRepository} from "../../application/repositories";
+import {UserRepository} from "../../application/repositories/UserRepository";
 import {asFieldFilter, asIdFieldFilter, toObjectId} from "./MongoDBUtils";
 import {FilterQuery, Model, SchemaDefinition} from "mongoose";
 import {User} from "cinetex-core/dist/domain/entities/User";

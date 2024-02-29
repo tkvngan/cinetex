@@ -1,6 +1,6 @@
 import fs from "fs";
 import {Movie} from "cinetex-core/dist/domain/entities";
-import {Repositories} from "./application/repositories";
+import {Repositories} from "./application/repositories/Repositories";
 import {generateSchedules} from "./generate-schedules";
 
 export async function loadSamplesFromFile<T>(fileName: string): Promise<T[]> {

@@ -1,6 +1,6 @@
-import {Repositories} from "../repositories";
+import {Repositories} from "../repositories/Repositories";
 import {SignIn, SignInRequest, SignInResponse} from "cinetex-core/dist/application/requests";
-import {createSecureToken, verifyPassword} from "../../security";
+import {createSecureToken, verifyPassword} from "../../security/SecurityUtils";
 import {User} from "cinetex-core/dist/domain/entities";
 import {InvalidPasswordException, UserNotFoundException} from "cinetex-core/dist/application/exceptions/Exceptions";
 

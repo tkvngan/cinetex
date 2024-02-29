@@ -1,5 +1,5 @@
 import {UseCase, UseCaseCollection} from "cinetex-core/dist/application";
-import {Repositories} from "./repositories";
+import {Repositories} from "./repositories/Repositories";
 import * as queries from "./queries";
 import * as requests from "./requests";
 import * as commands from "./commands";

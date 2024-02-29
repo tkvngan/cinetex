@@ -1,5 +1,5 @@
 import {Movie} from "cinetex-core/dist/domain/entities";
-import {Repositories} from "../repositories";
+import {Repositories} from "../repositories/Repositories";
 import {GetMovieById} from "cinetex-core/dist/application/queries";
 
 export class GetMovieByIdInteractor extends GetMovieById {

@@ -1,5 +1,5 @@
 import {Schedule} from "cinetex-core/dist/domain/entities";
-import {Repositories} from "../repositories";
+import {Repositories} from "../repositories/Repositories";
 import {GetAllSchedules} from "cinetex-core/dist/application/queries";
 
 export class GetAllSchedulesInteractor extends GetAllSchedules {

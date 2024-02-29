@@ -1,4 +1,4 @@
-import {ScheduleRepository} from "../../application/repositories";
+import {ScheduleRepository} from "../../application/repositories/ScheduleRepository";
 import {asArrayFieldFilter, asFieldFilter, asIdFieldFilter, toObjectId} from "./MongoDBUtils";
 import {FilterQuery, Model, SchemaDefinition, SchemaOptions, ToObjectOptions, Types} from "mongoose";
 import {Movie, Schedule, Theatre} from "cinetex-core/dist/domain/entities";

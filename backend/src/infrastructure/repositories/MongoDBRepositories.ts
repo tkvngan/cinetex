@@ -8,7 +8,7 @@ import mongoose, {
     SchemaOptions,
     ToObjectOptions
 } from "mongoose";
-import {Repositories} from "../../application/repositories";
+import {Repositories} from "../../application/repositories/Repositories";
 import {Booking, MediaContent, Movie, Schedule, Theatre, User} from "cinetex-core/dist/domain/entities";
 import {MongoDBMovieRepository, MovieSchemaDefinition} from "./MongoDBMovieRepository";
 import {MongoDBTheatreRepository, TheatreSchemaDefinition} from "./MongoDBTheatreRepository";

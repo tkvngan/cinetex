@@ -1,4 +1,4 @@
-import {MovieRepository} from "../../application/repositories";
+import {MovieRepository} from "../../application/repositories/MovieRepository";
 import {asArrayFieldFilter, asFieldFilter, asIdFieldFilter, toObjectId} from "./MongoDBUtils";
 import {FilterQuery, Model, SchemaDefinition} from "mongoose";
 import {Movie} from "cinetex-core/dist/domain/entities/Movie";

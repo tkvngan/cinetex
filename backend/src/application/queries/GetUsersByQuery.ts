@@ -1,6 +1,6 @@
 import {User} from "cinetex-core/dist/domain/entities";
 import {GetUsersByQuery, UsersQuery} from "cinetex-core/dist/application/queries";
-import {Repositories} from "../repositories";
+import {Repositories} from "../repositories/Repositories";
 import {
     AuthenticationRequiredException,
     UnauthorizedException

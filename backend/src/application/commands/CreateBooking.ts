@@ -1,6 +1,6 @@
 import {Booking} from "cinetex-core/dist/domain/entities";
 import {CreateBooking} from "cinetex-core/dist/application/commands";
-import {Repositories} from "../repositories";
+import {Repositories} from "../repositories/Repositories";
 import {Credentials} from "cinetex-core/dist/security/Credentials";
 import {UnauthorizedException} from "cinetex-core/dist/application/exceptions/Exceptions";
 

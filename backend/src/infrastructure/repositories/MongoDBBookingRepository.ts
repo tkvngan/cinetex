@@ -1,4 +1,4 @@
-import {BookingRepository} from "../../application/repositories";
+import {BookingRepository} from "../../application/repositories/BookingRepository";
 import {FilterQuery, Model, SchemaDefinition, Types} from "mongoose";
 import {asFieldFilter, asIdFieldFilter, toObjectId,} from "./MongoDBUtils";
 import {Booking, Movie, Theatre, User} from "cinetex-core/dist/domain/entities";

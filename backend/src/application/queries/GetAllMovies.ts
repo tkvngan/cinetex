@@ -1,6 +1,6 @@
 import {Movie} from "cinetex-core/dist/domain/entities";
 import {GetAllMovies} from "cinetex-core/dist/application/queries";
-import {Repositories} from "../repositories";
+import {Repositories} from "../repositories/Repositories";
 
 export class GetAllMoviesInteractor extends GetAllMovies {
     constructor(readonly repositories: Repositories) {

@@ -1,4 +1,4 @@
-import {connectMongoDB, MongoDBRepositories} from "./infrastructure/repositories";
+import {connectMongoDB, MongoDBRepositories} from "./infrastructure/repositories/MongoDBRepositories";
 import config from "./config";
 import {installAllSamples} from "./samples";
 

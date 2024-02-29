@@ -2,7 +2,7 @@ import express, {Router} from "express"
 import {CommandUseCase, QueryUseCase, RequestUseCase, UseCase, UseCaseCollection} from "cinetex-core/dist/application"
 import {ParamsDictionary, Request, RequestHandler} from "express-serve-static-core";
 import {StatusCodes} from "http-status-codes";
-import {verifySecureToken} from "../../security";
+import {verifySecureToken} from "../../security/SecurityUtils";
 import {ParsedQs} from "qs";
 import {Credentials} from "cinetex-core/dist/security/Credentials";
 import {

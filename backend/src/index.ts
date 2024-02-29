@@ -1,11 +1,13 @@
 import {MongoMemoryServer} from "mongodb-memory-server";
-import {Repositories} from "./application/repositories";
-import {ExpressRootPathRouter, ExpressServiceRouter} from "./infrastructure/routers"
-import {connectMongoDB, MongoDBRepositories} from "./infrastructure/repositories"
-import {ExpressServer} from "./infrastructure/servers"
+import {Repositories} from "./application/repositories/Repositories";
+import {ExpressRootPathRouter} from "./infrastructure/routers/ExpressRootPathRouter"
+import {ExpressServiceRouter} from "./infrastructure/routers/ExpressServiceRouter"
+import {connectMongoDB} from "./infrastructure/repositories/MongoDBRepositories"
+import {MongoDBRepositories} from "./infrastructure/repositories/MongoDBRepositories"
+import {ExpressServer} from "./infrastructure/servers/ExpressServer"
 import {installAllSamples} from "./samples";
-import {MongoMemoryServerOpts} from "mongodb-memory-server-core/lib/MongoMemoryServer";
-import {UseCaseInteractors} from "./application";
+import {MongoMemoryServerOpts} from "mongodb-memory-server-core/lib/MongoMemoryServer"
+import {UseCaseInteractors} from "./application/UseCaseInteractors";
 import config from "./config";
 
 async function startMongoDBMemoryServerIfEnabled(): Promise<void> {

@@ -1,6 +1,6 @@
 import {Schedule} from "cinetex-core/dist/domain/entities";
 import {GetSchedulesByQuery} from "cinetex-core/dist/application/queries";
-import {Repositories} from "../repositories";
+import {Repositories} from "../repositories/Repositories";
 import {SchedulesQuery} from "cinetex-core/dist/application/queries/GetSchedulesByQuery";
 
 export class GetSchedulesByQueryInteractor extends GetSchedulesByQuery {

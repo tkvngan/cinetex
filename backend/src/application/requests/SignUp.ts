@@ -1,9 +1,9 @@
-import {Repositories} from "../repositories";
+import {Repositories} from "../repositories/Repositories";
 import {SignUp, SignUpRequest, SignUpResponse} from "cinetex-core/dist/application/requests";
 import {ObjectId} from "mongodb";
 import {User} from "cinetex-core/dist/domain/entities";
 import {UserAlreadyExistsException} from "cinetex-core/dist/application/exceptions/Exceptions";
-import {createSecureHash, createSecureToken} from "../../security";
+import {createSecureHash, createSecureToken} from "../../security/SecurityUtils";
 
 export class SignUpInteractor extends SignUp {
     constructor(readonly repositories: Repositories) {
