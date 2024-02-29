@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import axios from "axios";
 import {App} from "./App";
-import {AxiosUseCaseInvoker} from "cinetex-shared/dist/infrastructure/interactors";
+import {AxiosUseCaseInvoker} from "cinetex-shared/dist/infrastructure/interactors/AxiosUseCaseInvoker";
 import {UseCaseCollection} from "cinetex-core/dist/application";
 import {css} from "@emotion/react";
 import {injectGlobal} from "@emotion/css";
