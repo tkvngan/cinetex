@@ -48,9 +48,12 @@ export function MongoDBUserRepository(model: Model<User>): UserRepository {
             return (await model.deleteMany(filter)).deletedCount || 0
         },
 
+        async deleteAllUsers(): Promise<number> {
+            return (await model.deleteMany({})).deletedCount || 0
+        },
+
         async updateUserById(id: string, user: Partial<Omit<User, "id">>): Promise<User | undefined> {
-            delete (user as any).id
-            return (await model.findByIdAndUpdate(toObjectId(id), {$set: fromObject(user)}, {returnDocument: "after"}))?.toObject(DefaultToObjectOptions)
+            return (await model.findByIdAndUpdate(toObjectId(id), {$set: fromObject({...user})}, {returnDocument: "after"}))?.toObject(DefaultToObjectOptions)
         },
     }
 }

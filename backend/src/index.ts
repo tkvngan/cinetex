@@ -9,14 +9,17 @@ import {installAllSamples} from "./samples";
 import {MongoMemoryServerOpts} from "mongodb-memory-server-core/lib/MongoMemoryServer"
 import {UseCaseInteractors} from "./application/UseCaseInteractors";
 import config from "./config";
+import {setObjectIdFactory} from "cinetex-core/dist/domain/types";
+import {ObjectId} from "mongodb";
+import {startMongoDBMemoryServer} from "./infrastructure/repositories/MongoDBUtils";
 
-async function startMongoDBMemoryServerIfEnabled(): Promise<void> {
+async function startMongoDBMemoryServerIfEnabled(): Promise<MongoMemoryServer | undefined> {
     if (config.START_MONGODB_MEMORY_SERVER !== "true") {
         console.log("MongoDB Memory Server is disabled.")
-        return
+        return undefined
     }
     console.log("MongoDB Memory Server is enabled.")
-    const options: MongoMemoryServerOpts = {
+    return await startMongoDBMemoryServer({
         instance: {
             dbName: config.MONGODB_DBNAME,
             ip: config.MONGODB_HOST,
@@ -28,13 +31,6 @@ async function startMongoDBMemoryServerIfEnabled(): Promise<void> {
             customRootName: config.MONGODB_USER || "root",
             customRootPwd:  config.MONGODB_PASS || "goodExample",
         }
-    }
-    console.log("MongoDB Memory Server starting with config:", JSON.stringify(options, null, 4), "...")
-    const mongoDBMemoryServer = await MongoMemoryServer.create(options)
-    console.log("MongoDB Memory Server started.")
-    process.on('SIGINT', () => {
-        mongoDBMemoryServer.stop()
-        process.exit(0)
     })
 }
 
@@ -61,6 +57,7 @@ async function installSampleDataIfEnabled(repositories: Repositories): Promise<v
 }
 
 async function main(): Promise<void> {
+    setObjectIdFactory(() => new ObjectId().toString("hex"))
     await startMongoDBMemoryServerIfEnabled()
     await connectMongoDBServer()
     const repositories = MongoDBRepositories()

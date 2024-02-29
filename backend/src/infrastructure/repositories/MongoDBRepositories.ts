@@ -16,7 +16,6 @@ import {Schedule} from "cinetex-core/dist/domain/entities/Schedule";
 import {Theatre} from "cinetex-core/dist/domain/entities/Theatre";
 import {User} from "cinetex-core/dist/domain/entities/User";
 
-
 import {MongoDBMovieRepository, MovieSchemaDefinition} from "./MongoDBMovieRepository";
 import {MongoDBTheatreRepository, TheatreSchemaDefinition} from "./MongoDBTheatreRepository";
 import {MongoDBScheduleRepository, ScheduleSchemaDefinition, ScheduleSchemaOptions} from "./MongoDBScheduleRepository";

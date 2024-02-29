@@ -13,6 +13,8 @@ export interface UserRepository {
 
     deleteUserById(id: string): Promise<User | undefined>;
 
+    deleteAllUsers(): Promise<number>;
+
     deleteUsersByQuery(query: UsersQuery): Promise<number>;
 
     updateUserById(id: string, user: Partial<Omit<User, "id">>): Promise<User | undefined>;

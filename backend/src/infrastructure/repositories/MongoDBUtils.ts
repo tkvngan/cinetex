@@ -1,6 +1,9 @@
 import {Types} from "mongoose";
 import {ByPattern, ByRange} from "cinetex-core/dist/application/queries/QueryCriteria";
 import {error} from "cinetex-core/dist/utils";
+import {MongoMemoryServerOpts} from "mongodb-memory-server-core/lib/MongoMemoryServer";
+import {MongoMemoryServer} from "mongodb-memory-server";
+import config from "../../config";
 
 export function toObjectId(id: string) {
     return new Types.ObjectId(id);
@@ -46,4 +49,28 @@ export function asFieldFilter<T>(value: T | T[] | ByRange<T> | ByPattern | { min
         error("Invalid filter value: " + JSON.stringify(value))
     }
     return { $eq: value };
+}
+
+export async function startMongoDBMemoryServer(options?: MongoMemoryServerOpts): Promise<MongoMemoryServer> {
+    options = options ?? {
+        instance: {
+            dbName: config.MONGODB_DBNAME,
+            ip: config.MONGODB_HOST,
+            port: parseInt(config.MONGODB_PORT)
+        },
+        auth: {
+            enable: true,
+            force: true,
+            customRootName: config.MONGODB_USER || "root",
+            customRootPwd:  config.MONGODB_PASS || "goodExample",
+        }
+    }
+    console.log("MongoDB Memory Server starting with config:", JSON.stringify(options, null, 4), "...")
+    const mongoDBMemoryServer = await MongoMemoryServer.create(options)
+    console.log("MongoDB Memory Server started.")
+    process.on('SIGINT', () => {
+        mongoDBMemoryServer.stop()
+        process.exit(0)
+    })
+    return mongoDBMemoryServer
 }

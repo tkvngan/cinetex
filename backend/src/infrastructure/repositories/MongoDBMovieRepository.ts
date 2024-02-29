@@ -108,8 +108,7 @@ export function MongoDBMovieRepository(model: Model<Movie>): MovieRepository {
         },
 
         async updateMovieById(id: string, movie: Partial<Omit<Movie, "id">>): Promise<Movie | undefined> {
-            delete (movie as any).id
-            return (await model.findByIdAndUpdate(toObjectId(id), {$set: movie}, {returnDocument: "after"}))?.toObject(DefaultToObjectOptions)
+            return (await model.findByIdAndUpdate(toObjectId(id), {$set: {...movie}}, {returnDocument: "after"}))?.toObject(DefaultToObjectOptions)
         },
 
         async deleteAllMovies(): Promise<number> {

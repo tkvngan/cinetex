@@ -7,9 +7,9 @@ import {MediaContentRepository} from "./MediaContentRepository";
 
 export interface Repositories {
     readonly Movie: MovieRepository
-    readonly Theatre: TheatreRepository,
-    readonly Schedule: ScheduleRepository,
-    readonly Booking: BookingRepository,
+    readonly Theatre: TheatreRepository
+    readonly Schedule: ScheduleRepository
+    readonly Booking: BookingRepository
     readonly User: UserRepository
     readonly MediaContent: MediaContentRepository
 }
