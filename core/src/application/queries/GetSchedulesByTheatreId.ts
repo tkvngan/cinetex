@@ -1,8 +1,8 @@
 import {QueryUseCase, UseCaseInvoker} from "../UseCase";
-import {Schedule} from "../../domain/entities";
+import {Schedule} from "../../domain/entities/Schedule";
 
-declare module "../" {
-    interface UseCaseDefinitions {
+declare module "../index" {
+     export interface UseCaseDefinitions {
         readonly GetSchedulesByTheatreId: GetSchedulesByTheatreId
     }
 }

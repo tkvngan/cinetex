@@ -1,8 +1,11 @@
 import {ScheduleRepository} from "../../application/repositories/ScheduleRepository";
 import {asArrayFieldFilter, asFieldFilter, asIdFieldFilter, toObjectId} from "./MongoDBUtils";
 import {FilterQuery, Model, SchemaDefinition, SchemaOptions, ToObjectOptions, Types} from "mongoose";
-import {Movie, Schedule, Theatre} from "cinetex-core/dist/domain/entities";
-import {SchedulesQuery} from "cinetex-core/dist/application/queries";
+import {Movie} from "cinetex-core/dist/domain/entities/Movie";
+import {Schedule} from "cinetex-core/dist/domain/entities/Schedule";
+import {Theatre} from "cinetex-core/dist/domain/entities/Theatre";
+
+import {SchedulesQuery} from "cinetex-core/dist/application/queries/GetSchedulesByQuery";
 import {createMovieFilter} from "./MongoDBMovieRepository";
 import {createTheatreFilter} from "./MongoDBTheatreRepository";
 import {DefaultSubSchemaOptions, fromObject as defaultFromObject} from "./MongoDBRepositories";

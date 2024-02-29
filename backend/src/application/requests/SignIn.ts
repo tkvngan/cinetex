@@ -1,7 +1,7 @@
 import {Repositories} from "../repositories/Repositories";
 import {SignIn, SignInRequest, SignInResponse} from "cinetex-core/dist/application/requests";
 import {createSecureToken, verifyPassword} from "../../security/SecurityUtils";
-import {User} from "cinetex-core/dist/domain/entities";
+import {User} from "cinetex-core/dist/domain/entities/User";
 import {InvalidPasswordException, UserNotFoundException} from "cinetex-core/dist/application/exceptions/Exceptions";
 
 export class SignInInteractor extends SignIn {

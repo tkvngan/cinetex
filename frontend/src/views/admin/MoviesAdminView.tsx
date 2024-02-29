@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import React, {useEffect, useState} from 'react';
-import {UseCaseCollection} from "cinetex-core/dist/application";
-import {Movie, Rating} from "cinetex-core/dist/domain/entities";
+import {UseCaseCollection} from "cinetex-core/dist/application/UseCaseCollection";
+import {Movie, Rating} from "cinetex-core/dist/domain/entities/Movie";
 import * as Icons from "react-bootstrap-icons";
 import {css, SerializedStyles} from "@emotion/react";
 import {AdminToolbar} from "./AdminToolbar";

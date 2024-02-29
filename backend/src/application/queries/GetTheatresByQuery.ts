@@ -1,5 +1,5 @@
 import {GetTheatresByQuery, TheatresQuery} from "cinetex-core/dist/application/queries";
-import {Theatre} from "cinetex-core/dist/domain/entities";
+import {Theatre} from "cinetex-core/dist/domain/entities/Theatre";
 import {Repositories} from "../repositories/Repositories";
 
 export class GetTheatresByQueryInteractor extends GetTheatresByQuery {

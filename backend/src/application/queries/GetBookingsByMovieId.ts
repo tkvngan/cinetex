@@ -1,4 +1,4 @@
-import {Booking} from "cinetex-core/dist/domain/entities";
+import {Booking} from "cinetex-core/dist/domain/entities/Booking";
 import {Repositories} from "../repositories/Repositories";
 import {GetBookingsByMovieId} from "cinetex-core/dist/application/queries";
 

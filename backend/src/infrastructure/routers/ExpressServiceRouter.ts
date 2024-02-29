@@ -1,5 +1,9 @@
 import express, {Router} from "express"
-import {CommandUseCase, QueryUseCase, RequestUseCase, UseCase, UseCaseCollection} from "cinetex-core/dist/application"
+import {CommandUseCase} from "cinetex-core/dist/application/UseCase"
+import {QueryUseCase} from "cinetex-core/dist/application/UseCase"
+import {RequestUseCase} from "cinetex-core/dist/application/UseCase"
+import {UseCase} from "cinetex-core/dist/application/UseCase"
+import {UseCaseCollection} from "cinetex-core/dist/application/UseCaseCollection"
 import {ParamsDictionary, Request, RequestHandler} from "express-serve-static-core";
 import {StatusCodes} from "http-status-codes";
 import {verifySecureToken} from "../../security/SecurityUtils";

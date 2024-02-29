@@ -1,8 +1,8 @@
 import {QueryUseCase, UseCaseInvoker} from "../UseCase";
-import {User} from "../../domain/entities";
+import {User} from "../../domain/entities/User";
 
-declare module "../" {
-    interface UseCaseDefinitions {
+declare module "../index" {
+     export interface UseCaseDefinitions {
         readonly GetUserById: GetUserById
     }
 }

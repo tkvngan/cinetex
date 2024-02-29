@@ -1,8 +1,8 @@
 import {QueryUseCase, UseCaseInvoker} from "../UseCase";
-import {Theatre} from "../../domain/entities";
+import {Theatre} from "../../domain/entities/Theatre";
 
-declare module "../" {
-    interface UseCaseDefinitions {
+declare module "../index" {
+     export interface UseCaseDefinitions {
         readonly GetTheatreById: GetTheatreById
     }
 }

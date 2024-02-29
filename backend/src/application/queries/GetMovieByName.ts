@@ -1,4 +1,4 @@
-import {Movie} from "cinetex-core/dist/domain/entities";
+import {Movie} from "cinetex-core/dist/domain/entities/Movie";
 import {Repositories} from "../repositories/Repositories";
 import {GetMovieByName} from "cinetex-core/dist/application/queries";
 

@@ -1,9 +1,9 @@
 import {CommandUseCase, UseCaseInvoker} from "../UseCase";
-import {Booking} from "../../domain/entities";
+import {Booking} from "../../domain/entities/Booking";
 
 
-declare module "../" {
-    interface UseCaseDefinitions {
+declare module "../index" {
+     export interface UseCaseDefinitions {
         readonly CreateBooking: CreateBooking
     }
 }

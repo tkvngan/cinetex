@@ -1,8 +1,8 @@
 import {QueryUseCase, UseCaseInvoker} from "../UseCase";
-import {Movie} from "../../domain/entities";
+import {Movie} from "../../domain/entities/Movie";
 
-declare module "../" {
-    interface UseCaseDefinitions {
+declare module "../index" {
+    export interface UseCaseDefinitions {
         readonly GetMovieById: GetMovieById
     }
 }

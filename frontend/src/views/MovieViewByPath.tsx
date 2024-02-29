@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import {UseCaseCollection} from "cinetex-core/dist/application";
+import {UseCaseCollection} from "cinetex-core/dist/application/UseCaseCollection";
 import {useParams} from "react-router-dom";
 import React from "react";
 import {MovieViewMode} from "./MovieView";

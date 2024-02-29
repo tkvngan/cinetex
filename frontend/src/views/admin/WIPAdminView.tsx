@@ -2,7 +2,7 @@
 
 import wip from "../../assets/wip1.png";
 import React from "react";
-import {UseCaseCollection} from "cinetex-core/dist/application";
+import {UseCaseCollection} from "cinetex-core/dist/application/UseCaseCollection";
 import {AdminToolbar} from "./AdminToolbar";
 
 

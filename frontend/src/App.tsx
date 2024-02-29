@@ -2,7 +2,7 @@
 
 import React, {useEffect} from 'react';
 import {Route, Routes, useLocation} from "react-router-dom";
-import {UseCaseCollection} from "cinetex-core/dist/application";
+import {UseCaseCollection} from "cinetex-core/dist/application/UseCaseCollection";
 import {UserSignInView} from "./views/UserSignInView";
 import {Credentials} from "cinetex-core/dist/security/Credentials";
 import {AppNavigationBar} from "./AppNavigationBar";

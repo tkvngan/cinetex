@@ -1,4 +1,4 @@
-import {User} from "cinetex-core/dist/domain/entities";
+import {User} from "cinetex-core/dist/domain/entities/User";
 import {Repositories} from "../repositories/Repositories";
 import {GetUserById} from "cinetex-core/dist/application/queries";
 import {

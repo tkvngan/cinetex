@@ -1,5 +1,5 @@
 import {ByPattern, ByRange} from "./QueryCriteria";
-import {Movie} from "../../domain/entities";
+import {Movie} from "../../domain/entities/Movie";
 import {QueryUseCase, UseCaseInvoker} from "../UseCase";
 
 export type MoviesQuery = {
@@ -18,8 +18,8 @@ export type MoviesQuery = {
     releaseDate?: string | string[] | ByRange<string>;
 }
 
-declare module "../" {
-    interface UseCaseDefinitions {
+declare module "../index" {
+     export interface UseCaseDefinitions {
         readonly GetMoviesByQuery: GetMoviesByQuery
     }
 }

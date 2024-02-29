@@ -1,5 +1,5 @@
 import {QueryUseCase, UseCaseInvoker} from "../UseCase";
-import {User} from "../../domain/entities";
+import {User} from "../../domain/entities/User";
 import {ByPattern} from "./QueryCriteria";
 
 export type UsersQuery = {
@@ -14,8 +14,8 @@ export type UsersQuery = {
     phoneNumber?: string | ByPattern;
 }
 
-declare module "../" {
-    interface UseCaseDefinitions {
+declare module "../index" {
+     export interface UseCaseDefinitions {
         readonly GetUsersByQuery: GetUsersByQuery
     }
 }

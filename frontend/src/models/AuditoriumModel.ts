@@ -1,5 +1,12 @@
-import {Booking, Movie, Screen, SeatPosition, SeatType, Theatre, Ticket} from "cinetex-core/dist/domain/entities";
-import {UseCaseCollection} from "cinetex-core/dist/application";
+import {Booking} from "cinetex-core/dist/domain/entities/Booking";
+import {Movie} from "cinetex-core/dist/domain/entities/Movie";
+import {Screen} from "cinetex-core/dist/domain/entities/Theatre";
+import {SeatPosition} from "cinetex-core/dist/domain/entities/Booking";
+import {SeatType} from "cinetex-core/dist/domain/entities/Theatre";
+import {Theatre} from "cinetex-core/dist/domain/entities/Theatre";
+import {Ticket} from "cinetex-core/dist/domain/entities/Booking";
+
+import {UseCaseCollection} from "cinetex-core/dist/application/UseCaseCollection";
 
 export interface SeatModelMutable extends SeatPosition {
     readonly row: number;

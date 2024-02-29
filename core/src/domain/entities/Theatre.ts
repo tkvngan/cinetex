@@ -1,4 +1,5 @@
-import {Address, Entity, Id} from "../types";
+import {Entity, Id} from "../types/Entity";
+import {Address} from "../types/Address";
 
 export type Row = number
 export type Column = number

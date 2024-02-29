@@ -1,4 +1,4 @@
-import {User} from "cinetex-core/dist/domain/entities";
+import {User} from "cinetex-core/dist/domain/entities/User";
 import {GetUsersByQuery, UsersQuery} from "cinetex-core/dist/application/queries";
 import {Repositories} from "../repositories/Repositories";
 import {

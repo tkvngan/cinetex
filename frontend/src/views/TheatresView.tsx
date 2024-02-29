@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
-import {UseCaseCollection} from "cinetex-core/dist/application";
-import {Theatre} from "cinetex-core/dist/domain/entities";
+import {UseCaseCollection} from "cinetex-core/dist/application/UseCaseCollection";
+import {Theatre} from "cinetex-core/dist/domain/entities/Theatre";
 import React, {useEffect, useState} from "react";
 import {css} from "@emotion/react";
 import * as Icons from "react-bootstrap-icons";

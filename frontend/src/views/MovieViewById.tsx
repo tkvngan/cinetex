@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
-import {UseCaseCollection} from "cinetex-core/dist/application";
+import {UseCaseCollection} from "cinetex-core/dist/application/UseCaseCollection";
 import React, {useEffect} from "react";
-import {Movie} from "cinetex-core/dist/domain/entities";
+import {Movie} from "cinetex-core/dist/domain/entities/Movie";
 import {MovieView, MovieViewMode} from "./MovieView";
 
 export function MovieViewById({movieId, viewMode, interactors}: {

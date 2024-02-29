@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import axios from "axios";
 import {App} from "./App";
 import {AxiosUseCaseInvoker} from "cinetex-shared/dist/infrastructure/interactors/AxiosUseCaseInvoker";
-import {UseCaseCollection} from "cinetex-core/dist/application";
+import {UseCaseCollection} from "cinetex-core/dist/application/UseCaseCollection";
 import {css} from "@emotion/react";
 import {injectGlobal} from "@emotion/css";
 import {AppThemeManager} from "./AppThemeManager";
@@ -43,7 +43,7 @@ const axiosInstance = axios.create({
 })
 
 const invoker = AxiosUseCaseInvoker(axiosInstance)
-const interactors: UseCaseCollection = new UseCaseCollection(invoker)
+const interactors: UseCaseCollection = UseCaseCollection(invoker)
 const security = new SecurityModel(interactors.SignIn, interactors.SignUp)
 const cart = CartModel()
 

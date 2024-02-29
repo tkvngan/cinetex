@@ -1,4 +1,4 @@
-import {User} from "../domain/entities";
+import {User} from "../domain/entities/User";
 
 export type Credentials = {
     readonly user: Omit<User, "password">;

@@ -1,4 +1,4 @@
-import {Entity, Id} from "../types";
+import {Entity, Id} from "../types/Entity";
 
 export type Movie = Entity & Readonly<{
     id: Id;

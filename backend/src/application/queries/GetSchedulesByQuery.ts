@@ -1,4 +1,4 @@
-import {Schedule} from "cinetex-core/dist/domain/entities";
+import {Schedule} from "cinetex-core/dist/domain/entities/Schedule";
 import {GetSchedulesByQuery} from "cinetex-core/dist/application/queries";
 import {Repositories} from "../repositories/Repositories";
 import {SchedulesQuery} from "cinetex-core/dist/application/queries/GetSchedulesByQuery";

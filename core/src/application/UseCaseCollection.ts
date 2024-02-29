@@ -2,12 +2,7 @@ import {UseCase, UseCaseInvoker} from "./UseCase";
 import * as queries from "./queries";
 import * as requests from "./requests";
 import * as commands from "./commands";
-import {UseCaseDefinitions} from ".";
-
-declare module "./" {
-    interface UseCaseDefinitions {
-    }
-}
+import {UseCaseDefinitions} from "./index";
 
 export type UseCaseCollection = UseCaseDefinitions & Iterable<UseCase> & {
     [K in keyof UseCaseDefinitions]: UseCaseDefinitions[K];
@@ -17,7 +12,11 @@ interface UseCaseCollectionConstructor {
     new (invoker: UseCaseInvoker): UseCaseCollection
 }
 
-export const UseCaseCollection: UseCaseCollectionConstructor = class implements UseCaseCollection {
+export function UseCaseCollection(invoker: UseCaseInvoker): UseCaseCollection {
+    return new UseCaseCollectionConstructor(invoker);
+}
+
+const UseCaseCollectionConstructor: UseCaseCollectionConstructor = class implements UseCaseCollection {
     constructor(private readonly invoker: UseCaseInvoker) {
     }
 

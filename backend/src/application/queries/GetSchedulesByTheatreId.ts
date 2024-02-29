@@ -1,5 +1,5 @@
 import {GetSchedulesByTheatreId} from "cinetex-core/dist/application/queries";
-import {Schedule} from "cinetex-core/dist/domain/entities";
+import {Schedule} from "cinetex-core/dist/domain/entities/Schedule";
 import {Repositories} from "../repositories/Repositories";
 
 export class GetSchedulesByTheatreIdInteractor extends GetSchedulesByTheatreId {

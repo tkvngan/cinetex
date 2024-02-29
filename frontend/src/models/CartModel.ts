@@ -1,5 +1,9 @@
-import {Booking, Movie, SeatPosition, Theatre} from "cinetex-core/dist/domain/entities";
-import {UseCaseCollection} from "cinetex-core/dist/application";
+import {Booking} from "cinetex-core/dist/domain/entities/Booking";
+import {Movie} from "cinetex-core/dist/domain/entities/Movie";
+import {SeatPosition} from "cinetex-core/dist/domain/entities/Booking";
+import {Theatre} from "cinetex-core/dist/domain/entities/Theatre";
+
+import {UseCaseCollection} from "cinetex-core/dist/application/UseCaseCollection";
 import {Credentials} from "cinetex-core/dist/security/Credentials";
 
 export interface CartModel {

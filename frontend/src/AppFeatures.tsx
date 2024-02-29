@@ -3,7 +3,7 @@
 import React, {ReactElement, ReactNode} from "react";
 import {HomeView} from "./views/HomeView";
 import {MoviesView} from "./views/MoviesView";
-import {UseCaseCollection} from "cinetex-core/dist/application";
+import {UseCaseCollection} from "cinetex-core/dist/application/UseCaseCollection";
 import {TheatresView} from "./views/TheatresView";
 import {MoviesAdminView} from "./views/admin/MoviesAdminView";
 import {WIPView} from "./views/WIPView";

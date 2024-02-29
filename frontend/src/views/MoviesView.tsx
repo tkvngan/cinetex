@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import React, {useEffect, useState} from "react";
-import {Movie} from "cinetex-core/dist/domain/entities";
+import {Movie} from "cinetex-core/dist/domain/entities/Movie";
 import * as Icons from 'react-bootstrap-icons';
-import {UseCaseCollection} from "cinetex-core/dist/application";
+import {UseCaseCollection} from "cinetex-core/dist/application/UseCaseCollection";
 import {MovieView, MovieViewMode} from "./MovieView";
 import {Link} from "react-router-dom";
 import Toolbar from "./Toolbar";

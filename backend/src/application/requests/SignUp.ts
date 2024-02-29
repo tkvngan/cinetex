@@ -1,7 +1,7 @@
 import {Repositories} from "../repositories/Repositories";
 import {SignUp, SignUpRequest, SignUpResponse} from "cinetex-core/dist/application/requests";
 import {ObjectId} from "mongodb";
-import {User} from "cinetex-core/dist/domain/entities";
+import {User} from "cinetex-core/dist/domain/entities/User";
 import {UserAlreadyExistsException} from "cinetex-core/dist/application/exceptions/Exceptions";
 import {createSecureHash, createSecureToken} from "../../security/SecurityUtils";
 

@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import {UseCaseCollection} from "cinetex-core/dist/application";
+import {UseCaseCollection} from "cinetex-core/dist/application/UseCaseCollection";
 import React from "react";
 import {AdminToolbar} from "./AdminToolbar";
 

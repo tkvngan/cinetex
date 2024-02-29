@@ -1,5 +1,5 @@
 import {RequestUseCase, UseCaseInvoker} from "../UseCase";
-import {User} from "../../domain/entities";
+import {User} from "../../domain/entities/User";
 
 export type SignInRequest = Readonly<{
     email: string;
@@ -11,8 +11,8 @@ export type SignInResponse = {
     token: string
 }
 
-declare module "../" {
-    interface UseCaseDefinitions {
+declare module "../index" {
+    export interface UseCaseDefinitions {
         readonly SignIn: SignIn
     }
 }

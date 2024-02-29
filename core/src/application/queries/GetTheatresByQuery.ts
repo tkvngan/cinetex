@@ -1,6 +1,6 @@
 import {ByPattern, ByRange} from "./QueryCriteria";
 import {QueryUseCase, UseCaseInvoker} from "../UseCase";
-import {Theatre} from "../../domain/entities";
+import {Theatre} from "../../domain/entities/Theatre";
 
 export type TheatresQuery = {
     id: string | [string];
@@ -14,8 +14,8 @@ export type TheatresQuery = {
     screenCount?: number | ByRange<number>;
 }
 
-declare module "../" {
-    interface UseCaseDefinitions {
+declare module "../index" {
+     export interface UseCaseDefinitions {
         readonly GetTheatresByQuery: GetTheatresByQuery
     }
 }

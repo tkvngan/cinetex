@@ -1,4 +1,4 @@
-import {Booking} from "cinetex-core/dist/domain/entities";
+import {Booking} from "cinetex-core/dist/domain/entities/Booking";
 import {Repositories} from "../repositories/Repositories";
 import {GetAllBookings} from "cinetex-core/dist/application/queries";
 import {Credentials} from "cinetex-core/dist/security/Credentials";

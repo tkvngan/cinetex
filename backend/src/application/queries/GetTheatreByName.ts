@@ -1,4 +1,4 @@
-import {Theatre} from "cinetex-core/dist/domain/entities";
+import {Theatre} from "cinetex-core/dist/domain/entities/Theatre";
 import {Repositories} from "../repositories/Repositories";
 import {GetTheatreByName} from "cinetex-core/dist/application/queries";
 

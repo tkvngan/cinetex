@@ -1,4 +1,4 @@
-import {UseCaseCollection} from "cinetex-core/dist/application";
+import {UseCaseCollection} from "cinetex-core/dist/application/UseCaseCollection";
 import {CartModel} from "../models/CartModel";
 import React, {useEffect, useReducer} from "react";
 import * as bootstrap from "bootstrap"

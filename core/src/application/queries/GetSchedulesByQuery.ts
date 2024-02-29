@@ -1,5 +1,5 @@
 import {QueryUseCase, UseCaseInvoker} from "../UseCase";
-import {Schedule} from "../../domain/entities";
+import {Schedule} from "../../domain/entities/Schedule";
 import {ByPattern, ByRange} from "./QueryCriteria";
 import {TheatresQuery} from "./GetTheatresByQuery";
 import {MoviesQuery} from "./GetMoviesByQuery";
@@ -24,8 +24,8 @@ export type SchedulesQuery = {
     showTime?: string | [string] | ByRange<string>;
 }
 
-declare module "../" {
-    interface UseCaseDefinitions {
+declare module "../index" {
+     export interface UseCaseDefinitions {
         readonly GetSchedulesByQuery: GetSchedulesByQuery
     }
 }

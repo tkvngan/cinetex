@@ -1,4 +1,4 @@
-import {MediaContent} from "cinetex-core/dist/domain/entities";
+import {MediaContent} from "cinetex-core/dist/domain/entities/MediaContent";
 
 export interface MediaContentRepository {
 

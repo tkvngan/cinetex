@@ -1,6 +1,9 @@
 /** @jsxImportSource @emotion/react */
-import {Movie, Schedule, Theatre} from "cinetex-core/dist/domain/entities";
-import {UseCaseCollection} from "cinetex-core/dist/application";
+import {Movie} from "cinetex-core/dist/domain/entities/Movie";
+import {Schedule} from "cinetex-core/dist/domain/entities/Schedule";
+import {Theatre} from "cinetex-core/dist/domain/entities/Theatre";
+
+import {UseCaseCollection} from "cinetex-core/dist/application/UseCaseCollection";
 import React, {ReactElement, useEffect} from "react";
 import {Link} from "react-router-dom";
 

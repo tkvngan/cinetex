@@ -1,5 +1,5 @@
 import fs from "fs";
-import {Movie} from "cinetex-core/dist/domain/entities";
+import {Movie} from "cinetex-core/dist/domain/entities/Movie";
 import {Repositories} from "./application/repositories/Repositories";
 import {generateSchedules} from "./generate-schedules";
 

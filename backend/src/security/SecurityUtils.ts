@@ -1,6 +1,6 @@
 import bcrypt from "bcrypt";
 import {jwtVerify, SignJWT} from "jose";
-import {User} from "cinetex-core/dist/domain/entities";
+import {User} from "cinetex-core/dist/domain/entities/User";
 import {Credentials} from "cinetex-core/dist/security/Credentials";
 
 const DEFAULT_SALT_ROUNDS = 10;

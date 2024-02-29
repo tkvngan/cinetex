@@ -1,4 +1,8 @@
-import {Movie, Schedule, Theatre, TimeSlot} from "cinetex-core/dist/domain/entities";
+import {Movie} from "cinetex-core/dist/domain/entities/Movie";
+import {Schedule} from "cinetex-core/dist/domain/entities/Schedule";
+import {Theatre} from "cinetex-core/dist/domain/entities/Theatre";
+import {TimeSlot} from "cinetex-core/dist/domain/entities/Schedule";
+
 import {ObjectId} from "mongodb";
 
 const dates: readonly string[] = [

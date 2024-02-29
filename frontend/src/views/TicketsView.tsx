@@ -1,4 +1,4 @@
-import {UseCaseCollection} from "cinetex-core/dist/application";
+import {UseCaseCollection} from "cinetex-core/dist/application/UseCaseCollection";
 import React from "react";
 
 export function TicketsView({interactors}: { interactors: UseCaseCollection }) {
