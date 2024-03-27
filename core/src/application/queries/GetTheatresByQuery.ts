@@ -3,13 +3,13 @@ import {QueryUseCase, UseCaseInvoker} from "../UseCase";
 import {Theatre} from "../../domain/entities/Theatre";
 
 export type TheatresQuery = {
-    id: string | [string];
+    id: string | string[];
     name?: never;
     location?: never;
     screenCount?: never;
 } | {
     id?: never;
-    name?: string | [string] |ByPattern;
+    name?: string | string[] | ByPattern;
     location?: ByPattern;
     screenCount?: number | ByRange<number>;
 }
@@ -22,7 +22,7 @@ declare module "../index" {
 
 export class GetTheatresByQuery extends QueryUseCase<TheatresQuery, Theatre[]> {
     constructor(invoker?: UseCaseInvoker<TheatresQuery, Theatre[]>) {
-        super(GetTheatresByQuery.name, invoker);
+        super("GetTheatresByQuery", invoker);
     }
 }
 

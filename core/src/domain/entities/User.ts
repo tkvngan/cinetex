@@ -8,6 +8,6 @@ export type User = Entity & Readonly<{
     firstName?: string
     lastName?: string
     phoneNumber?: string,
-    createdAt: Date,
+    createdAt?: Date,
     roles: string[],
 }>

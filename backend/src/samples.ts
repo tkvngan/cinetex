@@ -25,11 +25,28 @@ export async function installSamples<T>(
 }
 
 export async function installAllSamples(repositories: Repositories): Promise<void> {
-    const {Movie, Schedule, Theatre} = repositories
-    const allMovies = await installSamplesFromFile<Movie>("data/movies.json", Movie.deleteAllMovies, Movie.addMovie, Movie.getAllMovies)
-    const allTheatres = await installSamplesFromFile("data/theatres.json", ()=>Theatre.deleteTheatresByQuery({}), Theatre.addTheatre, Theatre.getAllTheatres)
+    const { Movie, Schedule, Theatre } = repositories
+    const allMovies = await installSamplesFromFile<Movie>(
+        "data/movies.json",
+        () => Movie.deleteAllMovies(),
+        (movie) => {
+            console.log("Adding movie: ", movie.id, "synopsis:", movie.synopsis?.length)
+            return Movie.addMovie(movie)
+        },
+        () => Movie.getAllMovies()
+    )
+    const allTheatres = await installSamplesFromFile(
+        "data/theatres.json",
+        () => Theatre.deleteTheatresByQuery({}),
+        (theatre) => Theatre.addTheatre(theatre),
+        () => Theatre.getAllTheatres()
+    )
     const schedules = generateSchedules(allMovies, allTheatres)
-    const allSchedule = await installSamples(schedules, ()=>Schedule.deleteSchedulesByQuery({}), Schedule.addSchedule, Schedule.getAllSchedules)
+    const allSchedule = await installSamples(schedules,
+        () => Schedule.deleteSchedulesByQuery({}),
+        (schedule) =>Schedule.addSchedule(schedule),
+        () => Schedule.getAllSchedules()
+    )
     const data = {
         movies: allMovies,
         theatres: allTheatres,

@@ -18,12 +18,13 @@ export class SignUpInteractor extends SignUp {
         const passwordHash = await createSecureHash(request.password);
         const userId = new ObjectId().toHexString();
         const roles: string[] = ["user"];
+        const createAt = new Date()
         const user: User = {
             ...request,
             id: userId,
             roles: roles,
             emailVerified: false,
-            createdAt: new Date(),
+            createdAt: createAt,
         } as User
         delete (user as any).password;
         const token = await createSecureToken(user)

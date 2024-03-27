@@ -9,7 +9,7 @@ declare module "../index" {
 
 export class GetAllMovies extends QueryUseCase<{}, Movie[]> {
     constructor(invoker?: UseCaseInvoker<{}, Movie[]>) {
-        super(GetAllMovies.name, invoker);
+        super("GetAllMovies", invoker);
     }
 }
 

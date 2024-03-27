@@ -8,8 +8,8 @@ declare module "../index" {
     }
 }
 
-export class CreateBooking extends CommandUseCase<Omit<Booking, "id">> {
-    constructor(invoker?: UseCaseInvoker<Omit<Booking, "id">, void>) {
-        super(CreateBooking.name, invoker);
+export class CreateBooking extends CommandUseCase<Booking> {
+    constructor(invoker?: UseCaseInvoker<Booking, void>) {
+        super("CreateBooking", invoker);
     }
 }

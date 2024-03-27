@@ -9,7 +9,7 @@ declare module "../index" {
 
 export class GetAllUsers extends QueryUseCase<{}, User[]> {
     constructor(invoker?: UseCaseInvoker<{}, User[]>) {
-        super(GetAllUsers.name, invoker);
+        super("GetAllUsers", invoker);
     }
 }
 

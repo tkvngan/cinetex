@@ -6,19 +6,18 @@ import {TheatresQuery} from "./GetTheatresByQuery";
 import {MoviesQuery} from "./GetMoviesByQuery";
 
 export type BookingsQuery = {
-    id: string | [string];
-    user?: never;
-    theatre?: never;
-    movie?: never;
-    showDate?: never;
-    showTime?: never;
-} | {
-    id?: never;
+    id?: string | string[];
     user?: UsersQuery;
     theatre?: TheatresQuery;
     movie?: MoviesQuery;
-    showDate?: string | [string] | ByRange<string>;
-    showTime?: string | [string] | ByRange<string>
+    bookingTime?: string | string[] | ByRange<string>;
+    ticket?: {
+        screenId: number | number[];
+        showDate: string | string[] | ByRange<string>;
+        showTime: string | string[] | ByRange<string>;
+        row: string | string[];
+        column: string | string[];
+    }
 }
 
 declare module "../index" {
@@ -29,7 +28,7 @@ declare module "../index" {
 
 export class GetBookingsByQuery extends QueryUseCase<BookingsQuery, Booking[]> {
     constructor(invoker?: UseCaseInvoker<BookingsQuery, Booking[]>) {
-        super(GetBookingsByQuery.name, invoker);
+        super("GetBookingsByQuery", invoker);
     }
 }
 

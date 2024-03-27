@@ -9,6 +9,6 @@ declare module "../index" {
 
 export class GetAllBookings extends QueryUseCase<{}, Booking[]> {
     constructor(invoker?: UseCaseInvoker<{}, Booking[]>) {
-        super(GetAllBookings.name, invoker);
+        super("GetAllBookings", invoker);
     }
 }

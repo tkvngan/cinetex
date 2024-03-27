@@ -10,7 +10,7 @@ export class CreateBookingInteractor extends CreateBooking {
         super();
     }
 
-    override async invoke(input: Omit<Booking, "id">, credentials?: Credentials): Promise<void> {
+    override async invoke(input: Booking, credentials?: Credentials): Promise<void> {
         if (credentials && credentials.user.roles.includes("user") && input.userId === credentials.user.id) {
             // need to check if other bookings exist for the same movie, seat and time
             await this.repositories.Booking.addBooking(input);

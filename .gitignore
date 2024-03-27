@@ -11,3 +11,4 @@
 yarn-error.log
 /frontend/dist/
 /backend/data/data.json
+/.idea/

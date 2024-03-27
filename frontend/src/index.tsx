@@ -14,6 +14,7 @@ import {BrowserRouter} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css"
 import {SecurityModel} from "./models/SecurityModel";
 import {CartModel} from "./models/CartModel";
+import {setObjectIdFactory} from "cinetex-core/dist/domain/types";
 
 /*#5f0f4f;*/
 const globalStyle = css(`
@@ -33,13 +34,22 @@ const globalStyle = css(`
 
 injectGlobal(globalStyle)
 
+setObjectIdFactory(() => {
+    function hex (value: number) {
+        return Math.floor(value).toString(16)
+    }
+    return hex(Date.now() / 1000) +
+        ' '.repeat(16).replace(/./g, () => hex(Math.random() * 16))
+    }
+)
+
 const axiosInstance = axios.create({
     baseURL: "/service",
     headers: {
         "Content-Type": "application/json",
         "Accept": ["application/json", "text/plain", "*/*"],
     },
-    timeout: 1000,
+    timeout: 1000 * 30,
 })
 
 const invoker = AxiosUseCaseInvoker(axiosInstance)

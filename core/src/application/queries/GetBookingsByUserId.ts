@@ -9,7 +9,7 @@ declare module "../index" {
 
 export class GetBookingsByUserId extends QueryUseCase<{ userId: string }, Booking[]> {
     constructor(invoker?: UseCaseInvoker<{ userId: string }, Booking[]>) {
-        super(GetBookingsByUserId.name, invoker);
+        super("GetBookingsByUserId", invoker);
     }
 }
 

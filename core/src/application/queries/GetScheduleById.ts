@@ -9,7 +9,7 @@ declare module "../index" {
 
 export class GetScheduleById extends QueryUseCase<{ id: string }, Schedule | undefined> {
     constructor(invoker?: UseCaseInvoker<{ id: string }, Schedule | undefined>) {
-        super(GetScheduleById.name, invoker);
+        super("GetScheduleById", invoker);
     }
 }
 

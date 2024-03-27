@@ -2,8 +2,7 @@ import {MongoMemoryServer} from "mongodb-memory-server";
 import {Repositories} from "./application/repositories/Repositories";
 import {ExpressRootPathRouter} from "./infrastructure/routers/ExpressRootPathRouter"
 import {ExpressServiceRouter} from "./infrastructure/routers/ExpressServiceRouter"
-import {connectMongoDB} from "./infrastructure/repositories/MongoDBRepositories"
-import {MongoDBRepositories} from "./infrastructure/repositories/MongoDBRepositories"
+import {MongoDBRepositories, connectMongoDB} from "./infrastructure/repositories/mongodb/MongoDBRepositories"
 import {ExpressServer} from "./infrastructure/servers/ExpressServer"
 import {installAllSamples} from "./samples";
 import {MongoMemoryServerOpts} from "mongodb-memory-server-core/lib/MongoMemoryServer"
@@ -11,7 +10,9 @@ import {UseCaseInteractors} from "./application/UseCaseInteractors";
 import config from "./config";
 import {setObjectIdFactory} from "cinetex-core/dist/domain/types";
 import {ObjectId} from "mongodb";
-import {startMongoDBMemoryServer} from "./infrastructure/repositories/MongoDBUtils";
+import {startMongoDBMemoryServer} from "./infrastructure/repositories/mongodb/MongoDBUtils";
+import {Sequelize} from "sequelize";
+import {SequelizeRepositories} from "./infrastructure/repositories/sequelize/SequelizeRepositories";
 
 async function startMongoDBMemoryServerIfEnabled(): Promise<MongoMemoryServer | undefined> {
     if (config.START_MONGODB_MEMORY_SERVER !== "true") {
@@ -58,9 +59,15 @@ async function installSampleDataIfEnabled(repositories: Repositories): Promise<v
 
 async function main(): Promise<void> {
     setObjectIdFactory(() => new ObjectId().toString("hex"))
+
     await startMongoDBMemoryServerIfEnabled()
     await connectMongoDBServer()
-    const repositories = MongoDBRepositories()
+    const repositories: Repositories = new MongoDBRepositories()
+
+    // let sequelize: Sequelize = new Sequelize("oracle://cinetex:goodExample@localhost:1521/xe", { omitNull: true })
+    // let repositories: Repositories = new SequelizeRepositories(sequelize)
+    // await sequelize.sync()
+
     await installSampleDataIfEnabled(repositories)
     const rootRouter = ExpressRootPathRouter(config.ROOT)
     const interactors = new UseCaseInteractors(repositories)

@@ -13,7 +13,6 @@ export type Movie = Entity & Readonly<{
     writers?: string;
     ratings: Rating[];
 
-    billboard?: Billboard;
     warning?: string;
     languageCode: string;
     movieLanguage: string;
@@ -29,15 +28,7 @@ export type Movie = Entity & Readonly<{
 
 export type Rating = Readonly<{
     provinceCode: string
-    warnings: string[]
+    warnings?: string
     rating: string
     ratingDescription: string
-}>
-
-export type Billboard = Readonly<{
-    alt?: string
-    mobileImageUrl?: string
-    tabletImageUrl?: string
-    desktopImageUrl?: string
-    largeDesktopImageUrl?: string
 }>

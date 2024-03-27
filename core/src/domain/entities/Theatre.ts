@@ -8,7 +8,7 @@ export type Theatre = Entity & Readonly<{
     id: Id;
     name: string;
     location: Address;
-    phone: string;
+    phone?: string;
     screens: readonly Screen[];
     imageUrl?: string;
 }>

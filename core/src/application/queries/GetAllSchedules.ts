@@ -9,7 +9,7 @@ declare module "../index" {
 
 export class GetAllSchedules extends QueryUseCase<{}, Schedule[]> {
     constructor(invoker?: UseCaseInvoker<{}, Schedule[]>) {
-        super(GetAllSchedules.name, invoker);
+        super("GetAllSchedules", invoker);
     }
 }
 

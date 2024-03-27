@@ -1,4 +1,4 @@
-import {connectMongoDB, MongoDBRepositories} from "./infrastructure/repositories/MongoDBRepositories";
+import {connectMongoDB, MongoDBRepositories} from "./infrastructure/repositories/mongodb/MongoDBRepositories";
 import config from "./config";
 import {installAllSamples} from "./samples";
 
@@ -15,7 +15,7 @@ async function connectMongoDBServer(): Promise<void> {
 
 async function main(): Promise<void> {
     await connectMongoDBServer()
-    const repositories = MongoDBRepositories()
+    const repositories = new MongoDBRepositories()
     await installAllSamples(repositories)
 }
 

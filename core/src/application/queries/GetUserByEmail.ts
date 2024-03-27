@@ -9,7 +9,7 @@ declare module "../index" {
 
 export class GetUserByEmail extends QueryUseCase<{ email: string }, Omit<User, "password"> | undefined> {
     constructor(invoker?: UseCaseInvoker<{ email: string }, Omit<User, "password"> | undefined>) {
-        super(GetUserByEmail.name, invoker);
+        super("GetUserByEmail", invoker);
     }
 }
 

@@ -5,6 +5,7 @@ import {Theatre} from "cinetex-core/dist/domain/entities/Theatre";
 
 import {UseCaseCollection} from "cinetex-core/dist/application/UseCaseCollection";
 import {Credentials} from "cinetex-core/dist/security/Credentials";
+import {newObjectId} from "cinetex-core/dist/domain/types";
 
 export interface CartModel {
     readonly items: readonly CartItem[];
@@ -127,7 +128,8 @@ class CartModelImpl implements CartModel {
                 seat: item.seat,
                 price: item.price
             }));
-            const booking: Omit<Booking, "id"> = {
+            const booking: Booking = {
+                id: newObjectId(),
                 userId: credentials.user.id,
                 theatreId: theatreId,
                 bookingTime: new Date().toISOString(),

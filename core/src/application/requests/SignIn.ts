@@ -19,6 +19,6 @@ declare module "../index" {
 
 export class SignIn extends RequestUseCase<SignInRequest, SignInResponse> {
     constructor(invoker?: UseCaseInvoker<SignInRequest, SignInResponse>) {
-        super(SignIn.name, invoker);
+        super("SignIn", invoker);
     }
 }

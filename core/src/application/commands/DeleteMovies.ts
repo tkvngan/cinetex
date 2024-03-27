@@ -8,6 +8,6 @@ declare module "../index" {
 
 export class DeleteMovies extends CommandUseCase<string[]> {
     constructor(invoker?: UseCaseInvoker<string[], void>) {
-        super(DeleteMovies.name, invoker);
+        super("DeleteMovies", invoker);
     }
 }

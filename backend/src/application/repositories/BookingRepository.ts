@@ -13,7 +13,7 @@ export interface BookingRepository {
 
     getBookingsByMovieId(movieId: string): Promise<Booking[]>;
 
-    addBooking(booking: Omit<Booking, "id">): Promise<Booking>;
+    addBooking(booking: Booking): Promise<Booking>;
 
     deleteBookingById(id: string): Promise<Booking | undefined>;
 

@@ -35,81 +35,59 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [
-        "Coarse Language"
-      ],
+      "warnings": "Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Coarse Language"
-      ],
+      "warnings": "Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Coarse Language"
-      ],
+      "warnings": "Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age and older."
     },
     {
       "provinceCode": "NB",
-      "warnings": [
-        "Mature Theme",
-        "Coarse Language"
-      ],
+      "warnings": "Mature Theme, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NL",
-      "warnings": [
-        "Mature Theme",
-        "Coarse Language"
-      ],
+      "warnings": "Mature Theme, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NS",
-      "warnings": [
-        "Mature Theme",
-        "Coarse Language"
-      ],
+      "warnings": "Mature Theme, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "ON",
-      "warnings": [],
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
     },
     {
       "provinceCode": "PE",
-      "warnings": [
-        "Mature Theme",
-        "Coarse Language"
-      ],
+      "warnings": "Mature Theme, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "QC",
-      "warnings": [],
       "rating": "13ans+",
       "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
     },
     {
       "provinceCode": "SK",
-      "warnings": [
-        "Coarse Language"
-      ],
+      "warnings": "Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
     }
@@ -136,89 +114,61 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [
-        "Coarse Language"
-      ],
+      "warnings": "Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Coarse Language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Coarse Language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "NB",
-      "warnings": [
-        "Mature Theme",
-        "Coarse Language"
-      ],
+      "warnings": "Mature Theme, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NL",
-      "warnings": [
-        "Mature Theme",
-        "Coarse Language"
-      ],
+      "warnings": "Mature Theme, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NS",
-      "warnings": [
-        "Mature Theme",
-        "Coarse Language"
-      ],
+      "warnings": "Mature Theme, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Coarse Language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "PE",
-      "warnings": [
-        "Mature Theme",
-        "Coarse Language"
-      ],
+      "warnings": "Mature Theme, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "QC",
-      "warnings": [
-        "Not Recommended for Young Children"
-      ],
+      "warnings": "Not Recommended for Young Children",
       "rating": "G",
       "ratingDescription": "May be viewed by persons of all ages."
     },
     {
       "provinceCode": "SK",
-      "warnings": [
-        "Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Coarse Language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     }
@@ -314,64 +264,52 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to Classification"
     },
     {
       "provinceCode": "BC",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification"
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Coarse Language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "NB",
-      "warnings": [],
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NL",
-      "warnings": [],
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NS",
-      "warnings": [],
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "ON",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject To Classification"
     },
     {
       "provinceCode": "PE",
-      "warnings": [],
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "QC",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "SK",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     }
@@ -402,88 +340,64 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [
-        "Not Recommended for Young Children"
-      ],
+      "warnings": "Not Recommended for Young Children",
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "NB",
-      "warnings": [
-        "Not Recommended for Young Children"
-      ],
+      "warnings": "Not Recommended for Young Children",
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "NL",
-      "warnings": [
-        "Not Recommended for Young Children"
-      ],
+      "warnings": "Not Recommended for Young Children",
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "NS",
-      "warnings": [
-        "Not Recommended for Young Children"
-      ],
+      "warnings": "Not Recommended for Young Children",
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "ON",
-      "warnings": [],
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "PE",
-      "warnings": [
-        "Not Recommended for Young Children"
-      ],
+      "warnings": "Not Recommended for Young Children",
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "QC",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "May be viewed by persons of all ages."
     },
     {
       "provinceCode": "SK",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     }
   ],
-  "billboard": {
-    "alt": "Barbie",
-    "mobileImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Mobile-Barbie_20230620134552_0.jpg",
-    "tabletImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Tablet-Barbie_20230620134555_0.jpg",
-    "desktopImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Desktop_Normal-Barbie_20230620134559_0.jpg",
-    "largeDesktopImageUrl": "https://mediafiles.cineplex.com/cineplex-v2/billboard-block/MDP-Desktop_Wide-Barbie_20230620134602_0.jpg"
-  },
+
   "languageCode": "EN",
   "movieLanguage": "English",
   "smallPosterImageUrl": "/images/posters/34071_130_193.jpg",
@@ -502,72 +416,56 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to Classification"
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "NB",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification"
     },
     {
       "provinceCode": "NL",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "NS",
-      "warnings": [
-        "Mature Theme",
-        "Substance Abuse"
-      ],
+      "warnings": "Mature Theme, Substance Abuse",
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Violent Scenes"
-      ],
+      "warnings": "Violent Scenes",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "PE",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "QC",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "May be viewed by persons of all ages."
     },
     {
       "provinceCode": "SK",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     }
@@ -592,84 +490,60 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [
-        "Brutal Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Brutal Violence, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age and older."
     },
     {
       "provinceCode": "NB",
-      "warnings": [
-        "Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NL",
-      "warnings": [
-        "Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NS",
-      "warnings": [
-        "Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
     },
     {
       "provinceCode": "PE",
-      "warnings": [
-        "Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "QC",
-      "warnings": [],
       "rating": "13ans+",
       "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
     },
     {
       "provinceCode": "SK",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
     }
@@ -695,72 +569,55 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to Classification"
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Coarse Language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Coarse Language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "NB",
-      "warnings": [],
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "NL",
-      "warnings": [],
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "NS",
-      "warnings": [],
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Violent Scenes"
-      ],
+      "warnings": "Violent Scenes",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "PE",
-      "warnings": [],
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "QC",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "May be viewed by persons of all ages."
     },
     {
       "provinceCode": "SK",
-      "warnings": [
-        "Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Coarse Language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     }
@@ -813,95 +670,66 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [
-        "Frightening Scenes"
-      ],
+      "warnings": "Frightening Scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Violence",
-        "Frightening Scenes"
-      ],
+      "warnings": "Violence, Frightening Scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Violence",
-        "Frightening Scenes"
-      ],
+      "warnings": "Violence, Frightening Scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age and older."
     },
     {
       "provinceCode": "NB",
-      "warnings": [
-        "Frightening Scenes"
-      ],
+      "warnings": "Frightening Scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NL",
-      "warnings": [
-        "Frightening Scenes"
-      ],
+      "warnings": "Frightening Scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NS",
-      "warnings": [
-        "Frightening Scenes"
-      ],
+      "warnings": "Frightening Scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Violence",
-        "Frightening Scenes"
-      ],
+      "warnings": "Violence, Frightening Scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
     },
     {
       "provinceCode": "PE",
-      "warnings": [
-        "Frightening Scenes"
-      ],
+      "warnings": "Frightening Scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "QC",
-      "warnings": [
-        "Horror"
-      ],
+      "warnings": "Horror",
       "rating": "13ans+",
       "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
     },
     {
       "provinceCode": "SK",
-      "warnings": [
-        "Violence",
-        "Frightening Scenes"
-      ],
+      "warnings": "Violence, Frightening Scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
     }
   ],
-  "billboard": {
-    "mobileImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Mobile-FNF_20231106214729_0.jpg",
-    "tabletImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Tablet-FNF_20231106214739_0.jpg",
-    "desktopImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Desktop_Normal-FNF_20231106214753_0.jpg",
-    "largeDesktopImageUrl": "https://mediafiles.cineplex.com/cineplex-v2/billboard-block/MDP-Desktop_Wide-FNF_20231106214800_0.jpg"
-  },
+
   "languageCode": "EN",
   "movieLanguage": "English",
   "smallPosterImageUrl": "/images/posters/35225_130_193.jpg",
@@ -924,94 +752,61 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [
-        "Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Violence",
-        "Nudity",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Nudity, Coarse Language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Violence",
-        "Nudity",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Nudity, Coarse Language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "NB",
-      "warnings": [
-        "Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NL",
-      "warnings": [
-        "Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NS",
-      "warnings": [
-        "Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Violence",
-        "Nudity",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Nudity, Coarse Language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "PE",
-      "warnings": [
-        "Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "QC",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "13ans+",
       "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
     },
     {
       "provinceCode": "SK",
-      "warnings": [
-        "Violence",
-        "Nudity",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Nudity, Coarse Language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     }
@@ -1038,83 +833,60 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [
-        "Mature Subject Matter"
-      ],
+      "warnings": "Mature Subject Matter",
       "rating": "14A",
       "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Violence",
-        "Sexual language"
-      ],
+      "warnings": "Violence, Sexual language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Violence",
-        "Sexual language"
-      ],
+      "warnings": "Violence, Sexual language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "NB",
-      "warnings": [
-        "Mature Theme"
-      ],
+      "warnings": "Mature Theme",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NL",
-      "warnings": [
-        "Mature Theme"
-      ],
+      "warnings": "Mature Theme",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NS",
-      "warnings": [
-        "Mature Theme"
-      ],
+      "warnings": "Mature Theme",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Mature Subject Matter",
-        "Violent Scenes"
-      ],
+      "warnings": "Mature Subject Matter, Violent Scenes",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "PE",
-      "warnings": [
-        "Mature Theme"
-      ],
+      "warnings": "Mature Theme",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "QC",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "SK",
-      "warnings": [
-        "Violence",
-        "Sexual language"
-      ],
+      "warnings": "Violence, Sexual language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     }
@@ -1167,89 +939,60 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [
-        "Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Violence",
-        "Frightening Scenes"
-      ],
+      "warnings": "Violence, Frightening Scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Violence",
-        "Frightening Scenes"
-      ],
+      "warnings": "Violence, Frightening Scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age and older."
     },
     {
       "provinceCode": "NB",
-      "warnings": [
-        "Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NL",
-      "warnings": [
-        "Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NS",
-      "warnings": [
-        "Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Violence",
-        "Frightening Scenes",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Frightening Scenes, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
     },
     {
       "provinceCode": "PE",
-      "warnings": [
-        "Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "QC",
-      "warnings": [
-        "Violence",
-        "Horror"
-      ],
+      "warnings": "Violence, Horror",
       "rating": "13ans+",
       "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
     },
     {
       "provinceCode": "SK",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     }
@@ -1277,73 +1020,57 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Suitable for viewing by all ages."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "G",
       "ratingDescription": "Suitable for viewing by persons of all ages."
     },
     {
       "provinceCode": "MB",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "General Viewing.  Suitable of all audiences."
     },
     {
       "provinceCode": "NB",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Suitable for persons of all ages."
     },
     {
       "provinceCode": "NL",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Suitable for persons of all ages."
     },
     {
       "provinceCode": "NS",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Suitable for persons of all ages."
     },
     {
       "provinceCode": "ON",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Suitable for viewing by persons of all ages."
     },
     {
       "provinceCode": "PE",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Suitable for persons of all ages."
     },
     {
       "provinceCode": "QC",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "May be viewed by persons of all ages."
     },
     {
       "provinceCode": "SK",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Acceptable for all age groups."
     }
   ],
-  "billboard": {
-    "mobileImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Mobile-Journey_To_Bethlehem_20231106221114_0.jpg",
-    "tabletImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Tablet-Journey_To_Bethlehem_20231106221122_0.jpg",
-    "desktopImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Desktop_Normal-Journey_To_Bethlehem_20231106221211_0.jpg",
-    "largeDesktopImageUrl": "https://mediafiles.cineplex.com/cineplex-v2/billboard-block/MDP-Desktop_Wide-Journey_To_Bethlehem_20231106221221_0.jpg"
-  },
+
   "languageCode": "EN",
   "movieLanguage": "English",
   "smallPosterImageUrl": "/images/posters/35103_130_193.jpg",
@@ -1387,61 +1114,51 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to Classification"
     },
     {
       "provinceCode": "BC",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification"
     },
     {
       "provinceCode": "MB",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "NB",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification"
     },
     {
       "provinceCode": "NL",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "NS",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification"
     },
     {
       "provinceCode": "ON",
-      "warnings": [],
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
     },
     {
       "provinceCode": "PE",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "QC",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "SK",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     }
@@ -1472,93 +1189,65 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "14A",
       "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age and older."
     },
     {
       "provinceCode": "NB",
-      "warnings": [
-        "Violence",
-        "Mature Theme"
-      ],
+      "warnings": "Violence, Mature Theme",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NL",
-      "warnings": [
-        "Violence",
-        "Mature Theme"
-      ],
+      "warnings": "Violence, Mature Theme",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NS",
-      "warnings": [
-        "Violence",
-        "Mature Theme"
-      ],
+      "warnings": "Violence, Mature Theme",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
     },
     {
       "provinceCode": "PE",
-      "warnings": [
-        "Violence",
-        "Mature Theme"
-      ],
+      "warnings": "Violence, Mature Theme",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "QC",
-      "warnings": [],
       "rating": "13ans+",
       "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
     },
     {
       "provinceCode": "SK",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
     }
   ],
-  "billboard": {
-    "mobileImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Mobile-Killers_of_the_flower_moon_20231106221706_0.jpg",
-    "tabletImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Tablet-Killers_of_the_flower_moon_20231106221716_0.jpg",
-    "desktopImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Desktop_Normal-Killers_of_the_flower_moon_20231106221729_0.jpg",
-    "largeDesktopImageUrl": "https://mediafiles.cineplex.com/cineplex-v2/billboard-block/MDP-Desktop_Wide-Killers_of_the_flower_moon_20231106221735_0.jpg"
-  },
+
   "languageCode": "EN",
   "movieLanguage": "English",
   "smallPosterImageUrl": "/images/posters/35209_130_193.jpg",
@@ -1581,76 +1270,57 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [
-        "Brutal Violence"
-      ],
+      "warnings": "Brutal Violence",
       "rating": "14A",
       "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Violence",
-        "Sexual Violence"
-      ],
+      "warnings": "Violence, Sexual Violence",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Violence",
-        "Sexual Violence"
-      ],
+      "warnings": "Violence, Sexual Violence",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age and older."
     },
     {
       "provinceCode": "NB",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification"
     },
     {
       "provinceCode": "NL",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "NS",
-      "warnings": [
-        "Violence",
-        "Disturbing Content"
-      ],
+      "warnings": "Violence, Disturbing Content",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Violent Scenes"
-      ],
+      "warnings": "Violent Scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
     },
     {
       "provinceCode": "PE",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "QC",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "13ans+",
       "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
     },
     {
       "provinceCode": "SK",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     }
@@ -1664,17 +1334,6 @@
   "cineplexId": 35993
 },
 {
-  "id": "6563a43f92c740d467db9321",
-  "name": "M3GAN 2.0",
-  "releaseDate": "2025-01-17",
-  "runtimeInMinutes": 999,
-  "genres": [],
-  "ratings": [],
-  "languageCode": "EN",
-  "movieLanguage": "English",
-  "cineplexId": 34961
-},
-{
   "id": "6563a43f92c740d467db9323",
   "name": "Maujaan Hi Maujaan (Punjabi)",
   "releaseDate": "2023-10-20",
@@ -1685,67 +1344,54 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [],
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "NB",
-      "warnings": [],
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "NL",
-      "warnings": [],
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "NS",
-      "warnings": [],
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "ON",
-      "warnings": [],
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "PE",
-      "warnings": [],
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "QC",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "May be viewed by persons of all ages."
     },
     {
       "provinceCode": "SK",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     }
@@ -1805,91 +1451,60 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [
-        "Gory violence"
-      ],
+      "warnings": "Gory violence",
       "rating": "14A",
       "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Violence",
-        "Sexually suggestive scenes"
-      ],
+      "warnings": "Violence, Sexually suggestive scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Violence",
-        "Sexually suggestive scenes"
-      ],
+      "warnings": "Violence, Sexually suggestive scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age and older."
     },
     {
       "provinceCode": "NB",
-      "warnings": [
-        "Brutal Violence",
-        "Sexual Content",
-        "Gory Scenes"
-      ],
+      "warnings": "Brutal Violence, Sexual Content, Gory Scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NL",
-      "warnings": [
-        "Brutal Violence",
-        "Sexual Content",
-        "Gory Scenes"
-      ],
+      "warnings": "Brutal Violence, Sexual Content, Gory Scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NS",
-      "warnings": [
-        "Brutal Violence",
-        "Sexual Content",
-        "Gory Scenes"
-      ],
+      "warnings": "Brutal Violence, Sexual Content, Gory Scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Sexually suggestive scenes",
-        "Gory violence"
-      ],
+      "warnings": "Sexually suggestive scenes, Gory violence",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
     },
     {
       "provinceCode": "PE",
-      "warnings": [
-        "Brutal Violence",
-        "Sexual Content",
-        "Gory Scenes"
-      ],
+      "warnings": "Brutal Violence, Sexual Content, Gory Scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "QC",
-      "warnings": [],
       "rating": "13ans+",
       "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
     },
     {
       "provinceCode": "SK",
-      "warnings": [
-        "Violence",
-        "Sexually suggestive scenes"
-      ],
+      "warnings": "Violence, Sexually suggestive scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
     }
@@ -1919,64 +1534,52 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to Classification"
     },
     {
       "provinceCode": "BC",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification"
     },
     {
       "provinceCode": "MB",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "NB",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification"
     },
     {
       "provinceCode": "NL",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "NS",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification"
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Sexually suggestive scenes",
-        "Gory violence"
-      ],
+      "warnings": "Sexually suggestive scenes, Gory violence",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
     },
     {
       "provinceCode": "PE",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "QC",
-      "warnings": [],
       "rating": "13ans+",
       "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
     },
     {
       "provinceCode": "SK",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     }
@@ -2006,79 +1609,60 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [
-        "Coarse Language"
-      ],
+      "warnings": "Coarse Language",
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Coarse Language"
-      ],
+      "warnings": "Coarse Language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Coarse Language"
-      ],
+      "warnings": "Coarse Language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "NB",
-      "warnings": [
-        "Language May Offend"
-      ],
+      "warnings": "Language May Offend",
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "NL",
-      "warnings": [
-        "Language May Offend"
-      ],
+      "warnings": "Language May Offend",
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "NS",
-      "warnings": [
-        "Language May Offend"
-      ],
+      "warnings": "Language May Offend",
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Coarse Language"
-      ],
+      "warnings": "Coarse Language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "PE",
-      "warnings": [
-        "Language May Offend"
-      ],
+      "warnings": "Language May Offend",
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "QC",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "May be viewed by persons of all ages."
     },
     {
       "provinceCode": "SK",
-      "warnings": [
-        "Coarse Language"
-      ],
+      "warnings": "Coarse Language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     }
@@ -2130,108 +1714,70 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [],
       "rating": "14A",
       "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Nudity",
-        "Sexually suggestive scenes"
-      ],
+      "warnings": "Nudity, Sexually suggestive scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Nudity",
-        "Sexually suggestive scenes"
-      ],
+      "warnings": "Nudity, Sexually suggestive scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age and older."
     },
     {
       "provinceCode": "NB",
-      "warnings": [
-        "Mature Theme"
-      ],
+      "warnings": "Mature Theme",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NL",
-      "warnings": [
-        "Mature Theme"
-      ],
+      "warnings": "Mature Theme",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NS",
-      "warnings": [
-        "Mature Theme"
-      ],
+      "warnings": "Mature Theme",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Nudity"
-      ],
+      "warnings": "Nudity",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
     },
     {
       "provinceCode": "PE",
-      "warnings": [
-        "Mature Theme"
-      ],
+      "warnings": "Mature Theme",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "QC",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "May be viewed by persons of all ages."
     },
     {
       "provinceCode": "SK",
-      "warnings": [
-        "Nudity",
-        "Sexually suggestive scenes"
-      ],
+      "warnings": "Nudity, Sexually suggestive scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
     }
   ],
-  "billboard": {
-    "alt": "Oppenheimer",
-    "mobileImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Mobile-Oppenheimer_20230620132259_0.jpg",
-    "tabletImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Tablet-Oppenheimer_20230620132301_0.jpg",
-    "desktopImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Desktop_Normal-Oppenheimer_20230620132314_0.jpg",
-    "largeDesktopImageUrl": "https://mediafiles.cineplex.com/cineplex-v2/billboard-block/MDP-Desktop_Wide-Oppenheimer_20230620132317_0.jpg"
-  },
+
   "languageCode": "EN",
   "movieLanguage": "English",
   "smallPosterImageUrl": "/images/posters/33327_130_193.jpg",
   "mediumPosterImageUrl": "/images/posters/33327_320_470.jpg",
   "largePosterImageUrl": "/images/posters/33327_768_1024.jpg",
   "cineplexId": 33327
-},
-{
-  "id": "6563a43f92c740d467db9366",
-  "name": "Paddington in Peru",
-  "releaseDate": "2025-01-17",
-  "runtimeInMinutes": 999,
-  "genres": [],
-  "ratings": [],
-  "languageCode": "EN",
-  "movieLanguage": "English",
-  "cineplexId": 35971
 },
 {
   "id": "6563a43f92c740d467db9368",
@@ -2247,69 +1793,55 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [],
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "NB",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification"
     },
     {
       "provinceCode": "NL",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "NS",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification"
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Violent Scenes"
-      ],
+      "warnings": "Violent Scenes",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "PE",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "QC",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "May be viewed by persons of all ages."
     },
     {
       "provinceCode": "SK",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     }
@@ -2338,72 +1870,56 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [],
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "BC",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Suitable for viewing by persons of all ages."
     },
     {
       "provinceCode": "MB",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "General Viewing.  Suitable of all audiences."
     },
     {
       "provinceCode": "NB",
-      "warnings": [],
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "NL",
-      "warnings": [],
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "NS",
-      "warnings": [],
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "ON",
-      "warnings": [],
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "PE",
-      "warnings": [],
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "QC",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "May be viewed by persons of all ages."
     },
     {
       "provinceCode": "SK",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Acceptable for all age groups."
     }
   ],
-  "billboard": {
-    "alt": "PAW Patrol: The Mighty Movie",
-    "mobileImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Mobile-Paw_patrol_20230927171614_0.jpg",
-    "tabletImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Tablet-Paw_patrol_20230927171618_0.jpg",
-    "desktopImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Desktop_Normal-Paw_patrol_20230927171622_0.jpg",
-    "largeDesktopImageUrl": "https://mediafiles.cineplex.com/cineplex-v2/billboard-block/MDP-Desktop_Wide-Paw_patrol_20230927171627_0.jpg"
-  },
+
   "languageCode": "EN",
   "movieLanguage": "English",
   "smallPosterImageUrl": "/images/posters/34117_130_193.jpg",
@@ -2444,95 +1960,64 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [],
       "rating": "14A",
       "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Violence",
-        "Coarse Language",
-        "Drug Use"
-      ],
+      "warnings": "Violence, Coarse Language, Drug Use",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Violence",
-        "Coarse Language",
-        "Drug Use"
-      ],
+      "warnings": "Violence, Coarse Language, Drug Use",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "NB",
-      "warnings": [
-        "Substance Abuse"
-      ],
+      "warnings": "Substance Abuse",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NL",
-      "warnings": [
-        "Substance Abuse"
-      ],
+      "warnings": "Substance Abuse",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NS",
-      "warnings": [
-        "Substance Abuse"
-      ],
+      "warnings": "Substance Abuse",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Violence",
-        "Coarse Language",
-        "Drug Use"
-      ],
+      "warnings": "Violence, Coarse Language, Drug Use",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "PE",
-      "warnings": [
-        "Substance Abuse"
-      ],
+      "warnings": "Substance Abuse",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "QC",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "May be viewed by persons of all ages."
     },
     {
       "provinceCode": "SK",
-      "warnings": [
-        "Violence",
-        "Coarse Language",
-        "Drug Use"
-      ],
+      "warnings": "Violence, Coarse Language, Drug Use",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     }
   ],
-  "billboard": {
-    "mobileImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Mobile-Priscilla _20231106215159_0.jpg",
-    "tabletImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Tablet-Priscilla _20231106215204_0.jpg",
-    "desktopImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Desktop_Normal-Priscilla_20231106215214_0.jpg",
-    "largeDesktopImageUrl": "https://mediafiles.cineplex.com/cineplex-v2/billboard-block/MDP-Desktop_Wide-Priscilla_20231106215224_0.jpg"
-  },
+
   "languageCode": "EN",
   "movieLanguage": "English",
   "smallPosterImageUrl": "/images/posters/35706_130_193.jpg",
@@ -2551,12 +2036,7 @@
   "synopsis": "RENAISSANCE: A FILM BY BEYONCÉ accentuates the journey of RENAISSANCE WORLD TOUR, from its inception, to the opening in Stockholm, Sweden, to the finale in Kansas City, Missouri. It is about Beyoncé’s intention, hard work, involvement in every aspect of the production, her creative mind and purpose to create her legacy, and master her craft.  Received with extraordinary acclaim, Beyoncé’s RENAISSANCE WORLD TOUR created a sanctuary for freedom, and shared joy, for more than 2.7 million fans.",
   "starring": "BEYONCÉ, Blue Ivy Carter",
   "ratings": [],
-  "billboard": {
-    "mobileImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Mobile-Beyonce_20231115141708_0.jpg",
-    "tabletImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Tablet-Beyonce_20231115141714_0.jpg",
-    "desktopImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Desktop_Normal-Beyonce_20231115141727_0.jpg",
-    "largeDesktopImageUrl": "https://mediafiles.cineplex.com/cineplex-v2/billboard-block/MDP-Desktop_Wide-Beyonce_20231115141731_0.jpg"
-  },
+
   "languageCode": "EN",
   "movieLanguage": "English",
   "smallPosterImageUrl": "/images/posters/35877_130_193.jpg",
@@ -2598,84 +2078,59 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [],
       "rating": "18A",
       "ratingDescription": "Suitable for viewing by person 18 years of age or older."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Coarse Language",
-        "Sexually suggestive scenes"
-      ],
+      "warnings": "Coarse Language, Sexually suggestive scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Coarse Language",
-        "Sexually suggestive scenes"
-      ],
+      "warnings": "Coarse Language, Sexually suggestive scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age and older."
     },
     {
       "provinceCode": "NB",
-      "warnings": [
-        "Sexual Content",
-        "Substance Abuse"
-      ],
+      "warnings": "Sexual Content, Substance Abuse",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NL",
-      "warnings": [
-        "Sexual Content",
-        "Substance Abuse"
-      ],
+      "warnings": "Sexual Content, Substance Abuse",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NS",
-      "warnings": [
-        "Sexual Content",
-        "Substance Abuse"
-      ],
+      "warnings": "Sexual Content, Substance Abuse",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "ON",
-      "warnings": [],
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
     },
     {
       "provinceCode": "PE",
-      "warnings": [
-        "Sexual Content",
-        "Substance Abuse"
-      ],
+      "warnings": "Sexual Content, Substance Abuse",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "QC",
-      "warnings": [
-        "Erotism"
-      ],
+      "warnings": "Erotism",
       "rating": "13ans+",
       "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
     },
     {
       "provinceCode": "SK",
-      "warnings": [
-        "Coarse Language",
-        "Sexually suggestive scenes"
-      ],
+      "warnings": "Coarse Language, Sexually suggestive scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
     }
@@ -2703,89 +2158,61 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Coarse Language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Coarse Language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "NB",
-      "warnings": [
-        "Violence",
-        "Mature Theme"
-      ],
+      "warnings": "Violence, Mature Theme",
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "NL",
-      "warnings": [
-        "Violence",
-        "Mature Theme"
-      ],
+      "warnings": "Violence, Mature Theme",
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "NS",
-      "warnings": [
-        "Violence",
-        "Mature Theme"
-      ],
+      "warnings": "Violence, Mature Theme",
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Coarse Language",
-        "Violent Scenes"
-      ],
+      "warnings": "Coarse Language, Violent Scenes",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "PE",
-      "warnings": [
-        "Violence",
-        "Mature Theme"
-      ],
+      "warnings": "Violence, Mature Theme",
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "QC",
-      "warnings": [
-        "Not Recommended for Young Children"
-      ],
+      "warnings": "Not Recommended for Young Children",
       "rating": "G",
       "ratingDescription": "May be viewed by persons of all ages."
     },
     {
       "provinceCode": "SK",
-      "warnings": [
-        "Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Coarse Language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     }
@@ -2815,101 +2242,66 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [
-        "Gory Brutal Violence"
-      ],
+      "warnings": "Gory Brutal Violence",
       "rating": "18A",
       "ratingDescription": "Suitable for viewing by person 18 years of age or older."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Gory Scenes",
-        "Explicit violence"
-      ],
+      "warnings": "Gory Scenes, Explicit violence",
       "rating": "18A",
       "ratingDescription": "Persons under 18 years of age must be accomplied by an adult."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Gory Scenes",
-        "Explicit violence"
-      ],
+      "warnings": "Gory Scenes, Explicit violence",
       "rating": "18A",
       "ratingDescription": "Suitable for persons 18 years of age and older."
     },
     {
       "provinceCode": "NB",
-      "warnings": [
-        "Brutal Violence",
-        "Gory Scenes"
-      ],
+      "warnings": "Brutal Violence, Gory Scenes",
       "rating": "18A",
       "ratingDescription": "Suitable for persons 18+. Persons 14-17 must be accompanied by a person 19+. Under 14 not permitted."
     },
     {
       "provinceCode": "NL",
-      "warnings": [
-        "Brutal Violence",
-        "Gory Scenes"
-      ],
+      "warnings": "Brutal Violence, Gory Scenes",
       "rating": "18A",
       "ratingDescription": "Suitable for persons 18+. Persons 14-17 must be accompanied by a person 19+. Under 14 not permitted."
     },
     {
       "provinceCode": "NS",
-      "warnings": [
-        "Brutal Violence",
-        "Gory Scenes"
-      ],
+      "warnings": "Brutal Violence, Gory Scenes",
       "rating": "18A",
       "ratingDescription": "Suitable for persons 18+. Persons 14-17 must be accompanied by a person 19+. Under 14 not permitted."
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Gory Scenes",
-        "Explicit violence"
-      ],
+      "warnings": "Gory Scenes, Explicit violence",
       "rating": "18A",
       "ratingDescription": "Suitable for persons 18 years of age or older. Persons under 18 must be accompanied by an adult."
     },
     {
       "provinceCode": "PE",
-      "warnings": [
-        "Brutal Violence",
-        "Gory Scenes"
-      ],
+      "warnings": "Brutal Violence, Gory Scenes",
       "rating": "18A",
       "ratingDescription": "Suitable for persons 18+. Persons 14-17 must be accompanied by a person 19+. Under 14 not permitted."
     },
     {
       "provinceCode": "QC",
-      "warnings": [
-        "Violence",
-        "Horror"
-      ],
+      "warnings": "Violence, Horror",
       "rating": "16ans+",
       "ratingDescription": "Restricted to persons 16 years of age or over."
     },
     {
       "provinceCode": "SK",
-      "warnings": [
-        "Gory Scenes",
-        "Explicit violence"
-      ],
+      "warnings": "Gory Scenes, Explicit violence",
       "rating": "18A",
       "ratingDescription": "Suitable for persons 18 years of age or older. Persons under 18 must be accompanied by an adult."
     }
   ],
-  "billboard": {
-    "alt": "Saw X",
-    "mobileImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Mobile-Saw_X_20230927163714_0.jpg",
-    "tabletImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Tablet-Saw_X_20230927163718_0.jpg",
-    "desktopImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Desktop_Normal-Saw_X_20230927163723_0.jpg",
-    "largeDesktopImageUrl": "https://mediafiles.cineplex.com/cineplex-v2/billboard-block/MDP-Desktop_Wide-Saw_X_20230927163727_0.jpg"
-  },
+
   "languageCode": "EN",
   "movieLanguage": "English",
   "smallPosterImageUrl": "/images/posters/34903_130_193.jpg",
@@ -2931,87 +2323,61 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [
-        "Brutal Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Brutal Violence, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Frequent Violence"
-      ],
+      "warnings": "Frequent Violence",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Frequent Violence"
-      ],
+      "warnings": "Frequent Violence",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age and older."
     },
     {
       "provinceCode": "NB",
-      "warnings": [
-        "Brutal Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Brutal Violence, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NL",
-      "warnings": [
-        "Brutal Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Brutal Violence, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NS",
-      "warnings": [
-        "Brutal Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Brutal Violence, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Brutal Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Brutal Violence, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
     },
     {
       "provinceCode": "PE",
-      "warnings": [
-        "Brutal Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Brutal Violence, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "QC",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "13ans+",
       "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
     },
     {
       "provinceCode": "SK",
-      "warnings": [
-        "Frequent Violence"
-      ],
+      "warnings": "Frequent Violence",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
     }
@@ -3037,63 +2403,52 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to Classification"
     },
     {
       "provinceCode": "BC",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification"
     },
     {
       "provinceCode": "MB",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "NB",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification"
     },
     {
       "provinceCode": "NL",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "NS",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification"
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Not Recommended for Children"
-      ],
+      "warnings": "Not Recommended for Children",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
     },
     {
       "provinceCode": "PE",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "QC",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "May be viewed by persons of all ages."
     },
     {
       "provinceCode": "SK",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     }
@@ -3120,78 +2475,59 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [],
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Coarse Language"
-      ],
+      "warnings": "Coarse Language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Coarse Language"
-      ],
+      "warnings": "Coarse Language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "NB",
-      "warnings": [],
       "rating": "N/A",
       "ratingDescription": "Rating not available"
     },
     {
       "provinceCode": "NL",
-      "warnings": [],
       "rating": "N/A",
       "ratingDescription": "Rating not available."
     },
     {
       "provinceCode": "NS",
-      "warnings": [],
       "rating": "N/A",
       "ratingDescription": "Rating not available"
     },
     {
       "provinceCode": "ON",
-      "warnings": [],
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "PE",
-      "warnings": [],
       "rating": "N/A",
       "ratingDescription": "Rating not available."
     },
     {
       "provinceCode": "QC",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "May be viewed by persons of all ages."
     },
     {
       "provinceCode": "SK",
-      "warnings": [
-        "Coarse Language"
-      ],
+      "warnings": "Coarse Language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     }
   ],
-  "billboard": {
-    "alt": "TAYLOR SWIFT THE ERAS TOUR",
-    "mobileImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Mobile-Eras_tour_20230831130021_0.jpg",
-    "tabletImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Tablet-Eras_tour_20230831130028_0.jpg",
-    "desktopImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Desktop_Normal-Eras_tour_20230831130033_0.jpg",
-    "largeDesktopImageUrl": "https://mediafiles.cineplex.com/cineplex-v2/billboard-block/MDP-Desktop_Wide-Eras_tour_20230831130038_0.jpg"
-  },
+
   "warning": "TAYLOR SWIFT|THE ERAS TOUR contains several sequences with flashing lights that may affect those who are susceptible to photo sensitive epilepsy or have other photo sensitivities............Tuesday discounted pricing and Scene+ discount do not apply to tickets purchased for this event...............",
   "languageCode": "EN",
   "movieLanguage": "English",
@@ -3212,67 +2548,54 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [
-        "Not Recommended for Young Children"
-      ],
+      "warnings": "Not Recommended for Young Children",
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Coarse & sexual language"
-      ],
+      "warnings": "Coarse & sexual language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Coarse & sexual language"
-      ],
+      "warnings": "Coarse & sexual language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "NB",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Suitable for persons of all ages."
     },
     {
       "provinceCode": "NL",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Suitable for persons of all ages."
     },
     {
       "provinceCode": "NS",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Suitable for persons of all ages."
     },
     {
       "provinceCode": "ON",
-      "warnings": [],
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "PE",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Suitable for persons of all ages."
     },
     {
       "provinceCode": "QC",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "May be viewed by persons of all ages."
     },
     {
       "provinceCode": "SK",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     }
@@ -3302,90 +2625,61 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [
-        "Gory Brutal Violence"
-      ],
+      "warnings": "Gory Brutal Violence",
       "rating": "18A",
       "ratingDescription": "Suitable for viewing by person 18 years of age or older."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Gory Scenes",
-        "Explicit violence"
-      ],
+      "warnings": "Gory Scenes, Explicit violence",
       "rating": "18A",
       "ratingDescription": "Persons under 18 years of age must be accomplied by an adult."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Gory Scenes",
-        "Explicit violence"
-      ],
+      "warnings": "Gory Scenes, Explicit violence",
       "rating": "18A",
       "ratingDescription": "Suitable for persons 18 years of age and older."
     },
     {
       "provinceCode": "NB",
-      "warnings": [
-        "Brutal Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Brutal Violence, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NL",
-      "warnings": [
-        "Brutal Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Brutal Violence, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NS",
-      "warnings": [
-        "Brutal Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Brutal Violence, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Violence",
-        "Gory Scenes"
-      ],
+      "warnings": "Violence, Gory Scenes",
       "rating": "18A",
       "ratingDescription": "Suitable for persons 18 years of age or older. Persons under 18 must be accompanied by an adult."
     },
     {
       "provinceCode": "PE",
-      "warnings": [
-        "Brutal Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Brutal Violence, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "QC",
-      "warnings": [
-        "Violence",
-        "Horror"
-      ],
+      "warnings": "Violence, Horror",
       "rating": "13ans+",
       "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
     },
     {
       "provinceCode": "SK",
-      "warnings": [
-        "Gory Scenes",
-        "Explicit violence"
-      ],
+      "warnings": "Gory Scenes, Explicit violence",
       "rating": "18A",
       "ratingDescription": "Suitable for persons 18 years of age or older. Persons under 18 must be accompanied by an adult."
     }
@@ -3437,24 +2731,6 @@
   "cineplexId": 35596
 },
 {
-  "id": "6563a43f92c740d467db93fb",
-  "name": "The Book of Clarence",
-  "releaseDate": "2024-01-12",
-  "runtimeInMinutes": 999,
-  "genres": [
-    "Drama",
-    "Period"
-  ],
-  "starring": "LaKeith Stanfield, Omar Sy, R.J. Cyler, Benedict Cumberbatch, James McAvoy, Anna Diop, Teyana Taylor, David Oyelowo, Alfre Woodard, Marianne Jean-Baptiste, Caleb McLaughlin, Babs Olusanmokun, Eric Kofi Abrefa, Nicholas Pinnock, Micheal Ward, Chase W. Dillon, Tom Glynn-Carney, Tom Vaughan-Lawlor",
-  "director": "Jeymes Samuel",
-  "producers": "Jeymes Samuel, James Lassiter, Tendo Nagenda, Jay-Z",
-  "writers": "Jeymes Samuel",
-  "ratings": [],
-  "languageCode": "EN",
-  "movieLanguage": "English",
-  "cineplexId": 35123
-},
-{
   "id": "6563a43f92c740d467db93fd",
   "name": "The Boy and the Heron",
   "releaseDate": "2023-12-08",
@@ -3471,69 +2747,55 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to Classification"
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "NB",
-      "warnings": [],
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "NL",
-      "warnings": [],
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "NS",
-      "warnings": [],
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "PE",
-      "warnings": [],
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "QC",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "SK",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     }
@@ -3600,91 +2862,61 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [
-        "Frightening Scenes",
-        "Gory Scenes"
-      ],
+      "warnings": "Frightening Scenes, Gory Scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Violence",
-        "Frightening Scenes"
-      ],
+      "warnings": "Violence, Frightening Scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Violence",
-        "Frightening Scenes"
-      ],
+      "warnings": "Violence, Frightening Scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age and older."
     },
     {
       "provinceCode": "NB",
-      "warnings": [
-        "Violence",
-        "Disturbing Content"
-      ],
+      "warnings": "Violence, Disturbing Content",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NL",
-      "warnings": [
-        "Violence",
-        "Disturbing Content"
-      ],
+      "warnings": "Violence, Disturbing Content",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NS",
-      "warnings": [
-        "Violence",
-        "Disturbing Content"
-      ],
+      "warnings": "Violence, Disturbing Content",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Violence",
-        "Gory Scenes"
-      ],
+      "warnings": "Violence, Gory Scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
     },
     {
       "provinceCode": "PE",
-      "warnings": [
-        "Violence",
-        "Disturbing Content"
-      ],
+      "warnings": "Violence, Disturbing Content",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "QC",
-      "warnings": [
-        "Violence",
-        "Horror"
-      ],
+      "warnings": "Violence, Horror",
       "rating": "13ans+",
       "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
     },
     {
       "provinceCode": "SK",
-      "warnings": [
-        "Violence",
-        "Frightening Scenes"
-      ],
+      "warnings": "Violence, Frightening Scenes",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
     }
@@ -3714,91 +2946,66 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [
-        "Coarse Language"
-      ],
+      "warnings": "Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Coarse Language"
-      ],
+      "warnings": "Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Coarse Language"
-      ],
+      "warnings": "Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age and older."
     },
     {
       "provinceCode": "NB",
-      "warnings": [
-        "Coarse Language"
-      ],
+      "warnings": "Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NL",
-      "warnings": [
-        "Coarse Language"
-      ],
+      "warnings": "Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NS",
-      "warnings": [
-        "Coarse Language"
-      ],
+      "warnings": "Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Coarse Language"
-      ],
+      "warnings": "Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
     },
     {
       "provinceCode": "PE",
-      "warnings": [
-        "Coarse Language"
-      ],
+      "warnings": "Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "QC",
-      "warnings": [
-        "Not Recommended for Young Children"
-      ],
+      "warnings": "Not Recommended for Young Children",
       "rating": "G",
       "ratingDescription": "May be viewed by persons of all ages."
     },
     {
       "provinceCode": "SK",
-      "warnings": [
-        "Coarse Language"
-      ],
+      "warnings": "Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
     }
   ],
-  "billboard": {
-    "mobileImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Mobile-The_Holdovers_20231107142729_0.jpg",
-    "tabletImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Tablet-The_Holdovers_20231107142733_0.jpg",
-    "desktopImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Desktop_Normal-The_Holdovers_20231107142739_0.jpg",
-    "largeDesktopImageUrl": "https://mediafiles.cineplex.com/cineplex-v2/billboard-block/MDP-Desktop_Wide-The_Holdovers_20231107142744_0.jpg"
-  },
+
   "languageCode": "EN",
   "movieLanguage": "English",
   "smallPosterImageUrl": "/images/posters/35097_130_193.jpg",
@@ -3820,65 +3027,53 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to Classification"
     },
     {
       "provinceCode": "BC",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification"
     },
     {
       "provinceCode": "MB",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "NB",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification"
     },
     {
       "provinceCode": "NL",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "NS",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification"
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "PE",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "QC",
-      "warnings": [
-        "Not Recommended for Young Children"
-      ],
+      "warnings": "Not Recommended for Young Children",
       "rating": "G",
       "ratingDescription": "May be viewed by persons of all ages."
     },
     {
       "provinceCode": "SK",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     }
@@ -3905,86 +3100,61 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [
-        "Violence",
-        "Not Recommended for Young Children"
-      ],
+      "warnings": "Violence, Not Recommended for Young Children",
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "NB",
-      "warnings": [
-        "Violence",
-        "Not Recommended for Young Children"
-      ],
+      "warnings": "Violence, Not Recommended for Young Children",
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "NL",
-      "warnings": [
-        "Violence",
-        "Not Recommended for Young Children"
-      ],
+      "warnings": "Violence, Not Recommended for Young Children",
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "NS",
-      "warnings": [
-        "Violence",
-        "Not Recommended for Young Children"
-      ],
+      "warnings": "Violence, Not Recommended for Young Children",
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "PE",
-      "warnings": [
-        "Violence",
-        "Not Recommended for Young Children"
-      ],
+      "warnings": "Violence, Not Recommended for Young Children",
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "QC",
-      "warnings": [
-        "Not Recommended for Young Children"
-      ],
+      "warnings": "Not Recommended for Young Children",
       "rating": "G",
       "ratingDescription": "May be viewed by persons of all ages."
     },
     {
       "provinceCode": "SK",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     }
@@ -4035,73 +3205,57 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to Classification"
     },
     {
       "provinceCode": "BC",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification"
     },
     {
       "provinceCode": "MB",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "NB",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification"
     },
     {
       "provinceCode": "NL",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "NS",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification"
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "PE",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "QC",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "SK",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     }
   ],
-  "billboard": {
-    "mobileImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Mobile-The_Marvels_20231106220230_0.jpg",
-    "tabletImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Tablet-The_Marvels_20231106220238_0.jpg",
-    "desktopImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Desktop_Normal-The_Marvels_20231106220246_0.jpg",
-    "largeDesktopImageUrl": "https://mediafiles.cineplex.com/cineplex-v2/billboard-block/MDP-Desktop_Wide-The_Marvels_20231106220252_0.jpg"
-  },
+
   "languageCode": "ES",
   "movieLanguage": "Spanish (Dubbed)",
   "smallPosterImageUrl": "/images/posters/35955_130_193.jpg",
@@ -4126,96 +3280,66 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [
-        "Violence",
-        "Not Recommended for Young Children",
-        "Frightening Scenes"
-      ],
+      "warnings": "Violence, Not Recommended for Young Children, Frightening Scenes",
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Coarse Language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Coarse Language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "NB",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "NL",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "NS",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "PE",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "PG",
       "ratingDescription": "Parental guidance is advised."
     },
     {
       "provinceCode": "QC",
-      "warnings": [
-        "Not Recommended for Young Children"
-      ],
+      "warnings": "Not Recommended for Young Children",
       "rating": "G",
       "ratingDescription": "May be viewed by persons of all ages."
     },
     {
       "provinceCode": "SK",
-      "warnings": [
-        "Violence",
-        "Coarse Language"
-      ],
+      "warnings": "Violence, Coarse Language",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     }
   ],
-  "billboard": {
-    "mobileImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Mobile-The_Marvels_20231106215803_0.jpg",
-    "tabletImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Tablet-The_Marvels_20231106215813_0.jpg",
-    "desktopImageUrl": "https://mediafiles.cineplex.com/modernization/MDP-Desktop_Normal-The_Marvels_20231106215821_0.jpg",
-    "largeDesktopImageUrl": "https://mediafiles.cineplex.com/cineplex-v2/billboard-block/MDP-Desktop_Wide-The_Marvels_20231106215830_0.jpg"
-  },
+
   "languageCode": "EN",
   "movieLanguage": "English",
   "smallPosterImageUrl": "/images/posters/28838_130_193.jpg",
@@ -4238,81 +3362,61 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "14A",
       "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age and older."
     },
     {
       "provinceCode": "NB",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NL",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NS",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
     },
     {
       "provinceCode": "PE",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "QC",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "13ans+",
       "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
     },
     {
       "provinceCode": "SK",
-      "warnings": [
-        "Violence"
-      ],
+      "warnings": "Violence",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
     }
@@ -4339,61 +3443,51 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Suitable for viewing by all ages."
     },
     {
       "provinceCode": "BC",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Suitable for viewing by persons of all ages."
     },
     {
       "provinceCode": "MB",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "General Viewing.  Suitable of all audiences."
     },
     {
       "provinceCode": "NB",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Suitable for persons of all ages."
     },
     {
       "provinceCode": "NL",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Suitable for persons of all ages."
     },
     {
       "provinceCode": "NS",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Suitable for persons of all ages."
     },
     {
       "provinceCode": "ON",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Suitable for viewing by persons of all ages."
     },
     {
       "provinceCode": "PE",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Suitable for persons of all ages."
     },
     {
       "provinceCode": "QC",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "May be viewed by persons of all ages."
     },
     {
       "provinceCode": "SK",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Acceptable for all age groups."
     }
@@ -4404,53 +3498,6 @@
   "mediumPosterImageUrl": "/images/posters/33636_320_470.jpg",
   "largePosterImageUrl": "/images/posters/33636_768_1024.jpg",
   "cineplexId": 33636
-},
-{
-  "id": "6563a43f92c740d467db9472",
-  "name": "Underdoggs",
-  "releaseDate": "2024-01-26",
-  "runtimeInMinutes": 999,
-  "genres": [
-    "Comedy",
-    "Sports"
-  ],
-  "starring": "Snoop Dogg, Tika Sumpter, Mike Epps, Andrew Schulz, George Lopez, Adan James Carrillo, Alexander Michael Gordon",
-  "director": "Charles Stone III",
-  "producers": "Snoop Dogg, Kenya Barris, Mychelle Deschamps, Constance Schwartz, Jonathan Glickman",
-  "writers": "Snoop Dogg, Constance Schwartz",
-  "ratings": [],
-  "languageCode": "EN",
-  "movieLanguage": "English",
-  "cineplexId": 36002
-},
-{
-  "id": "6563a43f92c740d467db9474",
-  "name": "Unsung Hero",
-  "releaseDate": "2024-04-26",
-  "runtimeInMinutes": 113,
-  "genres": [
-    "Drama"
-  ],
-  "synopsis": "When David Smallbone's successful music company collapses, he moves his family from Australia to the States, searching for a brighter future. With nothing more than their seven children, suitcases, and their love of music, David (for KING + COUNTRY's Joel Smallbone) and his pregnant wife Helen (Daisy Betts) set out to rebuild their lives. Based on a remarkable true story, Helen's faith stands against all odds and inspires her husband and children to hold onto theirs. With their own dreams on hold, David and Helen begin to realize the musical prowess in their children, who would go on to become two of the most successful acts in Inspirational Music history: five-time Grammy Award-winning artists for KING + COUNTRY and Rebecca St. James.",
-  "starring": "Joel Smallbone, Daisy Betts, Kirrilee Berger, Jonathan Jackson, Candace Cameron Bure, Terry O'Quinn, Lucas Black, Hillary Scott",
-  "director": "Richard Ramsey, Joel Smallbone",
-  "producers": "Steve Barnett, Alan Powell, David Smallbone, Luke Smallbone, Justin Tolley, Joshua Walsh",
-  "writers": "Richard Ramsey, Joel Smallbone",
-  "ratings": [],
-  "languageCode": "EN",
-  "movieLanguage": "English",
-  "cineplexId": 35997
-},
-{
-  "id": "6563a43f92c740d467db9476",
-  "name": "Untitled Fourth Film Directed By Jordan Peele",
-  "releaseDate": "2024-12-25",
-  "runtimeInMinutes": 999,
-  "genres": [],
-  "ratings": [],
-  "languageCode": "EN",
-  "movieLanguage": "English",
-  "cineplexId": 35185
 },
 {
   "id": "6563a43f92c740d467db9478",
@@ -4464,76 +3511,56 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to Classification"
     },
     {
       "provinceCode": "BC",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification"
     },
     {
       "provinceCode": "MB",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "NB",
-      "warnings": [
-        "Sexual Content",
-        "Coarse Language"
-      ],
+      "warnings": "Sexual Content, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NL",
-      "warnings": [
-        "Sexual Content",
-        "Coarse Language"
-      ],
+      "warnings": "Sexual Content, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "NS",
-      "warnings": [
-        "Sexual Content",
-        "Coarse Language"
-      ],
+      "warnings": "Sexual Content, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Sexual Content",
-        "Coarse Language"
-      ],
+      "warnings": "Sexual Content, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14 years of age or older. Persons under 14 must be accompanied by an adult."
     },
     {
       "provinceCode": "PE",
-      "warnings": [
-        "Sexual Content",
-        "Coarse Language"
-      ],
+      "warnings": "Sexual Content, Coarse Language",
       "rating": "14A",
       "ratingDescription": "Suitable for persons 14+.  Persons under 14 must be accompanied by a person 19+."
     },
     {
       "provinceCode": "QC",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "SK",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     }
@@ -4558,61 +3585,51 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to Classification"
     },
     {
       "provinceCode": "BC",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification"
     },
     {
       "provinceCode": "MB",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "NB",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification"
     },
     {
       "provinceCode": "NL",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "NS",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification"
     },
     {
       "provinceCode": "ON",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Suitable for viewing by persons of all ages."
     },
     {
       "provinceCode": "PE",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "QC",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "SK",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     }
@@ -4638,61 +3655,51 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Suitable for viewing by all ages."
     },
     {
       "provinceCode": "BC",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Suitable for viewing by persons of all ages."
     },
     {
       "provinceCode": "MB",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "General Viewing.  Suitable of all audiences."
     },
     {
       "provinceCode": "NB",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Suitable for persons of all ages."
     },
     {
       "provinceCode": "NL",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Suitable for persons of all ages."
     },
     {
       "provinceCode": "NS",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Suitable for persons of all ages."
     },
     {
       "provinceCode": "ON",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Suitable for viewing by persons of all ages."
     },
     {
       "provinceCode": "PE",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Suitable for persons of all ages."
     },
     {
       "provinceCode": "QC",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "May be viewed by persons of all ages."
     },
     {
       "provinceCode": "SK",
-      "warnings": [],
       "rating": "G",
       "ratingDescription": "Acceptable for all age groups."
     }
@@ -4745,75 +3752,56 @@
   "ratings": [
     {
       "provinceCode": "AB",
-      "warnings": [
-        "Substance Abuse"
-      ],
+      "warnings": "Substance Abuse",
       "rating": "14A",
       "ratingDescription": "Suitable for viewing by persons 14 years of age or older."
     },
     {
       "provinceCode": "BC",
-      "warnings": [
-        "Violence",
-        "Drug Use"
-      ],
+      "warnings": "Violence, Drug Use",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "MB",
-      "warnings": [
-        "Violence",
-        "Drug Use"
-      ],
+      "warnings": "Violence, Drug Use",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "NB",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification"
     },
     {
       "provinceCode": "NL",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "NS",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification"
     },
     {
       "provinceCode": "ON",
-      "warnings": [
-        "Drug Use",
-        "Violent Scenes"
-      ],
+      "warnings": "Drug Use, Violent Scenes",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     },
     {
       "provinceCode": "PE",
-      "warnings": [],
       "rating": "STC",
       "ratingDescription": "Subject to classification."
     },
     {
       "provinceCode": "QC",
-      "warnings": [],
       "rating": "13ans+",
       "ratingDescription": "May be viewed by persons 13 years of age or over. Persons under 13 must be accompanied by an adult."
     },
     {
       "provinceCode": "SK",
-      "warnings": [
-        "Violence",
-        "Drug Use"
-      ],
+      "warnings": "Violence, Drug Use",
       "rating": "PG",
       "ratingDescription": "Parental guidance advised."
     }

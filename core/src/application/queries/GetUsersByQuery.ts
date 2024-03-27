@@ -3,12 +3,7 @@ import {User} from "../../domain/entities/User";
 import {ByPattern} from "./QueryCriteria";
 
 export type UsersQuery = {
-    id: string | [string];
-    name?: never;
-    email?: never;
-    phoneNumber?: never;
-} | {
-    id?: never;
+    id?: string | string[];
     name?: string | ByPattern;
     email?: string | ByPattern;
     phoneNumber?: string | ByPattern;
@@ -22,7 +17,7 @@ declare module "../index" {
 
 export class GetUsersByQuery extends QueryUseCase<UsersQuery, Omit<User, "password">[]> {
     constructor(invoker?: UseCaseInvoker<UsersQuery, Omit<User, "password">[]>) {
-        super(GetUsersByQuery.name, invoker);
+        super("GetUsersByQuery", invoker);
     }
 }
 
