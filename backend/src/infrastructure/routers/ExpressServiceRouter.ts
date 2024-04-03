@@ -1,8 +1,5 @@
 import express, {Router} from "express"
-import {CommandUseCase} from "cinetex-core/dist/application/UseCase"
-import {QueryUseCase} from "cinetex-core/dist/application/UseCase"
-import {RequestUseCase} from "cinetex-core/dist/application/UseCase"
-import {UseCase} from "cinetex-core/dist/application/UseCase"
+import {CommandUseCase, QueryUseCase, RequestUseCase, UseCase} from "cinetex-core/dist/application/UseCase"
 import {UseCaseCollection} from "cinetex-core/dist/application/UseCaseCollection"
 import {ParamsDictionary, Request, RequestHandler} from "express-serve-static-core";
 import {StatusCodes} from "http-status-codes";
@@ -14,8 +11,9 @@ import {
     AuthenticationException,
     AuthorizationException
 } from "cinetex-core/dist/application/exceptions/Exceptions";
+import {Repositories} from "../../application/repositories/Repositories";
 
-export function ExpressServiceRouter(interactors: UseCaseCollection): Router {
+export function ExpressServiceRouter(interactors: UseCaseCollection, repositories: Repositories): Router {
     const router: Router = express.Router()
 
     async function getCredentials(req:  Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>): Promise<Credentials | undefined> {
@@ -55,12 +53,19 @@ export function ExpressServiceRouter(interactors: UseCaseCollection): Router {
             try {
                 logUseCaseInvocation(interactor, req.body)
                 const credentials = await getCredentials(req)
-                const result = await interactor.invoke(req.body, credentials)
-                if (result === undefined) {
-                    res.status(StatusCodes.NOT_FOUND).json(result).end()
-                } else {
-                    res.status(StatusCodes.OK).json(result).end()
-                }
+                await repositories.transaction(async () => {
+                    if (credentials !== undefined) {
+                        await repositories.User.setUserCredentials(credentials)
+                    }
+                    try {
+                        const result = await interactor.invoke(req.body, credentials)
+                        res.status(result !== undefined ? StatusCodes.OK : StatusCodes.NOT_FOUND).json(result).end()
+                    } finally {
+                        if (credentials !== undefined) {
+                            await repositories.User.clearUserCredentials()
+                        }
+                    }
+                });
             } catch (e: any) {
                 handleException(e, res)
             }
@@ -72,8 +77,17 @@ export function ExpressServiceRouter(interactors: UseCaseCollection): Router {
             try {
                 logUseCaseInvocation(interactor, req.body)
                 const credentials = await getCredentials(req)
-                const result = await interactor.invoke(req.body, credentials)
-                res.status(StatusCodes.OK).json(result).end()
+                if (credentials !== undefined) {
+                    await repositories.User.setUserCredentials(credentials)
+                }
+                try {
+                    const result = await interactor.invoke(req.body, credentials)
+                    res.status(StatusCodes.OK).json(result).end()
+                } finally {
+                    if (credentials !== undefined) {
+                        await repositories.User.clearUserCredentials()
+                    }
+                }
             } catch (e: any) {
                 handleException(e, res)
             }
@@ -83,8 +97,6 @@ export function ExpressServiceRouter(interactors: UseCaseCollection): Router {
     function commandHandler<Command>(interactor: CommandUseCase<Command>): RequestHandler {
         return requestHandler<Command, void>(interactor)
     }
-
-
 
     for (const interactor of interactors) {
         const path = `/${interactor.type}/${interactor.name}`

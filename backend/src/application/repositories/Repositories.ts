@@ -5,9 +5,12 @@ import {BookingRepository} from "./BookingRepository";
 import {UserRepository} from "./UserRepository";
 
 export interface Repositories {
+
     readonly Movie: MovieRepository
     readonly Theatre: TheatreRepository
     readonly Schedule: ScheduleRepository
     readonly Booking: BookingRepository
     readonly User: UserRepository
+
+    transaction(callback: (tx: any) => Promise<void>): Promise<void>
 }

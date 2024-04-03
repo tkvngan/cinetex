@@ -1,4 +1,4 @@
-import {Attributes, DataTypes, Model, Op, Sequelize} from 'sequelize';
+import {Attributes, DataTypes, Model, Op, QueryTypes, Sequelize} from 'sequelize';
 import {UserRepository} from "../../../application/repositories/UserRepository";
 import {User} from "cinetex-core/dist/domain/entities/User";
 import {UsersQuery} from "cinetex-core/dist/application/queries";
@@ -6,6 +6,7 @@ import {bracket, queryField, removeNulls, sqlWherePredicate} from "./SequelizeUt
 import {WhereOptions} from "sequelize/types/model";
 import dedent from "dedent";
 import {TheatreModel} from "./SequelizeTheatreRepository";
+import {Credentials} from "cinetex-core/dist/security/Credentials";
 
 const UserAttributes: Attributes<Model> = {
     id: {
@@ -135,6 +136,156 @@ export class SequelizeUserRepository implements UserRepository {
         return undefined;
     }
 
+    async createUserCredentialsPackage(): Promise<void> {
+        await this.sequelize.query(dedent`
+        CREATE OR REPLACE PACKAGE USER_CREDENTIALS AS
+            TYPE CREDENTIALS_RECORD IS RECORD (
+                userId NVARCHAR2(255),
+                email NVARCHAR2(255),
+                firstName NVARCHAR2(255),
+                lastName NVARCHAR2(255),
+                token NVARCHAR2(1024),
+                attributes NVARCHAR2(1024)
+            );
+        
+            PROCEDURE Set(
+                userId NVARCHAR2,
+                email NVARCHAR2 DEFAULT NULL,
+                firstName NVARCHAR2 DEFAULT NULL,
+                lastName NVARCHAR2 DEFAULT NULL,
+                token NVARCHAR2 DEFAULT NULL,
+                attributes NVARCHAR2 DEFAULT NULL
+            );
+            
+            PROCEDURE Clear;
+            
+            FUNCTION Get RETURN CREDENTIALS_RECORD;
+            
+            FUNCTION GetUserId RETURN NVARCHAR2;
+            FUNCTION GetEmail RETURN NVARCHAR2;
+            FUNCTION GetFirstName RETURN NVARCHAR2;
+            FUNCTION GetLastName RETURN NVARCHAR2;
+            FUNCTION GetToken RETURN NVARCHAR2;
+            FUNCTION GetAttributes RETURN NVARCHAR2;    
+        END USER_CREDENTIALS;;
+        `, { type: QueryTypes.RAW })
+    }
+
+    async createUserCredentialsPackageBody(): Promise<void> {
+        await this.sequelize.query(dedent`
+        CREATE OR REPLACE PACKAGE BODY USER_CREDENTIALS AS
+            rec CREDENTIALS_RECORD := NULL;
+        
+            PROCEDURE Set(
+                userId NVARCHAR2,
+                email NVARCHAR2 DEFAULT NULL,
+                firstName NVARCHAR2 DEFAULT NULL,
+                lastName NVARCHAR2 DEFAULT NULL,
+                token NVARCHAR2 DEFAULT NULL,
+                attributes NVARCHAR2 DEFAULT NULL
+            ) IS
+            BEGIN
+                rec := CREDENTIALS_RECORD(userId, email, firstName, lastName, token, attributes);
+            END Set;
+        
+            PROCEDURE Clear IS
+            BEGIN
+                rec := NULL;
+            END Clear;
+            
+            FUNCTION Get RETURN CREDENTIALS_RECORD IS
+            BEGIN
+                RETURN rec;
+            END Get;
+            
+            FUNCTION GetUserId RETURN NVARCHAR2 IS
+            BEGIN
+                RETURN rec.userId;
+            END GetUserId;
+            
+            FUNCTION GetEmail RETURN NVARCHAR2 IS
+            BEGIN
+                RETURN rec.email;
+            END GetEmail;
+            
+            FUNCTION GetFirstName RETURN NVARCHAR2 IS
+            BEGIN
+                RETURN rec.firstName;
+            END GetFirstName;
+            
+            FUNCTION GetLastName RETURN NVARCHAR2 IS
+            BEGIN
+                RETURN rec.lastName;
+            END GetLastName;
+            
+            FUNCTION GetToken RETURN NVARCHAR2 IS
+            BEGIN
+                RETURN rec.token;
+            END GetToken;
+            
+            FUNCTION GetAttributes RETURN NVARCHAR2 IS
+            BEGIN
+                RETURN rec.attributes;
+            END GetAttributes;
+        END USER_CREDENTIALS;;
+        `, { type: QueryTypes.RAW })
+    }
+
+    async setUserCredentials(credentials: Credentials): Promise<void> {
+        await this.sequelize.query(dedent`
+            BEGIN
+                USER_CREDENTIALS.Set($userId, $email, $firstName, $lastName, $token, $attributes);
+            END;
+            `, {
+            bind: {
+                userId: credentials.user.id,
+                email: credentials.user.email,
+                firstName: credentials.user.firstName,
+                lastName: credentials.user.lastName,
+                token: credentials.token,
+                attributes: (credentials.attributes ? JSON.stringify(credentials.attributes) : null)
+            },
+            type: QueryTypes.RAW
+        })
+    }
+
+    async getUserCredentials(): Promise<Credentials | undefined> {
+        const results: any[] = await this.sequelize.query(dedent`
+            SELECT 
+                USER_CREDENTIALS.GetUserId AS "userId",
+                USER_CREDENTIALS.GetEmail AS "email",
+                USER_CREDENTIALS.GetFirstName AS "firstName",
+                USER_CREDENTIALS.GetLastName AS "lastName",
+                USER_CREDENTIALS.GetToken AS "token",
+                USER_CREDENTIALS.GetAttributes AS "attributes" from DUAL;
+        `, { type: QueryTypes.SELECT })
+        if (results.length === 1) {
+            const result = results[0]
+            if (result.userId === null) {
+                return undefined
+            }
+            const credentials = <Credentials> {
+                user: {
+                    id: result.userId,
+                    email: result.email,
+                    firstName: result.firstName,
+                    lastName: result.lastName,
+                    roles: []
+                },
+                token: result.token,
+                attributes: result.attributes ? JSON.parse(result.attributes) : undefined
+            }
+            return { ...credentials }
+        }
+        return undefined
+    }
+
+    async clearUserCredentials(): Promise<void> {
+        await this.sequelize.query(dedent`
+        BEGIN 
+            USER_CREDENTIALS.Clear; 
+        END;`, { type: QueryTypes.RAW })
+    }
 }
 
 function createUserWhereClause(query: UsersQuery): WhereOptions<typeof UserAttributes> {
@@ -186,3 +337,4 @@ export function createUserSubqueryClause(query: UsersQuery): string | undefined 
             )`
     } return undefined;
 }
+

@@ -60,18 +60,18 @@ async function installSampleDataIfEnabled(repositories: Repositories): Promise<v
 async function main(): Promise<void> {
     setObjectIdFactory(() => new ObjectId().toString("hex"))
 
-    await startMongoDBMemoryServerIfEnabled()
-    await connectMongoDBServer()
-    const repositories: Repositories = new MongoDBRepositories()
+    // await startMongoDBMemoryServerIfEnabled()
+    // await connectMongoDBServer()
+    // const repositories: Repositories = new MongoDBRepositories()
 
-    // let sequelize: Sequelize = new Sequelize("oracle://cinetex:goodExample@localhost:1521/xe", { omitNull: true })
-    // let repositories: Repositories = new SequelizeRepositories(sequelize)
-    // await sequelize.sync()
+    let sequelize: Sequelize = new Sequelize("oracle://cinetex:goodExample@localhost:1521/xe", { omitNull: true })
+    let repositories: SequelizeRepositories = new SequelizeRepositories(sequelize)
+    await repositories.sync({force: true})
 
     await installSampleDataIfEnabled(repositories)
     const rootRouter = ExpressRootPathRouter(config.ROOT)
     const interactors = new UseCaseInteractors(repositories)
-    const serviceRouter = ExpressServiceRouter(interactors)
+    const serviceRouter = ExpressServiceRouter(interactors, repositories)
     const server = ExpressServer([["/service", serviceRouter], ["/", rootRouter]])
     const port = parseInt(config.PORT)
     server.listen(port, () => {

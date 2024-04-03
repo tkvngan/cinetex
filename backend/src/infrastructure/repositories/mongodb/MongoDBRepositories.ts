@@ -59,5 +59,13 @@ export class MongoDBRepositories implements Repositories {
     readonly Schedule = new MongoDBScheduleRepository(this.scheduleModel, this.movieModel, this.theatreModel)
     readonly Booking = new MongoDBBookingRepository(this.bookingModel, this.theatreModel, this.movieModel, this.userModel)
     readonly User = new MongoDBUserRepository(this.userModel)
+
+    async sync(): Promise<void> {
+        // Do nothing
+    }
+
+    async transaction(callback: (tx: any) => Promise<void>): Promise<void> {
+        await callback(undefined)
+    }
 }
 

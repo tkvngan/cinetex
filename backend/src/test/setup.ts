@@ -4,5 +4,5 @@ import {JestConfigWithTsJest} from "ts-jest";
 
 
 export default async function setup(globalConfig: Config.GlobalConfig, projectConfig: Config.ProjectConfig) {
-    await startMongoDBMemoryServer()
+    // await startMongoDBMemoryServer()
 }

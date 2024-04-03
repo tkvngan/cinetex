@@ -1,7 +1,7 @@
 import {Movie} from "cinetex-core/dist/domain/entities/Movie";
 import {MoviesQuery} from "cinetex-core/dist/application/queries";
-import {getRepositoriesForTest} from "./ForTest";
-import {clearTestData, loadTestData, testMovies, testMovieX} from "./Data";
+import {getRepositoriesForTest} from "../test-setup";
+import {clearTestData, loadTestData, testMovies, testMovieX} from "../test-data";
 
 describe.each(getRepositoriesForTest())('Test MovieRepository', (repositories) => {
 

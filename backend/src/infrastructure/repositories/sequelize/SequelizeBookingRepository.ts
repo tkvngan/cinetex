@@ -1,9 +1,9 @@
-import {Attributes, DataTypes, Model, Op, Sequelize} from "sequelize";
+import {Attributes, DatabaseError, DataTypes, Model, Op, Sequelize} from "sequelize";
 import {BookingRepository} from "../../../application/repositories/BookingRepository";
 import {Booking, Ticket} from "cinetex-core/dist/domain/entities/Booking";
 import {BookingsQuery} from "cinetex-core/dist/application/queries";
 
-import {bracket, queryField, sqlWherePredicate} from "./SequelizeUtils";
+import {bracket, queryField, removeNulls, sqlWherePredicate} from "./SequelizeUtils";
 import {createMovieSubqueryClause} from "./SequelizeMovieRepository";
 import {createTheatreSubqueryClause} from "./SequelizeTheatreRepository";
 import {createUserSubqueryClause} from "./SequelizeUserRepository";
@@ -26,7 +26,9 @@ const TicketAttributes: Attributes<Model> = {
     showTime: { type: DataTypes.STRING, allowNull: false, primaryKey: true },
     row: { type: DataTypes.NUMBER, allowNull: false, primaryKey: true },
     column: { type: DataTypes.NUMBER, allowNull: false, primaryKey: true },
-    price: { type: DataTypes.NUMBER, allowNull: false }
+    price: { type: DataTypes.NUMBER, allowNull: false },
+    ticketNo: { type: DataTypes.NUMBER, allowNull: true },
+    token: { type: DataTypes.STRING(1024), allowNull: true }
 }
 
 type TicketData = Omit<Ticket, "seat"> & {
@@ -80,6 +82,9 @@ function toTicket(ticketData: TicketData): Ticket {
     delete ticket.bookingId
     delete ticket.row
     delete ticket.column
+    if (ticket.ticketNo === null) {
+        delete ticket.ticketNo
+    }
     return ticket as Ticket
 }
 
@@ -113,6 +118,14 @@ export class BookingModel extends Model<BookingData> {
     }
 }
 
+function sqlErrorCode(e: any): number | undefined {
+    if (e instanceof DatabaseError) {
+        const original = e.original as Error & { errorNum?: number };
+        return original.errorNum
+    }
+    throw e;
+}
+
 export class SequelizeBookingRepository implements BookingRepository {
 
     constructor(private readonly sequelize: Sequelize) {
@@ -130,6 +143,39 @@ export class SequelizeBookingRepository implements BookingRepository {
         })
         BookingModel.hasMany(TicketModel, { foreignKey: "bookingId", as: "tickets" })
         TicketModel.belongsTo(BookingModel, { foreignKey: "bookingId" })
+    }
+
+    async createTicketSequence(): Promise<void> {
+        try {
+            await this.sequelize.query(
+                "CREATE SEQUENCE TICKET_SEQ START WITH 1000 INCREMENT BY 1 MAXVALUE 999999999", {raw: true});
+        } catch (e) {
+            console.log(e)
+            if (sqlErrorCode(e) === 955) {
+                return;
+            }
+            throw e;
+        }
+    }
+
+    async createTicketTrigger(): Promise<void> {
+        try {
+            await this.sequelize.query(dedent`
+                CREATE OR REPLACE TRIGGER TICKET_TRIGGER
+                BEFORE INSERT ON TICKET
+                FOR EACH ROW
+                BEGIN
+                    SELECT TICKET_SEQ.NEXTVAL, USER_CREDENTIALS.GetToken() 
+                    INTO :NEW."ticketNo", :NEW."token" FROM DUAL;
+                END;
+            `, {raw: true});
+        } catch (e) {
+            console.log(e)
+            if (sqlErrorCode(e) === 4080) {
+                return;
+            }
+            throw e;
+        }
     }
 
     async getAllBookings(): Promise<Booking[]> {

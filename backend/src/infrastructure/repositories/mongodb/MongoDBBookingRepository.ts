@@ -25,7 +25,9 @@ const TicketDefinition: SchemaDefinition = {
     showDate: {type: String, required: true},
     showTime: {type: String, required: true},
     seat: {type: SeatPositionSchema, required: true},
-    price: {type: Number, required: true}
+    price: {type: Number, required: true},
+    ticketNo: {type: Number, required: false},
+    token: {type: String, required: false}
 }
 
 const TicketSchema = new Schema(TicketDefinition, DefaultSubSchemaOptions)

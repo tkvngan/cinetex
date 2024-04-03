@@ -1,6 +1,6 @@
-import {getRepositoriesForTest} from "./ForTest";
+import {getRepositoriesForTest} from "../test-setup";
 import {newObjectId} from "cinetex-core/dist/domain/types";
-import {clearTestData, loadTestData, testTheatres, testTheatreX} from "./Data";
+import {clearTestData, loadTestData, testTheatres, testTheatreX} from "../test-data";
 import {Theatre} from "cinetex-core/dist/domain/entities/Theatre";
 
 describe.each(getRepositoriesForTest())('TheatreRepository', (repositories) => {

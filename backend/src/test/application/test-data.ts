@@ -3,7 +3,7 @@ import {Movie} from "cinetex-core/dist/domain/entities/Movie";
 import {User} from "cinetex-core/dist/domain/entities/User";
 import {Booking} from "cinetex-core/dist/domain/entities/Booking";
 import {Schedule} from "cinetex-core/dist/domain/entities/Schedule";
-import {Repositories} from "../../../application/repositories/Repositories";
+import {Repositories} from "../../application/repositories/Repositories";
 
 export const testMovies: readonly Movie[] = [
     {

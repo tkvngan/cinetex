@@ -1,10 +1,13 @@
 import {UserRepository} from "../../../application/repositories/UserRepository";
 import {filterField, filterIdField, toObjectId} from "./MongoDBUtils";
-import {FilterQuery, Model, Schema, SchemaDefinition} from "mongoose";
+import {FilterQuery, model, Model, Schema, SchemaDefinition} from "mongoose";
 import {User} from "cinetex-core/dist/domain/entities/User";
 import {UsersQuery} from "cinetex-core/dist/application/queries";
 import {DefaultSchemaOptions} from "./MongoDBRepositories";
 import {MongoDBRepository} from "./MongoDBRepository";
+import {id} from "inversify";
+import {query} from "express";
+import {Credentials} from "cinetex-core/dist/security/Credentials";
 
 export const UserSchemaDefinition: SchemaDefinition = {
     email: {type: String, required: true, unique: true, index: true},
@@ -61,6 +64,18 @@ export class MongoDBUserRepository extends MongoDBRepository<User> implements Us
 
     async updateUserById(id: string, user: Partial<Omit<User, "id">>): Promise<User | undefined> {
         return (await this.model.findByIdAndUpdate(toObjectId(id), {$set: this.fromObject({...user})}, {returnDocument: "after"}))?.toObject(this.toObjectOptions)
+    }
+
+    clearUserCredentials(): Promise<void> {
+        return Promise.resolve(undefined);
+    }
+
+    getUserCredentials(): Promise<Credentials | undefined> {
+        return Promise.resolve(undefined);
+    }
+
+    setUserCredentials(credentials: Credentials): Promise<void> {
+        return Promise.resolve(undefined);
     }
 
 }

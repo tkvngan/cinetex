@@ -17,6 +17,8 @@ export type Ticket = Readonly<{
     showTime: string
     seat: SeatPosition
     price: number,
+    ticketNo?: number,
+    token?: string,
 }>
 
 export type SeatPosition = Readonly<{

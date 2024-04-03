@@ -1,7 +1,7 @@
 import {ScheduleRepository} from "../../../application/repositories/ScheduleRepository";
 import {Schedule} from "cinetex-core/dist/domain/entities/Schedule";
-import {getRepositoriesForTest} from "./ForTest";
-import {clearTestData, loadTestData, testSchedules, testScheduleX, testTheatres} from "./Data";
+import {getRepositoriesForTest} from "../test-setup";
+import {clearTestData, loadTestData, testSchedules, testScheduleX, testTheatres} from "../test-data";
 
 describe.each(getRepositoriesForTest())('Test ScheduleRepository', (repositories) => {
 
