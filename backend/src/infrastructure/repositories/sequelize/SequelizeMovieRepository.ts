@@ -7,127 +7,41 @@ import dedent from "dedent";
 import {WhereOptions} from "sequelize/types/model";
 
 const MovieAttributes: Attributes<Model> = {
-    id: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        primaryKey: true
-    },
-    name: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    releaseDate: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    runtimeInMinutes: {
-        type: DataTypes.NUMBER,
-        allowNull: false
-    },
-    synopsis: {
-        type: DataTypes.TEXT,
-        allowNull: true
-    },
-    starring: {
-        type: DataTypes.STRING(1000),
-        allowNull: true
-    },
-    director: {
-        type: DataTypes.STRING,
-        allowNull: true
-    },
-    producers: {
-        type: DataTypes.STRING,
-        allowNull: true
-    },
-    writers: {
-        type: DataTypes.STRING,
-        allowNull: true
-    },
-    warning: {
-        type: DataTypes.STRING(1000),
-        allowNull: true
-    },
-    languageCode: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    movieLanguage: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    movieSubtitleLanguage: {
-        type: DataTypes.STRING,
-        allowNull: true
-    },
-
-    smallPosterImageUrl: {
-        type: DataTypes.STRING,
-        allowNull: true
-    },
-    mediumPosterImageUrl: {
-        type: DataTypes.STRING,
-        allowNull: true
-    },
-    largePosterImageUrl: {
-        type: DataTypes.STRING,
-        allowNull: true
-    },
-    trailerUrl: {
-        type: DataTypes.STRING,
-        allowNull: true
-    },
-    cineplexId: {
-        type: DataTypes.NUMBER,
-        allowNull: true
-    },
+    id: {type: DataTypes.STRING, allowNull: false, primaryKey: true},
+    name: {type: DataTypes.STRING, allowNull: false},
+    releaseDate: {type: DataTypes.STRING, allowNull: false},
+    runtimeInMinutes: {type: DataTypes.NUMBER, allowNull: false},
+    synopsis: {type: DataTypes.STRING(2000), allowNull: true},
+    starring: {type: DataTypes.STRING(1000), allowNull: true},
+    director: {type: DataTypes.STRING, allowNull: true},
+    producers: {type: DataTypes.STRING, allowNull: true},
+    writers: {type: DataTypes.STRING, allowNull: true},
+    warning: {type: DataTypes.STRING(1000), allowNull: true},
+    languageCode: {type: DataTypes.STRING, allowNull: false},
+    movieLanguage: {type: DataTypes.STRING, allowNull: false},
+    movieSubtitleLanguage: {type: DataTypes.STRING, allowNull: true},
+    smallPosterImageUrl: {type: DataTypes.STRING, allowNull: true},
+    mediumPosterImageUrl: {type: DataTypes.STRING, allowNull: true},
+    largePosterImageUrl: {type: DataTypes.STRING, allowNull: true},
+    trailerUrl: {type: DataTypes.STRING, allowNull: true},
+    cineplexId: {type: DataTypes.NUMBER, allowNull: true},
 }
 
 const GenreAttributes: Attributes<Model> = {
-    name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        primaryKey: true
-    },
+    name: {type: DataTypes.STRING, allowNull: false, primaryKey: true},
 }
 
 const MovieGenreAttributes: Attributes<Model> = {
-    MovieId: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        primaryKey: true
-    },
-    GenreName: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        primaryKey: true
-    },
-
+    MovieId: {type: DataTypes.STRING, allowNull: false, primaryKey: true},
+    GenreName: {type: DataTypes.STRING, allowNull: false, primaryKey: true},
 }
 
 const RatingAttributes: Attributes<Model> = {
-    movieId: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        primaryKey: true
-    },
-    provinceCode: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        primaryKey: true
-    },
-    warnings: {
-        type: DataTypes.STRING,
-        allowNull: true
-    },
-    rating: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    ratingDescription: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
+    movieId: {type: DataTypes.STRING, allowNull: false, primaryKey: true},
+    provinceCode: {type: DataTypes.STRING, allowNull: false, primaryKey: true},
+    warnings: {type: DataTypes.STRING, allowNull: true},
+    rating: {type: DataTypes.STRING, allowNull: false},
+    ratingDescription: {type: DataTypes.STRING, allowNull: false},
 }
 
 export class GenreModel extends Model<{ name: string }> {}
@@ -166,7 +80,15 @@ export class MovieModel extends Model<Movie> {
 export class SequelizeMovieRepository implements MovieRepository {
 
     constructor(private readonly sequelize: Sequelize) {
-        MovieModel.init(MovieAttributes, { sequelize, modelName: "Movie", timestamps: false, tableName: "MOVIE" });
+        MovieModel.init(MovieAttributes, {
+            sequelize,
+            modelName: "Movie",
+            timestamps: false,
+            tableName: "MOVIE",
+            indexes: [
+                {fields: ['name'], name: "MOVIE_name"},
+                {fields: ['releaseDate'], name: "MOVIE_release_date"},
+            ]});
         GenreModel.init(GenreAttributes, { sequelize, modelName: "Genre", timestamps: false, tableName: "GENRE" });
         RatingModel.init(RatingAttributes, { sequelize, modelName: "Rating", timestamps: false, tableName: "MOVIE_RATING" });
         MovieGenreModel.init(MovieGenreAttributes, { sequelize, modelName: "MovieGenre", timestamps: false, tableName: "MOVIE_GENRE" });
@@ -174,6 +96,8 @@ export class SequelizeMovieRepository implements MovieRepository {
         GenreModel.belongsToMany(MovieModel, { through: MovieGenreModel, timestamps: false });
         MovieModel.hasMany(RatingModel, { foreignKey: 'movieId' });
         RatingModel.belongsTo(MovieModel, { foreignKey: 'movieId' });
+
+
     }
 
     async getAllMovies(): Promise<Movie[]> {

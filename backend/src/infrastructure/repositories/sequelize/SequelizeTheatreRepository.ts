@@ -128,7 +128,7 @@ export class SequelizeTheatreRepository implements TheatreRepository {
             sequelize,
             modelName: "Theatre",
             tableName: "THEATRE",
-            timestamps: false
+            timestamps: false,
         })
         TheatreModel.hasOne(AddressModel, { foreignKey: "theatreId", as: "location" })
         TheatreModel.hasMany(ScreenModel, { foreignKey: "theatreId", as: "screens" })

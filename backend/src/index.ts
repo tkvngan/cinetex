@@ -13,6 +13,7 @@ import {ObjectId} from "mongodb";
 import {startMongoDBMemoryServer} from "./infrastructure/repositories/mongodb/MongoDBUtils";
 import {Sequelize} from "sequelize";
 import {SequelizeRepositories} from "./infrastructure/repositories/sequelize/SequelizeRepositories";
+import {Movie} from "cinetex-core/dist/domain/entities/Movie";
 
 async function startMongoDBMemoryServerIfEnabled(): Promise<MongoMemoryServer | undefined> {
     if (config.START_MONGODB_MEMORY_SERVER !== "true") {
@@ -82,7 +83,15 @@ async function main(): Promise<void> {
             console.log("Backend web server stopped.")
             process.exit(0)
         })
-    })
+    });
+
+    (await repositories.Movie.getAllMovies()).forEach((movie: Movie) => {
+        const len = movie.synopsis?.length ?? 0;
+        if (len > 1000) {
+            console.log("Movie: ", movie.name, ", length: ", len)
+        }
+    });
+
 }
 
 main().catch(error => {

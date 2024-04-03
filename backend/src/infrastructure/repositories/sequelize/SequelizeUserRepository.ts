@@ -9,43 +9,17 @@ import {TheatreModel} from "./SequelizeTheatreRepository";
 import {Credentials} from "cinetex-core/dist/security/Credentials";
 
 const UserAttributes: Attributes<Model> = {
-    id: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        primaryKey: true
-    },
-    email: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    password: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    emailVerified: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false
-    },
-    firstName: {
-        type: DataTypes.STRING,
-        allowNull: true
-    },
-    lastName: {
-        type: DataTypes.STRING,
-        allowNull: true
-    },
-    phoneNumber: {
-        type: DataTypes.STRING,
-        allowNull: true
-    }
+    id: {type: DataTypes.STRING, allowNull: false, primaryKey: true},
+    email: {type: DataTypes.STRING, allowNull: false, unique: true },
+    password: {type: DataTypes.STRING, allowNull: false},
+    emailVerified: {type: DataTypes.BOOLEAN, allowNull: false},
+    firstName: {type: DataTypes.STRING, allowNull: true},
+    lastName: {type: DataTypes.STRING, allowNull: true},
+    phoneNumber: {type: DataTypes.STRING, allowNull: true}
 }
 
 const RoleAttributes: Attributes<Model> = {
-    name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        primaryKey: true
-    },
+    name: {type: DataTypes.STRING, allowNull: false, primaryKey: true},
 }
 
 export class UserModel extends Model<User> {
@@ -69,7 +43,15 @@ export class RoleModel extends Model<{ name: string }> {}
 export class SequelizeUserRepository implements UserRepository {
 
     constructor(private readonly sequelize: Sequelize) {
-        UserModel.init(UserAttributes, { sequelize, modelName: "User", timestamps: false, tableName: "USER" });
+        UserModel.init(UserAttributes, {
+            sequelize,
+            modelName: "User",
+            timestamps: false,
+            tableName: "USER",
+            indexes: [
+                { fields: ["firstName", "lastName"], name: "USER_first_name_last_name" },
+            ]
+        });
         RoleModel.init(RoleAttributes, { sequelize, modelName: "Role", timestamps: false, tableName: "ROLE" });
         RoleModel.belongsToMany(UserModel, { through: 'USER_ROLE', timestamps: false});
         UserModel.belongsToMany(RoleModel, { through: 'USER_ROLE', timestamps: false });
@@ -144,8 +126,8 @@ export class SequelizeUserRepository implements UserRepository {
                 email NVARCHAR2(255),
                 firstName NVARCHAR2(255),
                 lastName NVARCHAR2(255),
-                token NVARCHAR2(1024),
-                attributes NVARCHAR2(1024)
+                token NVARCHAR2(1000),
+                attributes NVARCHAR2(1000)
             );
         
             PROCEDURE Set(

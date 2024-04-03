@@ -88,7 +88,11 @@ export class SequelizeScheduleRepository implements ScheduleRepository {
             sequelize,
             modelName: "Schedule",
             tableName: "SCHEDULE",
-            timestamps: false
+            timestamps: false,
+            indexes: [
+                { fields: ["movieId"], name: "SCHEDULE_movie_id" },
+                { fields: ["theatreId"], name: "SCHEDULE_theatre_id" },
+            ]
         });
         TimeSlotModel.init(TimeSlotAttributes, {
             sequelize,

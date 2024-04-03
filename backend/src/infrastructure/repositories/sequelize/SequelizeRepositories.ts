@@ -4,11 +4,11 @@ import {MovieRepository} from "../../../application/repositories/MovieRepository
 import {TheatreRepository} from "../../../application/repositories/TheatreRepository";
 import {ScheduleRepository} from "../../../application/repositories/ScheduleRepository";
 import {BookingRepository} from "../../../application/repositories/BookingRepository";
-import {SequelizeUserRepository} from "./SequelizeUserRepository";
-import {SequelizeMovieRepository} from "./SequelizeMovieRepository";
-import {SequelizeTheatreRepository} from "./SequelizeTheatreRepository";
-import {SequelizeScheduleRepository} from "./SequelizeScheduleRepository";
-import {SequelizeBookingRepository} from "./SequelizeBookingRepository";
+import {SequelizeUserRepository, UserModel} from "./SequelizeUserRepository";
+import {MovieModel, SequelizeMovieRepository} from "./SequelizeMovieRepository";
+import {SequelizeTheatreRepository, TheatreModel} from "./SequelizeTheatreRepository";
+import {ScheduleModel, SequelizeScheduleRepository} from "./SequelizeScheduleRepository";
+import {BookingModel, SequelizeBookingRepository, TicketModel} from "./SequelizeBookingRepository";
 import {SyncOptions} from "sequelize/types/sequelize";
 import {UserRepository} from "../../../application/repositories/UserRepository";
 import cls, {Namespace} from "cls-hooked";
@@ -30,6 +30,11 @@ export class SequelizeRepositories implements Repositories {
         this.theatreRepository = new SequelizeTheatreRepository(sequelize);
         this.scheduleRepository = new SequelizeScheduleRepository(sequelize);
         this.bookingRepository = new SequelizeBookingRepository(sequelize);
+        TheatreModel.hasMany(ScheduleModel, { foreignKey: "theatreId" });
+        TheatreModel.hasMany(BookingModel, { foreignKey: "theatreId" });
+        MovieModel.hasMany(ScheduleModel, { foreignKey: "movieId" });
+        MovieModel.hasMany(TicketModel, { foreignKey: "movieId" });
+        UserModel.hasMany(BookingModel, { foreignKey: "userId" });
     }
 
     async sync(options?: SyncOptions): Promise<void> {

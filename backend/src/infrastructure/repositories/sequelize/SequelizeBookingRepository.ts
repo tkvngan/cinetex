@@ -28,7 +28,7 @@ const TicketAttributes: Attributes<Model> = {
     column: { type: DataTypes.NUMBER, allowNull: false, primaryKey: true },
     price: { type: DataTypes.NUMBER, allowNull: false },
     ticketNo: { type: DataTypes.NUMBER, allowNull: true },
-    token: { type: DataTypes.STRING(1024), allowNull: true }
+    token: { type: DataTypes.STRING(1000), allowNull: true }
 }
 
 type TicketData = Omit<Ticket, "seat"> & {
@@ -133,13 +133,21 @@ export class SequelizeBookingRepository implements BookingRepository {
             sequelize,
             modelName: "Ticket",
             tableName: "TICKET",
-            timestamps: false
+            timestamps: false,
+            indexes: [
+                { fields: ["movieId"], name: "TICKET_movie_id" },
+            ]
         })
         BookingModel.init(BookingAttributes, {
             sequelize,
             modelName: "Booking",
             tableName: "BOOKING",
-            timestamps: false
+            timestamps: false,
+            indexes: [
+                { fields: ["userId"], name: "BOOKING_user_id" },
+                { fields: ["theatreId"], name: "BOOKING_theatre_id" },
+                { fields: ["bookingTime"], name: "BOOKING_booking_time" }
+            ]
         })
         BookingModel.hasMany(TicketModel, { foreignKey: "bookingId", as: "tickets" })
         TicketModel.belongsTo(BookingModel, { foreignKey: "bookingId" })
