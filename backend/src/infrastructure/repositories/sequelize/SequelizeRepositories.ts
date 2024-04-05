@@ -1,4 +1,4 @@
-import {DatabaseError, Sequelize, Transaction} from "sequelize";
+import {Sequelize} from "sequelize";
 import {Repositories} from "../../../application/repositories/Repositories";
 import {MovieRepository} from "../../../application/repositories/MovieRepository";
 import {TheatreRepository} from "../../../application/repositories/TheatreRepository";
@@ -42,6 +42,7 @@ export class SequelizeRepositories implements Repositories {
         if (options?.force) {
             await this.userRepository.createUserCredentialsPackage();
             await this.userRepository.createUserCredentialsPackageBody();
+            await this.bookingRepository.dropTicketSequence();
             await this.bookingRepository.createTicketSequence();
             await this.bookingRepository.createTicketTrigger();
         }

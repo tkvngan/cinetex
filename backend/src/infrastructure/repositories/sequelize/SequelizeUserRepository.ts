@@ -2,11 +2,11 @@ import {Attributes, DataTypes, Model, Op, QueryTypes, Sequelize} from 'sequelize
 import {UserRepository} from "../../../application/repositories/UserRepository";
 import {User} from "cinetex-core/dist/domain/entities/User";
 import {UsersQuery} from "cinetex-core/dist/application/queries";
-import {bracket, queryField, removeNulls, sqlWherePredicate} from "./SequelizeUtils";
+import {bracket, rawPredicate, removeNulls, sequelizePredicate} from "./SequelizeUtils";
 import {WhereOptions} from "sequelize/types/model";
 import dedent from "dedent";
-import {TheatreModel} from "./SequelizeTheatreRepository";
 import {Credentials} from "cinetex-core/dist/security/Credentials";
+import {TheatreModel} from "./SequelizeTheatreRepository";
 
 const UserAttributes: Attributes<Model> = {
     id: {type: DataTypes.STRING, allowNull: false, primaryKey: true},
@@ -22,7 +22,9 @@ const RoleAttributes: Attributes<Model> = {
     name: {type: DataTypes.STRING, allowNull: false, primaryKey: true},
 }
 
-export class UserModel extends Model<User> {
+type UserData = Omit<User, "roles">
+
+export class UserModel extends Model<UserData> {
     declare getRoles: () => Promise<RoleModel[]>
     declare setRoles: (roles: RoleModel[]) => Promise<void>
 
@@ -49,10 +51,14 @@ export class SequelizeUserRepository implements UserRepository {
             timestamps: false,
             tableName: "USER",
             indexes: [
-                { fields: ["firstName", "lastName"], name: "USER_first_name_last_name" },
-            ]
+                { fields: ["first_name", "last_name"], name: "USER_FIRST_NAME_LAST_NAME_IDX" },
+            ],
+            underscored: true
         });
-        RoleModel.init(RoleAttributes, { sequelize, modelName: "Role", timestamps: false, tableName: "ROLE" });
+        RoleModel.init(RoleAttributes, {
+            sequelize, modelName: "Role", timestamps: false, tableName: "ROLE",
+            underscored: true
+        });
         RoleModel.belongsToMany(UserModel, { through: 'USER_ROLE', timestamps: false});
         UserModel.belongsToMany(RoleModel, { through: 'USER_ROLE', timestamps: false });
     }
@@ -83,7 +89,7 @@ export class SequelizeUserRepository implements UserRepository {
     }
 
     async deleteUsersByQuery(query: UsersQuery): Promise<number> {
-        const where = createUserWhereClause(query);
+        const where = sequelizeUserQuery(query);
         return await UserModel.destroy({ where });
     }
 
@@ -100,7 +106,7 @@ export class SequelizeUserRepository implements UserRepository {
     }
 
     async queryUsers(query: UsersQuery): Promise<User[]> {
-        const where = createUserWhereClause(query);
+        const where = sequelizeUserQuery(query);
         return await Promise.all((await UserModel.findAll({ where, include: RoleModel })).map(userModel => userModel.toObject()));
     }
 
@@ -119,36 +125,38 @@ export class SequelizeUserRepository implements UserRepository {
     }
 
     async createUserCredentialsPackage(): Promise<void> {
+        console.log("DatabaseName: ", this.sequelize.getDatabaseName());
+        const dbUserName = this.sequelize.config.username
         await this.sequelize.query(dedent`
         CREATE OR REPLACE PACKAGE USER_CREDENTIALS AS
             TYPE CREDENTIALS_RECORD IS RECORD (
-                userId NVARCHAR2(255),
-                email NVARCHAR2(255),
-                firstName NVARCHAR2(255),
-                lastName NVARCHAR2(255),
+                user_id ${dbUserName}.USER.ID%TYPE,
+                email ${dbUserName}.USER.EMAIL%TYPE,
+                first_name ${dbUserName}.USER.FIRST_NAME%TYPE,
+                last_name ${dbUserName}.USER.LAST_NAME%TYPE,
                 token NVARCHAR2(1000),
                 attributes NVARCHAR2(1000)
             );
         
-            PROCEDURE Set(
-                userId NVARCHAR2,
+            PROCEDURE SET(
+                user_id NVARCHAR2,
                 email NVARCHAR2 DEFAULT NULL,
-                firstName NVARCHAR2 DEFAULT NULL,
-                lastName NVARCHAR2 DEFAULT NULL,
+                first_name NVARCHAR2 DEFAULT NULL,
+                last_name NVARCHAR2 DEFAULT NULL,
                 token NVARCHAR2 DEFAULT NULL,
                 attributes NVARCHAR2 DEFAULT NULL
             );
             
-            PROCEDURE Clear;
+            PROCEDURE CLEAR;
             
-            FUNCTION Get RETURN CREDENTIALS_RECORD;
+            FUNCTION GET RETURN CREDENTIALS_RECORD;
             
-            FUNCTION GetUserId RETURN NVARCHAR2;
-            FUNCTION GetEmail RETURN NVARCHAR2;
-            FUNCTION GetFirstName RETURN NVARCHAR2;
-            FUNCTION GetLastName RETURN NVARCHAR2;
-            FUNCTION GetToken RETURN NVARCHAR2;
-            FUNCTION GetAttributes RETURN NVARCHAR2;    
+            FUNCTION GET_USER_ID RETURN NVARCHAR2;
+            FUNCTION GET_EMAIL RETURN NVARCHAR2;
+            FUNCTION GET_FIRST_NAME RETURN NVARCHAR2;
+            FUNCTION GET_LAST_NAME RETURN NVARCHAR2;
+            FUNCTION GET_TOKEN RETURN NVARCHAR2;
+            FUNCTION GET_ATTRIBUTES RETURN NVARCHAR2;    
         END USER_CREDENTIALS;;
         `, { type: QueryTypes.RAW })
     }
@@ -159,15 +167,15 @@ export class SequelizeUserRepository implements UserRepository {
             rec CREDENTIALS_RECORD := NULL;
         
             PROCEDURE Set(
-                userId NVARCHAR2,
+                user_id NVARCHAR2,
                 email NVARCHAR2 DEFAULT NULL,
-                firstName NVARCHAR2 DEFAULT NULL,
-                lastName NVARCHAR2 DEFAULT NULL,
+                first_name NVARCHAR2 DEFAULT NULL,
+                last_name NVARCHAR2 DEFAULT NULL,
                 token NVARCHAR2 DEFAULT NULL,
                 attributes NVARCHAR2 DEFAULT NULL
             ) IS
             BEGIN
-                rec := CREDENTIALS_RECORD(userId, email, firstName, lastName, token, attributes);
+                rec := CREDENTIALS_RECORD(user_id, email, first_name, last_name, token, attributes);
             END Set;
         
             PROCEDURE Clear IS
@@ -175,40 +183,40 @@ export class SequelizeUserRepository implements UserRepository {
                 rec := NULL;
             END Clear;
             
-            FUNCTION Get RETURN CREDENTIALS_RECORD IS
+            FUNCTION GET RETURN CREDENTIALS_RECORD IS
             BEGIN
                 RETURN rec;
-            END Get;
+            END GET;
             
-            FUNCTION GetUserId RETURN NVARCHAR2 IS
+            FUNCTION GET_USER_ID RETURN NVARCHAR2 IS
             BEGIN
-                RETURN rec.userId;
-            END GetUserId;
+                RETURN rec.user_id;
+            END GET_USER_ID;
             
-            FUNCTION GetEmail RETURN NVARCHAR2 IS
+            FUNCTION GET_EMAIL RETURN NVARCHAR2 IS
             BEGIN
                 RETURN rec.email;
-            END GetEmail;
+            END GET_EMAIL;
             
-            FUNCTION GetFirstName RETURN NVARCHAR2 IS
+            FUNCTION GET_FIRST_NAME RETURN NVARCHAR2 IS
             BEGIN
-                RETURN rec.firstName;
-            END GetFirstName;
+                RETURN rec.first_name;
+            END GET_FIRST_NAME;
             
-            FUNCTION GetLastName RETURN NVARCHAR2 IS
+            FUNCTION GET_LAST_NAME RETURN NVARCHAR2 IS
             BEGIN
-                RETURN rec.lastName;
-            END GetLastName;
+                RETURN rec.last_name;
+            END GET_LAST_NAME;
             
-            FUNCTION GetToken RETURN NVARCHAR2 IS
+            FUNCTION GET_TOKEN RETURN NVARCHAR2 IS
             BEGIN
                 RETURN rec.token;
-            END GetToken;
+            END GET_TOKEN;
             
-            FUNCTION GetAttributes RETURN NVARCHAR2 IS
+            FUNCTION GET_ATTRIBUTES RETURN NVARCHAR2 IS
             BEGIN
                 RETURN rec.attributes;
-            END GetAttributes;
+            END GET_ATTRIBUTES;
         END USER_CREDENTIALS;;
         `, { type: QueryTypes.RAW })
     }
@@ -216,7 +224,7 @@ export class SequelizeUserRepository implements UserRepository {
     async setUserCredentials(credentials: Credentials): Promise<void> {
         await this.sequelize.query(dedent`
             BEGIN
-                USER_CREDENTIALS.Set($userId, $email, $firstName, $lastName, $token, $attributes);
+                USER_CREDENTIALS.SET($userId, $email, $firstName, $lastName, $token, $attributes);
             END;
             `, {
             bind: {
@@ -234,12 +242,12 @@ export class SequelizeUserRepository implements UserRepository {
     async getUserCredentials(): Promise<Credentials | undefined> {
         const results: any[] = await this.sequelize.query(dedent`
             SELECT 
-                USER_CREDENTIALS.GetUserId AS "userId",
-                USER_CREDENTIALS.GetEmail AS "email",
-                USER_CREDENTIALS.GetFirstName AS "firstName",
-                USER_CREDENTIALS.GetLastName AS "lastName",
-                USER_CREDENTIALS.GetToken AS "token",
-                USER_CREDENTIALS.GetAttributes AS "attributes" from DUAL;
+                USER_CREDENTIALS.GET_USER_ID() AS "userId",
+                USER_CREDENTIALS.GET_EMAIL() AS "email",
+                USER_CREDENTIALS.GET_FIRST_NAME() AS "firstName",
+                USER_CREDENTIALS.GET_LAST_NAME() AS "lastName",
+                USER_CREDENTIALS.GET_TOKEN() AS "token",
+                USER_CREDENTIALS.GET_ATTRIBUTES() AS "attributes" from DUAL;
         `, { type: QueryTypes.SELECT })
         if (results.length === 1) {
             const result = results[0]
@@ -265,55 +273,52 @@ export class SequelizeUserRepository implements UserRepository {
     async clearUserCredentials(): Promise<void> {
         await this.sequelize.query(dedent`
         BEGIN 
-            USER_CREDENTIALS.Clear; 
+            USER_CREDENTIALS.CLEAR; 
         END;`, { type: QueryTypes.RAW })
     }
 }
 
-function createUserWhereClause(query: UsersQuery): WhereOptions<typeof UserAttributes> {
+function sequelizeUserQuery(query: UsersQuery): WhereOptions<UserData> {
     const predicates: any[] = []
     if (query.id) {
-        predicates.push(queryField(UserModel, "id", query.id))
+        predicates.push(sequelizePredicate<UserData, string>(UserModel, "id", query.id))
     }
     if (query.name) {
         predicates.push({
             [Op.or]: [
-                queryField(UserModel, "firstName", query.name),
-                queryField(UserModel, "lastName", query.name),
+                sequelizePredicate<UserData, string>(UserModel, "firstName", query.name),
+                sequelizePredicate<UserData, string>(UserModel, "lastName", query.name),
             ]
         })
     }
     if (query.email) {
-        predicates.push(queryField(UserModel, "email", query.email))
+        predicates.push(sequelizePredicate<UserData, string>(UserModel, "email", query.email))
     }
     if (query.phoneNumber) {
-        predicates.push(queryField(UserModel, "phoneNumber", query.phoneNumber))
+        predicates.push(sequelizePredicate<UserData, string>(UserModel, "phoneNumber", query.phoneNumber))
     }
     return { [Op.and]: predicates }
 }
 
-export function createUserSubqueryClause(query: UsersQuery): string | undefined {
+export function rawUserSubquery(query: UsersQuery): string | undefined {
     const predicates: string[] = []
-    if (query.id) {
-        predicates.push(sqlWherePredicate("id", query.id))
-    }
     if (query.name) {
         predicates.push(
             dedent`(
-                ${sqlWherePredicate("firstName", query.name)} OR
-                ${sqlWherePredicate("lastName", query.name)}
+                ${rawPredicate("first_name", query.name)} OR
+                ${rawPredicate("last_name", query.name)}
             )`
         )
     }
     if (query.email) {
-        predicates.push(sqlWherePredicate("email", query.email))
+        predicates.push(rawPredicate("email", query.email))
     }
     if (query.phoneNumber) {
-        predicates.push(sqlWherePredicate("phoneNumber", query.phoneNumber))
+        predicates.push(rawPredicate("phone_number", query.phoneNumber))
     }
     if (predicates.length > 0) {
         return dedent`(
-            SELECT "${UserModel.tableName}"."id"
+            SELECT id
                 FROM "${UserModel.tableName}"
                 WHERE ${predicates.map(bracket).join(" AND ")}
             )`

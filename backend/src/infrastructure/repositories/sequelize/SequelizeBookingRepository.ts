@@ -1,14 +1,14 @@
-import {Attributes, DatabaseError, DataTypes, Model, Op, Sequelize} from "sequelize";
+import {Attributes, DatabaseError, DataTypes, Model, ModelStatic, Op, Sequelize} from "sequelize";
 import {BookingRepository} from "../../../application/repositories/BookingRepository";
 import {Booking, Ticket} from "cinetex-core/dist/domain/entities/Booking";
 import {BookingsQuery} from "cinetex-core/dist/application/queries";
 
-import {bracket, queryField, removeNulls, sqlWherePredicate} from "./SequelizeUtils";
-import {createMovieSubqueryClause} from "./SequelizeMovieRepository";
-import {createTheatreSubqueryClause} from "./SequelizeTheatreRepository";
-import {createUserSubqueryClause} from "./SequelizeUserRepository";
+import {bracket, rawPredicate, sequelizePredicate} from "./SequelizeUtils";
+import {rawMovieSubquery} from "./SequelizeMovieRepository";
+import {rawUserSubquery} from "./SequelizeUserRepository";
 import {WhereOptions} from "sequelize/types/model";
 import dedent from "dedent";
+import {rawTheatreSubquery} from "./SequelizeTheatreRepository";
 
 const BookingAttributes: Attributes<Model> = {
     id: { type: DataTypes.STRING, allowNull: false, primaryKey: true },
@@ -24,8 +24,8 @@ const TicketAttributes: Attributes<Model> = {
     screenId: { type: DataTypes.NUMBER, allowNull: false, primaryKey: true },
     showDate: { type: DataTypes.STRING, allowNull: false, primaryKey: true },
     showTime: { type: DataTypes.STRING, allowNull: false, primaryKey: true },
-    row: { type: DataTypes.NUMBER, allowNull: false, primaryKey: true },
-    column: { type: DataTypes.NUMBER, allowNull: false, primaryKey: true },
+    row: { type: DataTypes.NUMBER, allowNull: false, primaryKey: true, field: "ROW_IX" },
+    column: { type: DataTypes.NUMBER, allowNull: false, primaryKey: true, field: "COLUMN_IX" },
     price: { type: DataTypes.NUMBER, allowNull: false },
     ticketNo: { type: DataTypes.NUMBER, allowNull: true },
     token: { type: DataTypes.STRING(1000), allowNull: true }
@@ -135,8 +135,9 @@ export class SequelizeBookingRepository implements BookingRepository {
             tableName: "TICKET",
             timestamps: false,
             indexes: [
-                { fields: ["movieId"], name: "TICKET_movie_id" },
-            ]
+                { fields: ["MOVIE_ID"], name: "TICKET_MOVIE_ID_IDX" },
+            ],
+            underscored: true
         })
         BookingModel.init(BookingAttributes, {
             sequelize,
@@ -144,19 +145,32 @@ export class SequelizeBookingRepository implements BookingRepository {
             tableName: "BOOKING",
             timestamps: false,
             indexes: [
-                { fields: ["userId"], name: "BOOKING_user_id" },
-                { fields: ["theatreId"], name: "BOOKING_theatre_id" },
-                { fields: ["bookingTime"], name: "BOOKING_booking_time" }
-            ]
+                { fields: ["USER_ID"], name: "BOOKING_USER_ID_IDX" },
+                { fields: ["THEATRE_ID"], name: "BOOKING_THEATRE_ID_IDX" },
+                { fields: ["BOOKING_TIME"], name: "BOOKING_BOOKING_TIME_IDX" }
+            ],
+            underscored: true
         })
         BookingModel.hasMany(TicketModel, { foreignKey: "bookingId", as: "tickets" })
         TicketModel.belongsTo(BookingModel, { foreignKey: "bookingId" })
     }
 
+    async dropTicketSequence(): Promise<void> {
+        try {
+            await this.sequelize.query(
+                "DROP SEQUENCE TICKET_SEQ", { raw: true });
+        } catch (e) {
+            console.log(e)
+            if (sqlErrorCode(e) === 2289) {
+                return;
+            }
+            throw e;
+        }
+    }
     async createTicketSequence(): Promise<void> {
         try {
             await this.sequelize.query(
-                "CREATE SEQUENCE TICKET_SEQ START WITH 1000 INCREMENT BY 1 MAXVALUE 999999999", {raw: true});
+                "CREATE SEQUENCE TICKET_SEQ START WITH 1000 INCREMENT BY 1 MAXVALUE 999999999", { raw: true });
         } catch (e) {
             console.log(e)
             if (sqlErrorCode(e) === 955) {
@@ -173,8 +187,8 @@ export class SequelizeBookingRepository implements BookingRepository {
                 BEFORE INSERT ON TICKET
                 FOR EACH ROW
                 BEGIN
-                    SELECT TICKET_SEQ.NEXTVAL, USER_CREDENTIALS.GetToken() 
-                    INTO :NEW."ticketNo", :NEW."token" FROM DUAL;
+                    SELECT TICKET_SEQ.NEXTVAL, USER_CREDENTIALS.GET_TOKEN() 
+                    INTO :NEW.TICKET_NO, :NEW.TOKEN FROM DUAL;
                 END;
             `, {raw: true});
         } catch (e) {
@@ -203,7 +217,8 @@ export class SequelizeBookingRepository implements BookingRepository {
     }
 
     async getBookingsByQuery(query: BookingsQuery): Promise<Booking[]> {
-        const where = createBookingWhereClause(query);
+        const m: ModelStatic<BookingModel> = BookingModel;
+        const where = sequelizeBookingQuery(query);
         return await Promise.all((await BookingModel.findAll({ where,
             include: [
                 {model: TicketModel, as: "tickets"}
@@ -226,7 +241,7 @@ export class SequelizeBookingRepository implements BookingRepository {
     }
 
     async deleteBookingsByQuery(query: BookingsQuery): Promise<number> {
-        const where = createBookingWhereClause(query);
+        const where = sequelizeBookingQuery(query);
         return await BookingModel.destroy({ where });
     }
 
@@ -266,7 +281,7 @@ export class SequelizeBookingRepository implements BookingRepository {
     }
 
     async getBookingsByMovieId(movieId: string): Promise<Booking[]> {
-        const where = createBookingWhereClause({ movie: { id: movieId } });
+        const where = sequelizeBookingQuery({ movie: { id: movieId } });
         return await Promise.all((await BookingModel.findAll({ where,
             include: [
                 {model: TicketModel, as: "tickets"}
@@ -275,7 +290,7 @@ export class SequelizeBookingRepository implements BookingRepository {
     }
 
     async getBookingsByTheatreId(theatreId: string): Promise<Booking[]> {
-        const where = createBookingWhereClause({ theatre: { id: theatreId } });
+        const where = sequelizeBookingQuery({ theatre: { id: theatreId } });
         return await Promise.all((await BookingModel.findAll({ where,
             include: [
                 {model: TicketModel, as: "tickets"}
@@ -284,7 +299,7 @@ export class SequelizeBookingRepository implements BookingRepository {
     }
 
     async getBookingsByUserId(userId: string): Promise<Booking[]> {
-        const where = createBookingWhereClause({ user: { id: userId } });
+        const where = sequelizeBookingQuery({ user: { id: userId } });
         return await Promise.all((await BookingModel.findAll({ where,
             include: [
                 {model: TicketModel, as: "tickets"}
@@ -293,75 +308,72 @@ export class SequelizeBookingRepository implements BookingRepository {
     }
 }
 
-function createBookingWhereClause(query: BookingsQuery): WhereOptions<typeof BookingAttributes> {
-    const predicates: any[] = []
+function sequelizeBookingQuery(query: BookingsQuery): WhereOptions<BookingData> {
+    const predicates: WhereOptions<BookingData>[] = []
     if (query.id) {
-        predicates.push(queryField(BookingModel, "id", query.id));
+        predicates.push(sequelizePredicate<BookingData, string>(BookingModel, "id", query.id))
     }
     if (query.theatre) {
-        const theatreSubquery = createTheatreSubqueryClause(query.theatre);
+        if (query.theatre.id) {
+            predicates.push(sequelizePredicate<BookingData, string>(BookingModel, "theatreId", query.theatre.id))
+        }
+        const theatreSubquery: string | undefined = rawTheatreSubquery(query.theatre);
         if (theatreSubquery) {
             predicates.push({
-                ["theatreId"]: {[Op.in]: Sequelize.literal(theatreSubquery)}
+                theatreId: { [Op.in]: Sequelize.literal(theatreSubquery) }
             });
         }
     }
     if (query.user) {
-        const userSubquery = createUserSubqueryClause(query.user);
+        if (query.user.id) {
+            predicates.push(sequelizePredicate<BookingData, string>(BookingModel, "userId", query.user.id))
+        }
+        const userSubquery: string | undefined = rawUserSubquery(query.user);
         if (userSubquery) {
             predicates.push({
-                ["userId"]: {[Op.in]: Sequelize.literal(userSubquery)}
+                userId: { [Op.in]: Sequelize.literal(userSubquery) }
             });
         }
     }
     const ticketPredicates: string[] = []
 
     if (query.movie) {
-        const movieSubquery = createMovieSubqueryClause(query.movie);
+        if (query.movie.id) {
+            ticketPredicates.push(rawPredicate("movie_id", query.movie.id))
+        }
+        const movieSubquery: string | undefined = rawMovieSubquery(query.movie);
         if (movieSubquery) {
-            ticketPredicates.push(
-                `"movieId" IN ${movieSubquery}`
-            )
+            ticketPredicates.push("movie_id IN (" + movieSubquery + ")")
         }
     }
+    BookingModel.getAttributes()
     if (query.ticket) {
         if (query.ticket.screenId) {
-            ticketPredicates.push(
-                sqlWherePredicate(`"screenId"`, query.ticket.screenId)
-            )
+            ticketPredicates.push(rawPredicate("screen_id", query.ticket.screenId))
         }
         if (query.ticket.showDate) {
-            ticketPredicates.push(
-                sqlWherePredicate('"showDate"', query.ticket.showDate)
-            )
+            ticketPredicates.push(rawPredicate("show_date", query.ticket.showDate))
         }
         if (query.ticket.showTime) {
-            ticketPredicates.push(
-                sqlWherePredicate('"showTime"', query.ticket.showTime)
-            )
+            ticketPredicates.push(rawPredicate("show_time", query.ticket.showTime))
         }
         if (query.ticket.row) {
-            ticketPredicates.push(
-                sqlWherePredicate('."row"', query.ticket.row)
-            )
+            ticketPredicates.push(rawPredicate("row_ix", query.ticket.row))
         }
         if (query.ticket.column) {
-            ticketPredicates.push(
-                sqlWherePredicate('"column"', query.ticket.column)
-            )
+            ticketPredicates.push(rawPredicate("column_ix", query.ticket.column))
         }
     }
     if (ticketPredicates.length > 0) {
         const ticketSubquery = Sequelize.literal(dedent(`(
-            SELECT "bookingId" 
-            FROM "${TicketModel.tableName}" 
+            SELECT booking_id
+            FROM ${TicketModel.tableName}
             WHERE ${ticketPredicates.map(bracket).join(" AND ")}
         )`))
         predicates.push({
-            ["id"]: { [Op.in]: ticketSubquery }
+            id: { [Op.in]: ticketSubquery }
         })
     }
-
     return { [Op.and]: predicates };
 }
 

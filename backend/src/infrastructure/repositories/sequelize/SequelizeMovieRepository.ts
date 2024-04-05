@@ -2,7 +2,7 @@ import {Attributes, DataTypes, Model, Op, Sequelize} from "sequelize";
 import {Movie, Rating} from "cinetex-core/dist/domain/entities/Movie";
 import {MovieRepository} from "../../../application/repositories/MovieRepository";
 import {MoviesQuery} from "cinetex-core/dist/application/queries";
-import {bracket, queryField, removeNulls, sqlWherePredicate} from "./SequelizeUtils";
+import {bracket, rawPredicate, removeNulls, sequelizePredicate} from "./SequelizeUtils";
 import dedent from "dedent";
 import {WhereOptions} from "sequelize/types/model";
 
@@ -44,13 +44,15 @@ const RatingAttributes: Attributes<Model> = {
     ratingDescription: {type: DataTypes.STRING, allowNull: false},
 }
 
+type MovieData = Omit<Movie, "genres" | "ratings">
+
 export class GenreModel extends Model<{ name: string }> {}
 
 export class RatingModel extends Model<Rating & { movieId?: string }> {}
 
 export class MovieGenreModel extends Model<{ MovieId: string, GenreName: string }> {}
 
-export class MovieModel extends Model<Movie> {
+export class MovieModel extends Model<MovieData> {
     declare getGenres: () => Promise<GenreModel[]>
     declare setGenres: (genres: GenreModel[]) => Promise<void>
     declare getRatings: () => Promise<RatingModel[]>
@@ -86,12 +88,23 @@ export class SequelizeMovieRepository implements MovieRepository {
             timestamps: false,
             tableName: "MOVIE",
             indexes: [
-                {fields: ['name'], name: "MOVIE_name"},
-                {fields: ['releaseDate'], name: "MOVIE_release_date"},
-            ]});
-        GenreModel.init(GenreAttributes, { sequelize, modelName: "Genre", timestamps: false, tableName: "GENRE" });
-        RatingModel.init(RatingAttributes, { sequelize, modelName: "Rating", timestamps: false, tableName: "MOVIE_RATING" });
-        MovieGenreModel.init(MovieGenreAttributes, { sequelize, modelName: "MovieGenre", timestamps: false, tableName: "MOVIE_GENRE" });
+                {fields: ['name'], name: "MOVIE_NAME_IDX"},
+                {fields: ['release_date'], name: "MOVIE_RELEASE_DATE_IDX"},
+            ],
+            underscored: true
+        });
+        GenreModel.init(GenreAttributes, {
+            sequelize, modelName: "Genre", timestamps: false, tableName: "GENRE",
+            underscored: true
+        });
+        RatingModel.init(RatingAttributes, {
+            sequelize, modelName: "Rating", timestamps: false, tableName: "MOVIE_RATING",
+            underscored: true
+        });
+        MovieGenreModel.init(MovieGenreAttributes, {
+            sequelize, modelName: "MovieGenre", timestamps: false, tableName: "MOVIE_GENRE",
+            underscored: true
+        });
         MovieModel.belongsToMany(GenreModel, { through: MovieGenreModel, timestamps: false });
         GenreModel.belongsToMany(MovieModel, { through: MovieGenreModel, timestamps: false });
         MovieModel.hasMany(RatingModel, { foreignKey: 'movieId' });
@@ -113,7 +126,7 @@ export class SequelizeMovieRepository implements MovieRepository {
     }
 
     async getMoviesByQuery(query: MoviesQuery): Promise<Movie[]> {
-        const where = createMovieWhereClause(query);
+        const where = sequelizeMovieQuery(query);
         return await Promise.all(
             (await MovieModel.findAll({ where, include: [GenreModel, RatingModel] })).map(movieModel => movieModel.toObject()));
     }
@@ -143,7 +156,7 @@ export class SequelizeMovieRepository implements MovieRepository {
     }
 
     async deleteMoviesByQuery(query: MoviesQuery): Promise<number> {
-        const where = createMovieWhereClause(query);
+        const where = sequelizeMovieQuery(query);
         return await MovieModel.destroy({ where });
     }
 
@@ -193,22 +206,22 @@ export class SequelizeMovieRepository implements MovieRepository {
     }
 }
 
-function createMovieWhereClause(query: MoviesQuery): WhereOptions<typeof MovieAttributes> {
-    const predicates: any[] = []
+function sequelizeMovieQuery(query: MoviesQuery): WhereOptions<MovieData> {
+    const predicates: WhereOptions<MovieData>[] = []
     if (query.id) {
-        predicates.push(queryField(MovieModel, "id", query.id))
+        predicates.push(sequelizePredicate<MovieData, string>(MovieModel, "id", query.id))
     }
     if (query.name) {
-        predicates.push(queryField(MovieModel, "name", query.name))
+        predicates.push(sequelizePredicate<MovieData, string>(MovieModel, "name", query.name))
     }
     if (query.director) {
-        predicates.push(queryField(MovieModel, "director", query.director))
+        predicates.push(sequelizePredicate<MovieData, string>(MovieModel, "director", query.director))
     }
     if (query.starring) {
-        predicates.push(queryField(MovieModel, "starring", query.starring))
+        predicates.push(sequelizePredicate<MovieData, string>(MovieModel, "starring", query.starring))
     }
     if (query.releaseDate) {
-        predicates.push(queryField(MovieModel, "releaseDate", query.releaseDate))
+        predicates.push(sequelizePredicate<MovieData, string>(MovieModel, "releaseDate", query.releaseDate))
     }
     if (query.genres) {
         const genres: string[] = [];
@@ -219,13 +232,13 @@ function createMovieWhereClause(query: MoviesQuery): WhereOptions<typeof MovieAt
         }
         if (genres.length === 0) {
             predicates.push(Sequelize.literal(dedent`NOT EXISTS (
-                SELECT * FROM "${MovieGenreModel.tableName}" WHERE "MovieId" = "${MovieModel.name}"."id")`)
+                SELECT movie_id FROM ${MovieGenreModel.tableName} WHERE movie_id = ${MovieModel.name}.id)`)
             )
         } else {
             predicates.push(Sequelize.literal(dedent`(
-                SELECT count(*) FROM "${MovieGenreModel.tableName}"   
-                    WHERE "MovieId" = "${MovieModel.name}"."id" 
-                    AND "GenreName" IN (${genres.map(genre => `'${genre}'`).join(", ")})
+                SELECT count(*) FROM ${MovieGenreModel.tableName}  
+                    WHERE movie_id = ${MovieModel.name}.id 
+                    AND genre_name IN (${genres.map(genre => `'${genre}'`).join(", ")})
                 ) = ${genres.length}`)
             )
         }
@@ -233,22 +246,19 @@ function createMovieWhereClause(query: MoviesQuery): WhereOptions<typeof MovieAt
     return { [Op.and]: predicates }
 }
 
-export function createMovieSubqueryClause(query: MoviesQuery): string | undefined {
+export function rawMovieSubquery(query: MoviesQuery): string | undefined {
     const predicates: string[] = [];
-    if (query.id) {
-        predicates.push(sqlWherePredicate("id", query.id))
-    }
     if (query.name) {
-        predicates.push(sqlWherePredicate("name", query.name));
+        predicates.push(rawPredicate("name", query.name));
     }
     if (query.director) {
-        predicates.push(sqlWherePredicate("director", query.director));
+        predicates.push(rawPredicate("director", query.director));
     }
     if (query.starring) {
-        predicates.push(sqlWherePredicate("starring", query.starring));
+        predicates.push(rawPredicate("starring", query.starring));
     }
     if (query.releaseDate) {
-        predicates.push(sqlWherePredicate("releaseDate", query.releaseDate));
+        predicates.push(rawPredicate("releaseDate", query.releaseDate));
     }
     if (query.genres) {
         const genres: string[] = [];
@@ -259,23 +269,23 @@ export function createMovieSubqueryClause(query: MoviesQuery): string | undefine
         }
         if (genres.length === 0) {
             predicates.push(dedent`NOT EXISTS (
-                SELECT * FROM "${MovieGenreModel.tableName}" 
-                    WHERE "MovieId" = "${MovieModel.tableName}"."id"
+                SELECT * FROM ${MovieGenreModel.tableName}
+                    WHERE movie_id = ${MovieModel.tableName}.id
                 )`
             )
         } else {
             predicates.push(dedent`${genres.length} = (
-                SELECT count(*) FROM "${MovieGenreModel.tableName}"   
-                    WHERE "MovieId" = "${MovieModel.name}"."id" 
-                    AND "GenreName" IN (${genres.map(genre => `'${genre}'`).join(", ")})
+                SELECT count(*) FROM ${MovieGenreModel.tableName}
+                    WHERE movie_id = ${MovieModel.name}.id
+                    AND genre_name IN (${genres.map(genre => `'${genre}'`).join(", ")})
                 )`
             )
         }
     }
     if (predicates.length > 0) {
         return dedent`(
-            SELECT "${MovieModel.tableName}"."id" 
-                FROM "${MovieModel.tableName}" 
+            SELECT ${MovieModel.tableName}.id 
+                FROM ${MovieModel.tableName}
                 WHERE ${predicates.map(bracket).join(" AND ")}
             )`
     } return undefined;

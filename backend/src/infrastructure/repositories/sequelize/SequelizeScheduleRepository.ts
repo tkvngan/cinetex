@@ -1,18 +1,17 @@
 import {ScheduleRepository} from "../../../application/repositories/ScheduleRepository";
 import {Schedule, TimeSlot} from "cinetex-core/dist/domain/entities/Schedule";
-import {BookingsQuery, SchedulesQuery} from "cinetex-core/dist/application/queries";
+import {SchedulesQuery} from "cinetex-core/dist/application/queries";
 import {Attributes, DataTypes, Model, Op, Sequelize} from "sequelize";
-import {bracket, queryField, sqlWherePredicate} from "./SequelizeUtils";
+import {bracket, rawPredicate, sequelizePredicate} from "./SequelizeUtils";
 import dedent from "dedent";
-import {createMovieSubqueryClause} from "./SequelizeMovieRepository";
-import {createTheatreSubqueryClause} from "./SequelizeTheatreRepository";
+import {rawMovieSubquery} from "./SequelizeMovieRepository";
+import {rawTheatreSubquery} from "./SequelizeTheatreRepository";
 import {WhereOptions} from "sequelize/types/model";
-import {BookingModel} from "./SequelizeBookingRepository";
 
 const TimeSlotAttributes: Attributes<Model> = {
     scheduleId: { type: DataTypes.STRING, allowNull: false, primaryKey: true },
-    date: { type: DataTypes.STRING, allowNull: false, primaryKey: true },
-    time: { type: DataTypes.STRING, allowNull: false, primaryKey: true }
+    date: { type: DataTypes.STRING, allowNull: false, primaryKey: true, field: "SHOW_DATE" },
+    time: { type: DataTypes.STRING, allowNull: false, primaryKey: true, field: "SHOW_TIME" }
 }
 
 const ScheduleAttributes: Attributes<Model> = {
@@ -90,15 +89,17 @@ export class SequelizeScheduleRepository implements ScheduleRepository {
             tableName: "SCHEDULE",
             timestamps: false,
             indexes: [
-                { fields: ["movieId"], name: "SCHEDULE_movie_id" },
-                { fields: ["theatreId"], name: "SCHEDULE_theatre_id" },
-            ]
+                { fields: ["movie_id"], name: "SCHEDULE_MOVIE_ID_IDX" },
+                { fields: ["theatre_id"], name: "SCHEDULE_THEATRE_ID_IDX" },
+            ],
+            underscored: true
         });
         TimeSlotModel.init(TimeSlotAttributes, {
             sequelize,
             modelName: "TimeSlot",
             tableName: "SCHEDULE_TIMESLOT",
-            timestamps: false
+            timestamps: false,
+            underscored: true
         });
         ScheduleModel.hasMany(TimeSlotModel, { foreignKey: "scheduleId", as: "showTimes" });
         TimeSlotModel.belongsTo(ScheduleModel, { foreignKey: "scheduleId" });
@@ -121,7 +122,7 @@ export class SequelizeScheduleRepository implements ScheduleRepository {
     }
 
     async getSchedulesByQuery(query: SchedulesQuery): Promise<Schedule[]> {
-        const where = createScheduleWhereClause(query);
+        const where = sequelizeScheduleQuery(query);
         return await Promise.all((await ScheduleModel.findAll({ where,
             include: [
                 {model: TimeSlotModel, as: "showTimes"}
@@ -144,7 +145,7 @@ export class SequelizeScheduleRepository implements ScheduleRepository {
     }
 
     async deleteSchedulesByQuery(query: SchedulesQuery): Promise<number> {
-        const where = createScheduleWhereClause(query);
+        const where = sequelizeScheduleQuery(query);
         return await ScheduleModel.destroy({ where });
     }
 
@@ -184,54 +185,57 @@ export class SequelizeScheduleRepository implements ScheduleRepository {
     }
 }
 
-function createScheduleWhereClause(query: SchedulesQuery): WhereOptions<typeof ScheduleAttributes> {
-    const predicates: any[] = []
+function sequelizeScheduleQuery(query: SchedulesQuery): WhereOptions<ScheduleData> {
+    const predicates: WhereOptions<ScheduleData>[] = []
     if (query.id) {
-        predicates.push(queryField(ScheduleModel, "id", query.id));
+        predicates.push(sequelizePredicate<ScheduleData, string>(ScheduleModel, "id", query.id));
     }
     if (query.movie) {
         if (query.movie.id) {
-            predicates.push(queryField(ScheduleModel, "movieId", query.movie.id));
+            predicates.push(sequelizePredicate<ScheduleData, string>(ScheduleModel, "movieId", query.movie.id));
         }
-        const movieSubquery = createMovieSubqueryClause(query.movie);
+        const movieSubquery = rawMovieSubquery(query.movie);
         if (movieSubquery) {
             predicates.push({
-                ["movieId"]: {[Op.in]: Sequelize.literal(movieSubquery)}
+                movieId: { [Op.in]: Sequelize.literal(movieSubquery) }
             });
         }
     }
     if (query.theatre) {
-        const theatreSubquery = createTheatreSubqueryClause(query.theatre);
+        if (query.theatre.id) {
+            predicates.push(sequelizePredicate<ScheduleData, string>(ScheduleModel, "theatreId", query.theatre.id))
+        }
+        const theatreSubquery = rawTheatreSubquery(query.theatre);
         if (theatreSubquery) {
             predicates.push({
-                ["theatreId"]: {[Op.in]: Sequelize.literal(theatreSubquery)}
+                theatreId: { [Op.in]: Sequelize.literal(theatreSubquery) }
             });
         }
     }
     if (query.screenId) {
-        predicates.push(queryField(ScheduleModel, "screenId", query.screenId));
+        predicates.push(sequelizePredicate<ScheduleData, number>(ScheduleModel, "screenId", query.screenId));
     }
 
-    const showDateTimeSubquery = createShowDateTimeSubqueryClause(query);
+    const showDateTimeSubquery = rawShowDateTimeSubquery(query);
     if (showDateTimeSubquery) {
         predicates.push(Sequelize.literal(showDateTimeSubquery));
     }
     return { [Op.and]: predicates };
 }
 
-export function createShowDateTimeSubqueryClause(query: SchedulesQuery): string | undefined {
+export function rawShowDateTimeSubquery(query: SchedulesQuery): string | undefined {
     const predicates: string[] = []
     if (query.showDate) {
-        predicates.push(sqlWherePredicate("date", query.showDate))
+        predicates.push(rawPredicate("show_date", query.showDate))
     }
     if (query.showTime) {
-        predicates.push(sqlWherePredicate("time", query.showTime))
+        predicates.push(rawPredicate("show_time", query.showTime))
     }
     if (predicates.length > 0) {
-        return dedent`
-            EXISTS (SELECT * FROM "${TimeSlotModel.tableName}" 
-                WHERE "${TimeSlotModel.tableName}"."scheduleId" = "${ScheduleModel.name}"."id" 
-                  AND ${predicates.map(bracket).join(" AND ")})
-            `
+        return dedent`EXISTS (
+            SELECT 1 FROM ${TimeSlotModel.tableName}
+                WHERE ${TimeSlotModel.tableName}.schedule_id = ${ScheduleModel.tableName}.id 
+                  AND ${predicates.map(bracket).join(" AND ")}
+            )`
     } return undefined;
 }

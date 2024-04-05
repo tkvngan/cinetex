@@ -1,9 +1,9 @@
 import {Screen, Theatre} from "cinetex-core/dist/domain/entities/Theatre";
 import {TheatreRepository} from "../../../application/repositories/TheatreRepository";
 import {TheatresQuery} from "cinetex-core/dist/application/queries";
-import {Attributes, DataTypes, FindOptions, Model, Op, Sequelize} from "sequelize";
+import {Attributes, DataTypes, Model, Op, Sequelize} from "sequelize";
 import {Address} from "cinetex-core/dist/domain/types";
-import {bracket, queryField, removeNulls, sqlWherePredicate} from "./SequelizeUtils";
+import {bracket, rawPredicate, removeNulls, sequelizePredicate} from "./SequelizeUtils";
 import dedent from "dedent";
 import {WhereOptions} from "sequelize/types/model";
 
@@ -19,8 +19,8 @@ export const ScreenAttributes: Attributes<Model> = {
     theatreId: {type: DataTypes.STRING, allowNull: false, primaryKey: true},
     id: {type: DataTypes.NUMBER, allowNull: false, primaryKey: true},
     name: {type: DataTypes.STRING, allowNull: false},
-    rows: {type: DataTypes.NUMBER, allowNull: false},
-    columns: {type: DataTypes.NUMBER, allowNull: false},
+    rows: {type: DataTypes.NUMBER, allowNull: false, field: "ROW_COUNT"},
+    columns: {type: DataTypes.NUMBER, allowNull: false, field: "COLUMN_COUNT"},
     frontRows: {type: DataTypes.NUMBER, allowNull: false},
     sideColumns: {type: DataTypes.NUMBER, allowNull: false},
     seats: {type: DataTypes.STRING(2000), allowNull: false},
@@ -116,19 +116,22 @@ export class SequelizeTheatreRepository implements TheatreRepository {
             sequelize,
             modelName: "Address",
             tableName: "THEATRE_LOCATION",
-            timestamps: false
+            timestamps: false,
+            underscored: true
         })
         ScreenModel.init(ScreenAttributes, {
             sequelize,
             modelName: "Screen",
             tableName: "THEATRE_SCREEN",
-            timestamps: false
+            timestamps: false,
+            underscored: true
         })
         TheatreModel.init(TheatreAttributes, {
             sequelize,
             modelName: "Theatre",
             tableName: "THEATRE",
             timestamps: false,
+            underscored: true
         })
         TheatreModel.hasOne(AddressModel, { foreignKey: "theatreId", as: "location" })
         TheatreModel.hasMany(ScreenModel, { foreignKey: "theatreId", as: "screens" })
@@ -165,7 +168,7 @@ export class SequelizeTheatreRepository implements TheatreRepository {
     }
 
     async getTheatresByQuery(query: TheatresQuery): Promise<Theatre[]> {
-        const where = createTheatreWhereClause(query);
+        const where = sequelizeTheatreQuery(query);
         return await Promise.all((await TheatreModel.findAll({ where,
             include: [
                 {model: AddressModel, as: "location"},
@@ -205,7 +208,7 @@ export class SequelizeTheatreRepository implements TheatreRepository {
     }
 
     async deleteTheatresByQuery(query: TheatresQuery): Promise<number> {
-        const where = createTheatreWhereClause(query);
+        const where = sequelizeTheatreQuery(query);
         return await TheatreModel.destroy({ where });
     }
 
@@ -250,68 +253,68 @@ export class SequelizeTheatreRepository implements TheatreRepository {
     }
 }
 
-function createTheatreWhereClause(query: TheatresQuery): WhereOptions<typeof TheatreAttributes> {
+function sequelizeTheatreQuery(query: TheatresQuery): WhereOptions<typeof TheatreAttributes> {
     const predicates: any[] = []
     if (query.id) {
-        predicates.push(queryField(TheatreModel, "id", query.id))
+        predicates.push(sequelizePredicate<TheatreData, string>(TheatreModel, "id", query.id))
     }
     if (query.name) {
-        predicates.push(queryField(TheatreModel, "name", query.name))
+        predicates.push(sequelizePredicate<TheatreData, string>(TheatreModel, "name", query.name))
     }
     if (query.screenCount) {
         predicates.push(Sequelize.literal(dedent`${query.screenCount} = (
             SELECT count(*) 
-            FROM "${ScreenModel.tableName}" 
-            WHERE "theatreId" = "${TheatreModel.name}"."id")`
+            FROM ${ScreenModel.tableName} 
+            WHERE theatre_id = ${TheatreModel.name}.id)`
         ))
     }
     if (query.location) {
         predicates.push(Sequelize.literal(dedent`EXISTS (
-            SELECT "theatreId"
-            FROM "${AddressModel.tableName}" 
-            WHERE "theatreId" = "${TheatreModel.name}"."id" AND (
-                "street" = '${query.location}' OR 
-                "city" = '${query.location}' OR 
-                "state" = '${query.location}' OR 
-                "zip" = '${query.location}'
+            SELECT 1
+                FROM ${AddressModel.tableName}
+                WHERE theatre_id = ${TheatreModel.name}.id AND (
+                    ${rawPredicate("street", query.location)} OR
+                    ${rawPredicate("city", query.location)} OR
+                    ${rawPredicate("state", query.location)} OR
+                    ${rawPredicate("zip", query.location)}
             )`
         ))
     }
     return { [Op.and]: predicates }
 }
 
-export function createTheatreSubqueryClause(query: TheatresQuery): string | undefined {
+export function rawTheatreSubquery(query: TheatresQuery): string | undefined {
     const predicates: string[] = []
-    if (query.id) {
-        predicates.push(sqlWherePredicate("id", query.id))
-    }
     if (query.name) {
-        predicates.push(sqlWherePredicate("name", query.name))
+        predicates.push(rawPredicate("name", query.name))
     }
     if (query.screenCount) {
-        predicates.push(dedent`${query.screenCount} = (
-            SELECT count(*)
-                FROM "${ScreenModel.tableName}"
-                WHERE "theatreId" = "${TheatreModel.name}"."id"
-            )`
+        predicates.push(
+            rawPredicate(dedent`(
+                SELECT count(*) 
+                    FROM ${ScreenModel.tableName}
+                    WHERE theatre_id = ${TheatreModel.tableName}.id
+                )`, query.screenCount
+            )
         )
     }
     if (query.location) {
         predicates.push(dedent`EXISTS (
-            SELECT "theatreId"
-            FROM "${AddressModel.tableName}"
-            WHERE "theatreId" = "${TheatreModel.name}"."id" AND (
-                "street" = '${query.location}' OR
-                "city" = '${query.location}' OR
-                "state" = '${query.location}' OR
-                "zip" = '${query.location}'
+            SELECT 1 
+                FROM ${AddressModel.tableName}
+                WHERE theatre_id = ${TheatreModel.tableName}.id AND (
+                    ${rawPredicate("street", query.location)} OR
+                    ${rawPredicate("city", query.location)} OR
+                    ${rawPredicate("state", query.location)} OR
+                    ${rawPredicate("zip", query.location)}
+                )
             )`
         )
     }
     if (predicates.length > 0) {
         return dedent`(
-            SELECT "${TheatreModel.tableName}"."id"
-                FROM "${TheatreModel.tableName}"
+            SELECT id 
+                FROM ${TheatreModel.tableName}
                 WHERE ${predicates.map(bracket).join(" AND ")}
             )`
     } return undefined;

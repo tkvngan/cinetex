@@ -65,7 +65,10 @@ async function main(): Promise<void> {
     // await connectMongoDBServer()
     // const repositories: Repositories = new MongoDBRepositories()
 
-    let sequelize: Sequelize = new Sequelize("oracle://cinetex:goodExample@localhost:1521/xe", { omitNull: true })
+    let sequelize: Sequelize = new Sequelize(
+        "oracle://cinetex:goodExample@192.168.2.155:1521/xe",
+        { omitNull: true, quoteIdentifiers: false }
+    )
     let repositories: SequelizeRepositories = new SequelizeRepositories(sequelize)
     await repositories.sync({force: true})
 
@@ -84,14 +87,6 @@ async function main(): Promise<void> {
             process.exit(0)
         })
     });
-
-    (await repositories.Movie.getAllMovies()).forEach((movie: Movie) => {
-        const len = movie.synopsis?.length ?? 0;
-        if (len > 1000) {
-            console.log("Movie: ", movie.name, ", length: ", len)
-        }
-    });
-
 }
 
 main().catch(error => {

@@ -7,16 +7,10 @@ import {SequelizeUserRepository} from "../../infrastructure/repositories/sequeli
 
 setObjectIdFactory(() => new ObjectId().toString("hex"))
 
-let sequelize: Sequelize = new Sequelize("oracle://cinetex_test:goodExample@localhost:1521/xe",
-    {
-        omitNull: true,
-        pool: {
-            max: 5,
-            min: 5,
-            acquire: 30000,
-            idle: 10000
-        }
-    }
+let sequelize: Sequelize = new Sequelize(
+    "oracle://cinetex_test:goodExample@192.168.2.155:1521/xe",
+    // "oracle://cinetex_test:goodExample@localhost:1521/xe",
+    { omitNull: true, quoteIdentifiers: false }
 )
 
 let sqlRepositories: SequelizeRepositories = new SequelizeRepositories(sequelize)
@@ -39,19 +33,19 @@ beforeAll(async () => {
         }
         await new Promise(resolve => setTimeout(resolve, 1000))
     }
-    const userRepository: SequelizeUserRepository = sqlRepositories.User as SequelizeUserRepository
-    try {
-        await userRepository.createUserCredentialsPackage();
-    } catch (e) {
-        console.log("Failed to create user credentials package: ", e)
-        throw e;
-    }
-    try {
-        await userRepository.createUserCredentialsPackageBody();
-    } catch (e) {
-        console.log("Failed to create user credentials package body: ", e)
-        throw e;
-    }
+    // const userRepository: SequelizeUserRepository = sqlRepositories.User as SequelizeUserRepository
+    // try {
+    //     await userRepository.createUserCredentialsPackage();
+    // } catch (e) {
+    //     console.log("Failed to create user credentials package: ", e)
+    //     throw e;
+    // }
+    // try {
+    //     await userRepository.createUserCredentialsPackageBody();
+    // } catch (e) {
+    //     console.log("Failed to create user credentials package body: ", e)
+    //     throw e;
+    // }
 
     // await connectMongoDB(config.MONGODB_URI, {
     //     dbName: config.MONGODB_DBNAME,
