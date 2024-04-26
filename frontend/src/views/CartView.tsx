@@ -1,24 +1,30 @@
-import {UseCaseCollection} from "cinetex-core/dist/application/UseCaseCollection";
 import {CartModel} from "../models/CartModel";
-import React, {useEffect, useReducer} from "react";
+import React, {useEffect} from "react";
 import * as bootstrap from "bootstrap"
-import {Credentials} from "cinetex-core/dist/security/Credentials";
+import {AuthenticationModel} from "../models/AuthenticationModel";
 
-export function CartView({id, interactors, cart, credentials}: {
+export function CartView({ id, cart, authentication }: {
     id: string,
-    interactors: UseCaseCollection,
     cart: CartModel,
-    credentials?: Credentials
+    authentication: AuthenticationModel
 }) {
 
     const ref = React.useRef<HTMLDivElement>(null)
-    const [, forceUpdate] = useReducer(x => x + 1, 0);
+    const [cartState, setCartState] = React.useState(cart.state)
+    const [credentials, setCredentials] = React.useState(authentication.state.credentials)
 
     useEffect(() => {
-        cart.subscribe(() => {
-            forceUpdate()
+        const cartSubscriber = cart.subscribe((state) => {
+            setCartState(state)
         })
-    })
+        const authenticationSubscriber = authentication.subscribe((state) => {
+            setCredentials(state.credentials)
+        })
+        return () => {
+            cartSubscriber.dispose()
+            authenticationSubscriber.dispose()
+        }
+    }, [])
 
     function dismiss() {
         const element = ref.current
@@ -31,7 +37,7 @@ export function CartView({id, interactors, cart, credentials}: {
 
     async function onCheckout() {
         if (credentials) {
-            await cart.checkout(interactors, credentials)
+            await cart.handle({ action: 'checkout', credentials })
         }
         dismiss()
     }
@@ -69,7 +75,7 @@ export function CartView({id, interactors, cart, credentials}: {
                             </tr>
                             </thead>
                             <tbody>
-                            {cart.items.map((item, index) => {
+                            { cartState.items.map((item, index) => {
                                 return (
                                     <tr key={index}>
                                         <td>{item.movie.name}</td>
@@ -86,7 +92,7 @@ export function CartView({id, interactors, cart, credentials}: {
                 </div>
                 <div className="row">
                     <div className="col-12">
-                        <h3>Total: {cart.totalPrice}</h3>
+                        <h3>Total: {cart.state.totalPrice}</h3>
                     </div>
                 </div>
                 <div className="my-3">

@@ -1,22 +1,58 @@
-import {Booking} from "cinetex-core/dist/domain/entities/Booking";
+import {Booking, SeatPosition} from "cinetex-core/dist/domain/entities/Booking";
 import {Movie} from "cinetex-core/dist/domain/entities/Movie";
-import {SeatPosition} from "cinetex-core/dist/domain/entities/Booking";
 import {Theatre} from "cinetex-core/dist/domain/entities/Theatre";
 
-import {UseCaseCollection} from "cinetex-core/dist/application/UseCaseCollection";
 import {Credentials} from "cinetex-core/dist/security/Credentials";
 import {newObjectId} from "cinetex-core/dist/domain/types";
+import {ViewModel} from "./ViewModel";
+import {CreateBooking} from "cinetex-core/dist/application";
 
-export interface CartModel {
+export interface CartState {
     readonly items: readonly CartItem[];
     readonly totalPrice: number;
-    addItem(movie: Movie, theatre: Theatre, screenId: number, date: string, time: string, seat: SeatPosition, price: number): CartItem;
-    removeItem(item: CartItem): void;
-    updateItems(movie: Movie, theatre: Theatre, screenId: number, date: string, time: string, seats: SeatPosition[]): void;
-    clear(): void;
-    subscribe(listener: (this: this, change?: { action: 'add' | 'remove'; items: readonly CartItem[]}) => void): { readonly unsubscribe: () => void };
-    checkout(interactors: UseCaseCollection, credentials: Credentials): Promise<void>;
 }
+
+export type CardAddItemIntent = {
+    readonly action: 'add',
+    readonly movie: Movie,
+    readonly theatre: Theatre,
+    readonly screenId: number,
+    readonly date: string,
+    readonly time: string,
+    readonly seat: SeatPosition,
+    readonly price: number
+}
+
+export type CartRemoveItemIntent = {
+    readonly action: 'remove',
+    readonly item: CartItem
+}
+
+export type CartUpdateIntent = {
+    readonly action: 'update'
+    readonly movie: Movie,
+    readonly theatre: Theatre,
+    readonly screenId: number,
+    readonly date: string,
+    readonly time: string,
+    readonly seats: SeatPosition[]
+}
+
+export type CartCheckoutIntent = {
+    readonly action: 'checkout',
+    readonly credentials: Credentials
+}
+
+export type CartClearIntent = {
+    readonly action: 'clear'
+}
+
+export type CartIntent =
+    | CardAddItemIntent
+    | CartRemoveItemIntent
+    | CartUpdateIntent
+    | CartCheckoutIntent
+    | CartClearIntent
 
 export interface CartItem {
     readonly movie: Movie,
@@ -28,91 +64,78 @@ export interface CartItem {
     readonly price: number
 }
 
-class CartModelImpl implements CartModel {
-    private readonly _items: CartItem[];
-    private _totalPrice: number;
-    private _changeListeners: ((this: this, change?: { action: 'add' | 'remove'; items: readonly CartItem[]}) => void)[] = [];
+export class CartModel extends ViewModel<CartState, CartIntent> {
 
-    constructor(items: CartItem[], totalPrice: number) {
-        this._items = items;
-        this._totalPrice = totalPrice;
+    public constructor(readonly CreateBooking: CreateBooking) {
+        super({items: [], totalPrice: 0})
     }
 
-    get items(): readonly CartItem[] {
-        return this._items;
-    }
-
-    get totalPrice(): number {
-        return this._totalPrice;
-    }
-
-    addItem(movie: Movie, theatre: Theatre, screenId: number, date: string, time: string, seat: SeatPosition, price: number): CartItem {
-        const item = <CartItem> { movie, theatre, screenId, date, time, seat, price }
-        this._items.push(item);
-        this._totalPrice += price;
-        this.notifyItemsAdded([item])
-        return item;
-    }
-
-    updateItems(movie: Movie, theatre: Theatre, screenId: number, date: string, time: string, seats: SeatPosition[]) {
-        const items = this._items.filter(item => {
-            return item.movie.id !== movie.id ||
-                item.theatre.id !== theatre.id ||
-                item.screenId !== screenId ||
-                item.date !== date ||
-                item.time !== time
-        });
-        for (const seat of seats) {
-            const item = <CartItem> { movie, theatre, screenId, date, time, seat, price: 10.0 }
-            items.push(item);
+    public async handle(intent: CartIntent): Promise<void> {
+        switch (intent.action) {
+            case 'add':
+                this.addItem(intent)
+                break;
+            case 'remove':
+                this.removeItem(intent)
+                break;
+            case 'update':
+                this.update(intent)
+                break;
+            case 'checkout':
+                await this.checkout(intent)
+                break;
+            case 'clear':
+                this.clear(intent)
+                break;
         }
-        this._items.splice(0, this._items.length);
-        this._items.push(...items);
-        this.notifyItemsRemoved(this._items)
     }
 
-    removeItem(item: CartItem): boolean {
-        const index = this._items.indexOf(item);
+    private addItem(intent: CardAddItemIntent) {
+        const { movie, theatre, screenId, date, time, seat, price } = intent;
+        const item = <CartItem> { movie, theatre, screenId, date, time, seat, price }
+        this.state = {
+            items: [...this.state.items, item],
+            totalPrice: this.state.totalPrice + price
+        }
+    }
+
+    private removeItem(intent : CartRemoveItemIntent) {
+        const { item } = intent;
+        const index = this.state.items.indexOf(item);
         if (index !== -1) {
-            this._items.splice(index, 1);
-            this._totalPrice -= item.price;
-            this.notifyItemsRemoved([item])
-            return true
+            this.state = {
+                items: [...this.state.items].splice(index, 1),
+                totalPrice: this.state.totalPrice - item.price
+            }
         }
         return false
     }
 
-    notifyChange(change?: { action: 'add' | 'remove'; items: readonly CartItem[] }): void {
-        this._changeListeners.forEach(listener => listener.call(this, change))
-    }
-
-    notifyItemsAdded(items: CartItem[]): void {
-        this.notifyChange({action: 'add', items})
-    }
-
-    notifyItemsRemoved(items: CartItem[]): void {
-        this.notifyChange({action: 'remove', items})
-    }
-
-    subscribe(listener: (this: this, change?: { action: 'add' | 'remove'; items: readonly CartItem[] }) => void) {
-        this._changeListeners.push(listener);
-        return {
-            unsubscribe: () => {
-                this._changeListeners = this._changeListeners.filter(l => l !== listener)
-            }
+    private update(intent: CartUpdateIntent) {
+        const { movie, theatre, screenId, date, time, seats } = intent;
+        const items = this.state.items.filter(item => (
+            item.movie.id !== movie.id
+            || item.theatre.id !== theatre.id
+            || item.screenId !== screenId
+            || item.date !== date
+            || item.time !== time
+        ));
+        for (const seat of seats) {
+            items.push(<CartItem> { movie, theatre, screenId, date, time, seat, price: 10.0 });
+        }
+        this.state = {
+            items,
+            totalPrice: items.reduce((acc, item) => acc + item.price, 0)
         }
     }
 
-    clear(): void {
-        const items = [...this._items];
-        this._items.splice(0, this._items.length);
-        this._totalPrice = 0;
-        this.notifyItemsRemoved(items);
+    private clear(intent: CartClearIntent): void {
+        this.state = { items: [], totalPrice: 0 }
     }
 
-    async checkout(interactors: UseCaseCollection, credentials: Credentials): Promise<void> {
+    private async checkout(intent: CartCheckoutIntent): Promise<void> {
         const itemsByTheatre: Record<string, CartItem[]> = {}
-        for  (const item of this._items) {
+        for  (const item of this.state.items) {
             if (!itemsByTheatre[item.theatre.id]) {
                 itemsByTheatre[item.theatre.id] = []
             }
@@ -130,18 +153,14 @@ class CartModelImpl implements CartModel {
             }));
             const booking: Booking = {
                 id: newObjectId(),
-                userId: credentials.user.id,
+                userId: intent.credentials.user.id,
                 theatreId: theatreId,
                 bookingTime: new Date().toISOString(),
                 totalPrice: items.reduce((acc, item) => acc + item.price, 0),
                 tickets
             }
-            await interactors.CreateBooking.invoke(booking, credentials);
-            this.clear();
+            await this.CreateBooking.invoke(booking, intent.credentials);
+            this.state = { items: [], totalPrice: 0 }
         }
     }
-}
-
-export function CartModel(items: CartItem[] = [], totalPrice: number = 0): CartModel {
-    return new CartModelImpl(items, totalPrice);
 }

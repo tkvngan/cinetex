@@ -12,9 +12,11 @@ import {injectGlobal} from "@emotion/css";
 import {AppThemeManager} from "./AppThemeManager";
 import {BrowserRouter} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css"
-import {SecurityModel} from "./models/SecurityModel";
+import {AuthenticationModel} from "./models/AuthenticationModel";
 import {CartModel} from "./models/CartModel";
 import {setObjectIdFactory} from "cinetex-core/dist/domain/types";
+import {AuditoriumModel} from "./models/AuditoriumModel";
+import AppFeatures from "./AppFeatures";
 
 /*#5f0f4f;*/
 const globalStyle = css(`
@@ -54,14 +56,15 @@ const axiosInstance = axios.create({
 
 const invoker = AxiosUseCaseInvoker(axiosInstance)
 const interactors: UseCaseCollection = UseCaseCollection(invoker)
-const security = new SecurityModel(interactors.SignIn, interactors.SignUp)
-const cart = CartModel()
-
+const authentication = new AuthenticationModel(interactors.SignIn, interactors.SignUp)
+const cart = new CartModel(interactors.CreateBooking)
+const auditorium = new AuditoriumModel(interactors.GetMovieById, interactors.GetTheatreById, interactors.GetBookingsByTheatreId)
 const themeManager = new AppThemeManager("dark")
+const features = AppFeatures(interactors, authentication, cart, auditorium)
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
-        <App interactors={interactors} security={security} cart={cart} themeManager={themeManager}/>
+        <App features={features} authentication={authentication} cart={cart} themeManager={themeManager}/>
     </BrowserRouter>
 )
 

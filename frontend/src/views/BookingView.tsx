@@ -1,8 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import {useParams} from "react-router-dom";
-import {UseCaseCollection} from "cinetex-core/dist/application/UseCaseCollection";
-import React, {MouseEvent, useEffect, useReducer, useState} from "react";
-import {AuditoriumModel, createAuditoriumModel, SeatModel} from "../models/AuditoriumModel";
+import React, {MouseEvent, useEffect, useState} from "react";
+import {AuditoriumModel} from "../models/AuditoriumModel";
 import {SeatPosition} from "cinetex-core/dist/domain/entities/Booking";
 import {SeatType} from "cinetex-core/dist/domain/entities/Theatre";
 import {CartModel} from "../models/CartModel";
@@ -74,73 +73,96 @@ function renderScreen(className: string, width: string, screenName: string = "SC
     )
 }
 
-export function BookingView({interactors, cart}: { interactors: UseCaseCollection, cart: CartModel }) {
+export interface BookingViewProps {
+    cart: CartModel
+    auditorium: AuditoriumModel
+}
+
+export function BookingView({cart, auditorium}: BookingViewProps) {
     const params = useParams<BookingViewParams>()
     const movieId = params.movieId ? params.movieId : error("movieId is undefined")
     const theatreId = params.theatreId ?? error("theatreId is undefined")
     const screenId = params.screenId ? parseInt(params.screenId) : error("screenId is undefined")
     const date = params.date ?? error("date is undefined")
     const time = params.time ?? error("time is undefined")
+    const [auditoriumState, setAuditoriumState] = useState(auditorium.state)
 
-    const [model, setModel] = useState<AuditoriumModel>()
-    const [, forceUpdate] = useReducer(x => x + 1, 0);
+    async function initializeAuditorium() {
+        await auditorium.handle({
+            action: 'initialize',
+            movieId, theatreId, screenId, date, time
+        })
+        for (const item of cart.state.items) {
+            if (item.movie.id === movieId &&
+                item.theatre.id === theatreId &&
+                item.screenId === screenId &&
+                item.date === date &&
+                item.time === time) {
+                await auditorium.handle({
+                    action: 'selectSeat',
+                    row: item.seat.row,
+                    column: item.seat.column
+                })
+            }
+        }
+    }
 
     useEffect(() => {
-        async function createModel() {
-            const model = await createAuditoriumModel(interactors, movieId, theatreId, screenId, date, time)
-            for (const item of cart.items) {
-                if (item.movie.id === model.movie.id &&
-                    item.theatre.id === model.theatre.id &&
-                    item.screenId === model.screen.id &&
-                    item.date === date &&
-                    item.time === time) {
-                    model.selectSeat(item.seat.row, item.seat.column)
-                }
-            }
-            model.subscribe(() => {
-                const selectedSeats = model.getSelectedSeats()
-                console.log("BookingView: selectedSeats =", selectedSeats)
-                const cartSeats: SeatPosition[] = selectedSeats.map((seat) => {
-                    return {row: seat.row, column: seat.column}
+        initializeAuditorium().catch()
+        const auditoriumSubscriber = auditorium.subscribe(async (state) => {
+            if (state !== undefined) {
+                await cart.handle({
+                    action: 'update',
+                    movie: state.movie,
+                    theatre: state.theatre,
+                    screenId: state.screen.id,
+                    date: date,
+                    time: time,
+                    seats: state.selectedSeatPositions.getSeats()
                 })
-                console.log("BookingView: cartSeats =", cartSeats);
-                cart.updateItems(model.movie, model.theatre, model.screenId, date, time, cartSeats)
-                forceUpdate()
-            })
-            setModel(model)
-        }
-
-        createModel().then().catch((err) => {
-            console.error("BookingView: error creating model:", err)
+                setAuditoriumState(state)
+            }
         })
+        return () => {
+            auditoriumSubscriber.dispose()
+        }
     }, [])
 
-    function seatClassName(seat: SeatModel): string {
+    function seatClassName(seat: SeatPosition): string {
         let className = "seat"
-        if (seat.type === SeatType.Unavailable) {
+        if (auditoriumState === undefined) {
+            return className;
+        }
+        if (auditoriumState.getSeatType(seat.row, seat.column) === SeatType.Unavailable) {
             className += " seat-unavailable"
         }
-        if (seat.isOccupied) {
+        if (auditoriumState.isSeatOccupied(seat.row, seat.column)) {
             className += " seat-occupied"
         }
-        if (seat.isSelected) {
+        if (auditoriumState.isSeatSelected(seat.row, seat.column)) {
             className += " seat-selected"
         }
         return className
     }
 
-    function seatKey(seat: SeatModel): string {
+    function seatKey(seat: SeatPosition): string {
         return `seat-${seat.row}-${seat.column}`
     }
 
-    function onClickSeat(event: MouseEvent, seat: SeatModel) {
-        if (seat.isOccupied || seat.type === SeatType.Unavailable) {
+    async function onClickSeat(event: MouseEvent, seat: SeatPosition) {
+        if (auditoriumState === undefined) {
             return
         }
-        if (seat.isSelected) {
-            model?.unselectSeat(seat.row, seat.column)
+        if (auditoriumState.isSeatOccupied(seat.row, seat.column) ||
+            auditoriumState.getSeatType(seat.row, seat.column) === SeatType.Unavailable) {
+            return
+        }
+        if (auditoriumState.isSeatSelected(seat.row, seat.column)) {
+            console.log("unselectSeat", seat)
+            await auditorium.handle({action: 'unselectSeat', row: seat.row, column: seat.column})
         } else {
-            model?.selectSeat(seat.row, seat.column)
+            console.log("selectSeat", seat)
+            await auditorium.handle({action: 'selectSeat', row: seat.row, column: seat.column})
         }
     }
 
@@ -210,10 +232,10 @@ export function BookingView({interactors, cart}: { interactors: UseCaseCollectio
                 },
             }}>
             <div className={"row row-cols-2"}>
-                <img className="movie-image col-3" src={model?.movie.mediumPosterImageUrl} alt={model?.movie.name}/>
+                <img className="movie-image col-3" src={auditoriumState?.movie.mediumPosterImageUrl} alt={auditoriumState?.movie.name}/>
                 <div className={"col-9"}>
-                    <h1 className={""}>{model?.movie.name}</h1>
-                    <h5  className={""}>{model?.theatre.name}</h5>
+                    <h1 className={""}>{auditoriumState?.movie.name}</h1>
+                    <h5  className={""}>{auditoriumState?.theatre.name}</h5>
                     {/*<p  className={'col-1'}>{model?.movie?.ratings?.filter(r => r.provinceCode === 'ON')[0]?.rating}</p>*/}
                     <p  className={"col"}>{date.replaceAll("-", "\u2011")} {time}</p>
                 </div>
@@ -221,28 +243,29 @@ export function BookingView({interactors, cart}: { interactors: UseCaseCollectio
 
             <div className={"row row-cols-1 justify-content-center"}>
                 <div className={"col col-auto"}>
-                    {renderScreen("screen", "50rem", model?.screen.name)}
+                    {renderScreen("screen", "50rem", auditoriumState?.screen.name)}
                 </div>
                 <table className="col-auto" cellSpacing={0} cellPadding={0}>
                     <tbody>
-                    { model?.seats.map((row, rowIndex) =>
-                        <tr key={"row-" + row[0].row}>
-                            <td className={"row-index"}>{rowIndex}</td>
-                            { row.map((seat, colIndex) =>
+                    { auditoriumState?.screen?.seats.map((seatTypes, row) =>
+                        <tr key={"row-" + row}>
+                            <td className={"row-index"}>{row}</td>
+                            { seatTypes.map((seatType, column) =>
                                 <td
-                                    key={seatKey(seat)}
+                                    key={seatKey({row, column})}
                                     className={
-                                        seatClassName(seat)
+                                        seatClassName({row, column})
                                         // +
                                         //     (rowIndex === model.screen.frontRows ? " after-front-rows" : "") +
                                         //     (colIndex === model.screen.sideColumns ? " side-columns-right" : "") +
                                         //     (colIndex === model.screen.columns - model.screen.sideColumns - 1? " side-columns-left" : "")
                                     }
-                                    onClick={(e) => onClickSeat(e, seat)}>
+                                    onClick={(e) => onClickSeat(e, {row, column})}>
                                     {
-                                        seat.type === SeatType.Unavailable ? <div/> :
-                                            seat.isOccupied ? renderSeat("#262c38") :
-                                                seat.isSelected ? renderSeat("#FFFF00") : renderSeat()
+                                        seatType === SeatType.Unavailable ? <div/> :
+                                            auditoriumState.isSeatOccupied(row, column) ? renderSeat("#262c38") :
+                                                auditoriumState.isSeatSelected(row, column) ? renderSeat("#FFFF00") :
+                                                    renderSeat()
                                     }
                                 </td>
                             )}
@@ -250,8 +273,8 @@ export function BookingView({interactors, cart}: { interactors: UseCaseCollectio
                     )}
                     <tr>
                         <td/>
-                        { model?.seats[0].map((seat, colIndex) =>
-                            <td key={colIndex} className={"column-index"}>{colIndex}</td>
+                        { auditoriumState?.screen.seats[0].map((seatType, column) =>
+                            <td key={column} className="column-index">{column}</td>
                         )}
                     </tr>
                    </tbody>

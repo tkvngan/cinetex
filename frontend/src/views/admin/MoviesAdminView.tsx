@@ -5,14 +5,14 @@ import {Movie, Rating} from "cinetex-core/dist/domain/entities/Movie";
 import * as Icons from "react-bootstrap-icons";
 import {css, SerializedStyles} from "@emotion/react";
 import {AdminToolbar} from "./AdminToolbar";
-import {Credentials} from "cinetex-core/dist/security/Credentials";
+import {AuthenticationModel} from "../../models/AuthenticationModel";
 
 type AdminMoviesViewProps = {
     interactors: UseCaseCollection,
-    credentials?: Credentials
+    authentication: AuthenticationModel
 }
 
-export function MoviesAdminView({interactors, credentials}: AdminMoviesViewProps) {
+export function MoviesAdminView({interactors, authentication}: AdminMoviesViewProps) {
 
     const [movies, setMovies] = useState<Movie[]>([]);
     const [movieSelected, setMovieSelected] = useState<Record<string, true>>({});
@@ -124,7 +124,7 @@ export function MoviesAdminView({interactors, credentials}: AdminMoviesViewProps
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                             <button type="button" className="btn btn-primary" data-bs-dismiss="modal"
                                 onClick={() => {
-                                    interactors.DeleteMovies.invoke(Object.keys(movieSelected), credentials)
+                                    interactors.DeleteMovies.invoke(Object.keys(movieSelected), authentication.state.credentials)
                                         .then(() => {
                                             setMovieSelected({})
                                             interactors.GetAllMovies.invoke({}).then((movies: Movie[]) => {

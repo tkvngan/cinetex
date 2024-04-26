@@ -9,19 +9,21 @@ import bg from './assets/svg/bg.svg'
 import {Credentials} from "cinetex-core/dist/security/Credentials";
 import {AppFeature} from "./AppFeatures";
 import {CartModel} from "./models/CartModel";
+import {AuthenticationModel} from "./models/AuthenticationModel";
 
 type AppNavigationBarProps = {
-    features: AppFeature[],
-    credentials: Credentials | undefined,
-    cart: CartModel,
-    theme: 'dark' | 'light',
+    readonly features: readonly AppFeature[],
+    readonly authentication: AuthenticationModel,
+    readonly cart: CartModel,
+    readonly theme: 'dark' | 'light',
 }
 
-export function AppNavigationBar({features, credentials, cart, theme}: AppNavigationBarProps) {
+export function AppNavigationBar({features, authentication, cart, theme}: AppNavigationBarProps) {
     const isDarkTheme = () => (theme === 'dark')
     const signInViewButtonTooltip = React.useRef<Tooltip|null>(null)
     const currentPathMatch = features.map(({path}) => useMatch(path)).find((match) => match !== null)
-    const [cartItems, setCartItems] = React.useState<number>(cart.items.length)
+    const [credentials, setCredentials] = React.useState<Credentials|undefined>(authentication.state.credentials)
+    const [cartItems, setCartItems] = React.useState<number>(cart.state.items.length)
     function isActive(path: string) {
         return currentPathMatch?.pattern?.path === path
     }
@@ -37,12 +39,15 @@ export function AppNavigationBar({features, credentials, cart, theme}: AppNaviga
             signInTooltip.setContent({ '.tooltip-inner': tooltipMessage })
         }
 
-
         const cartSubscriber = cart.subscribe(() => {
-            setCartItems(cart.items.length)
+            setCartItems(cart.state.items.length)
+        })
+        const credentialsSubscriber = authentication.subscribe(() => {
+            setCredentials(authentication.state.credentials)
         })
         return () => {
-            cartSubscriber.unsubscribe()
+            cartSubscriber.dispose()
+            credentialsSubscriber.dispose()
         }
     }, [])
 

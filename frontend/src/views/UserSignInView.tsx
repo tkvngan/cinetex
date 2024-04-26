@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import React, {ChangeEvent, KeyboardEvent, ReactElement, useEffect, useRef, useState} from "react";
-import {SecurityModel} from "../models/SecurityModel";
+import {AuthenticationModel} from "../models/AuthenticationModel";
 import * as bootstrap from "bootstrap"
 import {
     ApplicationException,
@@ -15,7 +15,7 @@ import validate from "validate.js";
 
 export type UserSignInViewProps = {
     id: string,
-    security: SecurityModel,
+    authentication: AuthenticationModel,
 }
 
 type Mode = "signIn" | "signUp" | "info"
@@ -29,10 +29,10 @@ type Field = {
     message?: string,
 }
 
-export function UserSignInView({id, security}: UserSignInViewProps) {
+export function UserSignInView({id, authentication}: UserSignInViewProps) {
     const ref = useRef<HTMLDivElement>(null)
-    const [credentials, setCredentials] = useState<Credentials|undefined>()
-    const [mode, setMode] = useState<Mode>(security.isAuthenticated ? "info" : "signIn")
+    const [credentials, setCredentials] = useState<Credentials | undefined>(authentication.state.credentials)
+    const [mode, setMode] = useState<Mode>(credentials ? "info" : "signIn")
     const [errorMessage, setErrorMessage] = useState<string>("")
 
     const [emailField, setEmailField] = useState<Field>(
@@ -59,25 +59,28 @@ export function UserSignInView({id, security}: UserSignInViewProps) {
         setPhoneNumberField({...phoneNumberField, value: user?.phoneNumber??"", message: ""})
     }
 
+    function update(credentials?: Credentials) {
+    }
+
     useEffect(() => {
-        const subscription = security.subscribe((credentials) => {
-            setCredentials(credentials)
+        const subscription = authentication.subscribe((state) => {
+            setCredentials(state.credentials)
+            setMode(credentials ? "info" : "signIn")
             updateFields(credentials)
-            setMode(security.isAuthenticated ? "info" : "signIn")
         })
-        setMode(security.isAuthenticated ? "info" : "signIn")
-        updateFields(security.credentials)
+        setMode(credentials ? "info" : "signIn")
+        updateFields(credentials)
         if (ref.current) {
             ref.current.addEventListener('hidden.bs.offcanvas', () => {
                 setPasswordField({...passwordField, value: ""})
                 clearMessages()
             })
             ref.current.addEventListener('show.bs.offcanvas', () => {
-                updateFields(security.credentials)
+                updateFields(credentials)
             })
         }
         return () => {
-            subscription.unsubscribe()
+            subscription.dispose()
         }
     }, []);
 
@@ -111,14 +114,19 @@ export function UserSignInView({id, security}: UserSignInViewProps) {
 
     async function submitSignIn(): Promise<void> {
         if (validateSignInForm()) {
-            await security.signIn(emailField.value.trim(), passwordField.value.trim());
+            await authentication.handle({
+                action: "signIn",
+                email: emailField.value.trim(),
+                password: passwordField.value.trim()
+            })
             dismiss()
         }
     }
 
     async function submitSignUp(): Promise<void> {
         if (validateSignUpForm()) {
-            await security.signUp({
+            await authentication.handle({
+                action: "signUp",
                 email: emailField.value.trim(),
                 password: passwordField.value.trim(),
                 firstName: firstNameField.value.trim(),
@@ -137,7 +145,7 @@ export function UserSignInView({id, security}: UserSignInViewProps) {
                 case "signUp":
                     return await submitSignUp()
                 case "info":
-                    return await security.signOut();
+                    return await authentication.handle({action: "signOut"});
             }
         } catch (e : any) {
             if (e instanceof UserNotFoundException) {
@@ -158,7 +166,7 @@ export function UserSignInView({id, security}: UserSignInViewProps) {
         if (ref.current) {
             bootstrap.Offcanvas.getInstance(ref.current)?.hide();
         }
-        setMode(security.isAuthenticated ? "info" : "signIn")
+        setMode(authentication.state ? "info" : "signIn")
         clearMessages()
     }
 

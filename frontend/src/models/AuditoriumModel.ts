@@ -1,143 +1,175 @@
-import {Booking} from "cinetex-core/dist/domain/entities/Booking";
+import {Booking, SeatPosition, Ticket} from "cinetex-core/dist/domain/entities/Booking";
 import {Movie} from "cinetex-core/dist/domain/entities/Movie";
-import {Screen} from "cinetex-core/dist/domain/entities/Theatre";
-import {SeatPosition} from "cinetex-core/dist/domain/entities/Booking";
-import {SeatType} from "cinetex-core/dist/domain/entities/Theatre";
-import {Theatre} from "cinetex-core/dist/domain/entities/Theatre";
-import {Ticket} from "cinetex-core/dist/domain/entities/Booking";
+import {Screen, SeatType, Theatre} from "cinetex-core/dist/domain/entities/Theatre";
 
-import {UseCaseCollection} from "cinetex-core/dist/application/UseCaseCollection";
+import {ViewModel} from "./ViewModel";
+import {GetBookingsByTheatreId, GetMovieById, GetTheatreById} from "cinetex-core/dist/application";
 
-export interface SeatModelMutable extends SeatPosition {
-    readonly row: number;
-    readonly column: number;
-    readonly type: SeatType;
-    isOccupied: boolean;
-    isSelected: boolean;
+export type SeatPositions = Readonly<Record<number, Readonly<Record<number, true>>>> & {
+    addedSeat(row: number, column: number): SeatPositions
+    removedSeat(row: number, column: number): SeatPositions
+    getSeats(): SeatPosition[]
 }
 
-export type SeatModel = Readonly<SeatModelMutable>
+export const SeatPositions: { new(): SeatPositions } = function() {
+    return <SeatPositions> {
+        addedSeat: function(this: SeatPositions, row: number, column: number): SeatPositions {
+            return {
+                ...this,
+                [row]: {
+                    ...this[row],
+                    [column]: true
+                }
+            }
+        },
+        removedSeat: function(this: SeatPositions, row: number, column: number): SeatPositions {
+            const newRow = {...this[row]}
+            delete newRow[column]
+            return {
+                ...this,
+                [row]: newRow
+            }
+        },
+        getSeats: function(this: SeatPositions): SeatPosition[] {
+            return Object.entries(this).flatMap(([row, columns]) =>
+                Object.keys(columns).map(column => ({row: parseInt(row), column: parseInt(column)})))
+        }
+    }
+} as any
 
-export interface AuditoriumModel {
+export interface AuditoriumState {
     readonly movie: Movie,
     readonly theatre: Theatre
-    readonly screenId: number;
     readonly screen: Screen;
-    readonly rows: number;
-    readonly columns: number;
-    readonly seats: readonly (readonly SeatModel[])[];
+    readonly date: string;
+    readonly time: string;
+    readonly selectedSeatPositions: SeatPositions
+    readonly occupiedSeatPositions: SeatPositions
 
-    getSelectedSeats(): readonly SeatModel[];
-    getAvailableSeats(): readonly SeatModel[];
+    isSeatOccupied(row: number, column: number): boolean
+    isSeatSelected(row: number, column: number): boolean
 
-    isFrontRowSeat(seat: SeatModel): boolean;
-    isSideColumnSeat(seat: SeatModel): boolean;
+    isFrontRowSeat(row: number): boolean
+    isSideColumnSeat(column: number): boolean
 
-    subscribe(listener: (this: this, seats?: SeatModel[]) => void): { readonly unsubscribe: () => void};
-
-    selectSeat(row: number, column: number): void;
-    unselectSeat(row: number, column: number): void;
+    getSeatType(row: number, column: number): SeatType
 }
 
-class AuditoriumModelImpl implements AuditoriumModel {
-    readonly interactors: UseCaseCollection
-    readonly movie: Movie
-    readonly theatre: Theatre
-    readonly screenId: number;
-    readonly screen: Screen;
+export const AuditoriumState: { new(): AuditoriumState } = function() {
+    return <AuditoriumState> {
+        isSeatOccupied: function(this: AuditoriumState, row: number, column: number): boolean {
+            return this.occupiedSeatPositions[row]?.[column] === true
+        },
+        isSeatSelected: function(this: AuditoriumState, row: number, column: number): boolean {
+            return this.selectedSeatPositions[row]?.[column] === true
+        },
+        isFrontRowSeat: function(this: AuditoriumState, row: number): boolean {
+            return row < this.screen.frontRows
+        },
+        isSideColumnSeat: function(this: AuditoriumState, column: number): boolean {
+            return column < this.screen.sideColumns || column >= this.screen.columns - this.screen.sideColumns
+        },
+        getSeatType: function(this: AuditoriumState, row: number, column: number): SeatType {
+            return this.screen.seats[row][column]
+        }
+    }
+} as any
 
-    private readonly _seats: SeatModelMutable[][]
-    private changeListeners: ((this: this, seats?: SeatModel[]) => void)[] = []
+export type AuditoriumIntent = {
+    readonly action: 'initialize'
+    readonly movieId: string
+    readonly theatreId: string
+    readonly screenId: number
+    readonly date: string
+    readonly time: string
+} | {
+    readonly action: 'selectSeat' | 'unselectSeat'
+    readonly row: number
+    readonly column: number
+}
 
-    constructor(interactors: UseCaseCollection, movie: Movie, theatre: Theatre, screenId: number, occupiedSeats: SeatPosition[]) {
-        this.interactors = interactors
-        this.movie = movie
-        this.theatre = theatre
-        this.screenId = screenId
-        this.screen = theatre.screens[screenId]
-        this._seats = this.screen.seats.map((row, rowIndex) => row.map((seatType, columnIndex) =>
-            <SeatModelMutable> {
-                row: rowIndex,
-                column: columnIndex,
-                type: seatType,
-                isOccupied: occupiedSeats.some(({row, column}) => row === rowIndex && column === columnIndex),
-                isSelected: false
-            }
-        ))
+export class AuditoriumModel extends ViewModel<AuditoriumState | undefined, AuditoriumIntent> {
+
+    public constructor(
+        readonly GetMovieById: GetMovieById,
+        readonly GetTheatreById: GetTheatreById,
+        readonly GetBookingsByTheatreId: GetBookingsByTheatreId) {
+        super(undefined)
     }
 
-    get rows(): number {
-        return this.screen.rows
-    }
-
-    get columns(): number {
-        return this.screen.columns
-    }
-
-    get seats(): readonly (readonly SeatModel[])[] {
-        return this._seats
-    }
-
-    subscribe(listener: (this: this, seats?: SeatModel[]) => void): { readonly unsubscribe: () => void } {
-        this.changeListeners.push(listener)
-        return {
-            unsubscribe: () => {
-                this.changeListeners = this.changeListeners.filter(l => l !== listener)
-            }
+    public async handle(intent: AuditoriumIntent): Promise<void> {
+        switch (intent.action) {
+            case 'initialize':
+                await this.initialize(intent.movieId, intent.theatreId, intent.screenId, intent.date, intent.time)
+                break
+            case 'selectSeat':
+                this.selectSeat(intent.row, intent.column)
+                break
+            case 'unselectSeat':
+                this.unselectSeat(intent.row, intent.column)
+                break
         }
     }
 
-    notifyChange(seats?: SeatModel[]) {
-        this.changeListeners.forEach(listener => listener.call(this, seats))
+    private isSeatOccupied(row: number, column: number): boolean {
+        return this.state !== undefined ? this.state.isSeatOccupied(row, column) : false
     }
 
-    selectSeat(row: number, column: number): void {
-        const seat = this._seats[row][column]
-        if (seat.isOccupied) {
+    private isSeatSelected(row: number, column: number): boolean {
+        return this.state != undefined ? this.state.isSeatSelected(row, column) : false
+    }
+
+    private selectSeat(row: number, column: number): void {
+        if (this.state === undefined || this.isSeatOccupied(row, column) || this.isSeatSelected(row, column)) {
             return
         }
-        seat.isSelected = true
-        this.notifyChange([seat])
+        this.state = {
+            ...this.state,
+            selectedSeatPositions: this.state.selectedSeatPositions.addedSeat(row, column),
+        }
     }
 
-    unselectSeat(row: number, column: number) {
-        const seat = this._seats[row][column]
-        seat.isSelected = false
-        this.notifyChange([seat])
+    private unselectSeat(row: number, column: number) {
+        if (this.state == undefined || this.isSeatOccupied(row, column) || !this.isSeatSelected(row, column)) {
+            return
+        }
+        this.state = {
+            ...this.state,
+            selectedSeatPositions: this.state.selectedSeatPositions.removedSeat(row, column),
+        }
     }
 
-    getSelectedSeats(): readonly SeatModel[] {
-        return this._seats.flatMap(row => row.filter(seat => seat.isSelected))
+    private async initialize(movieId: string, theatreId: string, screenId: number, date: string, time: string) {
+        const movie = await this.GetMovieById.invoke({id: movieId})
+        if (movie === undefined) {
+            throw new Error(`Movie with id ${movieId} not found`)
+        }
+        const theatre = await this.GetTheatreById.invoke({id: theatreId})
+        if (theatre === undefined) {
+            throw new Error(`Theatre with id ${theatreId} not found`)
+        }
+        const screen = theatre.screens.find(screen => screen.id === screenId)
+        if (screen === undefined) {
+            throw new Error(`Screen with id ${screenId} not found`)
+        }
+        const bookings = await this.GetBookingsByTheatreId.invoke({theatreId: theatreId})
+        const selectedSeatPositions = new SeatPositions()
+        const occupiedSeatPositions = bookings
+            .flatMap((booking: Booking) => booking.tickets)
+            .filter((ticket: Ticket) =>
+                ticket.screenId === screenId &&
+                ticket.showDate === date &&
+                ticket.showTime === time)
+            .map(ticket => ticket.seat)
+            .reduce<SeatPositions>((positions, seat) =>
+                positions.addedSeat(seat.row, seat.column), new SeatPositions()
+            )
+        this.state = {
+            ... new AuditoriumState(),
+            movie, theatre, screen, date, time,
+            selectedSeatPositions,
+            occupiedSeatPositions,
+        }
     }
-
-    getAvailableSeats(): readonly SeatModel[] {
-        return this._seats.flatMap(row => row.filter(seat => seat.type !== SeatType.Unavailable && !seat.isOccupied && !seat.isSelected))
-    }
-
-
-
-    isFrontRowSeat(seat: SeatModel): boolean {
-        return seat.row < this.screen.frontRows
-    }
-
-    isSideColumnSeat(seat: SeatModel): boolean {
-        return seat.column < this.screen.sideColumns || seat.column >= this.screen.columns - this.screen.sideColumns
-    }
-
 }
 
-function error(message: string): never {
-    throw new Error(message)
-}
-
-export async function createAuditoriumModel(interactors: UseCaseCollection, movieId: string, theatreId: string, screenId: number, date: string, time: string): Promise<AuditoriumModel> {
-    const movie = await interactors.GetMovieById.invoke({id: movieId}) ?? error(`Movie with id ${movieId} not found`)
-    const theatre = await interactors.GetTheatreById.invoke({id: theatreId}) ?? error(`Theatre with id ${theatreId} not found`)
-    const occupiedSeats = (await interactors.GetBookingsByTheatreId.invoke({theatreId: theatreId}))
-        .flatMap((booking: Booking) => booking.tickets)
-        .filter((ticket: Ticket) => ticket.screenId === screenId && ticket.showDate === date && ticket.showTime === time)
-        .map(ticket => ticket.seat)
-    return new AuditoriumModelImpl(interactors, movie, theatre, screenId, occupiedSeats)
-}
-
-export default createAuditoriumModel

@@ -8,7 +8,7 @@ import {SequelizeUserRepository} from "../../infrastructure/repositories/sequeli
 setObjectIdFactory(() => new ObjectId().toString("hex"))
 
 let sequelize: Sequelize = new Sequelize(
-    "oracle://cinetex_test:goodExample@192.168.2.155:1521/xe",
+    "oracle://cinetex_test:goodExample@localhost:1521/xe",
     // "oracle://cinetex_test:goodExample@localhost:1521/xe",
     { omitNull: true, quoteIdentifiers: false }
 )
