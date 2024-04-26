@@ -243,7 +243,7 @@ export function BookingView({cart, auditorium}: BookingViewProps) {
 
             <div className={"row row-cols-1 justify-content-center"}>
                 <div className={"col col-auto"}>
-                    {renderScreen("screen", "50rem", auditoriumState?.screen.name)}
+                    {renderScreen("screen", "800px", auditoriumState?.screen.name)}
                 </div>
                 <table className="col-auto" cellSpacing={0} cellPadding={0}>
                     <tbody>

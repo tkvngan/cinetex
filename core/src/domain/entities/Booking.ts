@@ -1,27 +1,27 @@
 import {Entity, Id} from "../types/Entity";
 import {Column, Row} from "./Theatre";
 
-export type Booking = Entity & Readonly<{
-    id: Id
-    userId: Id
-    theatreId: Id,
-    bookingTime: string
-    totalPrice: number
-    tickets: readonly Ticket[]
-}>
+export interface Booking extends Entity {
+    readonly id: Id
+    readonly userId: Id
+    readonly theatreId: Id,
+    readonly bookingTime: string
+    readonly totalPrice: number
+    readonly tickets: readonly Ticket[]
+}
 
-export type Ticket = Readonly<{
-    movieId: Id,
-    screenId: number
-    showDate: string
-    showTime: string
-    seat: SeatPosition
-    price: number,
-    ticketNo?: number,
-    token?: string,
-}>
+export interface Ticket {
+    readonly movieId: Id,
+    readonly screenId: number
+    readonly showDate: string
+    readonly showTime: string
+    readonly seat: SeatPosition
+    readonly price: number,
+    readonly ticketNo?: number,
+    readonly token?: string,
+}
 
-export type SeatPosition = Readonly<{
-    row: Row
-    column: Column
-}>
+export interface SeatPosition {
+    readonly row: Row
+    readonly column: Column
+}

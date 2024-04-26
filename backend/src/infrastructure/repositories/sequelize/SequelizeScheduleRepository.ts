@@ -58,7 +58,10 @@ function toSchedule(data: ScheduleData): Schedule {
             if (index === -1) {
                 timeSlots.push(toTimeSlot(timeSlotData));
             } else {
-                timeSlots[index].times.push(timeSlotData.time);
+                timeSlots[index] = {
+                    ...timeSlots[index],
+                    times: [...timeSlots[index].times, timeSlotData.time]
+                }
             }
             return timeSlots;
         }, [] as TimeSlot[])

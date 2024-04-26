@@ -1,34 +1,34 @@
 import {Entity, Id} from "../types/Entity";
 
-export type Movie = Entity & Readonly<{
-    id: Id;
-    name: string;
-    releaseDate: string;
-    runtimeInMinutes: number;
-    genres: string[];
-    synopsis?: string;
-    starring?: string;
-    director?: string;
-    producers?: string;
-    writers?: string;
-    ratings: Rating[];
+export interface Movie extends Entity {
+    readonly id: Id;
+    readonly name: string;
+    readonly releaseDate: string;
+    readonly runtimeInMinutes: number;
+    readonly genres: readonly string[];
+    readonly synopsis?: string;
+    readonly starring?: string;
+    readonly director?: string;
+    readonly producers?: string;
+    readonly writers?: string;
+    readonly ratings: readonly Rating[];
 
-    warning?: string;
-    languageCode: string;
-    movieLanguage: string;
-    movieSubtitleLanguage?: string;
+    readonly warning?: string;
+    readonly languageCode: string;
+    readonly movieLanguage: string;
+    readonly movieSubtitleLanguage?: string;
 
-    smallPosterImageUrl?: string;
-    mediumPosterImageUrl?: string;
-    largePosterImageUrl?: string;
-    trailerUrl?: string;
+    readonly smallPosterImageUrl?: string;
+    readonly mediumPosterImageUrl?: string;
+    readonly largePosterImageUrl?: string;
+    readonly trailerUrl?: string;
 
-    cineplexId?: number;
-}>
+    readonly cineplexId?: number;
+}
 
-export type Rating = Readonly<{
-    provinceCode: string
-    warnings?: string
-    rating: string
-    ratingDescription: string
-}>
+export interface Rating {
+    readonly provinceCode: string
+    readonly warnings?: string
+    readonly rating: string
+    readonly ratingDescription: string
+}

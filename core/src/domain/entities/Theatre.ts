@@ -4,25 +4,25 @@ import {Address} from "../types/Address";
 export type Row = number
 export type Column = number
 
-export type Theatre = Entity & Readonly<{
-    id: Id;
-    name: string;
-    location: Address;
-    phone?: string;
-    screens: readonly Screen[];
-    imageUrl?: string;
-}>
+export interface Theatre extends Entity {
+    readonly id: Id;
+    readonly name: string;
+    readonly location: Address;
+    readonly phone?: string;
+    readonly screens: readonly Screen[];
+    readonly imageUrl?: string;
+}
 
-export type Screen = Readonly<{
-    id: number;
-    name: string;
-    rows: number;
-    columns: number;
-    frontRows: number;
-    sideColumns: number;
-    seats: readonly (readonly SeatType[])[];
-    imageUrl?: string;
-}>
+export interface Screen {
+    readonly id: number;
+    readonly name: string;
+    readonly rows: number;
+    readonly columns: number;
+    readonly frontRows: number;
+    readonly sideColumns: number;
+    readonly seats: readonly (readonly SeatType[])[];
+    readonly imageUrl?: string;
+}
 
 export enum SeatType {
     Unavailable = 0,

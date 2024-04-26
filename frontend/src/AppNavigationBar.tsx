@@ -117,7 +117,7 @@ export function AppNavigationBar({features, authentication, cart, theme}: AppNav
                             visible === "when-active" && !isActive(path)) {
                             return <span key={path}></span>
                         }
-                        const userRoles: string[] = credentials?.user.roles ?? []
+                        const userRoles: readonly string[] = credentials?.user.roles ?? []
                         const userHasRole = userRoles.some(userRole => roles?.includes(userRole) ?? false)
                         if (roles && roles.length > 0 && !userHasRole) {
                             return <span key={path}></span>

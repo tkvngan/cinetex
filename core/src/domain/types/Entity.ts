@@ -1,6 +1,6 @@
-export type Entity = Readonly<{
-    id: Id;
-}>
+export interface Entity {
+    readonly id: Id;
+}
 
 export type Id = string;
 

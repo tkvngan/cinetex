@@ -1,6 +1,6 @@
-export type Address = {
-    street: string;
-    city: string;
-    state: string;
-    zip: string;
+export interface Address {
+    readonly street: string;
+    readonly city: string;
+    readonly state: string;
+    readonly zip: string;
 }

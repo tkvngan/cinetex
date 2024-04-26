@@ -1,14 +1,14 @@
 import {Entity, Id} from "../types/Entity";
 
-export type Schedule = Entity & Readonly<{
-    id: Id;
-    movieId: Id
-    theatreId: Id
-    screenId: number
-    showTimes: readonly TimeSlot[]
-}>
+export interface Schedule extends Entity {
+    readonly id: Id;
+    readonly movieId: Id
+    readonly theatreId: Id
+    readonly screenId: number
+    readonly showTimes: readonly TimeSlot[]
+}
 
-export type TimeSlot = Readonly<{
-    date: string
-    times: string[]
-}>
+export interface TimeSlot {
+    readonly date: string
+    readonly times: readonly string[]
+}
